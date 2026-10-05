@@ -2,7 +2,7 @@ name: Collecte temps d'attente
 
 on:
   schedule:
-    - cron: "*/15 * * * *"   # toutes les 15 min (GitHub peut décaler de quelques minutes)
+    - cron: "7,22,37,52 * * * *"   # toutes les 15 min (GitHub peut décaler de quelques minutes)
   workflow_dispatch:          # bouton "Run workflow" pour lancer à la main
 
 permissions:
