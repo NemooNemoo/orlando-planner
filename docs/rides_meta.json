@@ -1,0 +1,1112 @@
+{
+ "_info": "Saisi à la main. height = taille minimale en cm (0 = aucune) ; type = thrill (sensation) | family (famille) | show (spectacle) | kids (enfants) ; ll = Lightning Lane Disney (multi | single | null) ; express = Universal Express ; duration = durée approximative de l'expérience en min (hors file) ; base_wait = attente moyenne typique en min, utilisée tant que stats.json n'a pas assez de données.",
+ "rides": {
+  "11527": {
+   "name": "TRON Lightcycle / Run",
+   "park": "magic_kingdom",
+   "height": 122,
+   "type": "thrill",
+   "duration": 5,
+   "base_wait": 70,
+   "ll": "single"
+  },
+  "129": {
+   "name": "Seven Dwarfs Mine Train",
+   "park": "magic_kingdom",
+   "height": 97,
+   "type": "family",
+   "duration": 5,
+   "base_wait": 65,
+   "ll": "multi"
+  },
+  "138": {
+   "name": "Space Mountain",
+   "park": "magic_kingdom",
+   "height": 112,
+   "type": "thrill",
+   "duration": 5,
+   "base_wait": 45,
+   "ll": "multi"
+  },
+  "130": {
+   "name": "Big Thunder Mountain Railroad",
+   "park": "magic_kingdom",
+   "height": 102,
+   "type": "thrill",
+   "duration": 6,
+   "base_wait": 40,
+   "ll": "multi"
+  },
+  "13630": {
+   "name": "Tiana's Bayou Adventure",
+   "park": "magic_kingdom",
+   "height": 102,
+   "type": "family",
+   "duration": 12,
+   "base_wait": 60,
+   "ll": "multi"
+  },
+  "136": {
+   "name": "Peter Pan's Flight",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "family",
+   "duration": 4,
+   "base_wait": 50,
+   "ll": "multi"
+  },
+  "140": {
+   "name": "Haunted Mansion",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "family",
+   "duration": 10,
+   "base_wait": 30,
+   "ll": "multi"
+  },
+  "137": {
+   "name": "Pirates of the Caribbean",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "family",
+   "duration": 10,
+   "base_wait": 25,
+   "ll": "multi"
+  },
+  "134": {
+   "name": "Jungle Cruise",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "family",
+   "duration": 10,
+   "base_wait": 40,
+   "ll": "multi"
+  },
+  "142": {
+   "name": "The Many Adventures of Winnie the Pooh",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "kids",
+   "duration": 5,
+   "base_wait": 30,
+   "ll": "multi"
+  },
+  "127": {
+   "name": "Under the Sea - Journey of The Little Mermaid",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "kids",
+   "duration": 7,
+   "base_wait": 20,
+   "ll": "multi"
+  },
+  "132": {
+   "name": "Dumbo the Flying Elephant",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "kids",
+   "duration": 4,
+   "base_wait": 15,
+   "ll": "multi"
+  },
+  "126": {
+   "name": "The Barnstormer",
+   "park": "magic_kingdom",
+   "height": 89,
+   "type": "kids",
+   "duration": 3,
+   "base_wait": 20,
+   "ll": "multi"
+  },
+  "135": {
+   "name": "Mad Tea Party",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "kids",
+   "duration": 3,
+   "base_wait": 10,
+   "ll": "multi"
+  },
+  "133": {
+   "name": "\"it's a small world\"",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "kids",
+   "duration": 11,
+   "base_wait": 15,
+   "ll": "multi"
+  },
+  "131": {
+   "name": "Buzz Lightyear’s Space Ranger Spin",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "family",
+   "duration": 6,
+   "base_wait": 30,
+   "ll": "multi"
+  },
+  "143": {
+   "name": "Tomorrowland Speedway",
+   "park": "magic_kingdom",
+   "height": 81,
+   "type": "kids",
+   "duration": 6,
+   "base_wait": 25,
+   "ll": "multi"
+  },
+  "248": {
+   "name": "Astro Orbiter",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "kids",
+   "duration": 3,
+   "base_wait": 25,
+   "ll": null
+  },
+  "141": {
+   "name": "The Magic Carpets of Aladdin",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "kids",
+   "duration": 3,
+   "base_wait": 15,
+   "ll": "multi"
+  },
+  "125": {
+   "name": "Monsters, Inc. Laugh Floor",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "show",
+   "duration": 20,
+   "base_wait": 15,
+   "ll": "multi"
+  },
+  "171": {
+   "name": "Mickey's PhilharMagic",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "show",
+   "duration": 15,
+   "base_wait": 10,
+   "ll": "multi"
+  },
+  "1190": {
+   "name": "Tomorrowland Transit Authority PeopleMover",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "family",
+   "duration": 10,
+   "base_wait": 15,
+   "ll": "multi"
+  },
+  "146": {
+   "name": "Meet Mickey at Town Square Theater",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "kids",
+   "duration": 5,
+   "base_wait": 30,
+   "ll": "multi"
+  },
+  "6699": {
+   "name": "Meet Princess Tiana and a Visiting Princess at Princess Fairytale Hall",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "kids",
+   "duration": 5,
+   "base_wait": 30,
+   "ll": "multi"
+  },
+  "6700": {
+   "name": "Meet Cinderella and a Visiting Princess at Princess Fairytale Hall",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "kids",
+   "duration": 5,
+   "base_wait": 30,
+   "ll": "multi"
+  },
+  "128": {
+   "name": "Enchanted Tales with Belle",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "show",
+   "duration": 20,
+   "base_wait": 25,
+   "ll": "multi"
+  },
+  "161": {
+   "name": "Prince Charming Regal Carrousel",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "kids",
+   "duration": 3,
+   "base_wait": 10,
+   "ll": null
+  },
+  "457": {
+   "name": "Walt Disney's Carousel of Progress",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "show",
+   "duration": 22,
+   "base_wait": 5,
+   "ll": null
+  },
+  "334": {
+   "name": "Walt Disney's Enchanted Tiki Room",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "show",
+   "duration": 12,
+   "base_wait": 5,
+   "ll": null
+  },
+  "1214": {
+   "name": "Country Bear Musical Jamboree",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "show",
+   "duration": 16,
+   "base_wait": 5,
+   "ll": null
+  },
+  "355": {
+   "name": "Swiss Family Treehouse",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "family",
+   "duration": 15,
+   "base_wait": 5,
+   "ll": null
+  },
+  "1189": {
+   "name": "Walt Disney World Railroad - Main Street, U.S.A.",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "family",
+   "duration": 20,
+   "base_wait": 10,
+   "ll": null
+  },
+  "10093": {
+   "name": "Guardians of the Galaxy: Cosmic Rewind",
+   "park": "epcot",
+   "height": 107,
+   "type": "thrill",
+   "duration": 5,
+   "base_wait": 80,
+   "ll": "single"
+  },
+  "160": {
+   "name": "Test Track",
+   "park": "epcot",
+   "height": 102,
+   "type": "thrill",
+   "duration": 6,
+   "base_wait": 60,
+   "ll": "multi"
+  },
+  "8956": {
+   "name": "Remy's Ratatouille Adventure",
+   "park": "epcot",
+   "height": 0,
+   "type": "family",
+   "duration": 5,
+   "base_wait": 60,
+   "ll": "multi"
+  },
+  "2679": {
+   "name": "Frozen Ever After",
+   "park": "epcot",
+   "height": 0,
+   "type": "family",
+   "duration": 6,
+   "base_wait": 60,
+   "ll": "multi"
+  },
+  "16467": {
+   "name": "Soarin' Across America",
+   "park": "epcot",
+   "height": 102,
+   "type": "family",
+   "duration": 8,
+   "base_wait": 45,
+   "ll": "multi"
+  },
+  "158": {
+   "name": "Mission: SPACE",
+   "park": "epcot",
+   "height": 102,
+   "type": "thrill",
+   "duration": 8,
+   "base_wait": 25,
+   "ll": "multi"
+  },
+  "159": {
+   "name": "Spaceship Earth",
+   "park": "epcot",
+   "height": 0,
+   "type": "family",
+   "duration": 16,
+   "base_wait": 25,
+   "ll": "multi"
+  },
+  "12387": {
+   "name": "Journey of Water, Inspired by Moana",
+   "park": "epcot",
+   "height": 0,
+   "type": "kids",
+   "duration": 10,
+   "base_wait": 25,
+   "ll": "multi"
+  },
+  "156": {
+   "name": "Living with the Land",
+   "park": "epcot",
+   "height": 0,
+   "type": "family",
+   "duration": 14,
+   "base_wait": 15,
+   "ll": "multi"
+  },
+  "153": {
+   "name": "The Seas with Nemo & Friends",
+   "park": "epcot",
+   "height": 0,
+   "type": "kids",
+   "duration": 5,
+   "base_wait": 10,
+   "ll": "multi"
+  },
+  "152": {
+   "name": "Turtle Talk With Crush",
+   "park": "epcot",
+   "height": 0,
+   "type": "show",
+   "duration": 17,
+   "base_wait": 15,
+   "ll": "multi"
+  },
+  "155": {
+   "name": "Journey Into Imagination With Figment",
+   "park": "epcot",
+   "height": 0,
+   "type": "family",
+   "duration": 7,
+   "base_wait": 10,
+   "ll": "multi"
+  },
+  "466": {
+   "name": "Gran Fiesta Tour Starring The Three Caballeros",
+   "park": "epcot",
+   "height": 0,
+   "type": "family",
+   "duration": 8,
+   "base_wait": 5,
+   "ll": null
+  },
+  "829": {
+   "name": "Canada Far and Wide in Circle-Vision 360",
+   "park": "epcot",
+   "height": 0,
+   "type": "show",
+   "duration": 14,
+   "base_wait": 5,
+   "ll": null
+  },
+  "6701": {
+   "name": "Meet Anna and Elsa at Royal Sommerhus",
+   "park": "epcot",
+   "height": 0,
+   "type": "kids",
+   "duration": 5,
+   "base_wait": 25,
+   "ll": "multi"
+  },
+  "13627": {
+   "name": "Meet Beloved Disney Pals at Mickey & Friends",
+   "park": "epcot",
+   "height": 0,
+   "type": "kids",
+   "duration": 5,
+   "base_wait": 25,
+   "ll": "multi"
+  },
+  "2495": {
+   "name": "Disney and Pixar Short Film Festival",
+   "park": "epcot",
+   "height": 0,
+   "type": "show",
+   "duration": 12,
+   "base_wait": 10,
+   "ll": "multi"
+  },
+  "6369": {
+   "name": "Star Wars: Rise of the Resistance",
+   "park": "hollywood_studios",
+   "height": 102,
+   "type": "thrill",
+   "duration": 20,
+   "base_wait": 80,
+   "ll": "single"
+  },
+  "6368": {
+   "name": "Millennium Falcon: Smugglers Run",
+   "park": "hollywood_studios",
+   "height": 97,
+   "type": "family",
+   "duration": 6,
+   "base_wait": 55,
+   "ll": "multi"
+  },
+  "5476": {
+   "name": "Slinky Dog Dash",
+   "park": "hollywood_studios",
+   "height": 97,
+   "type": "family",
+   "duration": 3,
+   "base_wait": 70,
+   "ll": "multi"
+  },
+  "123": {
+   "name": "The Twilight Zone™ Tower of Terror",
+   "park": "hollywood_studios",
+   "height": 102,
+   "type": "thrill",
+   "duration": 4,
+   "base_wait": 60,
+   "ll": "multi"
+  },
+  "16342": {
+   "name": "Rock ’n’ Roller Coaster Starring The Muppets",
+   "park": "hollywood_studios",
+   "height": 122,
+   "type": "thrill",
+   "duration": 3,
+   "base_wait": 60,
+   "ll": "multi"
+  },
+  "6361": {
+   "name": "Mickey & Minnie's Runaway Railway",
+   "park": "hollywood_studios",
+   "height": 0,
+   "type": "family",
+   "duration": 6,
+   "base_wait": 45,
+   "ll": "multi"
+  },
+  "117": {
+   "name": "Toy Story Mania!",
+   "park": "hollywood_studios",
+   "height": 0,
+   "type": "family",
+   "duration": 7,
+   "base_wait": 45,
+   "ll": "multi"
+  },
+  "5477": {
+   "name": "Alien Swirling Saucers",
+   "park": "hollywood_studios",
+   "height": 81,
+   "type": "kids",
+   "duration": 3,
+   "base_wait": 30,
+   "ll": "multi"
+  },
+  "120": {
+   "name": "Star Tours – The Adventures Continue",
+   "park": "hollywood_studios",
+   "height": 102,
+   "type": "family",
+   "duration": 7,
+   "base_wait": 25,
+   "ll": "multi"
+  },
+  "6702": {
+   "name": "Indiana Jones™ Epic Stunt Spectacular!",
+   "park": "hollywood_studios",
+   "height": 0,
+   "type": "show",
+   "duration": 30,
+   "base_wait": 20,
+   "ll": "multi"
+  },
+  "1176": {
+   "name": "Beauty and the Beast – Live on Stage",
+   "park": "hollywood_studios",
+   "height": 0,
+   "type": "show",
+   "duration": 30,
+   "base_wait": 20,
+   "ll": "multi"
+  },
+  "1174": {
+   "name": "For the First Time in Forever: A Frozen Sing-Along Celebration",
+   "park": "hollywood_studios",
+   "height": 0,
+   "type": "show",
+   "duration": 30,
+   "base_wait": 20,
+   "ll": "multi"
+  },
+  "14859": {
+   "name": "The Little Mermaid – A Musical Adventure",
+   "park": "hollywood_studios",
+   "height": 0,
+   "type": "show",
+   "duration": 25,
+   "base_wait": 20,
+   "ll": "multi"
+  },
+  "16641": {
+   "name": "Disney Jr. Mickey Mouse Clubhouse Live!",
+   "park": "hollywood_studios",
+   "height": 0,
+   "type": "show",
+   "duration": 25,
+   "base_wait": 20,
+   "ll": "multi"
+  },
+  "6703": {
+   "name": "Meet Olaf at Celebrity Spotlight",
+   "park": "hollywood_studios",
+   "height": 0,
+   "type": "kids",
+   "duration": 5,
+   "base_wait": 25,
+   "ll": "multi"
+  },
+  "12425": {
+   "name": "Meet Edna Mode at the Edna Mode Experience",
+   "park": "hollywood_studios",
+   "height": 0,
+   "type": "kids",
+   "duration": 5,
+   "base_wait": 15,
+   "ll": null
+  },
+  "6704": {
+   "name": "Meet Disney Stars at Red Carpet Dreams",
+   "park": "hollywood_studios",
+   "height": 0,
+   "type": "kids",
+   "duration": 5,
+   "base_wait": 25,
+   "ll": "multi"
+  },
+  "4439": {
+   "name": "Avatar Flight of Passage",
+   "park": "animal_kingdom",
+   "height": 112,
+   "type": "thrill",
+   "duration": 6,
+   "base_wait": 75,
+   "ll": "single"
+  },
+  "4438": {
+   "name": "Na'vi River Journey",
+   "park": "animal_kingdom",
+   "height": 0,
+   "type": "family",
+   "duration": 5,
+   "base_wait": 55,
+   "ll": "multi"
+  },
+  "110": {
+   "name": "Expedition Everest - Legend of the Forbidden Mountain",
+   "park": "animal_kingdom",
+   "height": 112,
+   "type": "thrill",
+   "duration": 4,
+   "base_wait": 35,
+   "ll": "multi"
+  },
+  "113": {
+   "name": "Kilimanjaro Safaris",
+   "park": "animal_kingdom",
+   "height": 0,
+   "type": "family",
+   "duration": 22,
+   "base_wait": 40,
+   "ll": "multi"
+  },
+  "112": {
+   "name": "Kali River Rapids",
+   "park": "animal_kingdom",
+   "height": 97,
+   "type": "family",
+   "duration": 6,
+   "base_wait": 30,
+   "ll": "multi"
+  },
+  "657": {
+   "name": "Festival of the Lion King",
+   "park": "animal_kingdom",
+   "height": 0,
+   "type": "show",
+   "duration": 30,
+   "base_wait": 20,
+   "ll": "multi"
+  },
+  "10920": {
+   "name": "Finding Nemo: The Big Blue... and Beyond!",
+   "park": "animal_kingdom",
+   "height": 0,
+   "type": "show",
+   "duration": 25,
+   "base_wait": 15,
+   "ll": "multi"
+  },
+  "14943": {
+   "name": "Zootopia: Better Zoogether!",
+   "park": "animal_kingdom",
+   "height": 0,
+   "type": "show",
+   "duration": 12,
+   "base_wait": 15,
+   "ll": "multi"
+  },
+  "10921": {
+   "name": "Feathered Friends in Flight!",
+   "park": "animal_kingdom",
+   "height": 0,
+   "type": "show",
+   "duration": 25,
+   "base_wait": 15,
+   "ll": "multi"
+  },
+  "651": {
+   "name": "Gorilla Falls Exploration Trail",
+   "park": "animal_kingdom",
+   "height": 0,
+   "type": "family",
+   "duration": 25,
+   "base_wait": 5,
+   "ll": null
+  },
+  "17661": {
+   "name": "Bluey's Wild World at Conservation Station",
+   "park": "animal_kingdom",
+   "height": 0,
+   "type": "kids",
+   "duration": 20,
+   "base_wait": 15,
+   "ll": null
+  },
+  "116": {
+   "name": "Meet Favorite Disney Pals at Adventurers Outpost",
+   "park": "animal_kingdom",
+   "height": 0,
+   "type": "kids",
+   "duration": 5,
+   "base_wait": 25,
+   "ll": "multi"
+  },
+  "12451": {
+   "name": "Meet Moana at Character Landing",
+   "park": "animal_kingdom",
+   "height": 0,
+   "type": "kids",
+   "duration": 5,
+   "base_wait": 20,
+   "ll": null
+  },
+  "655": {
+   "name": "Wildlife Express Train",
+   "park": "animal_kingdom",
+   "height": 0,
+   "type": "family",
+   "duration": 15,
+   "base_wait": 10,
+   "ll": null
+  },
+  "6014": {
+   "name": "Harry Potter and the Escape from Gringotts™",
+   "park": "universal_studios_florida",
+   "height": 107,
+   "type": "thrill",
+   "duration": 5,
+   "base_wait": 55,
+   "express": true
+  },
+  "6000": {
+   "name": "Revenge of the Mummy",
+   "park": "universal_studios_florida",
+   "height": 122,
+   "type": "thrill",
+   "duration": 4,
+   "base_wait": 40,
+   "express": true
+  },
+  "13605": {
+   "name": "Trolls Trollercoaster",
+   "park": "universal_studios_florida",
+   "height": 91,
+   "type": "kids",
+   "duration": 2,
+   "base_wait": 35,
+   "express": true
+  },
+  "5984": {
+   "name": "Despicable Me Minion Mayhem™",
+   "park": "universal_studios_florida",
+   "height": 102,
+   "type": "family",
+   "duration": 8,
+   "base_wait": 40,
+   "express": true
+  },
+  "12107": {
+   "name": "Illumination's Villain-Con Minion Blast",
+   "park": "universal_studios_florida",
+   "height": 0,
+   "type": "family",
+   "duration": 8,
+   "base_wait": 35,
+   "express": true
+  },
+  "5996": {
+   "name": "MEN IN BLACK™ Alien Attack!",
+   "park": "universal_studios_florida",
+   "height": 107,
+   "type": "family",
+   "duration": 5,
+   "base_wait": 25,
+   "express": true
+  },
+  "6005": {
+   "name": "The Simpsons Ride™",
+   "park": "universal_studios_florida",
+   "height": 102,
+   "type": "family",
+   "duration": 6,
+   "base_wait": 25,
+   "express": true
+  },
+  "6006": {
+   "name": "TRANSFORMERS™: The Ride-3D",
+   "park": "universal_studios_florida",
+   "height": 102,
+   "type": "thrill",
+   "duration": 5,
+   "base_wait": 20,
+   "express": true
+  },
+  "6018": {
+   "name": "Race Through New York Starring Jimmy Fallon",
+   "park": "universal_studios_florida",
+   "height": 102,
+   "type": "family",
+   "duration": 6,
+   "base_wait": 25,
+   "express": true
+  },
+  "5990": {
+   "name": "E.T. Adventure",
+   "park": "universal_studios_florida",
+   "height": 86,
+   "type": "kids",
+   "duration": 6,
+   "base_wait": 25,
+   "express": true
+  },
+  "5995": {
+   "name": "Kang & Kodos' Twirl 'n' Hurl",
+   "park": "universal_studios_florida",
+   "height": 0,
+   "type": "kids",
+   "duration": 2,
+   "base_wait": 15,
+   "express": true
+  },
+  "6016": {
+   "name": "Hogwarts Express™ - King's Cross Station",
+   "park": "universal_studios_florida",
+   "height": 0,
+   "type": "family",
+   "duration": 5,
+   "base_wait": 30,
+   "express": true
+  },
+  "6682": {
+   "name": "Hagrid's Magical Creatures Motorbike Adventure™",
+   "park": "islands_of_adventure",
+   "height": 122,
+   "type": "thrill",
+   "duration": 3,
+   "base_wait": 85,
+   "express": false
+  },
+  "8721": {
+   "name": "Jurassic World VelociCoaster",
+   "park": "islands_of_adventure",
+   "height": 130,
+   "type": "thrill",
+   "duration": 3,
+   "base_wait": 70,
+   "express": true
+  },
+  "5992": {
+   "name": "Harry Potter and the Forbidden Journey™",
+   "park": "islands_of_adventure",
+   "height": 122,
+   "type": "thrill",
+   "duration": 5,
+   "base_wait": 45,
+   "express": true
+  },
+  "6004": {
+   "name": "The Incredible Hulk Coaster®",
+   "park": "islands_of_adventure",
+   "height": 137,
+   "type": "thrill",
+   "duration": 3,
+   "base_wait": 35,
+   "express": true
+  },
+  "5985": {
+   "name": "The Amazing Adventures of Spider-Man®",
+   "park": "islands_of_adventure",
+   "height": 102,
+   "type": "family",
+   "duration": 5,
+   "base_wait": 30,
+   "express": true
+  },
+  "6017": {
+   "name": "Skull Island: Reign of Kong",
+   "park": "islands_of_adventure",
+   "height": 86,
+   "type": "family",
+   "duration": 6,
+   "base_wait": 30,
+   "express": true
+  },
+  "5994": {
+   "name": "Jurassic Park River Adventure",
+   "park": "islands_of_adventure",
+   "height": 107,
+   "type": "family",
+   "duration": 6,
+   "base_wait": 35,
+   "express": true
+  },
+  "5989": {
+   "name": "Dudley Do-Right's Ripsaw Falls®",
+   "park": "islands_of_adventure",
+   "height": 112,
+   "type": "family",
+   "duration": 6,
+   "base_wait": 30,
+   "express": true
+  },
+  "5998": {
+   "name": "Popeye & Bluto's Bilge-Rat Barges®",
+   "park": "islands_of_adventure",
+   "height": 107,
+   "type": "family",
+   "duration": 5,
+   "base_wait": 30,
+   "express": true
+  },
+  "5988": {
+   "name": "Doctor Doom's Fearfall®",
+   "park": "islands_of_adventure",
+   "height": 132,
+   "type": "thrill",
+   "duration": 2,
+   "base_wait": 25,
+   "express": true
+  },
+  "5991": {
+   "name": "Flight of the Hippogriff™",
+   "park": "islands_of_adventure",
+   "height": 91,
+   "type": "kids",
+   "duration": 2,
+   "base_wait": 35,
+   "express": true
+  },
+  "5987": {
+   "name": "The Cat in The Hat™",
+   "park": "islands_of_adventure",
+   "height": 0,
+   "type": "kids",
+   "duration": 4,
+   "base_wait": 20,
+   "express": true
+  },
+  "5997": {
+   "name": "One Fish, Two Fish, Red Fish, Blue Fish™",
+   "park": "islands_of_adventure",
+   "height": 0,
+   "type": "kids",
+   "duration": 2,
+   "base_wait": 15,
+   "express": true
+  },
+  "6001": {
+   "name": "The High in the Sky Seuss Trolley Train Ride!™",
+   "park": "islands_of_adventure",
+   "height": 86,
+   "type": "kids",
+   "duration": 5,
+   "base_wait": 25,
+   "express": true
+  },
+  "5986": {
+   "name": "Caro-Seuss-el™",
+   "park": "islands_of_adventure",
+   "height": 0,
+   "type": "kids",
+   "duration": 2,
+   "base_wait": 10,
+   "express": true
+  },
+  "5999": {
+   "name": "Pteranodon Flyers",
+   "park": "islands_of_adventure",
+   "height": 91,
+   "type": "kids",
+   "duration": 2,
+   "base_wait": 35,
+   "express": false
+  },
+  "6003": {
+   "name": "Storm Force Accelatron®",
+   "park": "islands_of_adventure",
+   "height": 0,
+   "type": "kids",
+   "duration": 2,
+   "base_wait": 10,
+   "express": true
+  },
+  "6015": {
+   "name": "Hogwarts Express™ - Hogsmeade™ Station",
+   "park": "islands_of_adventure",
+   "height": 0,
+   "type": "family",
+   "duration": 5,
+   "base_wait": 30,
+   "express": true
+  },
+  "14687": {
+   "name": "Harry Potter and the Battle at the Ministry™",
+   "park": "epic_universe",
+   "height": 102,
+   "type": "thrill",
+   "duration": 8,
+   "base_wait": 90,
+   "express": true
+  },
+  "14690": {
+   "name": "Stardust Racers",
+   "park": "epic_universe",
+   "height": 122,
+   "type": "thrill",
+   "duration": 3,
+   "base_wait": 70,
+   "express": true
+  },
+  "14686": {
+   "name": "Mine-Cart Madness™",
+   "park": "epic_universe",
+   "height": 102,
+   "type": "family",
+   "duration": 4,
+   "base_wait": 80,
+   "express": true
+  },
+  "14683": {
+   "name": "Mario Kart™: Bowser's Challenge",
+   "park": "epic_universe",
+   "height": 102,
+   "type": "family",
+   "duration": 6,
+   "base_wait": 70,
+   "express": true
+  },
+  "14689": {
+   "name": "Yoshi's Adventure™",
+   "park": "epic_universe",
+   "height": 86,
+   "type": "kids",
+   "duration": 6,
+   "base_wait": 50,
+   "express": true
+  },
+  "14692": {
+   "name": "Curse of the Werewolf",
+   "park": "epic_universe",
+   "height": 122,
+   "type": "thrill",
+   "duration": 3,
+   "base_wait": 45,
+   "express": true
+  },
+  "14694": {
+   "name": "Monsters Unchained: The Frankenstein Experiment",
+   "park": "epic_universe",
+   "height": 102,
+   "type": "thrill",
+   "duration": 5,
+   "base_wait": 55,
+   "express": true
+  },
+  "14695": {
+   "name": "Hiccup's Wing Gliders",
+   "park": "epic_universe",
+   "height": 102,
+   "type": "family",
+   "duration": 2,
+   "base_wait": 70,
+   "express": true
+  },
+  "14693": {
+   "name": "Dragon Racer's Rally",
+   "park": "epic_universe",
+   "height": 122,
+   "type": "thrill",
+   "duration": 2,
+   "base_wait": 40,
+   "express": true
+  },
+  "14691": {
+   "name": "Fyre Drill",
+   "park": "epic_universe",
+   "height": 0,
+   "type": "kids",
+   "duration": 4,
+   "base_wait": 25,
+   "express": true
+  },
+  "14688": {
+   "name": "Constellation Carousel",
+   "park": "epic_universe",
+   "height": 0,
+   "type": "kids",
+   "duration": 3,
+   "base_wait": 20,
+   "express": true
+  },
+  "14685": {
+   "name": "Meet Toothless and Friends",
+   "park": "epic_universe",
+   "height": 0,
+   "type": "kids",
+   "duration": 5,
+   "base_wait": 30,
+   "express": true
+  },
+  "14682": {
+   "name": "Bowser Jr. Challenge",
+   "park": "epic_universe",
+   "height": 0,
+   "type": "kids",
+   "duration": 5,
+   "base_wait": 30,
+   "express": true
+  }
+ }
+}
