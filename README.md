@@ -21,6 +21,28 @@ Animal Kingdom (8), Hollywood Studios (7), Magic Kingdom (6), Epcot (5).
 
 Le dépôt doit être **public** : Actions et Pages sont alors gratuits et illimités.
 
-## Phase 2 — Site planificateur (à construire)
+## Phase 2 — Site planificateur (`docs/`)
 
-Voir `BRIEF_SITE.md`.
+Site statique (HTML/CSS/JS, sans framework ni build), cahier des charges dans `BRIEF_SITE.md`.
+
+| Fichier | Rôle |
+|---|---|
+| `docs/index.html`, `docs/style.css` | Page unique, mobile d'abord |
+| `docs/js/app.js` | Interface : assistant, calendrier, journée, direct |
+| `docs/js/planner.js` | Calculs (sans DOM) : modèle d'attente, choix des parcs, programme du jour, « que faire maintenant ? » |
+| `docs/config.js` | Adresse des données (`raw.githubusercontent.com/<user>/<repo>/main/data/`) |
+| `docs/rides_meta.json` | Saisi à la main : taille mini, type, Lightning Lane / Express, durée, attente typique |
+| `docs/i18n.json` | Textes FR / EN |
+| `docs/sw.js`, `docs/manifest.webmanifest` | Installation sur téléphone + hors connexion (changer `VERSION` dans `sw.js` après une modif du site) |
+
+**Mise en ligne** : Settings → Pages → *Deploy from a branch* → `main` / `/docs`.
+
+**Tester en local** : `python -m http.server` à la racine du dépôt, puis http://localhost:8000/docs/
+(en local, le site lit `../data/` ; sinon l'adresse de `config.js`).
+
+**Notes personnelles** : bouton « Importer mes notes » (CSV `date,park,weekday,crowd_pct,note`),
+gardées uniquement dans le navigateur. `.gitignore` bloque `*notes*.csv` et `data/history/` pour
+qu'elles ne soient jamais committées.
+
+Tant que `stats.json` contient peu de relevés, les attentes sont complétées par `base_wait`
+(rides_meta.json) et un profil horaire type ; le poids des vraies données augmente avec la collecte.

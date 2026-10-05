@@ -1,0 +1,6 @@
+# Notes personnelles d'affluence : jamais dans le dépôt (dépôt public, conditions de queue-times)
+*notes*.csv
+notes/
+private/
+# Historique queue-times récupéré en local par scripts/history.py
+data/history/
