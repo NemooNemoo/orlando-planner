@@ -1,0 +1,917 @@
+{
+ "10093": {
+  "land": "World Discovery",
+  "name": "Guardians of the Galaxy: Cosmic Rewind",
+  "park": "epcot"
+ },
+ "10900": {
+  "land": "World Discovery",
+  "name": "Test Track Presented by Chevrolet Single Rider",
+  "park": "epcot"
+ },
+ "10902": {
+  "land": "Star Wars: Galaxy's Edge",
+  "name": "Millennium Falcon: Smugglers Run Single Rider",
+  "park": "hollywood_studios"
+ },
+ "10915": {
+  "land": "World Showcase",
+  "name": "Remy's Ratatouille Adventure Single Rider",
+  "park": "epcot"
+ },
+ "10920": {
+  "land": "Dinoland U.S.A",
+  "name": "Finding Nemo: The Big Blue... and Beyond!",
+  "park": "animal_kingdom"
+ },
+ "10921": {
+  "land": "Asia",
+  "name": "Feathered Friends in Flight!",
+  "park": "animal_kingdom"
+ },
+ "110": {
+  "land": "Asia",
+  "name": "Expedition Everest - Legend of the Forbidden Mountain",
+  "park": "animal_kingdom"
+ },
+ "112": {
+  "land": "Asia",
+  "name": "Kali River Rapids",
+  "park": "animal_kingdom"
+ },
+ "113": {
+  "land": "Africa",
+  "name": "Kilimanjaro Safaris",
+  "park": "animal_kingdom"
+ },
+ "11527": {
+  "land": "Tomorrowland",
+  "name": "TRON Lightcycle / Run",
+  "park": "magic_kingdom"
+ },
+ "116": {
+  "land": "Discovery Island",
+  "name": "Meet Favorite Disney Pals at Adventurers Outpost",
+  "park": "animal_kingdom"
+ },
+ "117": {
+  "land": "Pixar Plaza",
+  "name": "Toy Story Mania!",
+  "park": "hollywood_studios"
+ },
+ "1174": {
+  "land": "Echo Lake",
+  "name": "For the First Time in Forever: A Frozen Sing-Along Celebration",
+  "park": "hollywood_studios"
+ },
+ "1176": {
+  "land": "Sunset Boulevard",
+  "name": "Beauty and the Beast – Live on Stage",
+  "park": "hollywood_studios"
+ },
+ "1181": {
+  "land": "Fantasyland",
+  "name": "Walt Disney World Railroad - Fantasyland",
+  "park": "magic_kingdom"
+ },
+ "1184": {
+  "land": "Adventureland",
+  "name": "A Pirate's Adventure ~ Treasures of the Seven Seas",
+  "park": "magic_kingdom"
+ },
+ "1188": {
+  "land": "Main Street, U.S.A.",
+  "name": "Main Street Vehicles",
+  "park": "magic_kingdom"
+ },
+ "1189": {
+  "land": "Main Street, U.S.A.",
+  "name": "Walt Disney World Railroad - Main Street, U.S.A.",
+  "park": "magic_kingdom"
+ },
+ "1190": {
+  "land": "Tomorrowland",
+  "name": "Tomorrowland Transit Authority PeopleMover",
+  "park": "magic_kingdom"
+ },
+ "120": {
+  "land": "Echo Lake",
+  "name": "Star Tours – The Adventures Continue",
+  "park": "hollywood_studios"
+ },
+ "12107": {
+  "land": "Illumination's Minion Land",
+  "name": "Illumination's Villain-Con Minion Blast",
+  "park": "universal_studios_florida"
+ },
+ "1214": {
+  "land": "Frontierland",
+  "name": "Country Bear Musical Jamboree",
+  "park": "magic_kingdom"
+ },
+ "123": {
+  "land": "Sunset Boulevard",
+  "name": "The Twilight Zone™ Tower of Terror",
+  "park": "hollywood_studios"
+ },
+ "12387": {
+  "land": "World Nature",
+  "name": "Journey of Water, Inspired by Moana",
+  "park": "epcot"
+ },
+ "12425": {
+  "land": "Pixar Plaza",
+  "name": "Meet Edna Mode at the Edna Mode Experience",
+  "park": "hollywood_studios"
+ },
+ "12430": {
+  "land": "Animation Courtyard",
+  "name": "Meet Ariel at Walt Disney Presents",
+  "park": "hollywood_studios"
+ },
+ "12451": {
+  "land": "Discovery Island",
+  "name": "Meet Moana at Character Landing",
+  "park": "animal_kingdom"
+ },
+ "125": {
+  "land": "Tomorrowland",
+  "name": "Monsters, Inc. Laugh Floor",
+  "park": "magic_kingdom"
+ },
+ "126": {
+  "land": "Fantasyland",
+  "name": "The Barnstormer",
+  "park": "magic_kingdom"
+ },
+ "127": {
+  "land": "Fantasyland",
+  "name": "Under the Sea - Journey of The Little Mermaid",
+  "park": "magic_kingdom"
+ },
+ "128": {
+  "land": "Fantasyland",
+  "name": "Enchanted Tales with Belle",
+  "park": "magic_kingdom"
+ },
+ "129": {
+  "land": "Fantasyland",
+  "name": "Seven Dwarfs Mine Train",
+  "park": "magic_kingdom"
+ },
+ "130": {
+  "land": "Frontierland",
+  "name": "Big Thunder Mountain Railroad",
+  "park": "magic_kingdom"
+ },
+ "13098": {
+  "land": "The Wizarding World of Harry Potter - Hogsmeade",
+  "name": "Ollivanders™ Experience in Hogsmeade™",
+  "park": "islands_of_adventure"
+ },
+ "131": {
+  "land": "Tomorrowland",
+  "name": "Buzz Lightyear’s Space Ranger Spin",
+  "park": "magic_kingdom"
+ },
+ "13100": {
+  "land": "The Wizarding World of Harry Potter - Diagon Alley",
+  "name": "Ollivanders™ Experience in Diagon Alley™",
+  "park": "universal_studios_florida"
+ },
+ "13110": {
+  "land": "New York",
+  "name": "Revenge of the Mummy™ Single Rider",
+  "park": "universal_studios_florida"
+ },
+ "13113": {
+  "land": "The Wizarding World of Harry Potter - Hogsmeade",
+  "name": "Harry Potter and the Forbidden Journey™ Single Rider",
+  "park": "islands_of_adventure"
+ },
+ "132": {
+  "land": "Fantasyland",
+  "name": "Dumbo the Flying Elephant",
+  "park": "magic_kingdom"
+ },
+ "133": {
+  "land": "Fantasyland",
+  "name": "\"it's a small world\"",
+  "park": "magic_kingdom"
+ },
+ "134": {
+  "land": "Adventureland",
+  "name": "Jungle Cruise",
+  "park": "magic_kingdom"
+ },
+ "135": {
+  "land": "Fantasyland",
+  "name": "Mad Tea Party",
+  "park": "magic_kingdom"
+ },
+ "136": {
+  "land": "Fantasyland",
+  "name": "Peter Pan's Flight",
+  "park": "magic_kingdom"
+ },
+ "13605": {
+  "land": "DreamWorks Land",
+  "name": "Trolls Trollercoaster",
+  "park": "universal_studios_florida"
+ },
+ "13627": {
+  "land": "World Celebration",
+  "name": "Meet Beloved Disney Pals at Mickey & Friends",
+  "park": "epcot"
+ },
+ "13630": {
+  "land": "Frontierland",
+  "name": "Tiana's Bayou Adventure",
+  "park": "magic_kingdom"
+ },
+ "137": {
+  "land": "Adventureland",
+  "name": "Pirates of the Caribbean",
+  "park": "magic_kingdom"
+ },
+ "13751": {
+  "land": "Discovery Island",
+  "name": "Tree of Life",
+  "park": "animal_kingdom"
+ },
+ "13763": {
+  "land": "Fantasyland",
+  "name": "Cinderella Castle",
+  "park": "magic_kingdom"
+ },
+ "13764": {
+  "land": "Fantasyland",
+  "name": "Casey Jr. Splash 'N' Soak Station",
+  "park": "magic_kingdom"
+ },
+ "13782": {
+  "land": "World Nature",
+  "name": "SeaBase Aquarium",
+  "park": "epcot"
+ },
+ "138": {
+  "land": "Tomorrowland",
+  "name": "Space Mountain",
+  "park": "magic_kingdom"
+ },
+ "13806": {
+  "land": "Conservation Station",
+  "name": "Animal Care at Conservation Station",
+  "park": "animal_kingdom"
+ },
+ "13808": {
+  "land": "The Oasis",
+  "name": "Wilderness Explorers",
+  "park": "animal_kingdom"
+ },
+ "13811": {
+  "land": "Discovery Island",
+  "name": "Discovery Island Trails",
+  "park": "animal_kingdom"
+ },
+ "13812": {
+  "land": "The Oasis",
+  "name": "The Oasis Exhibits",
+  "park": "animal_kingdom"
+ },
+ "13849": {
+  "land": "The Wizarding World of Harry Potter - Diagon Alley",
+  "name": "Hogwarts™ Express - First Train",
+  "park": "universal_studios_florida"
+ },
+ "13850": {
+  "land": "The Wizarding World of Harry Potter - Diagon Alley",
+  "name": "Hogwarts™ Express - Last Train",
+  "park": "universal_studios_florida"
+ },
+ "140": {
+  "land": "Liberty Square",
+  "name": "Haunted Mansion",
+  "park": "magic_kingdom"
+ },
+ "141": {
+  "land": "Adventureland",
+  "name": "The Magic Carpets of Aladdin",
+  "park": "magic_kingdom"
+ },
+ "142": {
+  "land": "Fantasyland",
+  "name": "The Many Adventures of Winnie the Pooh",
+  "park": "magic_kingdom"
+ },
+ "143": {
+  "land": "Tomorrowland",
+  "name": "Tomorrowland Speedway",
+  "park": "magic_kingdom"
+ },
+ "144": {
+  "land": "Fantasyland",
+  "name": "Meet Daring Disney Pals as Circus Stars at Pete's Silly Sideshow",
+  "park": "magic_kingdom"
+ },
+ "145": {
+  "land": "Fantasyland",
+  "name": "Meet Dashing Disney Pals as Circus Stars at Pete's Silly Sideshow",
+  "park": "magic_kingdom"
+ },
+ "14517": {
+  "land": "World Expo",
+  "name": "MEN IN BLACK™ Alien Attack!™ Single Rider",
+  "park": "universal_studios_florida"
+ },
+ "14531": {
+  "land": "Star Wars: Galaxy's Edge",
+  "name": "Star Wars: Rise of the Resistance Single Rider",
+  "park": "hollywood_studios"
+ },
+ "14533": {
+  "land": "Asia",
+  "name": "Expedition Everest - Legend of the Forbidden Mountain Single Rider",
+  "park": "animal_kingdom"
+ },
+ "146": {
+  "land": "Main Street, U.S.A.",
+  "name": "Meet Mickey at Town Square Theater",
+  "park": "magic_kingdom"
+ },
+ "14682": {
+  "land": "SUPER NINTENDO WORLD",
+  "name": "Bowser Jr. Challenge",
+  "park": "epic_universe"
+ },
+ "14683": {
+  "land": "SUPER NINTENDO WORLD",
+  "name": "Mario Kart™: Bowser's Challenge",
+  "park": "epic_universe"
+ },
+ "14684": {
+  "land": "SUPER NINTENDO WORLD",
+  "name": "Mario Kart™: Bowser's Challenge Single Rider",
+  "park": "epic_universe"
+ },
+ "14685": {
+  "land": "How to Train Your Dragon — Isle of Berk",
+  "name": "Meet Toothless and Friends",
+  "park": "epic_universe"
+ },
+ "14686": {
+  "land": "SUPER NINTENDO WORLD",
+  "name": "Mine-Cart Madness™",
+  "park": "epic_universe"
+ },
+ "14687": {
+  "land": "The Wizarding World of Harry Potter — Ministry of Magic",
+  "name": "Harry Potter and the Battle at the Ministry™",
+  "park": "epic_universe"
+ },
+ "14688": {
+  "land": "Celestial Park",
+  "name": "Constellation Carousel",
+  "park": "epic_universe"
+ },
+ "14689": {
+  "land": "SUPER NINTENDO WORLD",
+  "name": "Yoshi's Adventure™",
+  "park": "epic_universe"
+ },
+ "14690": {
+  "land": "Celestial Park",
+  "name": "Stardust Racers",
+  "park": "epic_universe"
+ },
+ "14691": {
+  "land": "How to Train Your Dragon — Isle of Berk",
+  "name": "Fyre Drill",
+  "park": "epic_universe"
+ },
+ "14692": {
+  "land": "Dark Universe",
+  "name": "Curse of the Werewolf",
+  "park": "epic_universe"
+ },
+ "14693": {
+  "land": "How to Train Your Dragon — Isle of Berk",
+  "name": "Dragon Racer's Rally",
+  "park": "epic_universe"
+ },
+ "14694": {
+  "land": "Dark Universe",
+  "name": "Monsters Unchained: The Frankenstein Experiment",
+  "park": "epic_universe"
+ },
+ "14695": {
+  "land": "How to Train Your Dragon — Isle of Berk",
+  "name": "Hiccup's Wing Gliders",
+  "park": "epic_universe"
+ },
+ "14696": {
+  "land": "The Wizarding World of Harry Potter — Ministry of Magic",
+  "name": "Harry Potter and the Battle at the Ministry™ Single Rider",
+  "park": "epic_universe"
+ },
+ "14697": {
+  "land": "SUPER NINTENDO WORLD",
+  "name": "Mine-Cart Madness™ Single Rider",
+  "park": "epic_universe"
+ },
+ "14698": {
+  "land": "Dark Universe",
+  "name": "Curse of the Werewolf Single Rider",
+  "park": "epic_universe"
+ },
+ "147": {
+  "land": "Fantasyland",
+  "name": "Meet Ariel at Her Grotto",
+  "park": "magic_kingdom"
+ },
+ "14859": {
+  "land": "Animation Courtyard",
+  "name": "The Little Mermaid – A Musical Adventure",
+  "park": "hollywood_studios"
+ },
+ "14927": {
+  "land": "Other",
+  "name": "Meet Mickey Mouse and Minnie Mouse at Mickey's Not-So-Scary Halloween Party",
+  "park": "magic_kingdom"
+ },
+ "14928": {
+  "land": "Other",
+  "name": "Meet Jack Skellington and Sally at Mickey's Not-So-Scary Halloween Party",
+  "park": "magic_kingdom"
+ },
+ "14943": {
+  "land": "Discovery Island",
+  "name": "Zootopia: Better Zoogether!",
+  "park": "animal_kingdom"
+ },
+ "152": {
+  "land": "World Nature",
+  "name": "Turtle Talk With Crush",
+  "park": "epcot"
+ },
+ "153": {
+  "land": "World Nature",
+  "name": "The Seas with Nemo & Friends",
+  "park": "epcot"
+ },
+ "15384": {
+  "land": "Marvel Super Hero Island",
+  "name": "The Incredible Hulk Coaster® Single Rider",
+  "park": "islands_of_adventure"
+ },
+ "15416": {
+  "land": "The Wizarding World of Harry Potter - Diagon Alley",
+  "name": "Harry Potter and the Escape from Gringotts™ Single Rider",
+  "park": "universal_studios_florida"
+ },
+ "155": {
+  "land": "World Celebration",
+  "name": "Journey Into Imagination With Figment",
+  "park": "epcot"
+ },
+ "156": {
+  "land": "World Nature",
+  "name": "Living with the Land",
+  "park": "epcot"
+ },
+ "158": {
+  "land": "World Discovery",
+  "name": "Mission: SPACE",
+  "park": "epcot"
+ },
+ "159": {
+  "land": "World Celebration",
+  "name": "Spaceship Earth",
+  "park": "epcot"
+ },
+ "160": {
+  "land": "World Discovery",
+  "name": "Test Track",
+  "park": "epcot"
+ },
+ "161": {
+  "land": "Fantasyland",
+  "name": "Prince Charming Regal Carrousel",
+  "park": "magic_kingdom"
+ },
+ "16342": {
+  "land": "Sunset Boulevard",
+  "name": "Rock ’n’ Roller Coaster Starring The Muppets",
+  "park": "hollywood_studios"
+ },
+ "16343": {
+  "land": "Sunset Boulevard",
+  "name": "Rock 'n' Roller Coaster Starring Aerosmith Single Rider",
+  "park": "hollywood_studios"
+ },
+ "16467": {
+  "land": "World Nature",
+  "name": "Soarin' Across America",
+  "park": "epcot"
+ },
+ "16640": {
+  "land": "Celestial Park",
+  "name": "Stardust Racers Single Rider",
+  "park": "epic_universe"
+ },
+ "16641": {
+  "land": "Animation Courtyard",
+  "name": "Disney Jr. Mickey Mouse Clubhouse Live!",
+  "park": "hollywood_studios"
+ },
+ "16645": {
+  "land": "Marvel Super Hero Island",
+  "name": "Doctor Doom's Fearfall® Single Rider",
+  "park": "islands_of_adventure"
+ },
+ "16652": {
+  "land": "The Wizarding World of Harry Potter - Hogsmeade",
+  "name": "Hagrid's Magical Creatures Motorbike Adventure™ Single Rider",
+  "park": "islands_of_adventure"
+ },
+ "171": {
+  "land": "Fantasyland",
+  "name": "Mickey's PhilharMagic",
+  "park": "magic_kingdom"
+ },
+ "17526": {
+  "land": "Other",
+  "name": "Meet Festive Disney Pals at Mickey’s Not-So-Scary Halloween Party",
+  "park": "magic_kingdom"
+ },
+ "17576": {
+  "land": "Halloween",
+  "name": "Cybergoria",
+  "park": "universal_studios_florida"
+ },
+ "17577": {
+  "land": "Halloween",
+  "name": "MADLANDS: Caged Cannibals",
+  "park": "universal_studios_florida"
+ },
+ "17578": {
+  "land": "Halloween",
+  "name": "Evil Dead Burn",
+  "park": "universal_studios_florida"
+ },
+ "17579": {
+  "land": "Halloween",
+  "name": "H.R. Bloodengutz Presents: A Halloween Fright-Tacular!",
+  "park": "universal_studios_florida"
+ },
+ "17580": {
+  "land": "Halloween",
+  "name": "Ozzy Osbourne: Prince of Darkness",
+  "park": "universal_studios_florida"
+ },
+ "17581": {
+  "land": "Halloween",
+  "name": "Hellraiser",
+  "park": "universal_studios_florida"
+ },
+ "17582": {
+  "land": "Halloween",
+  "name": "INVASION: Alien Abduction",
+  "park": "universal_studios_florida"
+ },
+ "17583": {
+  "land": "Halloween",
+  "name": "Jack & Oddfellow: Chaos & Control",
+  "park": "universal_studios_florida"
+ },
+ "17584": {
+  "land": "Halloween",
+  "name": "Sinners",
+  "park": "universal_studios_florida"
+ },
+ "17585": {
+  "land": "Halloween",
+  "name": "Stranger Things 5",
+  "park": "universal_studios_florida"
+ },
+ "17661": {
+  "land": "Conservation Station",
+  "name": "Bluey's Wild World at Conservation Station",
+  "park": "animal_kingdom"
+ },
+ "17808": {
+  "land": "",
+  "name": "Jumping Junction",
+  "park": "animal_kingdom"
+ },
+ "2297": {
+  "land": "Other",
+  "name": "Trick-or-Treat Locations at Mickey's Not-So-Scary Halloween Party",
+  "park": "magic_kingdom"
+ },
+ "248": {
+  "land": "Tomorrowland",
+  "name": "Astro Orbiter",
+  "park": "magic_kingdom"
+ },
+ "2495": {
+  "land": "World Celebration",
+  "name": "Disney and Pixar Short Film Festival",
+  "park": "epcot"
+ },
+ "2679": {
+  "land": "World Showcase",
+  "name": "Frozen Ever After",
+  "park": "epcot"
+ },
+ "334": {
+  "land": "Adventureland",
+  "name": "Walt Disney's Enchanted Tiki Room",
+  "park": "magic_kingdom"
+ },
+ "355": {
+  "land": "Adventureland",
+  "name": "Swiss Family Treehouse",
+  "park": "magic_kingdom"
+ },
+ "356": {
+  "land": "Liberty Square",
+  "name": "The Hall of Presidents",
+  "park": "magic_kingdom"
+ },
+ "4438": {
+  "land": "Pandora - The World of Avatar",
+  "name": "Na'vi River Journey",
+  "park": "animal_kingdom"
+ },
+ "4439": {
+  "land": "Pandora - The World of Avatar",
+  "name": "Avatar Flight of Passage",
+  "park": "animal_kingdom"
+ },
+ "457": {
+  "land": "Tomorrowland",
+  "name": "Walt Disney's Carousel of Progress",
+  "park": "magic_kingdom"
+ },
+ "466": {
+  "land": "World Showcase",
+  "name": "Gran Fiesta Tour Starring The Three Caballeros",
+  "park": "epcot"
+ },
+ "5145": {
+  "land": "Animation Courtyard",
+  "name": "Walt Disney Presents",
+  "park": "hollywood_studios"
+ },
+ "5476": {
+  "land": "Toy Story Land",
+  "name": "Slinky Dog Dash",
+  "park": "hollywood_studios"
+ },
+ "5477": {
+  "land": "Toy Story Land",
+  "name": "Alien Swirling Saucers",
+  "park": "hollywood_studios"
+ },
+ "5984": {
+  "land": "Illumination's Minion Land",
+  "name": "Despicable Me Minion Mayhem™",
+  "park": "universal_studios_florida"
+ },
+ "5985": {
+  "land": "Marvel Super Hero Island",
+  "name": "The Amazing Adventures of Spider-Man®",
+  "park": "islands_of_adventure"
+ },
+ "5986": {
+  "land": "Seuss Landing",
+  "name": "Caro-Seuss-el™",
+  "park": "islands_of_adventure"
+ },
+ "5987": {
+  "land": "Seuss Landing",
+  "name": "The Cat in The Hat™",
+  "park": "islands_of_adventure"
+ },
+ "5988": {
+  "land": "Marvel Super Hero Island",
+  "name": "Doctor Doom's Fearfall®",
+  "park": "islands_of_adventure"
+ },
+ "5989": {
+  "land": "Toon Lagoon",
+  "name": "Dudley Do-Right's Ripsaw Falls®",
+  "park": "islands_of_adventure"
+ },
+ "5990": {
+  "land": "Hollywood",
+  "name": "E.T. Adventure",
+  "park": "universal_studios_florida"
+ },
+ "5991": {
+  "land": "The Wizarding World of Harry Potter - Hogsmeade",
+  "name": "Flight of the Hippogriff™",
+  "park": "islands_of_adventure"
+ },
+ "5992": {
+  "land": "The Wizarding World of Harry Potter - Hogsmeade",
+  "name": "Harry Potter and the Forbidden Journey™",
+  "park": "islands_of_adventure"
+ },
+ "5994": {
+  "land": "Jurassic Park",
+  "name": "Jurassic Park River Adventure",
+  "park": "islands_of_adventure"
+ },
+ "5995": {
+  "land": "World Expo",
+  "name": "Kang & Kodos' Twirl 'n' Hurl",
+  "park": "universal_studios_florida"
+ },
+ "5996": {
+  "land": "World Expo",
+  "name": "MEN IN BLACK™ Alien Attack!",
+  "park": "universal_studios_florida"
+ },
+ "5997": {
+  "land": "Seuss Landing",
+  "name": "One Fish, Two Fish, Red Fish, Blue Fish™",
+  "park": "islands_of_adventure"
+ },
+ "5998": {
+  "land": "Toon Lagoon",
+  "name": "Popeye & Bluto's Bilge-Rat Barges®",
+  "park": "islands_of_adventure"
+ },
+ "5999": {
+  "land": "Jurassic Park",
+  "name": "Pteranodon Flyers",
+  "park": "islands_of_adventure"
+ },
+ "6000": {
+  "land": "New York",
+  "name": "Revenge of the Mummy",
+  "park": "universal_studios_florida"
+ },
+ "6001": {
+  "land": "Seuss Landing",
+  "name": "The High in the Sky Seuss Trolley Train Ride!™",
+  "park": "islands_of_adventure"
+ },
+ "6003": {
+  "land": "Marvel Super Hero Island",
+  "name": "Storm Force Accelatron®",
+  "park": "islands_of_adventure"
+ },
+ "6004": {
+  "land": "Marvel Super Hero Island",
+  "name": "The Incredible Hulk Coaster®",
+  "park": "islands_of_adventure"
+ },
+ "6005": {
+  "land": "World Expo",
+  "name": "The Simpsons Ride™",
+  "park": "universal_studios_florida"
+ },
+ "6006": {
+  "land": "Production Central",
+  "name": "TRANSFORMERS™: The Ride-3D",
+  "park": "universal_studios_florida"
+ },
+ "6008": {
+  "land": "Jurassic Park",
+  "name": "Camp Jurassic™",
+  "park": "islands_of_adventure"
+ },
+ "6011": {
+  "land": "Seuss Landing",
+  "name": "If I Ran The Zoo™",
+  "park": "islands_of_adventure"
+ },
+ "6012": {
+  "land": "Jurassic Park",
+  "name": "Jurassic Park Discovery Center",
+  "park": "islands_of_adventure"
+ },
+ "6013": {
+  "land": "Toon Lagoon",
+  "name": "Me Ship, The Olive®",
+  "park": "islands_of_adventure"
+ },
+ "6014": {
+  "land": "The Wizarding World of Harry Potter - Diagon Alley",
+  "name": "Harry Potter and the Escape from Gringotts™",
+  "park": "universal_studios_florida"
+ },
+ "6015": {
+  "land": "The Wizarding World of Harry Potter - Hogsmeade",
+  "name": "Hogwarts Express™ - Hogsmeade™ Station",
+  "park": "islands_of_adventure"
+ },
+ "6016": {
+  "land": "The Wizarding World of Harry Potter - Diagon Alley",
+  "name": "Hogwarts Express™ - King's Cross Station",
+  "park": "universal_studios_florida"
+ },
+ "6017": {
+  "land": "Jurassic Park",
+  "name": "Skull Island: Reign of Kong",
+  "park": "islands_of_adventure"
+ },
+ "6018": {
+  "land": "New York",
+  "name": "Race Through New York Starring Jimmy Fallon",
+  "park": "universal_studios_florida"
+ },
+ "6361": {
+  "land": "Hollywood Boulevard",
+  "name": "Mickey & Minnie's Runaway Railway",
+  "park": "hollywood_studios"
+ },
+ "6368": {
+  "land": "Star Wars: Galaxy's Edge",
+  "name": "Millennium Falcon: Smugglers Run",
+  "park": "hollywood_studios"
+ },
+ "6369": {
+  "land": "Star Wars: Galaxy's Edge",
+  "name": "Star Wars: Rise of the Resistance",
+  "park": "hollywood_studios"
+ },
+ "651": {
+  "land": "Africa",
+  "name": "Gorilla Falls Exploration Trail",
+  "park": "animal_kingdom"
+ },
+ "655": {
+  "land": "Africa",
+  "name": "Wildlife Express Train",
+  "park": "animal_kingdom"
+ },
+ "657": {
+  "land": "Africa",
+  "name": "Festival of the Lion King",
+  "park": "animal_kingdom"
+ },
+ "6682": {
+  "land": "The Wizarding World of Harry Potter - Hogsmeade",
+  "name": "Hagrid's Magical Creatures Motorbike Adventure™",
+  "park": "islands_of_adventure"
+ },
+ "6699": {
+  "land": "Fantasyland",
+  "name": "Meet Princess Tiana and a Visiting Princess at Princess Fairytale Hall",
+  "park": "magic_kingdom"
+ },
+ "6700": {
+  "land": "Fantasyland",
+  "name": "Meet Cinderella and a Visiting Princess at Princess Fairytale Hall",
+  "park": "magic_kingdom"
+ },
+ "6701": {
+  "land": "World Showcase",
+  "name": "Meet Anna and Elsa at Royal Sommerhus",
+  "park": "epcot"
+ },
+ "6702": {
+  "land": "Echo Lake",
+  "name": "Indiana Jones™ Epic Stunt Spectacular!",
+  "park": "hollywood_studios"
+ },
+ "6703": {
+  "land": "Echo Lake",
+  "name": "Meet Olaf at Celebrity Spotlight",
+  "park": "hollywood_studios"
+ },
+ "6704": {
+  "land": "Commissary Lane",
+  "name": "Meet Disney Stars at Red Carpet Dreams",
+  "park": "hollywood_studios"
+ },
+ "7323": {
+  "land": "World Nature",
+  "name": "Awesome Planet",
+  "park": "epcot"
+ },
+ "7333": {
+  "land": "Echo Lake",
+  "name": "Vacation Fun - An Original Animated Short with Mickey & Minnie",
+  "park": "hollywood_studios"
+ },
+ "829": {
+  "land": "World Showcase",
+  "name": "Canada Far and Wide in Circle-Vision 360",
+  "park": "epcot"
+ },
+ "8721": {
+  "land": "Jurassic Park",
+  "name": "Jurassic World VelociCoaster",
+  "park": "islands_of_adventure"
+ },
+ "8956": {
+  "land": "World Showcase",
+  "name": "Remy's Ratatouille Adventure",
+  "park": "epcot"
+ }
+}
