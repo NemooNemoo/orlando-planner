@@ -39,7 +39,11 @@ const state = {
   step: store.get("step", 0),
   settings: { ...structuredClone(DEFAULT_SETTINGS), ...store.get("settings", {}) },
   configured: store.get("configured", false),
-  notes: store.get("notes", null), // { notes:[], ignored, invalid, at }
+  // Fichiers personnels importés (jamais envoyés) :
+  notes: store.get("notes", null),           // may_crowds      { notes:[], ignored, invalid, rows, file, at }
+  priorities: store.get("priorities", null), // ride_priorities { byId:{id:{avg,max,tier}}, rows, matched, unmatched, file, at }
+  patterns: store.get("patterns", null),     // park_patterns   { byPark, rows, invalid, file, at }
+  importMsgs: [],
   seeds: store.get("seeds", {}),
   dayDate: null,
   livePark: null,
@@ -89,10 +93,15 @@ function typeBadge(id) {
   return m ? `<span class="badge ${m.type}">${t("type_" + m.type)}</span>` : "";
 }
 
+function tierBadge(id) {
+  const tier = prioById()[id]?.tier;
+  return tier ? `<span class="badge tier tier-${tier}" title="${esc(t("tier_" + tier))}">${tier}</span>` : "";
+}
+
 function crowdTag(c) {
   if (!c || c.source === "none") return `<span class="crowd none"><i></i>${t("crowd_none")}</span>`;
   const lvl = P.crowdLevel(c.score);
-  const src = c.source === "notes" ? t("src_notes") : t("src_stats");
+  const src = t({ notes: "src_notes", patterns: "src_patterns" }[c.source] || "src_stats");
   return `<span class="crowd ${lvl}" title="${esc(src)}"><i></i>${t("crowd_" + lvl)}</span>`;
 }
 
@@ -135,16 +144,25 @@ async function refreshLatest() {
   } catch { /* hors connexion : on garde la précédente */ }
 }
 
-let model = null;
-const getModel = () => (model ||= P.createWaitModel(state.stats, state.meta));
+let model = null, modelKey = "";
+function getModel() {
+  const key = `${state.stats?.generated}|${state.priorities?.at}`;
+  if (!model || key !== modelKey) {
+    model = P.createWaitModel(state.stats, state.meta, state.priorities?.byId);
+    modelKey = key;
+  }
+  return model;
+}
+const prioById = () => state.priorities?.byId || {};
 
 // ------------------------------------------------------------------ calcul du séjour (mémorisé)
 
 let tripCache = { key: "", trip: [] };
 function trip() {
-  const key = JSON.stringify([state.settings, state.notes?.at, state.stats?.generated]);
+  const key = JSON.stringify([state.settings, state.notes?.at, state.patterns?.at, state.stats?.generated]);
   if (tripCache.key !== key) {
-    tripCache = { key, trip: P.planTrip(state.settings, state.stats, state.notes?.notes || [], state.meta) };
+    tripCache = { key, trip: P.planTrip(state.settings, state.stats, state.notes?.notes || [], state.meta,
+      state.patterns?.byPark) };
   }
   return tripCache.trip;
 }
@@ -152,7 +170,7 @@ function trip() {
 function dayPlan(date, park) {
   return P.planDay({
     park, date, wd: P.weekdayOf(date), settings: state.settings, model: getModel(),
-    meta: state.meta, catalog: state.catalog, seed: state.seeds[date] || 0,
+    meta: state.meta, catalog: state.catalog, seed: state.seeds[date] || 0, priorities: prioById(),
   });
 }
 
@@ -210,7 +228,8 @@ function viewSetup() {
         ? `<button class="pill" data-action="next" ${valid ? "" : "disabled"}>${t("next")} →</button>`
         : `<button class="pill" data-action="finish" ${valid ? "" : "disabled"}>${t("finish")} →</button>`}
     </div>
-  </section>`;
+  </section>
+  ${importsCard()}`;
 }
 
 function stepValid(name) {
@@ -333,7 +352,7 @@ function mustList() {
       return `<label class="must-item ${fam ? "fam" : ""}">
         <input type="checkbox" data-must="${id}" ${s.mustDo.includes(id) ? "checked" : ""}>
         <span class="grow"><span class="name">${esc(rideName(id))}</span>
-          <span class="badges">${typeBadge(id)}<span class="badge">${m.height ? t("height_min", { cm: m.height }) : t("no_height")}</span></span></span>
+          <span class="badges">${tierBadge(id)}${typeBadge(id)}<span class="badge">${m.height ? t("height_min", { cm: m.height }) : t("no_height")}</span></span></span>
       </label>`;
     }).join("");
   }).join("");
@@ -349,9 +368,7 @@ function viewCalendar() {
   if (!state.configured) return needSetup();
   const days = trip();
   const parkDays = days.filter((d) => d.park).length;
-  const notesInfo = state.notes?.notes?.length
-    ? t("notes_loaded", { n: state.notes.notes.length, ignored: state.notes.ignored, invalid: state.notes.invalid })
-    : t("notes_none");
+  const notesInfo = importsSummary();
   return `
     <section class="card soft">
       <h2>${t("cal_title")}</h2>
@@ -400,6 +417,7 @@ function timelineHtml(plan, wd, opts = {}) {
     if (it.kind === "break") return `<li class="tl">${time}<div class="tl-body"><div class="tl-note">☕ ${t("break")} · ${it.end - it.at} ${t("min")}</div></div></li>`;
     const m = state.meta[it.id];
     const badges = [
+      tierBadge(it.id),
       typeBadge(it.id),
       it.must ? `<span class="badge must">★ ${t("must")}</span>` : "",
       it.ll ? `<span class="badge ll">⚡ ${it.ll === "single" ? "LL Single" : "LL Multi"}</span>` : "",
@@ -506,7 +524,7 @@ function viewLive() {
           ${waitChip(s.wait)}
           <div class="grow"><div style="font-weight:700">${esc(rideName(s.id))}</div>
             <div class="small muted">${t("now_usual", { n: s.usual })} · ${t("now_later", { n: s.later })}</div>
-            <div class="badges">${typeBadge(s.id)}${s.must ? `<span class="badge must">★ ${t("must")}</span>` : ""}</div></div>
+            <div class="badges">${tierBadge(s.id)}${typeBadge(s.id)}${s.must ? `<span class="badge must">★ ${t("must")}</span>` : ""}</div></div>
           <button class="pill ghost" data-action="done" data-id="${s.id}">✓</button>
         </div>`).join("") : `<p class="muted small">${t("now_none")}</p>`}
     </section>`;
@@ -514,7 +532,7 @@ function viewLive() {
     const plan = P.planDay({
       park, date: now.date, wd: now.wd, settings: state.settings, model, meta: state.meta, catalog: state.catalog,
       from: Math.max(now.min, hours.open), done, alreadyDone: done.size, seed: state.seeds[now.date] || 0,
-      live: { waits, now: now.min },
+      live: { waits, now: now.min }, priorities: prioById(),
     });
     body += `<h3 class="section-title">${t("rest_of_day")}</h3>`;
     if (plan.closed.length) body += `<p class="small muted">${esc(t("closed_planned", { list: plan.closed.map(rideName).join(", ") }))}</p>`;
@@ -529,7 +547,7 @@ function viewLive() {
     const isDone = done.has(id);
     return `<div class="live-row ${w.open ? "" : "closed"}">
       ${w.open ? waitChip(w.wait) : `<span class="wait none">${t("closed")}</span>`}
-      <span class="name">${esc(rideName(id))}${isDone ? " ✓" : ""}</span>
+      <span class="name">${esc(rideName(id))}${isDone ? " ✓" : ""}</span>${tierBadge(id)}
       ${isDone ? `<button class="link small" data-action="undo" data-id="${id}">${t("undo")}</button>` : ""}
     </div>`;
   }).join("");
@@ -548,28 +566,109 @@ function markDone(id, value) {
   render();
 }
 
-// ------------------------------------------------------------------ notes personnelles
+// ------------------------------------------------------------------ fichiers personnels (CSV)
 
-function notesStatus() {
-  const n = state.notes;
-  $("#notes-status").textContent = n?.notes?.length
-    ? t("notes_loaded", { n: n.notes.length, ignored: n.ignored, invalid: n.invalid })
-    : t("notes_none");
-  $("#notes-clear").hidden = !n?.notes?.length;
+const IMPORT_KINDS = ["notes", "priorities", "patterns"]; // clés de state / localStorage
+const KIND_OF = { crowds: "notes", priorities: "priorities", patterns: "patterns" };
+
+function importRows(kind, d) {
+  if (kind === "notes") return d.rows ?? d.notes.length + (d.ignored || 0) + (d.invalid || 0);
+  return d.rows;
 }
 
-async function importNotes(file) {
-  try {
-    const text = await file.text();
-    const parsed = P.parseNotes(text);
-    if (!parsed.notes.length) throw new Error("empty");
-    state.notes = { ...parsed, at: Date.now() };
-    store.set("notes", state.notes);
-    notesStatus();
-    render();
-  } catch {
-    $("#notes-status").textContent = t("notes_error");
+function importsSummary() {
+  const parts = IMPORT_KINDS.filter((k) => state[k]).map((k) => `${t("kind_" + k)} (${importRows(k, state[k])})`);
+  return parts.length ? t("imports_active", { list: parts.join(", ") }) : t("notes_none");
+}
+
+function importsList() {
+  const rows = IMPORT_KINDS.filter((k) => state[k]).map((k) => {
+    const d = state[k];
+    const when = d.at ? new Date(d.at).toLocaleString(state.lang === "fr" ? "fr-FR" : "en-US",
+      { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }) : "";
+    let extra = "";
+    if (k === "priorities") {
+      extra = `<div class="small muted">${esc(t("prio_matched", { n: d.matched, total: d.rows }))}</div>`;
+      if (d.unmatched?.length) {
+        extra += `<details class="small"><summary>${esc(t("prio_unmatched", { n: d.unmatched.length }))}</summary>
+          <ul class="unmatched">${d.unmatched.map((u) => `<li>${esc(u.ride)} <span class="muted">(${esc(u.park)})</span></li>`).join("")}</ul></details>`;
+      }
+    }
+    if (k === "notes") extra = `<div class="small muted">${esc(t("notes_loaded", { n: d.notes.length, ignored: d.ignored, invalid: d.invalid }))}</div>`;
+    return `<div class="import-row">
+      <div class="grow"><b>${t("kind_" + k)}</b>
+        <div class="small muted">${esc(d.file || "")}${d.file ? " · " : ""}${t("import_rows", { n: importRows(k, d) })} · ${esc(when)}</div>
+        ${extra}</div>
+      <button type="button" class="pill ghost danger" data-action="imp-del" data-kind="${k}" aria-label="${t("remove")}">✕</button>
+    </div>`;
+  }).join("");
+  return rows || `<p class="muted small">${t("notes_none")}</p>`;
+}
+
+function importMsgsHtml() {
+  return state.importMsgs.map((m) => `<p class="small ${m.ok ? "" : "err"}">${m.ok ? "✓" : "⚠️"} ${esc(m.text)}</p>`).join("");
+}
+
+function importsCard() {
+  return `<section class="card">
+    <div class="row gap between"><h3>📥 ${t("imports_title")}</h3>
+      <label class="pill ghost">${t("notes_import")}<input type="file" class="csv-input" accept=".csv,text/csv" multiple hidden></label></div>
+    <p class="muted small">${t("notes_help")}</p>
+    ${importMsgsHtml()}
+    <div class="imports-list">${importsList()}</div>
+  </section>`;
+}
+
+function notesStatus() {
+  $("#notes-status").innerHTML = importMsgsHtml();
+  $("#imports-list").innerHTML = importsList();
+}
+
+async function importFiles(files) {
+  const msgs = [];
+  for (const file of files) {
+    try {
+      const text = await file.text();
+      const kind = P.detectCsvKind(text);
+      const base = { file: file.name, at: Date.now() };
+      if (kind === "crowds") {
+        const parsed = P.parseNotes(text);
+        if (!parsed.notes.length) throw new Error("empty");
+        state.notes = { ...parsed, rows: parsed.notes.length + parsed.ignored + parsed.invalid, ...base };
+        msgs.push({ ok: true, text: `${file.name} → ${t("kind_notes")} : ${t("notes_loaded", { n: parsed.notes.length, ignored: parsed.ignored, invalid: parsed.invalid })}` });
+      } else if (kind === "priorities") {
+        const parsed = P.parsePriorities(text, state.catalog, state.meta);
+        if (!parsed.rows) throw new Error("empty");
+        state.priorities = { ...parsed, ...base };
+        let msg = `${file.name} → ${t("kind_priorities")} : ${t("prio_matched", { n: parsed.matched, total: parsed.rows })}`;
+        if (parsed.unmatched.length) msg += ` ${t("prio_unmatched_list", { list: parsed.unmatched.map((u) => u.ride).join(", ") })}`;
+        msgs.push({ ok: true, text: msg });
+      } else if (kind === "patterns") {
+        const parsed = P.parsePatterns(text);
+        if (!parsed.rows) throw new Error("empty");
+        state.patterns = { ...parsed, ...base };
+        msgs.push({ ok: true, text: `${file.name} → ${t("kind_patterns")} : ${t("patterns_loaded", { n: parsed.rows, invalid: parsed.invalid })}` });
+      } else {
+        msgs.push({ ok: false, text: t("import_unknown", { file: file.name }) });
+        continue;
+      }
+      store.set(KIND_OF[kind], state[KIND_OF[kind]]);
+    } catch {
+      msgs.push({ ok: false, text: `${file.name} : ${t("notes_error")}` });
+    }
   }
+  state.importMsgs = msgs;
+  notesStatus();
+  render();
+}
+
+function deleteImport(kind) {
+  if (!IMPORT_KINDS.includes(kind)) return;
+  state[kind] = null;
+  store.del(kind);
+  state.importMsgs = [{ ok: true, text: t("import_deleted", { kind: t("kind_" + kind) }) }];
+  notesStatus();
+  render();
 }
 
 // ------------------------------------------------------------------ évènements
@@ -607,13 +706,14 @@ document.addEventListener("click", (e) => {
     case "refresh": refreshLatest(); break;
     case "done": markDone(el.dataset.id, true); break;
     case "undo": markDone(el.dataset.id, false); break;
+    case "imp-del": deleteImport(el.dataset.kind); break;
   }
 });
 
 document.addEventListener("change", (e) => {
   const el = e.target;
   const s = state.settings;
-  if (el.id === "notes-file") { if (el.files[0]) importNotes(el.files[0]); el.value = ""; return; }
+  if (el.classList.contains("csv-input")) { if (el.files.length) importFiles([...el.files]); el.value = ""; return; }
   if (el.id === "live-park") { state.livePark = el.value; render(); return; }
   if (el.dataset.set) {
     let v = el.type === "checkbox" ? el.checked : el.value;
@@ -657,13 +757,6 @@ $("#btn-lang").addEventListener("click", () => {
 });
 
 $("#btn-notes").addEventListener("click", () => { notesStatus(); $("#notes-dialog").showModal(); });
-$("#notes-clear").addEventListener("click", () => {
-  state.notes = null;
-  store.del("notes");
-  $("#notes-status").textContent = t("notes_cleared");
-  $("#notes-clear").hidden = true;
-  render();
-});
 
 window.addEventListener("popstate", () => {
   const tab = location.hash.slice(1);

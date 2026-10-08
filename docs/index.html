@@ -56,11 +56,12 @@
       <p class="muted small" data-i18n="notes_help"></p>
       <label class="file-btn pill">
         <span data-i18n="notes_import"></span>
-        <input type="file" id="notes-file" accept=".csv,text/csv" hidden>
+        <input type="file" class="csv-input" accept=".csv,text/csv" multiple hidden>
       </label>
-      <p id="notes-status" class="small"></p>
+      <div id="notes-status"></div>
+      <h3 class="small muted" data-i18n="imports_title"></h3>
+      <div id="imports-list" class="imports-list"></div>
       <div class="row gap">
-        <button type="button" class="pill ghost danger" id="notes-clear" data-i18n="notes_clear"></button>
         <button class="pill" value="close" data-i18n="close"></button>
       </div>
     </form>

@@ -155,6 +155,10 @@ input[type=date], input[type=number], input[type=search], select {
 .badge.ll { background: #e1e7f7; color: var(--disney); }
 .badge.express { background: #dcefe6; color: var(--universal); }
 .badge.must { background: var(--accent-soft); color: var(--accent); }
+.badge.tier { min-width: 20px; text-align: center; color: #fff; }
+.badge.tier-A { background: #c84a3b; }
+.badge.tier-B { background: #d9822b; }
+.badge.tier-C { background: #8a9a6b; }
 .badges { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
 
 .wait {
@@ -246,6 +250,13 @@ input[type=date], input[type=number], input[type=search], select {
 .live-row { display: flex; align-items: center; gap: 10px; padding: 8px 10px; background: var(--card); border-radius: 12px; }
 .live-row .name { flex: 1; min-width: 0; font-size: .88rem; font-weight: 600; }
 .live-row.closed { opacity: .55; }
+
+/* ---------- fichiers importés */
+.imports-list { display: grid; gap: 8px; margin-top: 8px; }
+.import-row { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border-radius: 12px; background: var(--card-2); }
+.unmatched { margin: 4px 0 0; padding-left: 18px; }
+.err { color: var(--red); }
+#notes-status p { margin: 2px 0; }
 
 /* ---------- pied de page */
 .foot { max-width: 760px; margin: 16px auto 0; padding: 0 16px 16px; text-align: center; }

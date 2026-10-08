@@ -17,17 +17,13 @@
     "ago_min": "il y a {n} min",
     "ago_h": "il y a {n} h",
     "ago_d": "il y a {n} j",
-
     "notes_import": "Importer mes notes",
     "notes_title": "Mes notes d'affluence",
-    "notes_help": "CSV local : date,park,weekday,crowd_pct,note. Gardé uniquement dans ce navigateur, jamais envoyé ni publié.",
+    "notes_help": "Jusqu'à 3 fichiers CSV, sélection multiple possible, type reconnu d'après la ligne d'en-tête : may_crowds (date,park,weekday,crowd_pct,note), ride_priorities (park,ride,avg_wait,avg_max_wait,tier), park_patterns (park,kind,key,crowd_pct). Gardés uniquement dans ce navigateur, jamais envoyés ni publiés.",
     "notes_loaded": "{n} notes chargées ({ignored} ignorées : pluie, Memorial Day, ouverture Epic Universe ; {invalid} illisibles).",
     "notes_none": "Aucune note importée : le calendrier se base sur nos statistiques.",
-    "notes_clear": "Supprimer mes notes",
-    "notes_cleared": "Notes supprimées de ce navigateur.",
     "notes_error": "Fichier illisible.",
     "close": "Fermer",
-
     "step": "Étape {n} / {total}",
     "prev": "Précédent",
     "next": "Suivant",
@@ -78,14 +74,12 @@
     "surprise_help": "On choisit pour toi les attractions selon ton profil.",
     "must_count": "{n} sélectionnées",
     "search": "Rechercher…",
-
     "type_thrill": "Sensation",
     "type_family": "Famille",
     "type_show": "Spectacle",
     "type_kids": "Enfants",
     "height_min": "≥ {cm} cm",
     "no_height": "Toutes tailles",
-
     "cal_title": "Ton séjour",
     "cal_help": "Un parc par jour, choisi pour éviter la foule. Touche un jour pour voir le programme.",
     "crowd_low": "Calme",
@@ -98,7 +92,6 @@
     "setup_first": "Commence par les réglages.",
     "go_setup": "Ouvrir les réglages",
     "summary_parks": "{n} jours de parc",
-
     "day_title": "Programme du jour",
     "day_hours": "Parc {open}–{close}",
     "hours_default": "horaires estimés",
@@ -117,7 +110,6 @@
     "no_park": "Aucun parc ce jour-là.",
     "curve": "Attente moyenne au fil de la journée",
     "estimate_note": "Estimation : nos relevés sont encore récents, les valeurs se précisent chaque jour.",
-
     "live_title": "En direct",
     "live_park": "Parc",
     "live_refresh": "Actualiser",
@@ -135,9 +127,24 @@
     "closed": "Fermée",
     "closed_planned": "Fermées pour l'instant : {list}",
     "min": "min",
-
     "install": "Installer l'appli",
-    "legal": "Projet personnel, non affilié à Disney ni Universal."
+    "legal": "Projet personnel, non affilié à Disney ni Universal.",
+    "imports_title": "Mes fichiers importés",
+    "imports_active": "Fichiers importés : {list}.",
+    "kind_notes": "Affluence par jour (may_crowds)",
+    "kind_priorities": "Priorités des attractions (ride_priorities)",
+    "kind_patterns": "Tendances mois / jour (park_patterns)",
+    "import_rows": "{n} lignes",
+    "import_unknown": "{file} : type de fichier non reconnu (vérifie la ligne d'en-tête).",
+    "import_deleted": "{kind} : supprimé de ce navigateur.",
+    "prio_matched": "{n} attractions reconnues sur {total}.",
+    "prio_unmatched": "{n} non reconnues",
+    "prio_unmatched_list": "Non reconnues : {list}.",
+    "patterns_loaded": "{n} lignes chargées ({invalid} illisibles).",
+    "src_patterns": "d'après tes tendances",
+    "tier_A": "Priorité A : à l'ouverture ou avec coupe-file",
+    "tier_B": "Priorité B : tôt le matin ou en soirée",
+    "tier_C": "Priorité C : n'importe quand"
   },
   "en": {
     "app_title": "Orlando Park Planner",
@@ -157,17 +164,13 @@
     "ago_min": "{n} min ago",
     "ago_h": "{n} h ago",
     "ago_d": "{n} d ago",
-
     "notes_import": "Import my notes",
     "notes_title": "My crowd notes",
-    "notes_help": "Local CSV: date,park,weekday,crowd_pct,note. Kept only in this browser, never uploaded or published.",
+    "notes_help": "Up to 3 CSV files, multiple selection allowed, type detected from the header row: may_crowds (date,park,weekday,crowd_pct,note), ride_priorities (park,ride,avg_wait,avg_max_wait,tier), park_patterns (park,kind,key,crowd_pct). Kept only in this browser, never uploaded or published.",
     "notes_loaded": "{n} notes loaded ({ignored} ignored: rain, Memorial Day, Epic Universe opening; {invalid} unreadable).",
     "notes_none": "No notes imported: the calendar uses our statistics.",
-    "notes_clear": "Delete my notes",
-    "notes_cleared": "Notes deleted from this browser.",
     "notes_error": "Unreadable file.",
     "close": "Close",
-
     "step": "Step {n} / {total}",
     "prev": "Back",
     "next": "Next",
@@ -218,14 +221,12 @@
     "surprise_help": "We pick the rides for you based on your profile.",
     "must_count": "{n} selected",
     "search": "Search…",
-
     "type_thrill": "Thrill",
     "type_family": "Family",
     "type_show": "Show",
     "type_kids": "Kids",
     "height_min": "≥ {cm} cm",
     "no_height": "Any height",
-
     "cal_title": "Your trip",
     "cal_help": "One park per day, picked to dodge the crowds. Tap a day to see its plan.",
     "crowd_low": "Quiet",
@@ -238,7 +239,6 @@
     "setup_first": "Start with the setup.",
     "go_setup": "Open setup",
     "summary_parks": "{n} park days",
-
     "day_title": "Day plan",
     "day_hours": "Park {open}–{close}",
     "hours_default": "estimated hours",
@@ -257,7 +257,6 @@
     "no_park": "No park that day.",
     "curve": "Average wait through the day",
     "estimate_note": "Estimate: our records are still new, values get sharper every day.",
-
     "live_title": "Live",
     "live_park": "Park",
     "live_refresh": "Refresh",
@@ -275,8 +274,23 @@
     "closed": "Closed",
     "closed_planned": "Closed for now: {list}",
     "min": "min",
-
     "install": "Install the app",
-    "legal": "Personal project, not affiliated with Disney or Universal."
+    "legal": "Personal project, not affiliated with Disney or Universal.",
+    "imports_title": "My imported files",
+    "imports_active": "Imported files: {list}.",
+    "kind_notes": "Daily crowds (may_crowds)",
+    "kind_priorities": "Ride priorities (ride_priorities)",
+    "kind_patterns": "Month / weekday patterns (park_patterns)",
+    "import_rows": "{n} rows",
+    "import_unknown": "{file}: unknown file type (check the header row).",
+    "import_deleted": "{kind}: deleted from this browser.",
+    "prio_matched": "{n} of {total} rides recognized.",
+    "prio_unmatched": "{n} not recognized",
+    "prio_unmatched_list": "Not recognized: {list}.",
+    "patterns_loaded": "{n} rows loaded ({invalid} unreadable).",
+    "src_patterns": "from your patterns",
+    "tier_A": "Priority A: at opening or with a skip-the-line pass",
+    "tier_B": "Priority B: early morning or evening",
+    "tier_C": "Priority C: any time"
   }
 }

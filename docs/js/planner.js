@@ -84,6 +84,8 @@ export function rng(seed) {
 const PROFILE = { 7: 0.5, 8: 0.55, 9: 0.7, 10: 0.95, 11: 1.1, 12: 1.2, 13: 1.25, 14: 1.25, 15: 1.2,
   16: 1.1, 17: 1.0, 18: 0.95, 19: 0.85, 20: 0.7, 21: 0.55, 22: 0.45, 23: 0.4 };
 
+const PROFILE_PEAK = Math.max(...Object.values(PROFILE));
+
 export function profileAt(min) {
   const h = Math.min(23, Math.max(7, min / 60));
   const lo = Math.floor(h), hi = Math.min(23, lo + 1);
@@ -97,7 +99,8 @@ const mean = (a) => (a.length ? a.reduce((x, y) => x + y, 0) / a.length : NaN);
  * Mélange stats.json (notre collecte) et une estimation par défaut (base_wait x profil horaire),
  * pondérée par la quantité de données disponibles pour l'attraction.
  */
-export function createWaitModel(stats, meta) {
+export function createWaitModel(stats, meta, priorities) {
+  const prio = priorities || {};
   stats = stats || { rides: {}, parks: {} };
   const rides = stats.rides || {};
   const parks = stats.parks || {};
@@ -129,10 +132,20 @@ export function createWaitModel(stats, meta) {
     return info;
   }
 
+  // Sans vraies données : attente typique de ride_priorities.csv (moyenne + pic) si importé,
+  // sinon base_wait de rides_meta.json, déformée par le profil horaire type.
   function fallback(id, wd, min) {
     const m = meta[id];
-    const base = m?.base_wait ?? 20;
-    return base * profileAt(min) * weekdayFactor(m?.park, wd);
+    const f = profileAt(min);
+    const p = prio[id];
+    let w;
+    if (p && p.avg != null) {
+      const max = p.max != null ? Math.max(p.max, p.avg) : null;
+      w = f >= 1 && max != null ? p.avg + (max - p.avg) * Math.min(1, (f - 1) / (PROFILE_PEAK - 1)) : p.avg * f;
+    } else {
+      w = (m?.base_wait ?? 20) * f;
+    }
+    return w * weekdayFactor(m?.park, wd);
   }
 
   function fromStats(id, wd, min) {
@@ -220,6 +233,97 @@ export function parseCsv(text) {
 const PARK_NUMERIC = { 334: "epic_universe", 64: "islands_of_adventure", 65: "universal_studios_florida",
   8: "animal_kingdom", 7: "hollywood_studios", 6: "magic_kingdom", 5: "epcot" };
 
+/** Normalise un nom d'attraction : sans majuscules, accents, ™ ® ©, apostrophes, guillemets, ponctuation */
+export function normName(s) {
+  return String(s ?? "")
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[™®©℠]/g, "")
+    .replace(/['’‘`´"“”«»„]/g, "")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+const headerOf = (rows) => (rows[0] || []).map((h) => h.trim().toLowerCase().replace(/^\uFEFF/, ""));
+
+/** Type de fichier d'après la ligne d'en-tête : "crowds" | "priorities" | "patterns" | null */
+export function detectCsvKind(text) {
+  const h = new Set(headerOf(parseCsv(text.split(/\r?\n/, 1)[0] || "")));
+  if (h.has("park") && h.has("ride") && h.has("tier")) return "priorities";
+  if (h.has("park") && h.has("kind") && h.has("key") && h.has("crowd_pct")) return "patterns";
+  if (h.has("date") && h.has("park") && h.has("crowd_pct")) return "crowds";
+  return null;
+}
+
+const num = (v) => {
+  const x = parseFloat(String(v ?? "").replace("%", "").replace(",", ".").trim());
+  return isFinite(x) ? x : null;
+};
+
+/**
+ * Lit `park,ride,avg_wait,avg_max_wait,tier` et associe chaque nom à un id de rides.json / rides_meta.json.
+ * Renvoie { byId: {id:{avg,max,tier}}, rows, matched, unmatched:[{park, ride}], invalid }
+ */
+export function parsePriorities(text, catalog, meta) {
+  const rows = parseCsv(text);
+  const head = headerOf(rows);
+  const col = (n) => head.indexOf(n);
+  const [iPark, iRide, iAvg, iMax, iTier] = ["park", "ride", "avg_wait", "avg_max_wait", "tier"].map(col);
+
+  // index des noms : d'abord dans le même parc, sinon n'importe où
+  const index = {};
+  const add = (id, name, park) => {
+    const k = normName(name);
+    if (!k) return;
+    const byPark = (index[park] ||= {});
+    if (!byPark[k] || (meta[id] && !meta[byPark[k]])) byPark[k] = id; // préférer une attraction décrite dans rides_meta
+  };
+  for (const [id, r] of Object.entries(catalog || {})) add(id, r.name, r.park);
+  for (const [id, m] of Object.entries(meta || {})) add(id, m.name, m.park);
+
+  const byId = {};
+  const unmatched = [];
+  let invalid = 0, count = 0;
+  for (const r of rows.slice(1)) {
+    let park = (r[iPark] || "").trim();
+    if (PARK_NUMERIC[park]) park = PARK_NUMERIC[park];
+    const ride = (r[iRide] || "").trim();
+    const tier = (r[iTier] || "").trim().toUpperCase();
+    if (!ride) { invalid++; continue; }
+    count++;
+    const k = normName(ride);
+    let id = index[park]?.[k];
+    if (!id) for (const p of Object.keys(index)) if (index[p][k]) { id = index[p][k]; break; }
+    if (!id) { unmatched.push({ park, ride }); continue; }
+    byId[id] = { avg: num(r[iAvg]), max: num(r[iMax]), tier: ["A", "B", "C"].includes(tier) ? tier : null };
+  }
+  return { byId, rows: count, matched: Object.keys(byId).length, unmatched, invalid };
+}
+
+const MONTHS = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
+const WEEKDAYS = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
+/** Lit `park,kind,key,crowd_pct`. Renvoie { byPark: {park:{month:{0..11}, weekday:{0..6}}}, rows, invalid } */
+export function parsePatterns(text) {
+  const rows = parseCsv(text);
+  const head = headerOf(rows);
+  const [iPark, iKind, iKey, iPct] = ["park", "kind", "key", "crowd_pct"].map((n) => head.indexOf(n));
+  const byPark = {};
+  let count = 0, invalid = 0;
+  for (const r of rows.slice(1)) {
+    let park = (r[iPark] || "").trim();
+    if (PARK_NUMERIC[park]) park = PARK_NUMERIC[park];
+    const kind = (r[iKind] || "").trim().toLowerCase();
+    const key = (r[iKey] || "").trim().toLowerCase().slice(0, 3);
+    const pct = num(r[iPct]);
+    const idx = kind === "month" ? MONTHS.indexOf(key) : kind === "weekday" ? WEEKDAYS.indexOf(key) : -1;
+    if (!PARK_BY_ID[park] || idx < 0 || pct == null) { invalid++; continue; }
+    ((byPark[park] ||= { month: {}, weekday: {} })[kind])[idx] = pct;
+    count++;
+  }
+  return { byPark, rows: count, invalid };
+}
+
 /** Lit le CSV `date,park,weekday,crowd_pct,note`. Renvoie { notes, ignored, invalid } */
 export function parseNotes(text) {
   const rows = parseCsv(text);
@@ -251,7 +355,8 @@ export function parseNotes(text) {
  * Avec notes : classement du jour *au sein du même parc* (percentile parmi les notes de ce parc).
  * Sans notes : attente moyenne du parc ce jour de semaine (stats.json) relative à sa moyenne.
  */
-export function crowdScorer(stats, notes) {
+export function crowdScorer(stats, notes, patterns) {
+  patterns = patterns || {};
   const byPark = {};
   for (const n of notes || []) (byPark[n.park] ||= []).push(n);
   for (const list of Object.values(byPark)) list.sorted = list.map((n) => n.crowd).sort((a, b) => a - b);
@@ -264,7 +369,11 @@ export function crowdScorer(stats, notes) {
   return function score(park, date) {
     const wd = weekdayOf(date);
     const list = byPark[park];
-    if (list && list.length >= 5) {
+    const month = +date.slice(5, 7) - 1;
+    const pat = patterns[park];
+    // Avec des tendances importées, les notes ne servent que si elles couvrent ce mois
+    const notesOk = list && list.length >= 5 && (!pat || list.some((n) => +n.date.slice(5, 7) - 1 === month));
+    if (notesOk) {
       const target = doy(date);
       const sameWd = list.filter((n) => weekdayOf(n.date) === wd);
       const near = sameWd.filter((n) => {
@@ -276,6 +385,19 @@ export function crowdScorer(stats, notes) {
       const below = list.sorted.filter((x) => x < v).length;
       const equal = list.sorted.filter((x) => x === v).length;
       return { score: (below + equal / 2) / list.sorted.length, value: Math.round(v), source: "notes" };
+    }
+    if (pat && (pat.month[month] != null || pat.weekday[wd] != null)) {
+      // Combinaison mois x jour de semaine, classée parmi toutes les combinaisons *de ce parc*
+      const mVals = Object.values(pat.month), wVals = Object.values(pat.weekday);
+      const mAvg = mean(mVals), wAvg = mean(wVals);
+      // % du jour de semaine, corrigé par le mois (relatif à la moyenne des mois) ; ou % du mois seul
+      const combo = (m, w) => (wVals.length ? (w ?? wAvg) : mAvg) * (mVals.length ? (m ?? mAvg) / mAvg : 1);
+      const v = combo(pat.month[month], pat.weekday[wd]);
+      const all = [];
+      for (const m of mVals.length ? mVals : [null]) for (const w of wVals.length ? wVals : [null]) all.push(combo(m, w));
+      const below = all.filter((x) => x < v - 1e-9).length;
+      const equal = all.filter((x) => Math.abs(x - v) <= 1e-9).length;
+      return { score: (below + equal / 2) / all.length, value: Math.round(v), source: "patterns" };
     }
     const bw = stats?.parks?.[park]?.by_weekday || {};
     const vals = Object.values(bw);
@@ -296,9 +418,9 @@ export const crowdLevel = (s) => (s < 0.34 ? "low" : s < 0.67 ? "mid" : "high");
  * settings : { start, end, parks:[], forced:[{date, park|'rest'}], mustDo:[] }
  * Renvoie [{ date, wd, park|null, forced, crowd }]
  */
-export function planTrip(settings, stats, notes, meta) {
+export function planTrip(settings, stats, notes, meta, patterns) {
   const dates = dateRange(settings.start, settings.end);
-  const scorer = crowdScorer(stats, notes);
+  const scorer = crowdScorer(stats, notes, patterns);
   const forced = {};
   for (const f of settings.forced || []) if (dates.includes(f.date) && f.park) forced[f.date] = f.park;
   const selected = (settings.parks || []).filter((p) => PARK_BY_ID[p]);
@@ -391,10 +513,13 @@ function walkTime(catalog, meta, from, to, pace) {
   return Math.round(w * pace.walk);
 }
 
+const TIER_BONUS = { A: 3, B: 1.5, C: 0 };
+
 /**
  * Programme d'une journée dans un parc.
  * opts : { park, date, wd, settings, model, meta, catalog,
- *          from?, to?, done?:Set, live?:{waits:{id:{open,wait}}, now}, seed? }
+ *          from?, to?, done?:Set, live?:{waits:{id:{open,wait}}, now}, seed?,
+ *          priorities?:{id:{avg,max,tier}} }
  */
 export function planDay(opts) {
   const { park, wd, settings, model, meta, catalog = {} } = opts;
@@ -407,6 +532,9 @@ export function planDay(opts) {
   const kidsMode = !!settings.kids?.enabled;
   const pref = TYPE_PREF[kidsMode ? "kids" : "normal"];
   const random = rng(`${opts.seed ?? ""}|${opts.date}|${park}`);
+  const prio = opts.priorities || {};
+  const tierOf = (id) => prio[id]?.tier || null;
+  const typical = (id) => prio[id]?.avg ?? meta[id].base_wait ?? 10;
 
   const eligible = eligibleRides(park, settings, meta).filter((id) => !done.has(id));
   const closedLive = new Set();
@@ -416,7 +544,7 @@ export function planDay(opts) {
   // Sélection des candidates
   const score = (id) => {
     const m = meta[id];
-    let s = (m.base_wait || 10) / 12 + (pref[m.type] || 0);
+    let s = (typical(id) || 10) / 12 + (pref[m.type] || 0) + (TIER_BONUS[tierOf(id)] || 0);
     if (settings.surprise) s += random() * 4;
     return s;
   };
@@ -432,7 +560,8 @@ export function planDay(opts) {
     if (settings.ll?.single) for (const id of pool) if (meta[id].ll === "single") llAccess.add(id);
     if (settings.ll?.multi) {
       pool.filter((id) => meta[id].ll === "multi")
-        .sort((a, b) => (must.has(b) - must.has(a)) || meta[b].base_wait - meta[a].base_wait)
+        .sort((a, b) => (must.has(b) - must.has(a)) || ((tierOf(b) === "A") - (tierOf(a) === "A"))
+          || typical(b) - typical(a))
         .slice(0, 3).forEach((id) => llAccess.add(id));
     }
   }
@@ -474,6 +603,17 @@ export function planDay(opts) {
     return { min, avg: sum / n };
   };
 
+  // Priorités importées (ride_priorities.csv) :
+  // A = ouverture ou coupe-file ; B = tôt le matin ou en soirée ; C = n'importe quand (laisse le matin aux autres)
+  const covered = (id) => llAccess.has(id) || (express && meta[id].express);
+  const tierPenalty = (id, at) => {
+    const tier = tierOf(id);
+    if (tier === "A") return covered(id) ? 0 : Math.min(60, 0.6 * (at - start));
+    if (tier === "B") return covered(id) || at < 660 || at >= 1020 ? 0 : 20;
+    if (tier === "C") return at < start + 60 ? 10 : 0;
+    return 0;
+  };
+
   const items = [];
   let t = start, last = opts.lastRide || null, count = 0, sinceBreak = 0;
   const lunch = settings.lunch?.enabled && opts.lunchDone !== true
@@ -510,7 +650,7 @@ export function planDay(opts) {
       // attente actuelle comparée au reste de la journée (et non attente brute).
       const l = later(id, arrive, m.duration, horizon);
       const cost = (wait - l.avg) + 1.3 * (wait - l.min) + walk
-        - (must.has(id) ? 15 : 0) - 2 * (pref[m.type] || 0);
+        - (must.has(id) ? 15 : 0) - 2 * (pref[m.type] || 0) + tierPenalty(id, arrive);
       if (!best || cost < best.cost) best = { id, walk, arrive, wait, finish, cost };
     }
     if (!best) {
@@ -522,7 +662,7 @@ export function planDay(opts) {
     remaining.delete(best.id);
     items.push({
       kind: "ride", id: best.id, at: best.arrive, walk: best.walk, wait: best.wait,
-      end: best.finish, must: must.has(best.id),
+      end: best.finish, must: must.has(best.id), tier: tierOf(best.id),
       ll: llAccess.has(best.id) ? (meta[best.id].ll === "single" ? "single" : "multi") : null,
       express: express && meta[best.id].express,
       live: !!liveAdj[best.id] && best.arrive - (opts.live?.now ?? 0) < 20,
