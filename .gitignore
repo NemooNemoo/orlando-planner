@@ -1,5 +1,8 @@
 # Notes personnelles d'affluence : jamais dans le dépôt (dépôt public, conditions de queue-times)
 *notes*.csv
+may_crowds*.csv
+ride_priorities*.csv
+park_patterns*.csv
 notes/
 private/
 # Historique queue-times récupéré en local par scripts/history.py

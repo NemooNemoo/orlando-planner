@@ -40,9 +40,20 @@ Site statique (HTML/CSS/JS, sans framework ni build), cahier des charges dans `B
 **Tester en local** : `python -m http.server` à la racine du dépôt, puis http://localhost:8000/docs/
 (en local, le site lit `../data/` ; sinon l'adresse de `config.js`).
 
-**Notes personnelles** : bouton « Importer mes notes » (CSV `date,park,weekday,crowd_pct,note`),
-gardées uniquement dans le navigateur. `.gitignore` bloque `*notes*.csv` et `data/history/` pour
-qu'elles ne soient jamais committées.
+**Notes personnelles** : bouton « Importer mes notes / Import my notes » (sélection multiple possible).
+Le type de chaque CSV est reconnu d'après sa ligne d'en-tête :
+
+| Fichier | En-tête | Utilisation |
+|---|---|---|
+| `may_crowds.csv` | `date,park,weekday,crowd_pct,note` | Calendrier : classement des jours au sein de chaque parc (lignes « pluie », « Memorial Day », « ouverture Epic Universe » ignorées) |
+| `ride_priorities.csv` | `park,ride,avg_wait,avg_max_wait,tier` | `avg_wait` / `avg_max_wait` remplacent `base_wait` tant qu'il y a peu de relevés ; `tier` A = ouverture ou coupe-file, B = tôt ou en soirée, C = n'importe quand (badge A/B/C). Noms associés à `rides.json` de façon tolérante (majuscules, accents, ™ ® ©, apostrophes, ponctuation) ; les noms non reconnus sont listés après l'import |
+| `park_patterns.csv` | `park,kind,key,crowd_pct` (`kind` = `month` Jan..Dec ou `weekday` Mon..Sun) | Calendrier, quand `may_crowds` ne couvre pas ce parc ou ce mois : mois × jour de semaine, comparé uniquement au sein du même parc |
+
+`park` = identifiants de `data/rides.json` (`magic_kingdom`, `epic_universe`…). Les fichiers sont gardés
+uniquement dans le navigateur (localStorage) ; la liste des fichiers importés, avec un bouton de
+suppression pour chacun, est affichée dans les Réglages. `.gitignore` bloque `*notes*.csv`,
+`may_crowds*.csv`, `ride_priorities*.csv`, `park_patterns*.csv` et `data/history/` pour qu'ils ne
+soient jamais committés.
 
 Tant que `stats.json` contient peu de relevés, les attentes sont complétées par `base_wait`
 (rides_meta.json) et un profil horaire type ; le poids des vraies données augmente avec la collecte.
