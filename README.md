@@ -2,7 +2,7 @@
 
 Planificateur de séjour Walt Disney World + Universal Orlando basé sur les temps d'attente réels.
 
-**Données : Powered by [Queue-Times.com](https://queue-times.com)**
+**Données : Powered by [Queue-Times.com](https://queue-times.com)** · Horaires et spectacles : [ThemeParks.wiki](https://themeparks.wiki)
 
 ## Phase 1 — Collecte (en place)
 
@@ -15,6 +15,10 @@ Planificateur de séjour Walt Disney World + Universal Orlando basé sur les tem
 | `data/rides.json` | Catalogue des attractions |
 | `data/stats.json` | Statistiques pour le planificateur |
 | `data/raw/<parc>/<mois>.csv` | Historique brut (heure d'Orlando) |
+| `scripts/themeparks.py` | Horaires des parcs (1x / 20 h) et spectacles du jour (à chaque collecte) depuis ThemeParks.wiki ; ne fait jamais échouer la collecte |
+| `data/themeparks_ids.json` | Correspondance de nos 7 parcs avec les identifiants ThemeParks.wiki (découverte via `/destinations`) |
+| `data/schedule.json` | Horaires par parc et par date : ouverture, fermeture, early entry, soirées prolongées, événements payants |
+| `data/shows.json` | Spectacles du jour et leurs séances (heure d'Orlando) |
 
 Parcs suivis : Epic Universe (334), Islands of Adventure (64), Universal Studios Florida (65),
 Animal Kingdom (8), Hollywood Studios (7), Magic Kingdom (6), Epcot (5).
@@ -50,6 +54,11 @@ Site statique (HTML/CSS/JS, sans framework ni build), cahier des charges dans `B
   des jours libres non attribués.
 - Journée : le programme prévu uniquement. Direct : le temps réel uniquement (attractions ouvertes de la
   plus courte à la plus longue attente, filtres, bouton « Fait », actualisation toutes les 5 min).
+- Horaires (`schedule.json`) : affichés dans le calendrier et la journée (le programme suit l'ouverture et la
+  fermeture du jour, early entry / soirée prolongée si l'option « hôtel sur place » est cochée). Jour pas encore
+  publié : « horaire estimé » (médiane des horaires connus du parc ce jour de semaine). Correction manuelle d'un
+  jour dans les Réglages (« horaire modifié », annulable).
+- Direct : « Spectacles dans l'heure » (`shows.json`), masqué s'il n'y en a aucun.
 - Thème Auto / Clair / Sombre (bouton en en-tête, choix mémorisé).
 - Types d'attraction (`rides_meta.json`) : `thrill`, `family`, `show`, `meet` (rencontre de personnages).
 

@@ -171,15 +171,23 @@ export function createWaitModel(stats, meta, priorities) {
     const p = PARK_BY_ID[park];
     const def = { open: p?.open ?? 540, close: p?.close ?? 1260, source: "default" };
     if (Object.keys(parks[park]?.by_date || {}).length < 3) return def;
-    let lo = Infinity, hi = -Infinity;
-    for (const r of Object.values(rides)) {
-      if (r.park !== park) continue;
+    // nombre d'attractions relevées par créneau ; après minuit = fin de soirée (00:30 -> 24:30)
+    const count = {};
+    const known = Object.keys(meta || {}).length > 0;
+    for (const [id, r] of Object.entries(rides)) {
+      if (r.park !== park || (known && !meta[id])) continue; // attractions décrites seulement (pas les maisons d'Halloween)
       const days = r.slots[wd] ? [r.slots[wd]] : Object.values(r.slots);
       for (const d of days) for (const s of Object.keys(d)) {
-        const m = slotToMin(s);
-        lo = Math.min(lo, m); hi = Math.max(hi, m + 30);
+        let m = slotToMin(s);
+        if (m < 300) m += 1440;
+        count[m] = (count[m] || 0) + 1;
       }
     }
+    // on ne garde que les créneaux où assez d'attractions tournent (écarte early entry, soirées payantes…)
+    const max = Math.max(0, ...Object.values(count));
+    const busy = Object.keys(count).map(Number).filter((m) => count[m] >= 0.3 * max).sort((a, b) => a - b);
+    if (!busy.length) return def;
+    const lo = busy[0], hi = busy[busy.length - 1] + 30;
     if (hi - lo < 360) return def;
     return { open: lo, close: hi, source: "stats" };
   }
@@ -192,6 +200,59 @@ export function createWaitModel(stats, meta, priorities) {
   }
 
   return { expected, parkHours, curve, weekdayFactor, hasData: (id) => !!rideInfo(id)?.n };
+}
+
+// ------------------------------------------------------------------ horaires des parcs
+
+/** "09:30" -> 570 ; "25:00" (1 h du matin le lendemain) -> 1500 */
+export const hmToMin = (hm) => {
+  const m = /^(\d{1,2}):(\d{2})$/.exec(hm || "");
+  return m ? +m[1] * 60 + +m[2] : null;
+};
+
+const median = (a) => {
+  const v = [...a].sort((x, y) => x - y);
+  return v.length ? v[Math.floor((v.length - 1) / 2)] : null;
+};
+
+/**
+ * Horaires d'un parc pour une date, du plus fiable au moins fiable :
+ * correction manuelle > horaire officiel (schedule.json, ThemeParks.wiki) > estimation (médiane des
+ * horaires connus de ce parc le même jour de semaine, sinon tous les jours, sinon stats.json / défaut).
+ * hotelPerks : early entry et soirées prolongées pris en compte pour le programme.
+ * Renvoie { open, close, source: manual|official|estimated, early[], evening[], events[], planOpen, planClose }
+ */
+export function dayHours(park, date, { schedule, overrides, model, hotelPerks } = {}) {
+  const days = schedule?.parks?.[park] || {};
+  const official = days[date];
+  const slots = (list) => (list || []).map((x) => ({ ...x, startMin: hmToMin(x.start), endMin: hmToMin(x.end) }))
+    .filter((x) => x.startMin != null && x.endMin != null);
+  let h;
+  if (official && hmToMin(official.open) != null && hmToMin(official.close) != null) {
+    h = { open: hmToMin(official.open), close: hmToMin(official.close), source: "official",
+      early: slots(official.early), evening: slots(official.evening), events: slots(official.events) };
+  } else {
+    const wd = weekdayOf(date);
+    const known = Object.entries(days).filter(([, d]) => hmToMin(d.open) != null && hmToMin(d.close) != null);
+    const pool = known.filter(([d]) => weekdayOf(d) === wd);
+    const use = pool.length ? pool : known;
+    if (use.length) {
+      h = { open: median(use.map(([, d]) => hmToMin(d.open))), close: median(use.map(([, d]) => hmToMin(d.close))) };
+    } else {
+      const ph = model?.parkHours(park, wd) || { open: PARK_BY_ID[park]?.open ?? 540, close: PARK_BY_ID[park]?.close ?? 1260 };
+      h = { open: ph.open, close: ph.close };
+    }
+    h = { ...h, source: "estimated", early: [], evening: [], events: [] };
+  }
+  const ov = overrides?.[`${date}|${park}`];
+  if (ov && ov.open != null && ov.close != null && ov.close > ov.open) {
+    h = { ...h, open: ov.open, close: ov.close, source: "manual", early: [], evening: [] };
+  }
+  const earlyStart = Math.min(...h.early.map((x) => x.startMin).filter((m) => m < h.open));
+  const lateEnd = Math.max(...h.evening.map((x) => (x.endMin <= x.startMin ? x.endMin + 1440 : x.endMin)).filter((m) => m > h.close));
+  h.planOpen = hotelPerks && isFinite(earlyStart) ? earlyStart : h.open;
+  h.planClose = hotelPerks && isFinite(lateEnd) ? lateEnd : h.close;
+  return h;
 }
 
 // ------------------------------------------------------------------ couleurs
@@ -619,14 +680,17 @@ const TIER_BONUS = { A: 3, B: 1.5, C: 0 };
  * Programme d'une journée dans un parc.
  * opts : { park, date, wd, settings, model, meta, catalog,
  *          from?, to?, done?:Set, live?:{waits:{id:{open,wait}}, now}, seed?,
- *          priorities?:{id:{avg,max,tier}} }
+ *          priorities?:{id:{avg,max,tier}}, hours?: dayHours(...) }
  */
 export function planDay(opts) {
   const { park, wd, settings, model, meta, catalog = {} } = opts;
   const pace = PACES[settings.pace] || PACES.normal;
-  const hours = model.parkHours(park, wd);
-  const start = Math.max(opts.from ?? hours.open + pace.arriveAfter, hours.open - 30);
-  const end = opts.to ?? hours.close - pace.leaveBefore;
+  // horaires du jour réel si fournis (dayHours), sinon estimation par le modèle
+  const hours = opts.hours ? { ...opts.hours, open: opts.hours.planOpen ?? opts.hours.open,
+    close: opts.hours.planClose ?? opts.hours.close } : model.parkHours(park, wd);
+  // le programme commence au plus tôt à l'ouverture et s'arrête au plus tard à la fermeture
+  const start = Math.max(opts.from ?? hours.open + pace.arriveAfter, hours.open);
+  const end = Math.min(opts.to ?? hours.close - pace.leaveBefore, hours.close);
   const done = opts.done || new Set();
   const isDisney = PARK_BY_ID[park]?.group === "disney";
   const pref = TYPE_PREF;
