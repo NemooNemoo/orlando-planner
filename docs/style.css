@@ -1,13 +1,15 @@
 /* Palette imposée : #393943 ardoise · #439B96 bleu-vert · #F2F2F3 gris clair · #FFF8E8 crème · #F37A69 corail.
-   #439B96 et #F37A69 n'atteignent pas 4,5:1 en texte sur fond clair : on utilise des nuances
-   plus foncées (texte, boutons) en mode clair et plus claires en mode sombre.
+   Couleur principale = corail. #F37A69 n'atteint pas 4,5:1 en texte sur fond clair : nuance plus foncée
+   (texte, boutons) en mode clair, plus claire en mode sombre. Le bleu-vert ne sert plus qu'au niveau
+   « attente courte » et à l'affluence « Calme » (même sens). Erreurs / alertes / « Retirer » : bordeaux (clair) ou rose (sombre), distincts du corail.
    Les rapports de contraste (WCAG AA) sont notés dans le README. */
 
 :root {
   /* marque (décor uniquement : pastilles, bordures latérales) */
   --brand-slate: #393943;
-  --brand-teal: #439B96;
   --brand-coral: #F37A69;
+  --group-disney: #F37A69;
+  --group-universal: #393943;
 
   /* surfaces et texte */
   --bg: #FFF8E8;
@@ -21,19 +23,18 @@
   --backdrop: rgba(57, 57, 67, .45);
   --tabs-bg: rgba(255, 255, 255, .96);
 
-  /* couleur principale (bleu-vert) et accent (corail) */
-  --primary: #2C6E6A;
+  /* couleur principale (corail) et erreurs (bordeaux) */
+  --primary: #B4472F;
   --on-primary: #FFFFFF;
-  --primary-soft: #DCEFED;
-  --primary-ink: #1E4F4C;
-  --selected-bg: #EEF7F6;
-  --accent: #B23F2E;
-  --on-accent: #FFFFFF;
-  --accent-soft: #FDE1DC;
-  --accent-ink: #9A3424;
+  --primary-soft: #FDE1DC;
+  --primary-ink: #9A3424;
+  --selected-bg: #FFF1EE;
+  --danger: #8B1E3F;
+  --must-bg: #393943;
+  --must-ink: #FFFFFF;
   --notice-bg: #F8EBC4;
   --notice-ink: #6A4F0C;
-  --focus: #2C6E6A;
+  --focus: #B4472F;
 
   /* attentes : 4 niveaux (court → très long) */
   --w-short-bg: #DCEFED;  --w-short-ink: #1E4F4C;  --bar-short: #439B96;
@@ -70,18 +71,18 @@
     --shadow: 0 1px 2px rgba(0, 0, 0, .25), 0 4px 14px rgba(0, 0, 0, .25);
     --backdrop: rgba(0, 0, 0, .6);
     --tabs-bg: rgba(57, 57, 67, .97);
-    --primary: #7FCFC9;
-    --on-primary: #1F3F3D;
-    --primary-soft: #1F4A47;
-    --primary-ink: #A8E3DE;
-    --selected-bg: #2F4544;
-    --accent: #F89A8B;
-    --on-accent: #2A2A31;
-    --accent-soft: #5C302B;
-    --accent-ink: #FFC0B5;
+    --primary: #F89A8B;
+    --on-primary: #2A2A31;
+    --primary-soft: #5C302B;
+    --primary-ink: #FFC0B5;
+    --selected-bg: #4A3533;
+    --danger: #F5A3C7;
+    --must-bg: #F2F2F3;
+    --must-ink: #393943;
+    --group-universal: #F2F2F3;
     --notice-bg: #4C3F18;
     --notice-ink: #F3D98C;
-    --focus: #7FCFC9;
+    --focus: #F89A8B;
     --w-short-bg: #1F4A47;  --w-short-ink: #A8E3DE;  --bar-short: #7FCFC9;
     --w-mid-bg: #4C3F18;    --w-mid-ink: #F3D98C;    --bar-mid: #E2B947;
     --w-long-bg: #5C302B;   --w-long-ink: #FFC0B5;   --bar-long: #F89A8B;
@@ -108,18 +109,18 @@
   --shadow: 0 1px 2px rgba(0, 0, 0, .25), 0 4px 14px rgba(0, 0, 0, .25);
   --backdrop: rgba(0, 0, 0, .6);
   --tabs-bg: rgba(57, 57, 67, .97);
-  --primary: #7FCFC9;
-  --on-primary: #1F3F3D;
-  --primary-soft: #1F4A47;
-  --primary-ink: #A8E3DE;
-  --selected-bg: #2F4544;
-  --accent: #F89A8B;
-  --on-accent: #2A2A31;
-  --accent-soft: #5C302B;
-  --accent-ink: #FFC0B5;
+  --primary: #F89A8B;
+  --on-primary: #2A2A31;
+  --primary-soft: #5C302B;
+  --primary-ink: #FFC0B5;
+  --selected-bg: #4A3533;
+  --danger: #F5A3C7;
+  --must-bg: #F2F2F3;
+  --must-ink: #393943;
+  --group-universal: #F2F2F3;
   --notice-bg: #4C3F18;
   --notice-ink: #F3D98C;
-  --focus: #7FCFC9;
+  --focus: #F89A8B;
   --w-short-bg: #1F4A47;  --w-short-ink: #A8E3DE;  --bar-short: #7FCFC9;
   --w-mid-bg: #4C3F18;    --w-mid-ink: #F3D98C;    --bar-mid: #E2B947;
   --w-long-bg: #5C302B;   --w-long-ink: #FFC0B5;   --bar-long: #F89A8B;
@@ -158,7 +159,7 @@ a { color: var(--primary); }
 .gap { gap: 8px; }
 .between { justify-content: space-between; }
 .grow { flex: 1; min-width: 0; }
-.err { color: var(--accent); }
+.err { color: var(--danger); }
 .notice { background: var(--notice-bg); color: var(--notice-ink); padding: 8px 12px; border-radius: 12px; margin: 8px 0; }
 [hidden] { display: none !important; }
 
@@ -178,7 +179,8 @@ a { color: var(--primary); }
 .theme-menu summary { list-style: none; }
 .theme-menu summary::-webkit-details-marker { display: none; }
 .theme-menu .menu {
-  position: absolute; right: 0; top: calc(100% + 6px); z-index: 20; min-width: 150px;
+  /* position calculée en JS (positionThemeMenu) pour rester dans l'écran, 16 px de marge minimum */
+  position: fixed; top: 0; left: 16px; z-index: 1000; min-width: 150px; max-width: calc(100vw - 32px);
   background: var(--card); color: var(--ink); border-radius: 14px; box-shadow: var(--shadow), 0 0 0 1px var(--line);
   padding: 6px; display: grid; gap: 2px;
 }
@@ -202,7 +204,7 @@ main { max-width: 760px; margin: 0 auto; padding: 4px 16px 8px; }
   display: inline-flex; align-items: center; gap: 6px; white-space: nowrap;
 }
 .pill.ghost { background: var(--card); color: var(--ink); box-shadow: inset 0 0 0 1px var(--field-border); }
-.pill.danger { color: var(--accent); }
+.pill.danger { color: var(--danger); box-shadow: inset 0 0 0 1px var(--danger); }
 .pill:disabled { opacity: .45; cursor: not-allowed; }
 .pill.big { padding: 12px 20px; font-size: .95rem; }
 .small-btn { padding: 6px 10px; min-height: 32px; font-size: .78rem; }
@@ -247,7 +249,9 @@ input[type=date], input[type=number], input[type=search], select {
   border: 1px solid var(--field-border); background: var(--card); color: var(--ink);
   border-radius: 12px; padding: 10px 12px; width: 100%; min-height: 44px;
 }
-.two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; }
+.two .field { min-width: 0; }
+input[type=date] { min-width: 0; }
 
 .choice {
   display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; margin: 8px 0;
@@ -259,8 +263,8 @@ input[type=date], input[type=number], input[type=search], select {
 .choice small { color: var(--muted); }
 .group-title { display: flex; align-items: center; gap: 8px; margin: 16px 0 4px; font-weight: 700; font-size: .9rem; }
 .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex: none; }
-.dot.disney { background: var(--brand-teal); }
-.dot.universal { background: var(--brand-coral); }
+.dot.disney { background: var(--group-disney); }
+.dot.universal { background: var(--group-universal); }
 
 /* compteur de visites */
 .counter-row {
@@ -306,7 +310,7 @@ input[type=date], input[type=number], input[type=search], select {
   background: var(--card-2); color: var(--ink); white-space: nowrap;
 }
 .badge.ll, .badge.express, .badge.good { background: var(--primary-soft); color: var(--primary-ink); }
-.badge.must { background: var(--accent-soft); color: var(--accent-ink); }
+.badge.must { background: var(--must-bg); color: var(--must-ink); }
 .badge.tier { min-width: 20px; text-align: center; }
 .badge.tier-A { background: var(--tierA-bg); color: var(--tierA-ink); }
 .badge.tier-B { background: var(--tierB-bg); color: var(--tierB-ink); }
@@ -332,8 +336,10 @@ input[type=date], input[type=number], input[type=search], select {
   background: var(--card); border-radius: 16px; box-shadow: var(--shadow); cursor: pointer;
   border: 0; border-left: 5px solid var(--line); width: 100%; text-align: left;
 }
-.cal-day.disney { border-left-color: var(--brand-teal); }
-.cal-day.universal { border-left-color: var(--brand-coral); }
+.cal-day.disney { border-left-color: var(--group-disney); }
+.cal-day.universal { border-left-color: var(--group-universal); }
+.cal-day.rest { background: var(--card-2); box-shadow: none; border-left-color: var(--primary); }
+.cal-day.free { background: transparent; box-shadow: inset 0 0 0 1px var(--field-border); border-left-color: var(--field-border); }
 .cal-date { width: 48px; text-align: center; flex: none; }
 .cal-date b { display: block; font-size: 1.35rem; line-height: 1; }
 .cal-date small { color: var(--muted); font-size: .72rem; text-transform: uppercase; }
@@ -377,7 +383,7 @@ input[type=date], input[type=number], input[type=search], select {
   background: var(--card); border-radius: 16px; box-shadow: var(--shadow); padding: 12px;
   display: flex; gap: 10px; align-items: flex-start;
 }
-.tl-card.must { box-shadow: var(--shadow), inset 4px 0 0 var(--accent); }
+.tl-card.must { box-shadow: var(--shadow), inset 4px 0 0 var(--primary); }
 .tl-card .title { font-weight: 700; font-size: .95rem; }
 .tl-card .meta { font-size: .78rem; color: var(--muted); margin-top: 2px; }
 .tl-note {

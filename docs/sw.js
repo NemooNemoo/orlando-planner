@@ -1,6 +1,6 @@
 // Service worker : l'appli fonctionne hors connexion avec les dernières données reçues.
 // Pense à changer VERSION quand tu modifies les fichiers du site.
-const VERSION = "op-v3";
+const VERSION = "op-v6";
 const SHELL = [
   "./", "index.html", "style.css", "config.js", "js/app.js", "js/planner.js",
   "i18n.json", "rides_meta.json", "manifest.webmanifest",
