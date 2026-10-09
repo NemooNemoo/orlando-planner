@@ -424,6 +424,47 @@ input[type=time] {
 .badge.show-now { background: var(--primary); color: var(--on-primary); }
 .sources { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
 
+/* ---------- journée : fin de journée, entrées, bouton « + » */
+.day-end { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 4px 12px; margin-top: 10px; }
+.day-end .field { margin: 0; max-width: 10rem; }
+.day-end p { margin: 0; flex-basis: 100%; }
+.tl-card.entry { box-shadow: var(--shadow), inset 4px 0 0 var(--brand-slate); }
+.tl-card.entry.current { box-shadow: var(--shadow), inset 4px 0 0 var(--primary); }
+.badge.entry-current { background: var(--primary); color: var(--on-primary); }
+.badge.entry-done { background: var(--w-short-bg); color: var(--w-short-ink); }
+.plain-list { margin: 6px 0 0; padding-left: 18px; }
+body.has-fab main { padding-bottom: 96px; } /* le bouton « + » ne masque jamais la fin de la liste */
+.fab {
+  position: fixed; z-index: 15; right: 16px; bottom: calc(80px + env(safe-area-inset-bottom));
+  width: 60px; height: 60px; border-radius: 50%; border: 0; cursor: pointer;
+  background: var(--primary); color: var(--on-primary); font-size: 2rem; font-weight: 700; line-height: 1;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .25);
+}
+dialog.sheet {
+  margin: auto 0 0; width: 100%; max-width: 100%; max-height: 88vh; border-radius: 20px 20px 0 0;
+  padding: 16px 16px calc(16px + env(safe-area-inset-bottom)); display: none;
+}
+dialog.sheet[open] { display: grid; gap: 10px; align-content: start; overflow: auto; animation: sheet-up .2s ease-out; }
+@media (min-width: 640px) { dialog.sheet { max-width: 600px; margin: auto auto 0; } }
+@keyframes sheet-up { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { dialog.sheet[open] { animation: none; } }
+.sheet-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.plus-list { display: grid; gap: 6px; grid-template-columns: minmax(0, 1fr); }
+.plus-item {
+  display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 12px; cursor: pointer; text-align: left;
+  border: 1px solid var(--line); background: var(--card); color: var(--ink); width: 100%;
+}
+.plus-item .name { display: block; font-weight: 600; font-size: .9rem; overflow-wrap: anywhere; }
+.big-exit { font-size: 1.2rem; font-weight: 800; color: var(--primary); margin: 0; }
+#overflow-dialog .plus-list { max-height: 50vh; overflow: auto; }
+
+/* ---------- direct : spectacles repliables */
+.shows-card summary { display: flex; align-items: center; gap: 10px; cursor: pointer; list-style: none; }
+.shows-card summary::-webkit-details-marker { display: none; }
+.shows-card .chev { font-size: 1.2rem; transition: transform .15s; }
+.shows-card[open] .chev { transform: rotate(180deg); }
+.live-row.show { background: var(--card-2); box-shadow: none; }
+
 /* ---------- fichiers importés */
 .imports-list { display: grid; gap: 8px; margin-top: 8px; }
 .import-row { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border-radius: 12px; background: var(--card-2); }

@@ -229,8 +229,14 @@ export function dayHours(park, date, { schedule, overrides, model, hotelPerks } 
     .filter((x) => x.startMin != null && x.endMin != null);
   let h;
   if (official && hmToMin(official.open) != null && hmToMin(official.close) != null) {
+    // ThemeParks.wiki range parfois « Early Entry » / « Extended Evening » parmi les événements payants
+    const ev = slots(official.events);
+    const isEarly = (x) => /early|matinale/i.test(x.name || "");
+    const isEvening = (x) => /extended|evening|soir/i.test(x.name || "") && !/ticket|party|soir[ée]e? payante/i.test(x.name || "");
     h = { open: hmToMin(official.open), close: hmToMin(official.close), source: "official",
-      early: slots(official.early), evening: slots(official.evening), events: slots(official.events) };
+      early: [...slots(official.early), ...ev.filter(isEarly)],
+      evening: [...slots(official.evening), ...ev.filter((x) => !isEarly(x) && isEvening(x))],
+      events: ev.filter((x) => !isEarly(x) && !isEvening(x)) };
   } else {
     const wd = weekdayOf(date);
     const known = Object.entries(days).filter(([, d]) => hmToMin(d.open) != null && hmToMin(d.close) != null);
@@ -675,23 +681,35 @@ function walkTime(catalog, meta, from, to, pace) {
 }
 
 const TIER_BONUS = { A: 3, B: 1.5, C: 0 };
+const WINDOW = 6; // attractions « pas encore faites » examinées à chaque pas (les plus intéressantes d'abord)
+const MAX_RERIDES = 8;
 
 /**
- * Programme d'une journée dans un parc.
- * opts : { park, date, wd, settings, model, meta, catalog,
- *          from?, to?, done?:Set, live?:{waits:{id:{open,wait}}, now}, seed?,
- *          priorities?:{id:{avg,max,tier}}, hours?: dayHours(...) }
+ * Programme d'une journée dans un parc, de l'ouverture (ou early entry) jusqu'à la fermeture.
+ * Ordre de remplissage : 1) incontournables, 2) attractions pas encore faites (meilleur créneau de
+ * chacune), 3) deuxièmes tours des préférées (incontournables d'abord). On peut entrer dans une file
+ * jusqu'à la fermeture ; avec une fin de journée choisie (endAt), tout doit être fini à cette heure.
+ *
+ * opts : { park, date, wd, settings, model, meta, catalog, hours: dayHours(...),
+ *          from?: début (ex. sortie de la dernière file), endAt?: fin choisie,
+ *          done?: Set déjà faites, exclude?: Set reportées ailleurs, extraMust?: [ids reportés ici],
+ *          only?: Set (programme prévu à respecter), lastRide?, live?, seed?, priorities? }
+ * Renvoie { items, start, end, close, hours, unplaced:[ids prévus qui ne tiennent plus], firstIds, totalWait }
  */
 export function planDay(opts) {
   const { park, wd, settings, model, meta, catalog = {} } = opts;
   const pace = PACES[settings.pace] || PACES.normal;
-  // horaires du jour réel si fournis (dayHours), sinon estimation par le modèle
   const hours = opts.hours ? { ...opts.hours, open: opts.hours.planOpen ?? opts.hours.open,
     close: opts.hours.planClose ?? opts.hours.close } : model.parkHours(park, wd);
-  // le programme commence au plus tôt à l'ouverture et s'arrête au plus tard à la fermeture
-  const start = Math.max(opts.from ?? hours.open + pace.arriveAfter, hours.open);
-  const end = Math.min(opts.to ?? hours.close - pace.leaveBefore, hours.close);
+  const close = hours.close;
+  const userEnd = opts.endAt != null && opts.endAt < close ? Math.max(opts.endAt, hours.open) : null;
+  const end = userEnd ?? close;
+  const start = Math.min(Math.max(opts.from ?? hours.open, hours.open), end);
+  // entrée dans la file au plus tard à la fermeture ; avec une fin choisie, sortie avant cette heure
+  const fits = (arrive, finish) => (userEnd != null ? finish <= userEnd : arrive <= close);
+
   const done = opts.done || new Set();
+  const exclude = opts.exclude || new Set();
   const isDisney = PARK_BY_ID[park]?.group === "disney";
   const pref = TYPE_PREF;
   const random = rng(`${opts.seed ?? ""}|${opts.date}|${park}`);
@@ -699,30 +717,29 @@ export function planDay(opts) {
   const tierOf = (id) => prio[id]?.tier || null;
   const typical = (id) => prio[id]?.avg ?? meta[id].base_wait ?? 10;
 
-  const eligible = eligibleRides(park, settings, meta).filter((id) => !done.has(id));
+  const all = eligibleRides(park, settings, meta).filter((id) => !exclude.has(id));
   const closedLive = new Set();
-  if (opts.live) for (const id of eligible) if (opts.live.waits[id] && !opts.live.waits[id].open) closedLive.add(id);
-  const must = new Set((settings.mustDo || []).filter((id) => eligible.includes(id)));
+  if (opts.live) for (const id of all) if (opts.live.waits[id] && !opts.live.waits[id].open) closedLive.add(id);
+  const mustAll = [...new Set([...(settings.mustDo || []), ...(opts.extraMust || [])])].filter((id) => all.includes(id));
+  const must = new Set(mustAll.filter((id) => !done.has(id)));
 
-  // Sélection des candidates
   const score = (id) => {
     const m = meta[id];
-    let s = (typical(id) || 10) / 12 + (pref[m.type] || 0) + (TIER_BONUS[tierOf(id)] || 0);
-    if (settings.surprise) s += random() * 4;
-    return s;
+    let sc = (typical(id) || 10) / 12 + (pref[m.type] || 0) + (TIER_BONUS[tierOf(id)] || 0);
+    if (settings.surprise) sc += random() * 4;
+    return sc;
   };
-  const extras = eligible.filter((id) => !must.has(id)).sort((a, b) => score(b) - score(a));
-  const capacity = Math.max(0, pace.maxRides - (opts.alreadyDone || 0));
-  const ranked = [...must, ...extras].filter((id) => !closedLive.has(id));
-  const primary = ranked.slice(0, Math.max(capacity, must.size));
-  const pool = ranked.slice(0, primary.length + 6); // les suivantes servent de réserve
+  let others = all.filter((id) => !must.has(id) && !done.has(id) && !closedLive.has(id))
+    .sort((a, b) => score(b) - score(a));
+  if (opts.only) others = others.filter((id) => opts.only.has(id));
+  const firstPool = [...must, ...others];
 
   // Coupe-files
   const llAccess = new Set();
   if (isDisney) {
-    if (settings.ll?.single) for (const id of pool) if (meta[id].ll === "single") llAccess.add(id);
+    if (settings.ll?.single) for (const id of firstPool) if (meta[id].ll === "single") llAccess.add(id);
     if (settings.ll?.multi) {
-      pool.filter((id) => meta[id].ll === "multi")
+      firstPool.filter((id) => meta[id].ll === "multi")
         .sort((a, b) => (must.has(b) - must.has(a)) || ((tierOf(b) === "A") - (tierOf(a) === "A"))
           || typical(b) - typical(a))
         .slice(0, 3).forEach((id) => llAccess.add(id));
@@ -730,10 +747,9 @@ export function planDay(opts) {
   }
   const express = !isDisney && settings.express;
 
-  // Attente effective à l'instant t (avec ajustement en direct si fourni)
   const liveAdj = {};
   if (opts.live) {
-    for (const id of pool) {
+    for (const id of all) {
       const l = opts.live.waits[id];
       if (l?.open && typeof l.wait === "number" && l.wait > 0) {
         const exp = Math.max(5, model.expected(id, wd, opts.live.now));
@@ -750,24 +766,21 @@ export function planDay(opts) {
     const k = Math.max(0, 1 - dt / 180);
     return Math.round(exp * (1 + (adj.ratio - 1) * k));
   };
-  const effWait = (id, t) => {
+  const usedLL = new Set(); // une réservation Lightning Lane ne sert qu'une fois
+  const effWait = (id, t, reride) => {
     const w = rawWait(id, t);
-    if (llAccess.has(id)) return Math.min(w, 10);
+    if (llAccess.has(id) && !(reride || usedLL.has(id))) return Math.min(w, 10);
     if (express && meta[id].express) return Math.min(w, Math.max(5, Math.round(w * 0.3)));
     return w;
   };
-  // Attente minimale et moyenne sur le reste de la journée probable
-  const later = (id, from, dur, horizon) => {
-    let min = effWait(id, from), sum = min, n = 1;
+  const later = (id, from, dur, horizon, reride) => {
+    let min = effWait(id, from, reride), sum = min, n = 1;
     for (let t = from + 30; t <= Math.min(end, horizon) - dur; t += 30) {
-      const w = effWait(id, t);
+      const w = effWait(id, t, reride);
       min = Math.min(min, w); sum += w; n++;
     }
     return { min, avg: sum / n };
   };
-
-  // Priorités importées (ride_priorities.csv) :
-  // A = ouverture ou coupe-file ; B = tôt le matin ou en soirée ; C = n'importe quand (laisse le matin aux autres)
   const covered = (id) => llAccess.has(id) || (express && meta[id].express);
   const tierPenalty = (id, at) => {
     const tier = tierOf(id);
@@ -776,22 +789,39 @@ export function planDay(opts) {
     if (tier === "C") return at < start + 60 ? 10 : 0;
     return 0;
   };
+  const estimate = (id) => typical(id) + meta[id].duration + 8;
 
   const items = [];
-  let t = start, last = opts.lastRide || null, count = 0, sinceBreak = 0;
-  const lunch = settings.lunch?.enabled && opts.lunchDone !== true
-    ? { at: +settings.lunch.at || 720, len: pace.lunchLen } : null;
-  let lunchDone = !lunch || (opts.from != null && opts.from > (lunch?.at ?? 0) + 90);
-  let remaining = new Set(primary);
-  const backup = pool.filter((id) => !remaining.has(id));
+  let t = start, last = opts.lastRide || null, sinceBreak = 0;
+  const lunch = settings.lunch?.enabled ? { at: +settings.lunch.at || 720, len: pace.lunchLen } : null;
+  let lunchDone = !lunch || t > lunch.at + 90;
+  const remainingMust = new Set(must);
+  const remainingOthers = [...others];
+  let rerides = null; // construit quand toutes les « premières fois » sont faites
+  const scheduled = [];
   items.push({ kind: "start", at: t });
 
-  while (count < capacity && t < end) {
-    if (!remaining.size) {
-      if (!backup.length) break;
-      remaining = new Set(backup.splice(0));
+  const pick = (cands, reride) => {
+    let best = null;
+    const horizon = t + Math.max(1, cands.length) * 40 + 30;
+    for (const id of cands) {
+      if (id === last) continue;
+      const m = meta[id];
+      const walk = walkTime(catalog, meta, last, id, pace);
+      const arrive = t + walk;
+      const wait = effWait(id, arrive, reride);
+      const finish = arrive + wait + m.duration;
+      if (!fits(arrive, finish)) continue;
+      const l = later(id, arrive, m.duration, horizon, reride);
+      const cost = (wait - l.avg) + 1.3 * (wait - l.min) + walk
+        - (must.has(id) ? 15 : 0) - 2 * (pref[m.type] || 0) + tierPenalty(id, arrive);
+      if (!best || cost < best.cost) best = { id, walk, arrive, wait, finish, cost };
     }
-    if (!lunchDone && t >= lunch.at) {
+    return best;
+  };
+
+  while (t < end) {
+    if (lunch && !lunchDone && t >= lunch.at) {
       items.push({ kind: "lunch", at: t, end: t + lunch.len });
       t += lunch.len; lunchDone = true; sinceBreak = 0; continue;
     }
@@ -799,51 +829,51 @@ export function planDay(opts) {
       items.push({ kind: "break", at: t, end: t + pace.breakLen });
       t += pace.breakLen; sinceBreak = 0; continue;
     }
-    let best = null;
-    // jusqu'où la journée ira probablement, au rythme d'environ 40 min par attraction
-    const horizon = t + Math.min(remaining.size, capacity - count) * 40 + 30;
-    for (const id of remaining) {
-      const m = meta[id];
-      const walk = walkTime(catalog, meta, last, id, pace);
-      const arrive = t + walk;
-      const wait = effWait(id, arrive);
-      const finish = arrive + wait + m.duration;
-      if (finish > end) continue;
-      // On choisit l'attraction pour laquelle c'est *maintenant* le meilleur moment :
-      // attente actuelle comparée au reste de la journée (et non attente brute).
-      const l = later(id, arrive, m.duration, horizon);
-      const cost = (wait - l.avg) + 1.3 * (wait - l.min) + walk
-        - (must.has(id) ? 15 : 0) - 2 * (pref[m.type] || 0) + tierPenalty(id, arrive);
-      if (!best || cost < best.cost) best = { id, walk, arrive, wait, finish, cost };
+    let best = null, reride = false;
+    if (remainingMust.size || remainingOthers.length) {
+      // incontournables seuls quand le temps devient juste pour eux
+      const mustTime = [...remainingMust].reduce((a, id) => a + estimate(id), 0);
+      const urgent = remainingMust.size && mustTime >= 0.8 * (end - t);
+      const cands = urgent ? [...remainingMust] : [...remainingMust, ...remainingOthers.slice(0, WINDOW)];
+      best = pick(cands, false);
+      if (!best && !urgent && remainingOthers.length > WINDOW) best = pick([...remainingMust, ...remainingOthers], false);
+      if (!best) { remainingMust.clear(); remainingOthers.length = 0; continue; } // plus rien ne tient
+    } else {
+      // 3) deuxièmes tours : incontournables d'abord, puis les attractions préférées
+      if (!rerides) {
+        const favs = [...mustAll, ...[...done, ...scheduled].filter((id) => all.includes(id)).sort((a, b) => score(b) - score(a))];
+        rerides = [...new Set(favs)].filter((id) => meta[id].type !== "show" && !closedLive.has(id)).slice(0, MAX_RERIDES);
+      }
+      if (!rerides.length) break;
+      best = pick(rerides, true);
+      if (!best) break;
+      reride = true;
     }
-    if (!best) {
-      if (!backup.length) break;
-      remaining = new Set(backup.splice(0));
-      continue;
-    }
-    // Si le déjeuner tombe pendant cette attraction, on la garde et on mange juste après
-    remaining.delete(best.id);
+    if (reride) rerides = rerides.filter((id) => id !== best.id);
+    else { remainingMust.delete(best.id); const k = remainingOthers.indexOf(best.id); if (k >= 0) remainingOthers.splice(k, 1); scheduled.push(best.id); }
+    const ll = !reride && llAccess.has(best.id) && !usedLL.has(best.id) ? (meta[best.id].ll === "single" ? "single" : "multi") : null;
+    if (ll) usedLL.add(best.id);
     items.push({
-      kind: "ride", id: best.id, at: best.arrive, walk: best.walk, wait: best.wait,
-      end: best.finish, must: must.has(best.id), tier: tierOf(best.id),
-      ll: llAccess.has(best.id) ? (meta[best.id].ll === "single" ? "single" : "multi") : null,
+      kind: "ride", id: best.id, at: best.arrive, walk: best.walk, wait: best.wait, end: best.finish,
+      must: mustAll.includes(best.id), tier: tierOf(best.id), reride, ll,
       express: express && meta[best.id].express,
       live: !!liveAdj[best.id] && best.arrive - (opts.live?.now ?? 0) < 20,
     });
     sinceBreak += best.finish - t;
-    t = best.finish; last = best.id; count++;
+    t = best.finish; last = best.id;
   }
-  if (!lunchDone && t < end) {
+  if (lunch && !lunchDone && Math.max(t, lunch.at) < end) {
     items.push({ kind: "lunch", at: Math.max(t, lunch.at), end: Math.max(t, lunch.at) + lunch.len });
     t = Math.max(t, lunch.at) + lunch.len;
   }
-  items.push({ kind: "end", at: Math.min(Math.max(t, start), end + 60) });
+  items.push({ kind: "end", at: Math.max(t, start) });
 
-  const planned = new Set(items.filter((i) => i.kind === "ride").map((i) => i.id));
+  const placed = new Set(scheduled);
+  const expected = new Set([...must, ...(opts.only ? others : [])]);
   return {
-    items, start, end, hours,
-    skippedMust: [...must].filter((id) => !planned.has(id)),
-    closed: [...closedLive],
-    totalWait: items.reduce((s, i) => s + (i.wait || 0), 0),
+    items, start, end, close, hours, userEnd,
+    unplaced: [...expected].filter((id) => !placed.has(id)),
+    firstIds: scheduled,
+    totalWait: items.reduce((sum, i) => sum + (i.wait || 0), 0),
   };
 }

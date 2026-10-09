@@ -52,13 +52,24 @@ Site statique (HTML/CSS/JS, sans framework ni build), cahier des charges dans `B
   deux d'affilée, mention « choisi car journée chargée ») ; chaque parc reçoit ensuite son nombre de
   visites sur ses jours les plus calmes, si possible jamais deux jours de suite. Les jours restants sont
   des jours libres non attribués.
-- Journée : le programme prévu uniquement. Direct : le temps réel uniquement (attractions ouvertes de la
-  plus courte à la plus longue attente, filtres, bouton « Fait », actualisation toutes les 5 min).
+- Journée : programme de l'ouverture (ou early entry avec « hôtel sur place ») jusqu'à la fermeture, rempli
+  dans cet ordre : incontournables (tiers A/B/C, coupe-files), attractions pas encore faites (meilleur
+  créneau de chacune), puis deuxièmes tours des préférées. On entre dans une file au plus tard à la fermeture.
+  « Fin de journée » réglable pour chaque jour (tout est alors fini à cette heure), avec retour « jusqu'à la fermeture ».
+- Bouton « + » (onglet Journée) : j'entre dans une file. Attraction / rencontre : heure d'entrée = maintenant,
+  attente en direct (sinon prévision) + durée → « sortie prévue vers … », la suite se recalcule depuis la sortie
+  (ce que le programme avait terminé avant est considéré comme fait). Spectacle : choix de la séance
+  (`shows.json`), arrivée 15 min avant. Entrées corrigeables / annulables, gardées dans le navigateur par date.
+- Quand tout ne tient plus : fenêtre « Quelle attraction veux-tu garder pour un autre jour ? » ; l'activité
+  choisie passe à la prochaine visite du même parc, sinon dans « Pas fait cette fois ». « Finir un peu plus
+  tard » si une fin de journée a été choisie.
+- Direct : le temps réel uniquement (attractions ouvertes de la plus courte à la plus longue attente, filtres,
+  bouton « Fait » — repris dans la Journée —, actualisation toutes les 5 min). Les spectacles affichent leurs
+  prochaines séances ; « Spectacles dans l'heure » est en bas, repliable (🤝 pour les rencontres à horaires fixes).
 - Horaires (`schedule.json`) : affichés dans le calendrier et la journée (le programme suit l'ouverture et la
   fermeture du jour, early entry / soirée prolongée si l'option « hôtel sur place » est cochée). Jour pas encore
   publié : « horaire estimé » (médiane des horaires connus du parc ce jour de semaine). Correction manuelle d'un
   jour dans les Réglages (« horaire modifié », annulable).
-- Direct : « Spectacles dans l'heure » (`shows.json`), masqué s'il n'y en a aucun.
 - Thème Auto / Clair / Sombre (bouton en en-tête, choix mémorisé).
 - Types d'attraction (`rides_meta.json`) : `thrill`, `family`, `show`, `meet` (rencontre de personnages).
 
