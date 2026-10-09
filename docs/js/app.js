@@ -306,33 +306,40 @@ function stepDates(s) {
 }
 
 function stepParks(s) {
-  const limit = P.visitLimit(s);
   const total = P.totalVisits(s.visits);
-  const full = total >= limit;
   const rest = P.restDays(s);
-  const days = stepValid("dates") ? P.dateRange(s.start, s.end).length : 0;
+  const forcedRest = P.forcedRestDays(s);
+  const days = stepValid("dates") ? P.tripDays(s) : 0;
+  const full = total + rest >= days; // limite commune : visites + repos ≤ jours du séjour
   const forcedCount = {};
   for (const f of s.forced) if (f.park !== "rest") forcedCount[f.park] = (forcedCount[f.park] || 0) + 1;
+  const counter = ({ cls = "", label, sub, n, min, action, park = "", less, more }) => `
+      <div class="counter-row ${n ? "on" : ""} ${cls}">
+        <span class="grow">${label}<small class="muted">${sub}</small></span>
+        <button type="button" class="round" data-action="${action}" data-park="${park}" data-d="-1" ${n <= min ? "disabled" : ""}
+          aria-label="${esc(less)}">−</button>
+        <output class="count" aria-live="polite">${n}</output>
+        <button type="button" class="round" data-action="${action}" data-park="${park}" data-d="1" ${full ? "disabled" : ""}
+          aria-label="${esc(more)}">+</button>
+      </div>`;
   const group = (g) => `
     <div class="group-title"><span class="dot ${g}"></span>${t(g)}</div>
     ${P.PARKS.filter((p) => p.group === g).map((p) => {
       const n = s.visits?.[p.id] || 0;
-      const min = forcedCount[p.id] || 0;
-      return `<div class="counter-row ${n ? "on" : ""}">
-        <span class="grow">${p.emoji} <b>${p.name}</b>
-          <small class="muted">${n ? t("visits_n", { n }) : t("visits_none")}</small></span>
-        <button type="button" class="round" data-action="visit" data-park="${p.id}" data-d="-1" ${n <= min ? "disabled" : ""}
-          aria-label="${esc(t("visit_less", { park: p.name }))}">−</button>
-        <output class="count" aria-live="polite">${n}</output>
-        <button type="button" class="round" data-action="visit" data-park="${p.id}" data-d="1" ${full ? "disabled" : ""}
-          aria-label="${esc(t("visit_more", { park: p.name }))}">+</button>
-      </div>`;
+      return counter({ label: `${p.emoji} <b>${p.name}</b>`, sub: n ? t("visits_n", { n }) : t("visits_none"),
+        n, min: forcedCount[p.id] || 0, action: "visit", park: p.id,
+        less: t("visit_less", { park: p.name }), more: t("visit_more", { park: p.name }) });
     }).join("")}`;
+  const restRow = `
+    <div class="group-title">🏖️ ${t("rest_days")}</div>
+    ${counter({ cls: "rest", label: `<b>${t("rest_days")}</b>`,
+      sub: forcedRest ? t("rest_forced_n", { n: forcedRest }) : t("rest_help"),
+      n: rest, min: forcedRest, action: "rest", less: t("rest_less"), more: t("rest_more") })}`;
   return `<h2>${t("s_parks")}</h2><p class="muted small">${t("s_parks_help")}</p>
-    <p class="small"><b>${t("visits_total", { n: total, max: limit })}</b></p>
-    ${full ? `<p class="small notice" role="status">${t("visits_limit", { max: limit, days, rest })}</p>` : ""}
+    <p class="small total-line"><b>${t("days_total", { v: total, r: rest, sum: total + rest, days })}</b></p>
+    ${full ? `<p class="small notice" role="status">${t("days_limit", { days })}</p>` : ""}
     ${visitMsgHtml()}
-    ${group("disney")}${group("universal")}
+    ${group("disney")}${group("universal")}${restRow}
     ${total ? "" : `<p class="small err">${t("parks_none")}</p>`}`;
 }
 
@@ -371,7 +378,7 @@ function stepForced(s) {
       <select data-forced="${i}" data-key="date" aria-label="${t("date")}">${dates.map((d) => `<option value="${d}" ${d === f.date ? "selected" : ""}>${esc(fmtDate(d))}</option>`).join("")}</select>
       <select data-forced="${i}" data-key="park" aria-label="${t("live_park")}">
         ${s.parks.map((p) => `<option value="${p}" ${p === f.park ? "selected" : ""}>${parkOf(p).emoji} ${parkOf(p).name}</option>`).join("")}
-        <option value="rest" ${f.park === "rest" ? "selected" : ""}>😴 ${t("rest_day")}</option>
+        <option value="rest" ${f.park === "rest" ? "selected" : ""}>🏖️ ${t("rest_day")}</option>
       </select>
       <button class="pill ghost danger" data-action="forced-del" data-i="${i}" aria-label="${t("remove")}">✕</button>
     </div>`).join("");
@@ -418,8 +425,9 @@ function stepRecap(s) {
   const n = STEPS.indexOf.bind(STEPS);
   const days = P.dateRange(s.start, s.end).length;
   const total = P.totalVisits(s.visits);
-  const forcedRest = P.restDays(s);
-  const freeDays = Math.max(0, days - forcedRest - total);
+  const rest = P.restDays(s);
+  const forcedRest = P.forcedRestDays(s);
+  const freeDays = Math.max(0, days - rest - total);
   const row = (label, value, step) => `
     <div class="recap-row">
       <div class="grow"><div class="small muted">${label}</div><div>${value}</div></div>
@@ -432,7 +440,7 @@ function stepRecap(s) {
   }
   if (s.parks.some((p) => parkOf(p).group === "universal")) passes.push(`${t("express")} : ${yes(s.express)}`);
   const forced = s.forced.length
-    ? s.forced.map((f) => `${esc(fmtDate(f.date))} → ${f.park === "rest" ? "😴 " + t("rest_day") : parkOf(f.park).emoji + " " + parkOf(f.park).name}`).join("<br>")
+    ? s.forced.map((f) => `${esc(fmtDate(f.date))} → ${f.park === "rest" ? "🏖️ " + t("rest_day") : parkOf(f.park).emoji + " " + parkOf(f.park).name}`).join("<br>")
     : t("forced_none");
   const must = s.surprise
     ? `🎲 ${t("surprise")}`
@@ -441,8 +449,8 @@ function stepRecap(s) {
       : t("must_none");
   return `<h2>${t("s_recap")}</h2><p class="muted small">${t("s_recap_help")}</p>
     ${row(t("s_dates"), `${esc(fmtDate(s.start, { day: "numeric", month: "long" }))} → ${esc(fmtDate(s.end, { day: "numeric", month: "long", year: "numeric" }))} · ${t("days_count", { n: days })}`, "dates")}
-    ${row(t("recap_rest"), t("recap_rest_v", { n: forcedRest + freeDays, forced: forcedRest, free: freeDays }), "forced")}
-    ${row(t("s_parks"), P.PARKS.filter((p) => s.visits?.[p.id]).map((p) => `${p.emoji} ${p.name} × ${s.visits[p.id]}`).join("<br>") + `<br><b>${t("visits_total", { n: total, max: P.visitLimit(s) })}</b>`, "parks")}
+    ${row(t("s_parks"), P.PARKS.filter((p) => s.visits?.[p.id]).map((p) => `${p.emoji} ${p.name} × ${s.visits[p.id]}`).join("<br>") + `<br><b>${t("days_total", { v: total, r: rest, sum: total + rest, days })}</b>`, "parks")}
+    ${row(t("recap_rest"), t("recap_rest_v", { n: rest, forced: forcedRest }) + (freeDays ? `<br>${t("recap_free", { n: freeDays })}` : ""), "parks")}
     ${row(t("s_passes"), passes.join("<br>") || "—", "passes")}
     ${row(t("s_pace"), t("pace_" + s.pace), "pace")}
     ${row(t("lunch_on"), s.lunch.enabled ? `${t("yes")} · ${P.fmtTime(+s.lunch.at)}` : t("no"), "pace")}
@@ -459,10 +467,16 @@ function stepRecap(s) {
 /** Applique les limites de visites ; signale si on a dû en retirer */
 function applyVisitLimits() {
   const s = state.settings;
-  const { visits, reduced } = P.normalizeVisits(s);
+  const { visits, restDays, reduced, reducedRest } = P.normalizeVisits(s);
   s.visits = visits;
+  s.restDays = restDays;
   syncParks();
-  if (reduced) state.visitMsg = t("visits_reduced", { n: reduced, max: P.visitLimit(s) });
+  if (reduced || reducedRest) {
+    const parts = [];
+    if (reducedRest) parts.push(t("n_rest", { n: reducedRest }));
+    if (reduced) parts.push(t("n_visits", { n: reduced }));
+    state.visitMsg = t("days_reduced", { list: parts.join(t("then")), days: P.tripDays(s) });
+  }
 }
 
 /** La liste des parcs visités découle du nombre de visites */
@@ -478,6 +492,10 @@ function ensureVisits() {
   if (!s.visits || typeof s.visits !== "object") {
     s.visits = P.defaultVisits(s, (s.parks || []).filter((p) => P.PARK_BY_ID[p]), state.meta);
   }
+  // anciens réglages sans compteur de repos : les jours sans visite deviennent des jours de repos
+  if (typeof s.restDays !== "number") {
+    s.restDays = Math.max(P.forcedRestDays(s), P.tripDays(s) - P.totalVisits(s.visits));
+  }
   applyVisitLimits();
   state.visitMsg = "";
   saveSettings();
@@ -488,6 +506,8 @@ function ensureVisits() {
 function needSetup() {
   return `<div class="card center"><p>${t("setup_first")}</p><button class="pill big" data-action="tab" data-tab="setup">${t("go_setup")}</button></div>`;
 }
+
+const dayEmoji = (d) => (d.park ? parkOf(d.park).emoji : d.rest ? "🏖️" : "🗓️");
 
 function viewCalendar() {
   if (!state.configured) return needSetup();
@@ -503,13 +523,13 @@ function viewCalendar() {
     </section>
     ${days.map((d) => {
       const p = d.park && parkOf(d.park);
-      return `<button class="cal-day ${p ? p.group : ""}" data-action="open-day" data-date="${d.date}">
+      return `<button class="cal-day ${p ? p.group : d.rest ? "rest" : "free"}" data-action="open-day" data-date="${d.date}">
         <span class="cal-date"><small>${esc(fmtDate(d.date, { weekday: "short" }))}</small><b>${+d.date.slice(8)}</b><small>${esc(fmtDate(d.date, { month: "short" }))}</small></span>
-        <span class="cal-emoji">${p ? p.emoji : "😴"}</span>
+        <span class="cal-emoji">${dayEmoji(d)}</span>
         <span class="grow">
-          <span class="cal-park">${p ? p.name : t("rest_day")}</span>
+          <span class="cal-park">${p ? p.name : d.rest ? t("rest_day") : t("free_day")}</span>
           ${d.forced ? `<span class="badge">📌 ${t("forced")}</span>` : ""}<br>
-          ${p ? crowdTag(d.crowd) : ""}
+          ${p ? crowdTag(d.crowd) : d.restAuto ? `<span class="small muted">${t("rest_auto")}</span>` : !d.rest ? `<span class="small muted">${t("free_help")}</span>` : ""}
         </span>
         <span class="muted">›</span>
       </button>`;
@@ -574,11 +594,13 @@ function viewDay() {
   const day = days.find((d) => d.date === state.dayDate);
   const chips = days.map((d) => `
     <button class="chip ${d.date === day.date ? "active" : ""}" data-action="pick-day" data-date="${d.date}">
-      <small>${esc(fmtDate(d.date, { weekday: "short" }))}</small><b>${+d.date.slice(8)}</b><small>${d.park ? parkOf(d.park).emoji : "😴"}</small>
+      <small>${esc(fmtDate(d.date, { weekday: "short" }))}</small><b>${+d.date.slice(8)}</b><small>${dayEmoji(d)}</small>
     </button>`).join("");
 
   if (!day.park) {
-    return `<div class="chips">${chips}</div><section class="card center"><p style="font-size:2rem;margin:0">😴</p><p>${t("rest_msg")}</p></section>`;
+    return `<div class="chips">${chips}</div><section class="card center"><p style="font-size:2rem;margin:0">${dayEmoji(day)}</p>
+      <h2>${day.rest ? t("rest_day") : t("free_day")}</h2>
+      <p>${day.rest ? t("rest_msg") : t("free_help")}</p>${day.restAuto ? `<p class="small muted">${t("rest_auto")}</p>` : ""}</section>`;
   }
   const p = parkOf(day.park);
   const plan = dayPlan(day.date, day.park);
@@ -815,11 +837,20 @@ document.addEventListener("click", (e) => {
       const p = el.dataset.park;
       if (!P.PARK_BY_ID[p]) break;
       const d = +el.dataset.d;
-      if (d > 0 && P.totalVisits(s.visits) >= P.visitLimit(s)) break;
+      if (d > 0 && P.totalVisits(s.visits) + P.restDays(s) >= P.tripDays(s)) break;
       s.visits = { ...s.visits, [p]: Math.max(0, (s.visits?.[p] || 0) + d) };
       state.visitMsg = "";
       applyVisitLimits(); saveSettings(); render();
       $(`[data-action=visit][data-park="${p}"][data-d="${d}"]`)?.focus();
+      break;
+    }
+    case "rest": {
+      const d = +el.dataset.d;
+      if (d > 0 && P.totalVisits(s.visits) + P.restDays(s) >= P.tripDays(s)) break;
+      s.restDays = Math.max(P.forcedRestDays(s), P.restDays(s) + d);
+      state.visitMsg = "";
+      applyVisitLimits(); saveSettings(); render();
+      $(`[data-action=rest][data-d="${d}"]`)?.focus();
       break;
     }
     case "cat": {
