@@ -1654,12 +1654,6 @@
   ],
   "islands_of_adventure": [
    {
-    "end": "2026-10-09T18:20-04:00",
-    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
-    "name": "Raptor Encounter",
-    "start": "2026-10-09T18:20-04:00"
-   },
-   {
     "end": "2026-10-09T18:40-04:00",
     "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
     "name": "Raptor Encounter",
@@ -2003,5 +1997,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-09T18:15-04:00"
+ "updated": "2026-10-09T18:30-04:00"
 }
