@@ -913,6 +913,24 @@ function setTheme(theme) {
   $("#theme-menu").open = false;
 }
 darkQuery?.addEventListener?.("change", applyTheme);
+
+/** Place le menu du thème sous son bouton, entièrement dans l'écran (marge de 16 px) */
+function positionThemeMenu() {
+  const menu = $("#theme-menu .menu");
+  if (!$("#theme-menu").open || !menu) return;
+  const MARGIN = 16;
+  const btn = $("#theme-summary").getBoundingClientRect();
+  const w = menu.offsetWidth, h = menu.offsetHeight;
+  const vw = document.documentElement.clientWidth, vh = window.innerHeight;
+  const left = Math.min(Math.max(btn.right - w, MARGIN), vw - MARGIN - w);
+  let top = btn.bottom + 6;
+  if (top + h > vh - MARGIN) top = Math.max(MARGIN, btn.top - 6 - h); // pas la place dessous : au-dessus
+  menu.style.left = `${Math.max(MARGIN, left)}px`;
+  menu.style.top = `${top}px`;
+}
+$("#theme-menu").addEventListener("toggle", positionThemeMenu);
+window.addEventListener("resize", positionThemeMenu);
+window.addEventListener("scroll", () => { if ($("#theme-menu").open) $("#theme-menu").open = false; }, { passive: true });
 document.addEventListener("click", (e) => {
   const menu = $("#theme-menu");
   if (menu?.open && !menu.contains(e.target)) menu.open = false;

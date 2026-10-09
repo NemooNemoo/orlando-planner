@@ -230,7 +230,7 @@
    "name": "Enchanted Tales with Belle",
    "park": "magic_kingdom",
    "height": 0,
-   "type": "show",
+   "type": "meet",
    "duration": 20,
    "base_wait": 25,
    "ll": "multi"
