@@ -1068,12 +1068,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-10-09T19:40-04:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
-    "start": "2026-10-09T19:40-04:00"
-   },
-   {
     "end": "2026-10-09T21:30-04:00",
     "id": "a872883d-761b-4dda-a124-5dadcfa9e5ae",
     "name": "Universal Celestial Goodnight",
@@ -1984,5 +1978,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-09T19:30-04:00"
+ "updated": "2026-10-09T19:45-04:00"
 }
