@@ -1,7 +1,7 @@
 /* Palette imposée : #393943 ardoise · #439B96 bleu-vert · #F2F2F3 gris clair · #FFF8E8 crème · #F37A69 corail.
    Couleur principale = corail. #F37A69 n'atteint pas 4,5:1 en texte sur fond clair : nuance plus foncée
    (texte, boutons) en mode clair, plus claire en mode sombre. Le bleu-vert ne sert plus qu'au niveau
-   « attente courte ». Erreurs / alertes / « Retirer » : bordeaux (clair) ou rose (sombre), distincts du corail.
+   « attente courte » et à l'affluence « Calme » (même sens). Erreurs / alertes / « Retirer » : bordeaux (clair) ou rose (sombre), distincts du corail.
    Les rapports de contraste (WCAG AA) sont notés dans le README. */
 
 :root {
@@ -44,7 +44,7 @@
   --w-none-bg: #F2F2F3;   --w-none-ink: #5D5D6B;   --bar-none: #8A8A97;
 
   /* affluence */
-  --crowd-low: #393943;
+  --crowd-low: #2C6E6A;
   --crowd-mid: #6A4F0C;
   --crowd-high: #B23F2E;
   --crowd-none: #5D5D6B;
@@ -88,7 +88,7 @@
     --w-long-bg: #5C302B;   --w-long-ink: #FFC0B5;   --bar-long: #F89A8B;
     --w-vlong-bg: #5A2230;  --w-vlong-ink: #FFB3C1;  --bar-vlong: #F2708A;
     --w-none-bg: #44444F;   --w-none-ink: #BDBDC8;   --bar-none: #8E8E9C;
-    --crowd-low: #F2F2F3;
+    --crowd-low: #7FCFC9;
     --crowd-mid: #E2B947;
     --crowd-high: #F89A8B;
     --crowd-none: #BDBDC8;
@@ -126,7 +126,7 @@
   --w-long-bg: #5C302B;   --w-long-ink: #FFC0B5;   --bar-long: #F89A8B;
   --w-vlong-bg: #5A2230;  --w-vlong-ink: #FFB3C1;  --bar-vlong: #F2708A;
   --w-none-bg: #44444F;   --w-none-ink: #BDBDC8;   --bar-none: #8E8E9C;
-  --crowd-low: #F2F2F3;
+  --crowd-low: #7FCFC9;
   --crowd-mid: #E2B947;
   --crowd-high: #F89A8B;
   --crowd-none: #BDBDC8;

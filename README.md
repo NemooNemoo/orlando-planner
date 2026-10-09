@@ -57,7 +57,7 @@ Site statique (HTML/CSS/JS, sans framework ni build), cahier des charges dans `B
 Toutes les couleurs sont des variables CSS (`docs/style.css`). Couleur principale = corail (boutons, liens,
 progression, onglet actif, compteurs, filtres actifs, focus) : #F37A69 (2,54:1 sur crème) ne suffit pas
 pour du texte, d'où #B4472F en mode clair et #F89A8B en mode sombre. Le bleu-vert ne sert qu'au niveau
-« attente courte ». Erreurs / « Retirer » : bordeaux #8B1E3F (clair) ou rose #F5A3C7 (sombre).
+« attente courte » et à l'affluence « Calme ». Erreurs / « Retirer » : bordeaux #8B1E3F (clair) ou rose #F5A3C7 (sombre).
 Les attentes ont 4 niveaux (< 20, < 45, < 75, ≥ 75 min) et le nombre de minutes est toujours écrit.
 Contrastes vérifiés (WCAG AA : 4,5:1 texte, 3:1 éléments d'interface) :
 
@@ -88,7 +88,7 @@ Contrastes vérifiés (WCAG AA : 4,5:1 texte, 3:1 éléments d'interface) :
 | clair | attente 20-44 min | `#6A4F0C` / `#F8EBC4` | 6.46:1 | 4.5:1 |
 | clair | attente 45-74 min | `#9A3424` / `#FDE1DC` | 5.87:1 | 4.5:1 |
 | clair | attente >= 75 min | `#7A1E2C` / `#F3D5DA` | 7.48:1 | 4.5:1 |
-| clair | affluence Calme | `#393943` / `#FFFFFF` | 11.41:1 | 4.5:1 |
+| clair | affluence Calme (bleu-vert) | `#2C6E6A` / `#FFFFFF` | 5.92:1 | 4.5:1 |
 | clair | affluence Moyen | `#6A4F0C` / `#FFFFFF` | 7.67:1 | 4.5:1 |
 | clair | affluence Chargé | `#B23F2E` / `#FFFFFF` | 5.76:1 | 4.5:1 |
 | clair | badge A | `#FFFFFF` / `#B23F2E` | 5.76:1 | 4.5:1 |
@@ -122,7 +122,7 @@ Contrastes vérifiés (WCAG AA : 4,5:1 texte, 3:1 éléments d'interface) :
 | sombre | attente 20-44 min | `#F3D98C` / `#4C3F18` | 7.44:1 | 4.5:1 |
 | sombre | attente 45-74 min | `#FFC0B5` / `#5C302B` | 7.04:1 | 4.5:1 |
 | sombre | attente >= 75 min | `#FFB3C1` / `#5A2230` | 7.31:1 | 4.5:1 |
-| sombre | affluence Calme | `#F2F2F3` / `#393943` | 10.20:1 | 4.5:1 |
+| sombre | affluence Calme (bleu-vert) | `#7FCFC9` / `#393943` | 6.34:1 | 4.5:1 |
 | sombre | affluence Moyen | `#E2B947` / `#393943` | 6.12:1 | 4.5:1 |
 | sombre | affluence Chargé | `#F89A8B` / `#393943` | 5.43:1 | 4.5:1 |
 | sombre | badge A | `#2A2A31` / `#F89A8B` | 6.78:1 | 4.5:1 |
