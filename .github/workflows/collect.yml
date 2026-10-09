@@ -26,6 +26,12 @@ jobs:
       - name: Collecter les temps d'attente
         run: python scripts/collect.py
 
+      - name: Horaires et spectacles
+        # ThemeParks.wiki : ne doit jamais faire échouer la collecte
+        continue-on-error: true
+        timeout-minutes: 4
+        run: python scripts/themeparks.py
+
       - name: Recalculer les statistiques (1x/jour)
         run: python scripts/stats.py
 

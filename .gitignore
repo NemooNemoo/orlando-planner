@@ -7,3 +7,7 @@ notes/
 private/
 # Historique queue-times récupéré en local par scripts/history.py
 data/history/
+# Fichiers techniques
+__pycache__/
+# écriture interrompue de themeparks.py : ne jamais committer
+data/*.tmp

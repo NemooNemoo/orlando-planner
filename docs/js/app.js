@@ -28,6 +28,8 @@ const DEFAULT_SETTINGS = {
   visits: null, // { parc: nombre de visites } — calculé au démarrage si absent
   pace: "normal",
   lunch: { enabled: true, at: 720 },
+  hotelPerks: false, // accès hôtel : early entry et soirées prolongées
+  hoursOverride: {}, // corrections manuelles { "AAAA-MM-JJ|parc": { open, close } } en minutes
   forced: [],
   mustDo: [],
   surprise: false,
@@ -71,6 +73,9 @@ const state = {
   stats: null,
   latest: null,
   latestAt: 0,
+  schedule: null, // data/schedule.json (ThemeParks.wiki)
+  shows: null,    // data/shows.json
+  editHours: null, // jour en cours de correction dans les réglages
 };
 
 const saveSettings = () => store.set("settings", state.settings);
@@ -174,6 +179,8 @@ async function loadData() {
       state.base = base;
       state.catalog = catalog;
       state.stats = stats;
+      // horaires et spectacles (ThemeParks.wiki) : facultatifs, le site marche sans
+      state.schedule = await fetchJson(base + "schedule.json").catch(() => null);
       refreshLatest();
       return;
     } catch (err) { lastErr = err; }
@@ -184,7 +191,12 @@ async function loadData() {
 async function refreshLatest() {
   if (!state.base) return;
   try {
-    state.latest = await fetchJson(state.base + "latest.json", { cache: "no-cache" });
+    const [latest, shows] = await Promise.all([
+      fetchJson(state.base + "latest.json", { cache: "no-cache" }),
+      fetchJson(state.base + "shows.json", { cache: "no-cache" }).catch(() => state.shows),
+    ]);
+    state.latest = latest;
+    state.shows = shows;
     state.latestAt = Date.now();
     updateFooter();
     if (state.tab === "live") render();
@@ -214,11 +226,37 @@ function trip() {
   return tripCache.trip;
 }
 
+function hoursFor(date, park) {
+  const s = state.settings;
+  return P.dayHours(park, date, { schedule: state.schedule, overrides: s.hoursOverride, model: getModel(), hotelPerks: s.hotelPerks });
+}
+
 function dayPlan(date, park) {
   return P.planDay({
     park, date, wd: P.weekdayOf(date), settings: state.settings, model: getModel(),
     meta: state.meta, catalog: state.catalog, seed: state.seeds[date] || 0, priorities: prioById(),
+    hours: hoursFor(date, park),
   });
+}
+
+/** 570 -> « 9h30 » (FR) / « 9:30 AM » (EN) ; au-delà de minuit : 1500 -> « 1h » */
+function fmtHour(min) {
+  const m = ((Math.round(min) % 1440) + 1440) % 1440;
+  const h = Math.floor(m / 60), mm = m % 60;
+  if (state.lang === "fr") return `${h}h${mm ? String(mm).padStart(2, "0") : ""}`;
+  return `${h % 12 || 12}${mm ? ":" + String(mm).padStart(2, "0") : ""} ${h < 12 ? "AM" : "PM"}`;
+}
+
+/** Ligne d'horaires : « 9h–22h · Early entry 8h30 · Soirée prolongée → 0h · 🎟️ … · horaire estimé » */
+function hoursLine(h, { extras = true } = {}) {
+  const parts = [`🕘 ${fmtHour(h.open)}–${fmtHour(h.close)}`];
+  if (extras) {
+    for (const e of h.early) parts.push(t("hours_early", { time: fmtHour(e.startMin) }));
+    for (const e of h.evening) parts.push(t("hours_evening", { time: fmtHour(e.endMin) }));
+    for (const e of h.events) parts.push(`🎟️ ${esc(e.name || t("hours_event"))} ${fmtHour(e.startMin)}–${fmtHour(e.endMin)}`);
+  }
+  const tag = { estimated: t("hours_estimated"), manual: t("hours_manual") }[h.source];
+  return `<span class="hours-line">${parts.join(" · ")}${tag ? ` <span class="badge hours-${h.source}">${tag}</span>` : ""}</span>`;
 }
 
 // ------------------------------------------------------------------ rendu général
@@ -279,7 +317,39 @@ function viewSetup() {
         : `<button class="pill" data-action="next" ${stepValid(STEPS[step]) ? "" : "disabled"}>${t("next")} →</button>`}
     </div>
   </section>
+  ${hoursCard()}
   ${importsCard()}`;
+}
+
+/** Horaires de chaque journée de parc, avec correction manuelle */
+function hoursCard() {
+  if (!state.configured) return "";
+  const days = trip().filter((d) => d.park);
+  if (!days.length) return "";
+  const rows = days.map((d) => {
+    const key = `${d.date}|${d.park}`;
+    const h = hoursFor(d.date, d.park);
+    const p = parkOf(d.park);
+    const editing = state.editHours === key;
+    const toVal = (m) => P.fmtTime(m % 1440);
+    return `<div class="hours-row">
+      <div class="grow"><b>${esc(fmtDate(d.date))}</b> · ${p.emoji} ${p.name}<br>${hoursLine(h, { extras: false })}</div>
+      ${editing ? "" : `<button type="button" class="link" data-action="hours-edit" data-key="${key}">${t("edit")}</button>`}
+      ${editing ? `<div class="hours-edit">
+        <label class="field"><span>${t("hours_open")}</span><input type="time" id="hours-open" value="${toVal(h.open)}"></label>
+        <label class="field"><span>${t("hours_close")}</span><input type="time" id="hours-close" value="${toVal(h.close)}"></label>
+        <div class="row gap">
+          <button type="button" class="pill" data-action="hours-save" data-key="${key}">${t("save")}</button>
+          <button type="button" class="pill ghost" data-action="hours-cancel">${t("cancel")}</button>
+        </div></div>` : ""}
+      ${h.source === "manual" && !editing ? `<button type="button" class="link" data-action="hours-reset" data-key="${key}">${t("hours_reset")}</button>` : ""}
+    </div>`;
+  }).join("");
+  return `<section class="card">
+    <h3>🕘 ${t("hours_title")}</h3>
+    <p class="muted small">${t("hours_help")}</p>
+    <div class="hours-list">${rows}</div>
+  </section>`;
 }
 
 function stepValid(name) {
@@ -354,7 +424,10 @@ function stepPasses(s) {
         <span><b>${t("ll_single")}</b><small>${t("ll_single_help")}</small></span></label>` : ""}
     ${hasUni ? `<div class="group-title"><span class="dot universal"></span>${t("universal")}</div>
       <label class="choice"><input type="checkbox" data-set="express" ${s.express ? "checked" : ""}>
-        <span><b>${t("express")}</b><small>${t("express_help")}</small></span></label>` : ""}`;
+        <span><b>${t("express")}</b><small>${t("express_help")}</small></span></label>` : ""}
+    <div class="group-title">🏨 ${t("hotel_title")}</div>
+    <label class="choice"><input type="checkbox" data-set="hotelPerks" ${s.hotelPerks ? "checked" : ""}>
+      <span><b>${t("hotel_perks")}</b><small>${t("hotel_perks_help")}</small></span></label>`;
 }
 
 function stepPace(s) {
@@ -529,7 +602,7 @@ function viewCalendar() {
         <span class="grow">
           <span class="cal-park">${p ? p.name : d.rest ? t("rest_day") : t("free_day")}</span>
           ${d.forced ? `<span class="badge">📌 ${t("forced")}</span>` : ""}<br>
-          ${p ? crowdTag(d.crowd) : d.restAuto ? `<span class="small muted">${t("rest_auto")}</span>` : !d.rest ? `<span class="small muted">${t("free_help")}</span>` : ""}
+          ${p ? `${crowdTag(d.crowd)}<br>${hoursLine(hoursFor(d.date, d.park))}` : d.restAuto ? `<span class="small muted">${t("rest_auto")}</span>` : !d.rest ? `<span class="small muted">${t("free_help")}</span>` : ""}
         </span>
         <span class="muted">›</span>
       </button>`;
@@ -614,7 +687,8 @@ function viewDay() {
           <p class="muted small" style="margin:0">${esc(fmtDate(day.date, { weekday: "long", day: "numeric", month: "long" }))}</p>
           <h2>${p.name}</h2>
           <div class="row gap small">${crowdTag(day.crowd)}
-            <span class="muted">${t("day_hours", { open: P.fmtTime(plan.hours.open), close: P.fmtTime(plan.hours.close) })}${plan.hours.source === "default" ? ` (${t("hours_default")})` : ""}</span></div>
+            </div>
+          <p class="small" style="margin:4px 0 0">${hoursLine(hoursFor(day.date, day.park))}</p>
         </div>
       </div>
       <p class="small" style="margin:10px 0 0">${t("total_wait", { n: plan.totalWait })}</p>
@@ -629,11 +703,26 @@ function viewDay() {
 
 const doneKey = (date, park) => `done.${date}.${park}`;
 
-/** Emplacement « Spectacles dans l'heure » : rempli au tour 2, masqué tant qu'il n'y a pas de données */
-function showsSoonHtml() {
-  const shows = []; // à venir : horaires des spectacles
+/** Spectacles du parc qui commencent dans les 60 min, ou commencés il y a moins de 10 min (shows.json) */
+function showsSoon(park) {
+  const nowMs = Date.now();
+  return (state.shows?.parks?.[park] || [])
+    .map((sh) => ({ ...sh, delta: Math.round((new Date(sh.start).getTime() - nowMs) / 60000) }))
+    .filter((sh) => isFinite(sh.delta) && sh.delta >= -10 && sh.delta <= 60)
+    .sort((a, b) => a.delta - b.delta);
+}
+
+function showsSoonHtml(park) {
+  const shows = showsSoon(park);
+  const startMin = (iso) => { const m = /T(\d{2}):(\d{2})/.exec(iso); return m ? +m[1] * 60 + +m[2] : 0; };
   return `<section class="card" id="shows-soon" ${shows.length ? "" : "hidden"}>
-    <h3>🎭 ${t("shows_soon")}</h3><div class="shows-list"></div></section>`;
+    <h3>🎭 ${t("shows_soon")}</h3>
+    <div class="shows-list">${shows.map((sh) => `
+      <div class="show-row">
+        <span class="show-time">${fmtHour(startMin(sh.start))}</span>
+        <span class="grow name">${esc(sh.name)}</span>
+        <span class="badge ${sh.delta <= 0 ? "show-now" : ""}">${sh.delta <= 0 ? t("show_started", { n: -sh.delta }) : t("show_in", { n: sh.delta })}</span>
+      </div>`).join("")}</div></section>`;
 }
 
 function viewLive() {
@@ -675,7 +764,7 @@ function viewLive() {
   };
 
   return `
-    ${showsSoonHtml()}
+    ${showsSoonHtml(park)}
     <section class="card">
       <div class="row gap between"><h2>📡 ${t("live_title")}</h2>
         <button class="pill ghost" data-action="refresh">↻ ${t("live_refresh")}</button></div>
@@ -863,6 +952,20 @@ document.addEventListener("click", (e) => {
       break;
     }
     case "theme": setTheme(el.dataset.theme); break;
+    case "hours-edit": state.editHours = el.dataset.key; render(); $("#hours-open")?.focus(); break;
+    case "hours-cancel": state.editHours = null; render(); break;
+    case "hours-save": {
+      const open = P.hmToMin($("#hours-open")?.value), close0 = P.hmToMin($("#hours-close")?.value);
+      if (open == null || close0 == null) break;
+      const close = close0 <= open ? close0 + 1440 : close0; // fermeture après minuit
+      s.hoursOverride = { ...(s.hoursOverride || {}), [el.dataset.key]: { open, close } };
+      state.editHours = null; saveSettings(); render(); break;
+    }
+    case "hours-reset": {
+      const o = { ...(s.hoursOverride || {}) };
+      delete o[el.dataset.key];
+      s.hoursOverride = o; saveSettings(); render(); break;
+    }
     case "open-notes": notesStatus(); $("#notes-dialog").showModal(); break;
     case "open-day": state.dayDate = el.dataset.date; go("day"); break;
     case "pick-day": state.dayDate = el.dataset.date; render(); break;
@@ -1031,7 +1134,12 @@ async function init() {
   state.tab = ["setup", "calendar", "day", "live"].includes(hashTab) ? hashTab : state.configured ? "calendar" : "setup";
   render();
   updateOnline();
-  setInterval(updateClock, 30000);
+  setInterval(() => {
+    updateClock();
+    // « dans X min » des spectacles tenu à jour sans recharger toute la page
+    const box = $("#shows-soon");
+    if (box && state.tab === "live") box.outerHTML = showsSoonHtml(state.livePark);
+  }, 30000);
   setInterval(() => { if (state.tab === "live" && document.visibilityState === "visible") refreshLatest(); }, 5 * 60000);
 }
 

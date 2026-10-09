@@ -395,13 +395,34 @@ input[type=date] { min-width: 0; }
 .spark-axis { display: flex; justify-content: space-between; font-size: .68rem; color: var(--muted); }
 
 /* ---------- direct */
-.live-list { display: grid; gap: 6px; }
+.live-list { display: grid; gap: 6px; grid-template-columns: minmax(0, 1fr); }
 .live-row { display: flex; align-items: center; gap: 10px; padding: 8px 10px; background: var(--card); border-radius: 12px; box-shadow: var(--shadow); }
-.live-row .name { font-size: .9rem; font-weight: 600; }
+.live-row .name { font-size: .9rem; font-weight: 600; overflow-wrap: anywhere; }
+.show-row .name, .hours-line { overflow-wrap: anywhere; }
 .live-row.done .name { text-decoration: line-through; }
 .live-row.done, .live-row.closed { background: var(--card-2); box-shadow: none; }
 .sr-done { font-size: .75rem; font-weight: 700; color: var(--primary); text-decoration: none; display: inline-block; }
 .closed-list summary { cursor: pointer; }
+
+/* ---------- horaires et spectacles */
+.hours-line { font-size: .8rem; color: var(--muted); }
+.badge.hours-estimated { background: var(--notice-bg); color: var(--notice-ink); }
+.badge.hours-manual { background: var(--primary-soft); color: var(--primary-ink); }
+.hours-list { display: grid; gap: 4px; margin-top: 8px; }
+.hours-row { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.hours-row:last-child { border-bottom: 0; }
+.hours-edit { flex-basis: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0 10px; }
+.hours-edit .row { grid-column: 1 / -1; }
+input[type=time] {
+  border: 1px solid var(--field-border); background: var(--card); color: var(--ink);
+  border-radius: 12px; padding: 10px 12px; width: 100%; min-height: 44px; min-width: 0;
+}
+.shows-list { display: grid; gap: 6px; margin-top: 8px; }
+.show-row { display: flex; align-items: center; gap: 10px; }
+.show-row .name { font-weight: 600; font-size: .9rem; }
+.show-time { font-weight: 800; min-width: 52px; }
+.badge.show-now { background: var(--primary); color: var(--on-primary); }
+.sources { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
 
 /* ---------- fichiers importés */
 .imports-list { display: grid; gap: 8px; margin-top: 8px; }
