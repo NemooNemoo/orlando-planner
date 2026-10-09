@@ -198,10 +198,10 @@ export function createWaitModel(stats, meta, priorities) {
 
 export function waitLevel(w) {
   if (w == null) return "none";
-  if (w < 20) return "green";
-  if (w < 45) return "yellow";
-  if (w < 75) return "orange";
-  return "red";
+  if (w < 20) return "short";
+  if (w < 45) return "mid";
+  if (w < 75) return "long";
+  return "vlong";
 }
 
 // ------------------------------------------------------------------ notes personnelles
@@ -418,36 +418,99 @@ export const crowdLevel = (s) => (s < 0.34 ? "low" : s < 0.67 ? "mid" : "high");
  * settings : { start, end, parks:[], forced:[{date, park|'rest'}], mustDo:[] }
  * Renvoie [{ date, wd, park|null, forced, crowd }]
  */
+// ------------------------------------------------------------------ visites par parc
+
+/** Jours de repos imposés (dans les dates du séjour) */
+export function restDays(settings) {
+  const dates = new Set(dateRange(settings.start, settings.end));
+  return new Set((settings.forced || []).filter((f) => f.park === "rest" && dates.has(f.date)).map((f) => f.date)).size;
+}
+
+/** Nombre maximal de visites : jours du séjour − jours de repos */
+export function visitLimit(settings) {
+  return Math.max(0, dateRange(settings.start, settings.end).length - restDays(settings));
+}
+
+function forcedVisits(settings) {
+  const dates = new Set(dateRange(settings.start, settings.end));
+  const byDate = {};
+  for (const f of settings.forced || []) if (dates.has(f.date) && f.park && f.park !== "rest") byDate[f.date] = f.park;
+  const count = {};
+  for (const p of Object.values(byDate)) count[p] = (count[p] || 0) + 1;
+  return count;
+}
+
+export const totalVisits = (visits) => Object.values(visits || {}).reduce((a, b) => a + (+b || 0), 0);
+
+/**
+ * Visites par défaut : 1 par parc choisi, puis les jours restants répartis selon l'intérêt du parc.
+ * parks : liste des parcs ; renvoie { parc: nombre }
+ */
+export function defaultVisits(settings, parks, meta) {
+  const mustCount = {};
+  for (const id of settings.mustDo || []) {
+    const p = meta?.[id]?.park;
+    if (p) mustCount[p] = (mustCount[p] || 0) + 1;
+  }
+  const weight = (p) => PARK_BY_ID[p].weight + 0.08 * (mustCount[p] || 0);
+  const selected = parks.filter((p) => PARK_BY_ID[p]);
+  const target = Object.fromEntries(selected.map((p) => [p, 0]));
+  let left = visitLimit(settings);
+  for (const p of [...selected].sort((a, b) => weight(b) - weight(a))) {
+    if (left > 0) { target[p] = 1; left--; }
+  }
+  while (left > 0 && selected.length) {
+    // le parc dont le ratio visites / poids est le plus faible reçoit un jour de plus
+    const p = [...selected].sort((a, b) => target[a] / weight(a) - target[b] / weight(b) || weight(b) - weight(a))[0];
+    target[p]++; left--;
+  }
+  return target;
+}
+
+/**
+ * Remet les visites dans les limites : au moins autant que de jours imposés pour ce parc,
+ * et un total ≤ jours du séjour − jours de repos. Renvoie { visits, reduced }.
+ */
+export function normalizeVisits(settings) {
+  const v = {};
+  for (const p of PARKS) v[p.id] = Math.max(0, Math.round(+settings.visits?.[p.id] || 0));
+  const forced = forcedVisits(settings);
+  for (const [p, n] of Object.entries(forced)) if (p in v) v[p] = Math.max(v[p], n);
+  const limit = visitLimit(settings);
+  let reduced = 0;
+  while (totalVisits(v) > limit) {
+    // on retire une visite au parc qui en a le plus (hors jours imposés)
+    const p = PARKS.map((x) => x.id).filter((id) => v[id] > (forced[id] || 0))
+      .sort((a, b) => v[b] - v[a] || PARK_BY_ID[a].weight - PARK_BY_ID[b].weight)[0];
+    if (!p) break;
+    v[p]--; reduced++;
+  }
+  return { visits: v, reduced };
+}
+
+// ------------------------------------------------------------------ calendrier du séjour
+
+/**
+ * Choisit un parc par jour.
+ * settings : { start, end, visits:{parc:n}, forced:[{date, park|'rest'}], mustDo:[] }
+ * Chaque parc reçoit son nombre de visites, placées sur ses jours les plus calmes ;
+ * les jours restants sont des jours libres. Renvoie [{ date, wd, park|null, rest, forced, crowd }]
+ */
 export function planTrip(settings, stats, notes, meta, patterns) {
   const dates = dateRange(settings.start, settings.end);
   const scorer = crowdScorer(stats, notes, patterns);
   const forced = {};
   for (const f of settings.forced || []) if (dates.includes(f.date) && f.park) forced[f.date] = f.park;
-  const selected = (settings.parks || []).filter((p) => PARK_BY_ID[p]);
-  if (!selected.length) return dates.map((date) => ({ date, wd: weekdayOf(date), park: null, forced: false }));
+  const target = settings.visits
+    ? normalizeVisits(settings).visits
+    : defaultVisits(settings, settings.parks || [], meta);
+  const selected = PARKS.map((p) => p.id).filter((p) => target[p] > 0);
+  if (!selected.length) return dates.map((date) => ({ date, wd: weekdayOf(date), park: null, rest: true, forced: false }));
 
   const assign = { ...forced };
   const free = dates.filter((d) => !forced[d]);
   const visits = Object.fromEntries(selected.map((p) => [p, 0]));
   for (const p of Object.values(forced)) if (p in visits) visits[p]++;
-
-  // Combien de jours pour chaque parc : 1 minimum, le reste réparti selon l'intérêt
-  const mustCount = {};
-  for (const id of settings.mustDo || []) {
-    const p = meta[id]?.park;
-    if (p) mustCount[p] = (mustCount[p] || 0) + 1;
-  }
-  const weight = (p) => PARK_BY_ID[p].weight + 0.08 * (mustCount[p] || 0);
-  const target = { ...visits };
-  let left = free.length;
-  for (const p of [...selected].sort((a, b) => weight(b) - weight(a))) {
-    if (left > 0 && target[p] === 0) { target[p] = 1; left--; }
-  }
-  while (left > 0) {
-    // le parc dont le ratio visites / poids est le plus faible reçoit un jour de plus
-    const p = [...selected].sort((a, b) => target[a] / weight(a) - target[b] / weight(b) || weight(b) - weight(a))[0];
-    target[p]++; left--;
-  }
   const need = Object.fromEntries(selected.map((p) => [p, Math.max(0, target[p] - visits[p])]));
 
   // Affectation gloutonne : les couples (parc, jour) les plus calmes d'abord
@@ -474,7 +537,7 @@ export function planTrip(settings, stats, notes, meta, patterns) {
     improved = false;
     for (let i = 0; i < free.length; i++) for (let j = i + 1; j < free.length; j++) {
       const a = free[i], b = free[j];
-      if (assign[a] === assign[b]) continue;
+      if (assign[a] === assign[b]) continue; // échange aussi un parc avec un jour libre
       [assign[a], assign[b]] = [assign[b], assign[a]];
       const c = cost();
       if (c < best - 1e-9) { best = c; improved = true; }
@@ -485,25 +548,27 @@ export function planTrip(settings, stats, notes, meta, patterns) {
   return dates.map((date) => {
     const p = assign[date];
     const park = p && p !== "rest" ? p : null;
-    return { date, wd: weekdayOf(date), park, rest: p === "rest", forced: !!forced[date],
+    return { date, wd: weekdayOf(date), park, rest: !park, forced: !!forced[date],
       crowd: park ? scorer(park, date) : null };
   });
 }
 
 // ------------------------------------------------------------------ journée
 
-const TYPE_PREF = {
-  kids:   { kids: 3, family: 2.5, show: 1, thrill: -1 },
-  normal: { thrill: 2, family: 1.5, show: 0, kids: -1.5 },
-};
+// Préférence par type d'attraction pour remplir la journée
+const TYPE_PREF = { thrill: 2, family: 1.5, show: 0, meet: -1 };
 
-/** Attractions possibles dans un parc, compte tenu de la taille de l'enfant */
+export const CATEGORIES = ["thrill", "family", "show", "meet"];
+
+/** Type d'une attraction : rides_meta.json, sinon « meet » si le nom contient « Meet » */
+export function rideType(id, meta, catalog) {
+  if (meta?.[id]?.type) return meta[id].type;
+  return /\bmeet\b/i.test(catalog?.[id]?.name || "") ? "meet" : null;
+}
+
+/** Attractions possibles dans un parc */
 export function eligibleRides(park, settings, meta) {
-  const kids = settings.kids?.enabled;
-  const h = +settings.kids?.height || 0;
-  return Object.entries(meta)
-    .filter(([, m]) => m.park === park && !(kids && m.height > h))
-    .map(([id]) => id);
+  return Object.entries(meta).filter(([, m]) => m.park === park).map(([id]) => id);
 }
 
 function walkTime(catalog, meta, from, to, pace) {
@@ -529,8 +594,7 @@ export function planDay(opts) {
   const end = opts.to ?? hours.close - pace.leaveBefore;
   const done = opts.done || new Set();
   const isDisney = PARK_BY_ID[park]?.group === "disney";
-  const kidsMode = !!settings.kids?.enabled;
-  const pref = TYPE_PREF[kidsMode ? "kids" : "normal"];
+  const pref = TYPE_PREF;
   const random = rng(`${opts.seed ?? ""}|${opts.date}|${park}`);
   const prio = opts.priorities || {};
   const tierOf = (id) => prio[id]?.tier || null;
@@ -683,29 +747,4 @@ export function planDay(opts) {
     closed: [...closedLive],
     totalWait: items.reduce((s, i) => s + (i.wait || 0), 0),
   };
-}
-
-/** « Que faire maintenant ? » : attractions dont l'attente en direct est la meilleure affaire */
-export function suggestNow({ park, wd, settings, model, meta, catalog, waits, now, done, last }) {
-  const pace = PACES[settings.pace] || PACES.normal;
-  const hours = model.parkHours(park, wd);
-  const kidsMode = !!settings.kids?.enabled;
-  const pref = TYPE_PREF[kidsMode ? "kids" : "normal"];
-  const must = new Set(settings.mustDo || []);
-  const out = [];
-  for (const id of eligibleRides(park, settings, meta)) {
-    if (done?.has(id)) continue;
-    const l = waits[id];
-    if (!l || !l.open || typeof l.wait !== "number") continue;
-    const m = meta[id];
-    let later = Infinity;
-    for (let t = now + 30; t <= hours.close - m.duration; t += 30) later = Math.min(later, model.expected(id, wd, t));
-    if (!isFinite(later)) later = l.wait;
-    const usual = model.expected(id, wd, now);
-    const walk = walkTime(catalog, meta, last, id, pace);
-    const gain = usual - l.wait;
-    const score = (later - l.wait) + gain * 0.5 + (must.has(id) ? 20 : 0) + 3 * (pref[m.type] || 0) - walk - l.wait * 0.3;
-    out.push({ id, wait: l.wait, usual, later, walk, score, must: must.has(id) });
-  }
-  return out.sort((a, b) => b.score - a.score);
 }
