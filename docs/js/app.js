@@ -56,6 +56,8 @@ const state = {
   theme: ["auto", "light", "dark"].includes(store.get("theme", "auto")) ? store.get("theme", "auto") : "auto",
   mustCats: storedList("mustCats"), // filtres par catégorie ([] = toutes)
   liveCats: storedList("liveCats"),
+  plusCats: [], plusSearch: "", plusPick: null, plusDone: null, // panneau « + »
+  dayState: null, dayMsg: "", editEntry: null,
   visitMsg: "",
   configured: store.get("configured", false),
   // Fichiers personnels importés (jamais envoyés) :
@@ -111,14 +113,20 @@ function waitChip(w, extra = "") {
 }
 
 const TYPE_ICON = { thrill: "🎢", family: "🎠", show: "🎭", meet: "🤝" };
+/** File « Single Rider » -> identifiant de l'attraction principale (sinon l'identifiant tel quel) */
+function mainRideId(id) {
+  if (state.meta[id]) return id;
+  const name = state.catalog[id]?.name || "";
+  if (!/ single rider$/i.test(name)) return id;
+  const main = P.normName(name.replace(/ single rider$/i, ""));
+  return Object.keys(state.meta).find((k) => P.normName(rideName(k)) === main) || id;
+}
+
 function rideType(id) {
   const type = P.rideType(id, state.meta, state.catalog);
   if (type) return type;
-  const name = state.catalog[id]?.name || "";
-  if (!/ single rider$/i.test(name)) return null;
-  const main = P.normName(name.replace(/ single rider$/i, ""));
-  const mainId = Object.keys(state.meta).find((k) => P.normName(rideName(k)) === main);
-  return mainId ? state.meta[mainId].type : null;
+  const main = mainRideId(id);
+  return main !== id ? state.meta[main].type : null;
 }
 
 function typeBadge(id) {
@@ -270,8 +278,15 @@ function render() {
   const main = $("#main");
   const view = { setup: viewSetup, calendar: viewCalendar, day: viewDay, live: viewLive }[state.tab] || viewSetup;
   main.innerHTML = view();
+  // bouton « + » : onglet Journée uniquement, quand le jour a un parc
+  const fab = state.tab === "day" && state.dayState && document.querySelector(".day-end");
+  $("#fab-plus").hidden = !fab;
+  $("#fab-plus").setAttribute("aria-label", t("plus_label"));
+  document.body.classList.toggle("has-fab", !!fab);
+  if (!fab) state.dayState = null;
   updateFooter();
   updateClock();
+  maybeOpenOverflow();
 }
 
 function updateClock() {
@@ -626,18 +641,82 @@ function sparkline(id, wd, from, to, highlight) {
     <div class="spark-axis"><span>${P.fmtTime(pts[0].min)}</span><span>${P.fmtTime(pts[pts.length - 1].min + 30)}</span></div>`;
 }
 
-function timelineHtml(plan, wd) {
-  const items = plan.items.map((it) => {
+// Stockage par date : entrées dans les files, fin de journée, programme prévu, reports
+const entriesKey = (date) => `entries.${date}`;
+const getEntries = (date) => { const v = store.get(entriesKey(date), []); return Array.isArray(v) ? v : []; };
+const setEntries = (date, list) => store.set(entriesKey(date), list);
+const getDeferred = () => { const v = store.get("deferred", []); return Array.isArray(v) ? v : []; };
+const doneKey = (date, park) => `done.${date}.${park}`;
+
+/** Où en est la journée : programme recalculé, entrées, activités prévues qui ne tiennent plus */
+function computeDay(date, park) {
+  const s = state.settings;
+  const h = hoursFor(date, park);
+  const wd = P.weekdayOf(date);
+  const entries = getEntries(date).filter((e) => e.park === park).sort((a, b) => a.at - b.at);
+  const deferred = getDeferred();
+  const deferredOut = new Set(deferred.filter((d) => d.from === date && d.park === park).map((d) => d.id));
+  const deferredIn = deferred.filter((d) => d.to === date && d.park === park);
+  const endAt = store.get(`dayEnd.${date}`, null);
+  const base = { park, date, wd, settings: s, model: getModel(), meta: state.meta, catalog: state.catalog,
+    seed: state.seeds[date] || 0, priorities: prioById(), hours: h, endAt,
+    exclude: deferredOut, extraMust: deferredIn.map((d) => d.id) };
+  // programme prévu (sans les entrées) : référence pour savoir ce qui ne tient plus
+  const sig = daySig(date, h, endAt, deferredIn);
+  let snap = store.get(`snapshot.${date}`, null);
+  if (!snap || snap.sig !== sig || snap.park !== park) {
+    snap = { sig, park, ids: P.planDay(base).firstIds };
+    store.set(`snapshot.${date}`, snap);
+  }
+  // fait : entrées enregistrées, « Fait » de Direct, et ce que le programme avait terminé avant chaque entrée
+  const done = new Set([...entries.filter((e) => e.id).map((e) => e.id), ...entries.flatMap((e) => e.assumed || []),
+    ...store.get(doneKey(date, park), []).map(mainRideId)]);
+  const lastExit = entries.length ? Math.max(...entries.map((e) => e.exit)) : null;
+  const plan = P.planDay({ ...base, from: lastExit ?? undefined, done, only: new Set(snap.ids),
+    lastRide: entries.at(-1)?.id || null });
+  const placed = new Set(plan.firstIds);
+  const remaining = snap.ids.filter((id) => !deferredOut.has(id) && !done.has(id));
+  const dropped = [...new Set([...remaining.filter((id) => !placed.has(id)), ...plan.unplaced])];
+  return { plan, h, entries, endAt, remaining, dropped, deferredIn, wd };
+}
+
+function daySig(date, h, endAt, deferredIn) {
+  return JSON.stringify([state.settings, h.planOpen, h.planClose, endAt, state.seeds[date] || 0, deferredIn.map((d) => d.id),
+    state.priorities?.at, state.stats?.generated]);
+}
+
+function entryStatus(date, e) {
+  const now = P.orlandoNow();
+  if (date < now.date) return "done";
+  if (date > now.date) return "saved";
+  return now.min < e.exit ? "current" : "done";
+}
+
+function timelineHtml(plan, wd, extra = {}) {
+  const entries = extra.entries || [];
+  const deferredIn = new Map((extra.deferredIn || []).map((d) => [d.id, d.from]));
+  const rows = [
+    ...entries.map((e) => ({ kind: "entry", at: e.at, e })),
+    ...plan.items.filter((it) => !(entries.length && it.kind === "start")).map((it) => ({ ...it })),
+  ];
+  if (entries.length) rows.push({ kind: "resume", at: plan.start });
+  rows.sort((a, b) => a.at - b.at || (a.kind === "entry" ? -1 : 1));
+  const items = rows.map((it) => {
     const time = `<div class="tl-time">${P.fmtTime(it.at)}</div>`;
     if (it.kind === "start") return `<li class="tl">${time}<div class="tl-body"><div class="tl-note">🚪 ${t("arrive")}</div></div></li>`;
+    if (it.kind === "resume") return `<li class="tl">${time}<div class="tl-body"><div class="tl-note">▶️ ${t("resume")}</div></div></li>`;
     if (it.kind === "end") return `<li class="tl">${time}<div class="tl-body"><div class="tl-note">👋 ${t("leave")}</div></div></li>`;
     if (it.kind === "lunch") return `<li class="tl">${time}<div class="tl-body"><div class="tl-note">🍽️ ${t("lunch")} · ${P.fmtTime(it.at)}–${P.fmtTime(it.end)}</div></div></li>`;
     if (it.kind === "break") return `<li class="tl">${time}<div class="tl-body"><div class="tl-note">☕ ${t("break")} · ${it.end - it.at} ${t("min")}</div></div></li>`;
+    if (it.kind === "entry") return entryHtml(it.e, time, extra.date);
     const m = state.meta[it.id];
+    const from = deferredIn.get(it.id);
     const badges = [
       tierBadge(it.id),
       typeBadge(it.id),
       it.must ? `<span class="badge must">★ ${t("must")}</span>` : "",
+      from ? `<span class="badge">↪️ ${esc(t("deferred_from", { date: fmtDate(from) }))}</span>` : "",
+      it.reride ? `<span class="badge">🔁 ${t("reride")}</span>` : "",
       it.ll ? `<span class="badge ll">⚡ ${it.ll === "single" ? "LL Single" : "LL Multi"}</span>` : "",
       it.express ? `<span class="badge express">⚡ Express</span>` : "",
     ].join("");
@@ -656,7 +735,43 @@ function timelineHtml(plan, wd) {
   return `<ol class="timeline">${items}</ol>`;
 }
 
+function entryHtml(e, time, date) {
+  const status = entryStatus(date, e);
+  const editing = state.editEntry === e.uid;
+  const icon = e.kind === "show" ? "🎭" : TYPE_ICON[rideType(e.id)] || "🎢";
+  return `<li class="tl">${time}<div class="tl-body">
+    <div class="tl-card entry ${status}">
+      <div class="grow">
+        <div class="title">${icon} ${esc(e.name)}</div>
+        <div class="meta">${e.kind === "show"
+          ? esc(t("entry_show_meta", { arrive: fmtHour(e.at), start: fmtHour(e.showStart), end: fmtHour(e.exit) }))
+          : esc(t("entry_meta", { at: fmtHour(e.at), wait: e.wait, dur: e.dur }))}</div>
+        <div class="badges"><span class="badge entry-${status}">${t("entry_" + status)}</span>
+          <span class="badge">${esc(t("exit_at", { time: fmtHour(e.exit) }))}</span></div>
+        ${editing ? `<div class="row gap" style="margin-top:8px">
+            <input type="time" id="entry-time" value="${P.fmtTime(e.at)}" aria-label="${t("entry_time")}" style="max-width:9rem">
+            <button type="button" class="pill" data-action="entry-save" data-uid="${e.uid}">${t("save")}</button>
+            <button type="button" class="pill ghost" data-action="entry-edit" data-uid="">${t("cancel")}</button></div>`
+          : `<div class="row gap" style="margin-top:6px">
+            <button type="button" class="link small" data-action="entry-edit" data-uid="${e.uid}">${t("entry_fix")}</button>
+            <button type="button" class="link small" data-action="entry-del" data-uid="${e.uid}">${t("entry_cancel")}</button></div>`}
+      </div>
+    </div></div></li>`;
+}
+
+function notThisTimeHtml() {
+  const list = getDeferred().filter((d) => !d.to);
+  if (!list.length) return "";
+  return `<section class="card">
+    <h3>📝 ${t("not_this_time")}</h3>
+    <ul class="plain-list">${list.map((d) => `<li>${parkOf(d.park)?.emoji || ""} ${esc(rideName(d.id))}
+      <span class="small muted">· ${esc(fmtDate(d.from))}</span>
+      <button type="button" class="link small" data-action="undefer" data-id="${d.id}" data-from="${d.from}">${t("put_back")}</button></li>`).join("")}</ul>
+  </section>`;
+}
+
 function viewDay() {
+  state.dayState = null;
   if (!state.configured) return needSetup();
   const days = trip();
   if (!days.length) return needSetup();
@@ -676,8 +791,11 @@ function viewDay() {
       <p>${day.rest ? t("rest_msg") : t("free_help")}</p>${day.restAuto ? `<p class="small muted">${t("rest_auto")}</p>` : ""}</section>`;
   }
   const p = parkOf(day.park);
-  const plan = dayPlan(day.date, day.park);
+  const cd = computeDay(day.date, day.park);
+  const { plan, h } = cd;
+  state.dayState = { date: day.date, park: day.park, cd };
   const sparse = plan.items.some((i) => i.kind === "ride" && !getModel().hasData(i.id));
+  const endVal = P.fmtTime(Math.min(cd.endAt ?? plan.close, plan.close) % 1440);
   return `
     <div class="chips">${chips}</div>
     <section class="card">
@@ -686,24 +804,232 @@ function viewDay() {
         <div class="grow">
           <p class="muted small" style="margin:0">${esc(fmtDate(day.date, { weekday: "long", day: "numeric", month: "long" }))}</p>
           <h2>${p.name}</h2>
-          <div class="row gap small">${crowdTag(day.crowd)}
-            </div>
-          <p class="small" style="margin:4px 0 0">${hoursLine(hoursFor(day.date, day.park))}</p>
+          <div class="row gap small">${crowdTag(day.crowd)}</div>
+          <p class="small" style="margin:4px 0 0">${hoursLine(h)}</p>
         </div>
       </div>
+      <div class="day-end">
+        <label class="field"><span>${t("day_end")}</span>
+          <input type="time" id="day-end" value="${endVal}" data-date="${day.date}"></label>
+        <p class="small muted">${plan.userEnd != null ? esc(t("day_end_custom", { time: fmtHour(plan.userEnd) })) : esc(t("day_end_close", { time: fmtHour(plan.close) }))}</p>
+        ${plan.userEnd != null ? `<button type="button" class="pill ghost" data-action="day-end-reset" data-date="${day.date}">${t("until_close")}</button>` : ""}
+      </div>
+      ${state.dayMsg ? `<p class="small notice" role="status">ℹ️ ${esc(state.dayMsg)}</p>` : ""}
       <p class="small" style="margin:10px 0 0">${t("total_wait", { n: plan.totalWait })}</p>
-      ${plan.skippedMust.length ? `<p class="small err">${esc(t("skipped_must", { list: plan.skippedMust.map(rideName).join(", ") }))}</p>` : ""}
+      ${cd.dropped.length ? `<p class="small err">${esc(t("dropped_line", { list: cd.dropped.map(rideName).join(", ") }))}
+        <button type="button" class="link small" data-action="overflow-open">${t("choose")}</button></p>` : ""}
       ${sparse ? `<p class="small muted">ℹ️ ${t("estimate_note")}</p>` : ""}
       ${state.settings.surprise ? `<button class="pill ghost" data-action="reshuffle" data-date="${day.date}">🎲 ${t("reshuffle")}</button>` : ""}
     </section>
-    ${timelineHtml(plan, day.wd)}`;
+    ${timelineHtml(plan, day.wd, { entries: cd.entries, date: day.date, deferredIn: cd.deferredIn })}
+    ${notThisTimeHtml()}`;
+}
+
+// ------------------------------------------------------------------ « + » : j'entre dans la file
+
+function plusItems(date, park) {
+  const now = P.orlandoNow();
+  const today = date === now.date;
+  const waits = today ? state.latest?.parks?.[park] || {} : {};
+  const done = new Set([...getEntries(date).map((e) => e.id).filter(Boolean), ...store.get(doneKey(date, park), []).map(mainRideId)]);
+  const list = P.eligibleRides(park, state.settings, state.meta).map((id) => {
+    const live = waits[id];
+    const type = rideType(id);
+    const wait = type === "show" ? null
+      : live?.open && typeof live.wait === "number" ? live.wait : getModel().expected(id, P.weekdayOf(date), now.min);
+    return { key: id, id, name: rideName(id), type, wait, live: !!(live?.open), done: done.has(id) };
+  });
+  // spectacles et rencontres à horaires fixes de shows.json absents de rides_meta.json
+  const seen = new Set(list.map((x) => P.normName(x.name)));
+  for (const sh of showsOf(park, date)) {
+    const k = P.normName(sh.name);
+    if (seen.has(k)) continue;
+    seen.add(k);
+    list.push({ key: "show:" + k, id: null, name: sh.name, type: isMeetName(sh.name) ? "meet" : "show", wait: null, showOnly: true });
+  }
+  return list;
+}
+
+const isMeetName = (name) => /\bmeet\b/i.test(name || "");
+
+/** Séances du jour (shows.json) d'un parc ; vide si la date n'est pas celle du fichier */
+function showsOf(park, date) {
+  const list = state.shows?.parks?.[park] || [];
+  return list.filter((sh) => (sh.start || "").slice(0, 10) === date);
+}
+
+/** Séances d'une attraction/spectacle par correspondance de nom tolérante */
+function showtimesFor(name, park, date) {
+  const k = P.normName(name);
+  if (!k) return [];
+  return showsOf(park, date).filter((sh) => {
+    const n = P.normName(sh.name);
+    return n === k || (k.length > 6 && n.includes(k)) || (n.length > 6 && k.includes(n));
+  });
+}
+
+const isoMin = (iso) => { const m = /T(\d{2}):(\d{2})/.exec(iso || ""); return m ? +m[1] * 60 + +m[2] : null; };
+
+function plusSheetHtml() {
+  const ds = state.dayState;
+  if (!ds) return "";
+  const { date, park } = ds;
+  const q = state.plusSearch.trim().toLowerCase();
+  if (state.plusPick) return showPickHtml();
+  if (state.plusDone) {
+    const e = state.plusDone;
+    return `<div class="sheet-head"><h2>✅ ${t("entry_saved_head")}</h2></div>
+      <p><b>${esc(e.name)}</b></p>
+      <p>${esc(e.kind === "show" ? t("entry_show_meta", { arrive: fmtHour(e.at), start: fmtHour(e.showStart), end: fmtHour(e.exit) })
+        : t("entry_meta", { at: fmtHour(e.at), wait: e.wait, dur: e.dur }))}</p>
+      <p class="big-exit">${esc(t("exit_at", { time: fmtHour(e.exit) }))}</p>
+      <div class="row gap"><button type="button" class="pill" data-action="plus-close">${t("close")}</button>
+        <button type="button" class="pill ghost danger" data-action="entry-del" data-uid="${e.uid}">${t("entry_cancel")}</button></div>`;
+  }
+  const items = plusItems(date, park)
+    .filter((x) => (!q || x.name.toLowerCase().includes(q)) && (!state.plusCats.length || state.plusCats.includes(x.type)))
+    .sort((a, b) => (a.wait ?? 999) - (b.wait ?? 999) || a.name.localeCompare(b.name));
+  return `<div class="sheet-head"><h2>➕ ${t("plus_title")}</h2>
+      <button type="button" class="pill ghost" data-action="plus-close" aria-label="${t("close")}">✕</button></div>
+    <p class="small muted">${esc(t("plus_help", { park: parkOf(park).name }))}</p>
+    <input type="search" id="plus-search" placeholder="${t("search")}" aria-label="${t("search")}" value="${esc(state.plusSearch)}">
+    ${catChips("plus")}
+    <div class="plus-list">${items.map((x) => `
+      <button type="button" class="plus-item" data-action="plus-pick" data-key="${esc(x.key)}">
+        ${x.wait != null ? waitChip(x.wait) : `<span class="wait none">${TYPE_ICON[x.type] || "🎭"}</span>`}
+        <span class="grow"><span class="name">${esc(x.name)}</span>
+          <span class="small muted">${TYPE_ICON[x.type] || ""} ${x.type ? t("type_" + x.type) : ""}${x.wait != null ? " · " + (x.live ? t("wait_live") : t("wait_forecast")) : ""}${x.done ? " · ✓ " + t("done_already") : ""}</span></span>
+      </button>`).join("") || `<p class="muted small">${t("filter_empty")}</p>`}</div>`;
+}
+
+function showPickHtml() {
+  const { date, park } = state.dayState;
+  const x = state.plusPick;
+  const times = showtimesFor(x.name, park, date);
+  return `<div class="sheet-head"><h2>🎭 ${esc(x.name)}</h2>
+      <button type="button" class="pill ghost" data-action="plus-back">← ${t("prev")}</button></div>
+    <p class="small muted">${t("show_pick_help")}</p>
+    ${times.length ? `<div class="plus-list">${times.map((sh, i) => `
+      <button type="button" class="plus-item" data-action="plus-show" data-i="${i}">
+        <span class="show-time">${fmtHour(isoMin(sh.start))}</span>
+        <span class="grow small">${esc(t("arrive_before", { time: fmtHour(isoMin(sh.start) - 15) }))}</span></button>`).join("")}</div>`
+      : `<p class="small">${t("showtimes_none")}</p>
+        <button type="button" class="pill" data-action="plus-show-now">${t("show_go_now")}</button>`}`;
+}
+
+function openPlus() {
+  state.plusSearch = ""; state.plusPick = null; state.plusDone = null;
+  const d = $("#plus-sheet");
+  d.innerHTML = plusSheetHtml();
+  d.setAttribute("aria-label", t("plus_title"));
+  d.showModal();
+  $("#plus-search")?.focus();
+}
+const refreshPlus = () => { const d = $("#plus-sheet"); if (d.open) d.innerHTML = plusSheetHtml(); };
+
+function recordEntry(entry) {
+  const { date, park } = state.dayState;
+  // on suppose que le programme a été suivi jusqu'ici : ce qui était fini avant l'entrée est fait
+  const before = computeDay(date, park).plan.items;
+  entry.assumed = before.filter((i) => i.kind === "ride" && !i.reride && i.end <= entry.at && i.id !== entry.id).map((i) => i.id);
+  const list = getEntries(date);
+  list.push(entry);
+  setEntries(date, list);
+  state.plusDone = entry;
+  state.plusPick = null;
+  state.dayMsg = "";
+  refreshPlus();
+  render();
+}
+
+function pickPlus(key) {
+  const { date, park } = state.dayState;
+  const x = plusItems(date, park).find((i) => i.key === key);
+  if (!x) return;
+  if (x.type === "show" || x.showOnly) { state.plusPick = x; refreshPlus(); return; }
+  const now = P.orlandoNow();
+  const dur = state.meta[x.id]?.duration ?? 5;
+  const wait = Math.round(x.wait ?? 0);
+  recordEntry({ uid: Date.now(), id: x.id, name: x.name, kind: "ride", park, at: now.min, wait, dur, exit: now.min + wait + dur });
+}
+
+function recordShow(sh) {
+  const { park } = state.dayState;
+  const x = state.plusPick;
+  const start = sh ? isoMin(sh.start) : P.orlandoNow().min;
+  const end = sh?.end ? isoMin(sh.end) : null;
+  const dur = end && end > start ? end - start : state.meta[x.id]?.duration ?? 20;
+  const arrive = sh ? start - 15 : start;
+  recordEntry({ uid: Date.now(), id: x.id, name: x.name, kind: "show", park, at: arrive, showStart: start, wait: start - arrive, dur, exit: start + dur });
+}
+
+// ------------------------------------------------------------------ quand tout ne tient plus
+
+function overflowHtml() {
+  const ds = state.dayState;
+  if (!ds) return "";
+  const { cd, date, park } = ds;
+  const mustAll = new Set([...(state.settings.mustDo || []), ...cd.deferredIn.map((d) => d.id)]);
+  const list = [...new Set([...cd.dropped, ...cd.remaining])];
+  return `<form method="dialog" class="dialog-body">
+    <h2>⏳ ${t("overflow_title")}</h2>
+    <p>${t("overflow_question")}</p>
+    <div class="plus-list">${list.map((id) => `
+      <button type="button" class="plus-item" data-action="defer" data-id="${id}">
+        <span class="grow"><span class="name">${esc(rideName(id))}</span>
+          <span class="badges">${mustAll.has(id) ? `<span class="badge must">★ ${t("must")}</span>` : ""}${cd.dropped.includes(id) ? `<span class="badge hours-estimated">${t("no_longer_fits")}</span>` : ""}</span></span>
+        <span aria-hidden="true">›</span>
+      </button>`).join("")}</div>
+    ${cd.endAt != null ? `<button type="button" class="pill ghost" data-action="finish-later">🕘 ${t("finish_later")}</button>` : ""}
+    <button type="button" class="pill ghost" data-action="overflow-later">${t("decide_later")}</button>
+  </form>`;
+}
+
+function maybeOpenOverflow(force = false) {
+  const ds = state.dayState;
+  const dlg = $("#overflow-dialog");
+  if (state.tab !== "day" || !ds || !ds.cd.dropped.length) { if (dlg.open) dlg.close(); return; }
+  if ($("#plus-sheet").open) return; // on attend la fermeture du panneau « + »
+  const sig = `${ds.date}|${[...ds.cd.dropped].sort().join(",")}`;
+  if (!force && store.get(`overflowSeen.${ds.date}`, "") === sig) return;
+  dlg.innerHTML = overflowHtml();
+  if (!dlg.open) dlg.showModal();
+}
+
+function deferActivity(id) {
+  const { date, park } = state.dayState;
+  const next = trip().find((d) => d.park === park && d.date > date);
+  const list = getDeferred().filter((d) => !(d.id === id && d.from === date));
+  list.push({ id, park, from: date, to: next?.date || null });
+  store.set("deferred", list);
+  state.dayMsg = next
+    ? t("deferred_to", { name: rideName(id), date: fmtDate(next.date, { weekday: "long", day: "numeric", month: "long" }), park: parkOf(park).name })
+    : t("deferred_none", { name: rideName(id) });
+  $("#overflow-dialog").close();
+  render();
+}
+
+/** Fin de journée la plus proche qui permet de tout faire (au plus la fermeture), même programme prévu */
+function finishLater() {
+  const { date, park, cd } = state.dayState;
+  const close = cd.plan.close;
+  const ids = store.get(`snapshot.${date}`, { ids: [] }).ids;
+  const tryEnd = (e) => {
+    if (e >= close) store.del(`dayEnd.${date}`); else store.set(`dayEnd.${date}`, e);
+    // on garde le même programme prévu : seule l'heure de fin change
+    store.set(`snapshot.${date}`, { sig: daySig(date, cd.h, e >= close ? null : e, cd.deferredIn), park, ids });
+    return !computeDay(date, park).dropped.length;
+  };
+  let end = close;
+  for (let e = (cd.endAt ?? close) + 15; e < close; e += 15) if (tryEnd(e)) { end = e; break; }
+  if (end >= close) tryEnd(close);
+  state.dayMsg = end >= close ? t("until_close_set") : t("day_end_custom", { time: fmtHour(end) });
+  $("#overflow-dialog").close();
+  render();
 }
 
 // ------------------------------------------------------------------ direct
 
-const doneKey = (date, park) => `done.${date}.${park}`;
-
-/** Spectacles du parc qui commencent dans les 60 min, ou commencés il y a moins de 10 min (shows.json) */
 function showsSoon(park) {
   const nowMs = Date.now();
   return (state.shows?.parks?.[park] || [])
@@ -714,15 +1040,18 @@ function showsSoon(park) {
 
 function showsSoonHtml(park) {
   const shows = showsSoon(park);
-  const startMin = (iso) => { const m = /T(\d{2}):(\d{2})/.exec(iso); return m ? +m[1] * 60 + +m[2] : 0; };
-  return `<section class="card" id="shows-soon" ${shows.length ? "" : "hidden"}>
-    <h3>🎭 ${t("shows_soon")}</h3>
+  const next = shows.find((sh) => sh.delta >= 0) || shows[0];
+  const open = store.get("showsOpen", false);
+  return `<details class="card shows-card" id="shows-soon" ${open ? "open" : ""} ${shows.length ? "" : "hidden"}>
+    <summary><span class="grow"><b>🎭 ${t("shows_soon")}</b><br>
+      <span class="small muted">${next ? esc(t("shows_summary", { n: shows.length, time: fmtHour(isoMin(next.start)) })) : ""}</span></span>
+      <span class="chev" aria-hidden="true">▾</span></summary>
     <div class="shows-list">${shows.map((sh) => `
       <div class="show-row">
-        <span class="show-time">${fmtHour(startMin(sh.start))}</span>
-        <span class="grow name">${esc(sh.name)}</span>
+        <span class="show-time">${fmtHour(isoMin(sh.start))}</span>
+        <span class="grow name">${isMeetName(sh.name) ? "🤝" : "🎭"} ${esc(sh.name)}</span>
         <span class="badge ${sh.delta <= 0 ? "show-now" : ""}">${sh.delta <= 0 ? t("show_started", { n: -sh.delta }) : t("show_in", { n: sh.delta })}</span>
-      </div>`).join("")}</div></section>`;
+      </div>`).join("")}</div></details>`;
 }
 
 function viewLive() {
@@ -739,15 +1068,25 @@ function viewLive() {
 
   const parkSelect = `<select id="live-park" aria-label="${t("live_park")}">${P.PARKS.map((p) => `<option value="${p.id}" ${p.id === park ? "selected" : ""}>${p.emoji} ${p.name}</option>`).join("")}</select>`;
 
-  // attractions décrites dans rides_meta.json, plus leurs files Single Rider (même type que l'attraction)
   const liveRide = (id) => state.meta[id] || / single rider$/i.test(state.catalog[id]?.name || "");
   const ids = Object.keys(waits).filter((id) => liveRide(id) && catMatch("live", id));
-  const isOpen = (id) => waits[id].open && typeof waits[id].wait === "number";
+  const isShow = (id) => rideType(id) === "show";
+  const isOpen = (id) => !isShow(id) && waits[id].open && typeof waits[id].wait === "number";
   const open = ids.filter(isOpen).sort((a, b) => waits[a].wait - waits[b].wait || rideName(a).localeCompare(rideName(b)));
-  const closed = ids.filter((id) => !isOpen(id)).sort((a, b) => rideName(a).localeCompare(rideName(b)));
+  const shows = ids.filter(isShow).sort((a, b) => rideName(a).localeCompare(rideName(b)));
+  const closed = ids.filter((id) => !isOpen(id) && !isShow(id)).sort((a, b) => rideName(a).localeCompare(rideName(b)));
 
   const row = (id) => {
     const w = waits[id];
+    if (isShow(id)) {
+      // spectacle : pas d'attente ni de bouton « Fait », mais ses prochaines séances
+      const next = showtimesFor(rideName(id), park, now.date).map((sh) => isoMin(sh.start)).filter((m) => m >= now.min - 10);
+      return `<div class="live-row show">
+        <span class="wait none">🎭</span>
+        <div class="grow"><div class="name">${esc(rideName(id))}</div>
+          <div class="small muted">${next.length ? esc(t("next_shows", { list: next.slice(0, 4).map(fmtHour).join(", ") })) : t("showtimes_none")}</div></div>
+      </div>`;
+    }
     const isDone = done.has(id);
     const usual = state.meta[id] ? model.expected(id, now.wd, now.min) : null;
     const good = isOpen(id) && usual != null && usual - w.wait >= 10 && w.wait <= usual * 0.7;
@@ -764,7 +1103,6 @@ function viewLive() {
   };
 
   return `
-    ${showsSoonHtml(park)}
     <section class="card">
       <div class="row gap between"><h2>📡 ${t("live_title")}</h2>
         <button class="pill ghost" data-action="refresh">↻ ${t("live_refresh")}</button></div>
@@ -777,8 +1115,10 @@ function viewLive() {
     <h3 class="section-title">${t("live_open", { n: open.length })}</h3>
     ${open.length ? `<div class="live-list">${open.map(row).join("")}</div>`
       : `<section class="card center muted">🌙 ${t(Object.keys(waits).length ? "live_none_open" : "live_nodata")}</section>`}
+    ${shows.length ? `<h3 class="section-title">🎭 ${t("cat_show")} · ${shows.length}</h3><div class="live-list">${shows.map(row).join("")}</div>` : ""}
     ${closed.length ? `<details class="closed-list"><summary class="section-title">${t("live_closed", { n: closed.length })}</summary>
-      <div class="live-list">${closed.map(row).join("")}</div></details>` : ""}`;
+      <div class="live-list">${closed.map(row).join("")}</div></details>` : ""}
+    ${showsSoonHtml(park)}`;
 }
 
 function markDone(id, value) {
@@ -946,6 +1286,7 @@ document.addEventListener("click", (e) => {
       const key = el.dataset.scope + "Cats";
       const c = el.dataset.cat;
       state[key] = c === "all" ? [] : state[key].includes(c) ? state[key].filter((x) => x !== c) : [...state[key], c];
+      if (el.dataset.scope === "plus") { refreshPlus(); $(`#plus-sheet [data-cat="${c}"]`)?.focus(); break; }
       store.set(key, state[key]);
       render();
       $(`[data-action=cat][data-scope="${el.dataset.scope}"][data-cat="${c}"]`)?.focus();
@@ -966,9 +1307,46 @@ document.addEventListener("click", (e) => {
       delete o[el.dataset.key];
       s.hoursOverride = o; saveSettings(); render(); break;
     }
+    case "plus-open": openPlus(); break;
+    case "plus-close": $("#plus-sheet").close(); break;
+    case "plus-pick": pickPlus(el.dataset.key); break;
+    case "plus-back": state.plusPick = null; refreshPlus(); break;
+    case "plus-show": {
+      const sh = showtimesFor(state.plusPick.name, state.dayState.park, state.dayState.date)[+el.dataset.i];
+      if (sh) recordShow(sh);
+      break;
+    }
+    case "plus-show-now": recordShow(null); break;
+    case "entry-edit": state.editEntry = el.dataset.uid ? +el.dataset.uid : null; render(); $("#entry-time")?.focus(); break;
+    case "entry-save": {
+      const date = state.dayState.date;
+      const at = P.hmToMin($("#entry-time")?.value);
+      if (at == null) break;
+      setEntries(date, getEntries(date).map((e) => (e.uid === +el.dataset.uid
+        ? { ...e, at, ...(e.kind === "show" ? {} : { exit: at + e.wait + e.dur }) } : e)));
+      state.editEntry = null; render(); break;
+    }
+    case "entry-del": {
+      const date = state.dayState.date;
+      setEntries(date, getEntries(date).filter((e) => e.uid !== +el.dataset.uid));
+      if ($("#plus-sheet").open) $("#plus-sheet").close();
+      render(); break;
+    }
+    case "day-end-reset": store.del(`dayEnd.${el.dataset.date}`); state.dayMsg = ""; render(); break;
+    case "overflow-open": maybeOpenOverflow(true); break;
+    case "overflow-later": {
+      const ds = state.dayState;
+      store.set(`overflowSeen.${ds.date}`, `${ds.date}|${[...ds.cd.dropped].sort().join(",")}`);
+      $("#overflow-dialog").close(); break;
+    }
+    case "defer": deferActivity(el.dataset.id); break;
+    case "finish-later": finishLater(); break;
+    case "undefer":
+      store.set("deferred", getDeferred().filter((d) => !(d.id === el.dataset.id && d.from === el.dataset.from)));
+      render(); break;
     case "open-notes": notesStatus(); $("#notes-dialog").showModal(); break;
     case "open-day": state.dayDate = el.dataset.date; go("day"); break;
-    case "pick-day": state.dayDate = el.dataset.date; render(); break;
+    case "pick-day": state.dayDate = el.dataset.date; state.dayMsg = ""; state.editEntry = null; render(); break;
     case "reshuffle":
       state.seeds[el.dataset.date] = (state.seeds[el.dataset.date] || 0) + 1;
       store.set("seeds", state.seeds); render(); break;
@@ -984,6 +1362,14 @@ document.addEventListener("change", (e) => {
   const s = state.settings;
   if (el.classList.contains("csv-input")) { if (el.files.length) importFiles([...el.files]); el.value = ""; return; }
   if (el.id === "live-park") { state.livePark = el.value; render(); return; }
+  if (el.id === "day-end") {
+    const m = P.hmToMin(el.value);
+    if (m == null) return;
+    const close = state.dayState?.cd.plan.close ?? 1440;
+    if (m >= close % 1440 && close < 1440) store.del(`dayEnd.${el.dataset.date}`);
+    else store.set(`dayEnd.${el.dataset.date}`, m < 300 ? m + 1440 : m);
+    state.dayMsg = ""; render(); return;
+  }
   if (el.dataset.set) {
     let v = el.type === "checkbox" ? el.checked : el.value;
     if (el.dataset.set === "lunch.at") v = +v;
@@ -1011,6 +1397,14 @@ document.addEventListener("change", (e) => {
 });
 
 document.addEventListener("input", (e) => {
+  if (e.target.id === "plus-search") {
+    state.plusSearch = e.target.value;
+    const pos = e.target.selectionStart;
+    refreshPlus();
+    const input = $("#plus-search");
+    input.focus(); input.setSelectionRange(pos, pos);
+    return;
+  }
   if (e.target.id === "must-search") {
     state.search = e.target.value;
     $("#must-list").innerHTML = mustList();
@@ -1076,6 +1470,14 @@ $("#btn-lang").addEventListener("click", () => {
   render();
   notesStatus();
 });
+
+// panneau « + » fermé : la fenêtre « plus assez de temps » peut s'ouvrir si besoin
+$("#plus-sheet").addEventListener("close", () => maybeOpenOverflow());
+
+// section spectacles de Direct : état ouvert / fermé mémorisé
+document.addEventListener("toggle", (e) => {
+  if (e.target.id === "shows-soon") store.set("showsOpen", e.target.open);
+}, true);
 
 $("#btn-notes").addEventListener("click", () => { notesStatus(); $("#notes-dialog").showModal(); });
 
