@@ -1,5 +1,5 @@
 {
- "_info": "Saisi à la main. height = taille minimale en cm (0 = aucune) ; type = thrill (sensation) | family (famille) | show (spectacle) | kids (enfants) ; ll = Lightning Lane Disney (multi | single | null) ; express = Universal Express ; duration = durée approximative de l'expérience en min (hors file) ; base_wait = attente moyenne typique en min, utilisée tant que stats.json n'a pas assez de données.",
+ "_info": "Saisi à la main. height = taille minimale en cm (0 = aucune) ; type = thrill (sensations) | family (famille) | show (spectacle) | meet (rencontre de personnages) ; ll = Lightning Lane Disney (multi | single | null) ; express = Universal Express ; duration = durée approximative de l'expérience en min (hors file) ; base_wait = attente moyenne typique en min, utilisée tant que stats.json n'a pas assez de données.",
  "rides": {
   "11527": {
    "name": "TRON Lightcycle / Run",
@@ -86,7 +86,7 @@
    "name": "The Many Adventures of Winnie the Pooh",
    "park": "magic_kingdom",
    "height": 0,
-   "type": "kids",
+   "type": "family",
    "duration": 5,
    "base_wait": 30,
    "ll": "multi"
@@ -95,7 +95,7 @@
    "name": "Under the Sea - Journey of The Little Mermaid",
    "park": "magic_kingdom",
    "height": 0,
-   "type": "kids",
+   "type": "family",
    "duration": 7,
    "base_wait": 20,
    "ll": "multi"
@@ -104,7 +104,7 @@
    "name": "Dumbo the Flying Elephant",
    "park": "magic_kingdom",
    "height": 0,
-   "type": "kids",
+   "type": "family",
    "duration": 4,
    "base_wait": 15,
    "ll": "multi"
@@ -113,7 +113,7 @@
    "name": "The Barnstormer",
    "park": "magic_kingdom",
    "height": 89,
-   "type": "kids",
+   "type": "family",
    "duration": 3,
    "base_wait": 20,
    "ll": "multi"
@@ -122,7 +122,7 @@
    "name": "Mad Tea Party",
    "park": "magic_kingdom",
    "height": 0,
-   "type": "kids",
+   "type": "family",
    "duration": 3,
    "base_wait": 10,
    "ll": "multi"
@@ -131,7 +131,7 @@
    "name": "\"it's a small world\"",
    "park": "magic_kingdom",
    "height": 0,
-   "type": "kids",
+   "type": "family",
    "duration": 11,
    "base_wait": 15,
    "ll": "multi"
@@ -149,7 +149,7 @@
    "name": "Tomorrowland Speedway",
    "park": "magic_kingdom",
    "height": 81,
-   "type": "kids",
+   "type": "family",
    "duration": 6,
    "base_wait": 25,
    "ll": "multi"
@@ -158,7 +158,7 @@
    "name": "Astro Orbiter",
    "park": "magic_kingdom",
    "height": 0,
-   "type": "kids",
+   "type": "family",
    "duration": 3,
    "base_wait": 25,
    "ll": null
@@ -167,7 +167,7 @@
    "name": "The Magic Carpets of Aladdin",
    "park": "magic_kingdom",
    "height": 0,
-   "type": "kids",
+   "type": "family",
    "duration": 3,
    "base_wait": 15,
    "ll": "multi"
@@ -203,7 +203,7 @@
    "name": "Meet Mickey at Town Square Theater",
    "park": "magic_kingdom",
    "height": 0,
-   "type": "kids",
+   "type": "meet",
    "duration": 5,
    "base_wait": 30,
    "ll": "multi"
@@ -212,7 +212,7 @@
    "name": "Meet Princess Tiana and a Visiting Princess at Princess Fairytale Hall",
    "park": "magic_kingdom",
    "height": 0,
-   "type": "kids",
+   "type": "meet",
    "duration": 5,
    "base_wait": 30,
    "ll": "multi"
@@ -221,7 +221,7 @@
    "name": "Meet Cinderella and a Visiting Princess at Princess Fairytale Hall",
    "park": "magic_kingdom",
    "height": 0,
-   "type": "kids",
+   "type": "meet",
    "duration": 5,
    "base_wait": 30,
    "ll": "multi"
@@ -239,7 +239,7 @@
    "name": "Prince Charming Regal Carrousel",
    "park": "magic_kingdom",
    "height": 0,
-   "type": "kids",
+   "type": "family",
    "duration": 3,
    "base_wait": 10,
    "ll": null
@@ -356,7 +356,7 @@
    "name": "Journey of Water, Inspired by Moana",
    "park": "epcot",
    "height": 0,
-   "type": "kids",
+   "type": "family",
    "duration": 10,
    "base_wait": 25,
    "ll": "multi"
@@ -374,7 +374,7 @@
    "name": "The Seas with Nemo & Friends",
    "park": "epcot",
    "height": 0,
-   "type": "kids",
+   "type": "family",
    "duration": 5,
    "base_wait": 10,
    "ll": "multi"
@@ -419,7 +419,7 @@
    "name": "Meet Anna and Elsa at Royal Sommerhus",
    "park": "epcot",
    "height": 0,
-   "type": "kids",
+   "type": "meet",
    "duration": 5,
    "base_wait": 25,
    "ll": "multi"
@@ -428,7 +428,7 @@
    "name": "Meet Beloved Disney Pals at Mickey & Friends",
    "park": "epcot",
    "height": 0,
-   "type": "kids",
+   "type": "meet",
    "duration": 5,
    "base_wait": 25,
    "ll": "multi"
@@ -509,7 +509,7 @@
    "name": "Alien Swirling Saucers",
    "park": "hollywood_studios",
    "height": 81,
-   "type": "kids",
+   "type": "family",
    "duration": 3,
    "base_wait": 30,
    "ll": "multi"
@@ -572,7 +572,7 @@
    "name": "Meet Olaf at Celebrity Spotlight",
    "park": "hollywood_studios",
    "height": 0,
-   "type": "kids",
+   "type": "meet",
    "duration": 5,
    "base_wait": 25,
    "ll": "multi"
@@ -581,7 +581,7 @@
    "name": "Meet Edna Mode at the Edna Mode Experience",
    "park": "hollywood_studios",
    "height": 0,
-   "type": "kids",
+   "type": "meet",
    "duration": 5,
    "base_wait": 15,
    "ll": null
@@ -590,7 +590,7 @@
    "name": "Meet Disney Stars at Red Carpet Dreams",
    "park": "hollywood_studios",
    "height": 0,
-   "type": "kids",
+   "type": "meet",
    "duration": 5,
    "base_wait": 25,
    "ll": "multi"
@@ -689,7 +689,7 @@
    "name": "Bluey's Wild World at Conservation Station",
    "park": "animal_kingdom",
    "height": 0,
-   "type": "kids",
+   "type": "family",
    "duration": 20,
    "base_wait": 15,
    "ll": null
@@ -698,7 +698,7 @@
    "name": "Meet Favorite Disney Pals at Adventurers Outpost",
    "park": "animal_kingdom",
    "height": 0,
-   "type": "kids",
+   "type": "meet",
    "duration": 5,
    "base_wait": 25,
    "ll": "multi"
@@ -707,7 +707,7 @@
    "name": "Meet Moana at Character Landing",
    "park": "animal_kingdom",
    "height": 0,
-   "type": "kids",
+   "type": "meet",
    "duration": 5,
    "base_wait": 20,
    "ll": null
@@ -743,7 +743,7 @@
    "name": "Trolls Trollercoaster",
    "park": "universal_studios_florida",
    "height": 91,
-   "type": "kids",
+   "type": "family",
    "duration": 2,
    "base_wait": 35,
    "express": true
@@ -806,7 +806,7 @@
    "name": "E.T. Adventure",
    "park": "universal_studios_florida",
    "height": 86,
-   "type": "kids",
+   "type": "family",
    "duration": 6,
    "base_wait": 25,
    "express": true
@@ -815,7 +815,7 @@
    "name": "Kang & Kodos' Twirl 'n' Hurl",
    "park": "universal_studios_florida",
    "height": 0,
-   "type": "kids",
+   "type": "family",
    "duration": 2,
    "base_wait": 15,
    "express": true
@@ -923,7 +923,7 @@
    "name": "Flight of the Hippogriff™",
    "park": "islands_of_adventure",
    "height": 91,
-   "type": "kids",
+   "type": "family",
    "duration": 2,
    "base_wait": 35,
    "express": true
@@ -932,7 +932,7 @@
    "name": "The Cat in The Hat™",
    "park": "islands_of_adventure",
    "height": 0,
-   "type": "kids",
+   "type": "family",
    "duration": 4,
    "base_wait": 20,
    "express": true
@@ -941,7 +941,7 @@
    "name": "One Fish, Two Fish, Red Fish, Blue Fish™",
    "park": "islands_of_adventure",
    "height": 0,
-   "type": "kids",
+   "type": "family",
    "duration": 2,
    "base_wait": 15,
    "express": true
@@ -950,7 +950,7 @@
    "name": "The High in the Sky Seuss Trolley Train Ride!™",
    "park": "islands_of_adventure",
    "height": 86,
-   "type": "kids",
+   "type": "family",
    "duration": 5,
    "base_wait": 25,
    "express": true
@@ -959,7 +959,7 @@
    "name": "Caro-Seuss-el™",
    "park": "islands_of_adventure",
    "height": 0,
-   "type": "kids",
+   "type": "family",
    "duration": 2,
    "base_wait": 10,
    "express": true
@@ -968,7 +968,7 @@
    "name": "Pteranodon Flyers",
    "park": "islands_of_adventure",
    "height": 91,
-   "type": "kids",
+   "type": "family",
    "duration": 2,
    "base_wait": 35,
    "express": false
@@ -977,7 +977,7 @@
    "name": "Storm Force Accelatron®",
    "park": "islands_of_adventure",
    "height": 0,
-   "type": "kids",
+   "type": "family",
    "duration": 2,
    "base_wait": 10,
    "express": true
@@ -1031,7 +1031,7 @@
    "name": "Yoshi's Adventure™",
    "park": "epic_universe",
    "height": 86,
-   "type": "kids",
+   "type": "family",
    "duration": 6,
    "base_wait": 50,
    "express": true
@@ -1076,7 +1076,7 @@
    "name": "Fyre Drill",
    "park": "epic_universe",
    "height": 0,
-   "type": "kids",
+   "type": "family",
    "duration": 4,
    "base_wait": 25,
    "express": true
@@ -1085,7 +1085,7 @@
    "name": "Constellation Carousel",
    "park": "epic_universe",
    "height": 0,
-   "type": "kids",
+   "type": "family",
    "duration": 3,
    "base_wait": 20,
    "express": true
@@ -1094,7 +1094,7 @@
    "name": "Meet Toothless and Friends",
    "park": "epic_universe",
    "height": 0,
-   "type": "kids",
+   "type": "meet",
    "duration": 5,
    "base_wait": 30,
    "express": true
@@ -1103,10 +1103,46 @@
    "name": "Bowser Jr. Challenge",
    "park": "epic_universe",
    "height": 0,
-   "type": "kids",
+   "type": "family",
    "duration": 5,
    "base_wait": 30,
    "express": true
+  },
+  "12430": {
+   "name": "Meet Ariel at Walt Disney Presents",
+   "park": "hollywood_studios",
+   "height": 0,
+   "type": "meet",
+   "duration": 5,
+   "base_wait": 20,
+   "ll": null
+  },
+  "144": {
+   "name": "Meet Daring Disney Pals as Circus Stars at Pete's Silly Sideshow",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "meet",
+   "duration": 5,
+   "base_wait": 20,
+   "ll": null
+  },
+  "145": {
+   "name": "Meet Dashing Disney Pals as Circus Stars at Pete's Silly Sideshow",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "meet",
+   "duration": 5,
+   "base_wait": 20,
+   "ll": null
+  },
+  "147": {
+   "name": "Meet Ariel at Her Grotto",
+   "park": "magic_kingdom",
+   "height": 0,
+   "type": "meet",
+   "duration": 5,
+   "base_wait": 20,
+   "ll": null
   }
  }
 }

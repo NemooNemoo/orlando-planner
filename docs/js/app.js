@@ -25,7 +25,7 @@ const DEFAULT_SETTINGS = {
   parks: P.PARKS.map((p) => p.id),
   ll: { multi: true, single: false },
   express: false,
-  kids: { enabled: false, height: 110 },
+  visits: null, // { parc: nombre de visites } — calculé au démarrage si absent
   pace: "normal",
   lunch: { enabled: true, at: 720 },
   forced: [],
@@ -33,11 +33,28 @@ const DEFAULT_SETTINGS = {
   surprise: false,
 };
 
+// Anciennes valeurs ignorées sans erreur (ex. mode enfants supprimé)
+function loadSettings() {
+  const saved = store.get("settings", {});
+  const s = { ...structuredClone(DEFAULT_SETTINGS), ...(saved && typeof saved === "object" ? saved : {}) };
+  delete s.kids;
+  return s;
+}
+
+const storedList = (key) => {
+  const v = store.get(key, []);
+  return Array.isArray(v) ? v.filter((c) => P.CATEGORIES.includes(c)) : [];
+};
+
 const state = {
   lang: store.get("lang", (navigator.language || "fr").startsWith("fr") ? "fr" : "en"),
   tab: "setup",
   step: store.get("step", 0),
-  settings: { ...structuredClone(DEFAULT_SETTINGS), ...store.get("settings", {}) },
+  settings: loadSettings(),
+  theme: ["auto", "light", "dark"].includes(store.get("theme", "auto")) ? store.get("theme", "auto") : "auto",
+  mustCats: storedList("mustCats"), // filtres par catégorie ([] = toutes)
+  liveCats: storedList("liveCats"),
+  visitMsg: "",
   configured: store.get("configured", false),
   // Fichiers personnels importés (jamais envoyés) :
   notes: store.get("notes", null),           // may_crowds      { notes:[], ignored, invalid, rows, file, at }
@@ -88,9 +105,39 @@ function waitChip(w, extra = "") {
   return `<span class="wait ${lvl} ${extra}">${w == null ? "–" : Math.round(w)}<small>${t("min")}</small></span>`;
 }
 
+const TYPE_ICON = { thrill: "🎢", family: "🎠", show: "🎭", meet: "🤝" };
+function rideType(id) {
+  const type = P.rideType(id, state.meta, state.catalog);
+  if (type) return type;
+  const name = state.catalog[id]?.name || "";
+  if (!/ single rider$/i.test(name)) return null;
+  const main = P.normName(name.replace(/ single rider$/i, ""));
+  const mainId = Object.keys(state.meta).find((k) => P.normName(rideName(k)) === main);
+  return mainId ? state.meta[mainId].type : null;
+}
+
 function typeBadge(id) {
-  const m = state.meta[id];
-  return m ? `<span class="badge ${m.type}">${t("type_" + m.type)}</span>` : "";
+  const type = rideType(id);
+  return type ? `<span class="badge type">${TYPE_ICON[type]} ${t("type_" + type)}</span>` : "";
+}
+
+/** Puces de filtre par catégorie (sélection multiple, [] = toutes) */
+function catChips(scope) {
+  const sel = state[scope + "Cats"];
+  const chip = (cat, label, on) =>
+    `<button type="button" class="fchip ${on ? "on" : ""}" aria-pressed="${on}" data-action="cat" data-scope="${scope}" data-cat="${cat}">${label}</button>`;
+  return `<div class="fchips" role="group" aria-label="${t("filter_label")}">
+    ${chip("all", t("cat_all"), !sel.length)}
+    ${P.CATEGORIES.map((c) => chip(c, `${TYPE_ICON[c]} ${t("cat_" + c)}`, sel.includes(c))).join("")}
+  </div>`;
+}
+
+function catMatch(scope, id) {
+  const sel = state[scope + "Cats"];
+  const type = rideType(id);
+  if (sel.length) return sel.includes(type);
+  // Direct, « Toutes » : sans spectacles ni rencontres
+  return scope === "live" ? type !== "show" && type !== "meet" : true;
 }
 
 function tierBadge(id) {
@@ -180,6 +227,7 @@ function render() {
   document.documentElement.lang = state.lang;
   for (const el of document.querySelectorAll("[data-i18n]")) el.textContent = t(el.dataset.i18n);
   $("#btn-lang").textContent = t("lang_switch");
+  applyTheme();
   for (const b of document.querySelectorAll("#tabs button")) b.classList.toggle("active", b.dataset.tab === state.tab);
   const main = $("#main");
   const view = { setup: viewSetup, calendar: viewCalendar, day: viewDay, live: viewLive }[state.tab] || viewSetup;
@@ -210,23 +258,25 @@ function go(tab) {
 
 // ------------------------------------------------------------------ assistant de configuration
 
-const STEPS = ["dates", "parks", "passes", "kids", "pace", "forced", "must"];
+const STEPS = ["dates", "parks", "passes", "pace", "forced", "must", "recap"];
 
 function viewSetup() {
   const s = state.settings;
   const step = Math.min(state.step, STEPS.length - 1);
-  const valid = stepValid(STEPS[step]);
+  const valid = STEPS.slice(0, step + 1).every(stepValid);
+  const last = step === STEPS.length - 1;
   const dots = STEPS.map((_, i) => `<span class="${i <= step ? "on" : ""}" data-action="step" data-step="${i}"></span>`).join("");
+  const STEP_VIEWS = { dates: stepDates, parks: stepParks, passes: stepPasses, pace: stepPace, forced: stepForced, must: stepMust, recap: stepRecap };
   return `
   <section class="card">
     <div class="steps">${dots}</div>
     <p class="step-label">${t("step", { n: step + 1, total: STEPS.length })}</p>
-    ${{ dates: stepDates, parks: stepParks, passes: stepPasses, kids: stepKids, pace: stepPace, forced: stepForced, must: stepMust }[STEPS[step]](s)}
+    ${STEP_VIEWS[STEPS[step]](s)}
     <div class="wizard-nav">
       <button class="pill ghost" data-action="prev" ${step === 0 ? "disabled" : ""}>← ${t("prev")}</button>
-      ${step < STEPS.length - 1
-        ? `<button class="pill" data-action="next" ${valid ? "" : "disabled"}>${t("next")} →</button>`
-        : `<button class="pill" data-action="finish" ${valid ? "" : "disabled"}>${t("finish")} →</button>`}
+      ${last
+        ? `<button class="pill big" data-action="finish" ${valid ? "" : "disabled"}>✓ ${t("create_trip")}</button>`
+        : `<button class="pill" data-action="next" ${stepValid(STEPS[step]) ? "" : "disabled"}>${t("next")} →</button>`}
     </div>
   </section>
   ${importsCard()}`;
@@ -237,9 +287,11 @@ function stepValid(name) {
   if (name === "dates") {
     return !!(s.start && s.end && s.end >= s.start && P.dateRange(s.start, s.end, 46).length <= 45);
   }
-  if (name === "parks") return s.parks.length > 0;
+  if (name === "parks") return P.totalVisits(s.visits) > 0;
   return true;
 }
+
+const visitMsgHtml = () => (state.visitMsg ? `<p class="small notice" role="status">ℹ️ ${esc(state.visitMsg)}</p>` : "");
 
 function stepDates(s) {
   const n = stepValid("dates") ? P.dateRange(s.start, s.end).length : 0;
@@ -249,18 +301,39 @@ function stepDates(s) {
       <label class="field"><span>${t("date_start")}</span><input type="date" data-set="start" value="${esc(s.start)}"></label>
       <label class="field"><span>${t("date_end")}</span><input type="date" data-set="end" value="${esc(s.end)}" min="${esc(s.start)}"></label>
     </div>
-    <p class="small ${n ? "muted" : ""}" style="${n ? "" : "color:var(--red)"}">${n ? t("days_count", { n }) : t("dates_invalid")}</p>`;
+    <p class="small ${n ? "muted" : "err"}">${n ? t("days_count", { n }) : t("dates_invalid")}</p>
+    ${visitMsgHtml()}`;
 }
 
 function stepParks(s) {
+  const limit = P.visitLimit(s);
+  const total = P.totalVisits(s.visits);
+  const full = total >= limit;
+  const rest = P.restDays(s);
+  const days = stepValid("dates") ? P.dateRange(s.start, s.end).length : 0;
+  const forcedCount = {};
+  for (const f of s.forced) if (f.park !== "rest") forcedCount[f.park] = (forcedCount[f.park] || 0) + 1;
   const group = (g) => `
     <div class="group-title"><span class="dot ${g}"></span>${t(g)}</div>
-    ${P.PARKS.filter((p) => p.group === g).map((p) => `
-      <label class="choice"><input type="checkbox" data-park="${p.id}" ${s.parks.includes(p.id) ? "checked" : ""}>
-        <span>${p.emoji} <b style="display:inline">${p.name}</b></span></label>`).join("")}`;
+    ${P.PARKS.filter((p) => p.group === g).map((p) => {
+      const n = s.visits?.[p.id] || 0;
+      const min = forcedCount[p.id] || 0;
+      return `<div class="counter-row ${n ? "on" : ""}">
+        <span class="grow">${p.emoji} <b>${p.name}</b>
+          <small class="muted">${n ? t("visits_n", { n }) : t("visits_none")}</small></span>
+        <button type="button" class="round" data-action="visit" data-park="${p.id}" data-d="-1" ${n <= min ? "disabled" : ""}
+          aria-label="${esc(t("visit_less", { park: p.name }))}">−</button>
+        <output class="count" aria-live="polite">${n}</output>
+        <button type="button" class="round" data-action="visit" data-park="${p.id}" data-d="1" ${full ? "disabled" : ""}
+          aria-label="${esc(t("visit_more", { park: p.name }))}">+</button>
+      </div>`;
+    }).join("")}`;
   return `<h2>${t("s_parks")}</h2><p class="muted small">${t("s_parks_help")}</p>
+    <p class="small"><b>${t("visits_total", { n: total, max: limit })}</b></p>
+    ${full ? `<p class="small notice" role="status">${t("visits_limit", { max: limit, days, rest })}</p>` : ""}
+    ${visitMsgHtml()}
     ${group("disney")}${group("universal")}
-    ${s.parks.length ? "" : `<p class="small" style="color:var(--red)">${t("parks_none")}</p>`}`;
+    ${total ? "" : `<p class="small err">${t("parks_none")}</p>`}`;
 }
 
 function stepPasses(s) {
@@ -275,18 +348,6 @@ function stepPasses(s) {
     ${hasUni ? `<div class="group-title"><span class="dot universal"></span>${t("universal")}</div>
       <label class="choice"><input type="checkbox" data-set="express" ${s.express ? "checked" : ""}>
         <span><b>${t("express")}</b><small>${t("express_help")}</small></span></label>` : ""}`;
-}
-
-function stepKids(s) {
-  const hidden = s.kids.enabled
-    ? Object.values(state.meta).filter((m) => s.parks.includes(m.park) && m.height > (+s.kids.height || 0)).length : 0;
-  return `<h2>${t("s_kids")}</h2><p class="muted small">${t("s_kids_help")}</p>
-    <label class="choice"><input type="checkbox" data-set="kids.enabled" ${s.kids.enabled ? "checked" : ""}>
-      <span><b>${t("kids_on")}</b></span></label>
-    ${s.kids.enabled ? `
-      <label class="field"><span>${t("kids_height")}</span>
-        <input type="number" inputmode="numeric" min="60" max="200" step="1" data-set="kids.height" value="${esc(s.kids.height)}"></label>
-      <p class="small muted" id="kids-hidden">${t("kids_hidden", { n: hidden })}</p>` : ""}`;
 }
 
 function stepPace(s) {
@@ -307,8 +368,8 @@ function stepForced(s) {
   const dates = stepValid("dates") ? P.dateRange(s.start, s.end) : [];
   const rows = s.forced.map((f, i) => `
     <div class="forced-row">
-      <select data-forced="${i}" data-key="date">${dates.map((d) => `<option value="${d}" ${d === f.date ? "selected" : ""}>${esc(fmtDate(d))}</option>`).join("")}</select>
-      <select data-forced="${i}" data-key="park">
+      <select data-forced="${i}" data-key="date" aria-label="${t("date")}">${dates.map((d) => `<option value="${d}" ${d === f.date ? "selected" : ""}>${esc(fmtDate(d))}</option>`).join("")}</select>
+      <select data-forced="${i}" data-key="park" aria-label="${t("live_park")}">
         ${s.parks.map((p) => `<option value="${p}" ${p === f.park ? "selected" : ""}>${parkOf(p).emoji} ${parkOf(p).name}</option>`).join("")}
         <option value="rest" ${f.park === "rest" ? "selected" : ""}>😴 ${t("rest_day")}</option>
       </select>
@@ -316,6 +377,7 @@ function stepForced(s) {
     </div>`).join("");
   return `<h2>${t("s_forced")}</h2><p class="muted small">${t("s_forced_help")}</p>
     ${rows || `<p class="muted small">${t("forced_none")}</p>`}
+    ${visitMsgHtml()}
     <button class="pill ghost" data-action="forced-add" ${dates.length ? "" : "disabled"}>+ ${t("forced_add")}</button>`;
 }
 
@@ -324,8 +386,9 @@ function stepMust(s) {
     <label class="choice"><input type="checkbox" data-set="surprise" ${s.surprise ? "checked" : ""}>
       <span><b>🎲 ${t("surprise")}</b><small>${t("surprise_help")}</small></span></label>
     ${s.surprise ? "" : `
+      ${catChips("must")}
       <div class="row gap" style="margin-top:8px">
-        <input type="search" id="must-search" class="grow" placeholder="${t("search")}" value="${esc(state.search)}">
+        <input type="search" id="must-search" class="grow" placeholder="${t("search")}" aria-label="${t("search")}" value="${esc(state.search)}">
         <span class="badge must" id="must-count">${t("must_count", { n: s.mustDo.length })}</span>
       </div>
       <div class="must-list" id="must-list">${mustList()}</div>`}`;
@@ -334,28 +397,90 @@ function stepMust(s) {
 function mustList() {
   const s = state.settings;
   const q = state.search.trim().toLowerCase();
-  const kids = s.kids.enabled;
-  return P.PARKS.filter((p) => s.parks.includes(p.id)).map((p) => {
+  const html = P.PARKS.filter((p) => s.parks.includes(p.id)).map((p) => {
     const ids = P.eligibleRides(p.id, s, state.meta)
-      .filter((id) => !q || rideName(id).toLowerCase().includes(q))
-      .sort((a, b) => {
-        if (kids) {
-          const fa = ["kids", "family"].includes(state.meta[a].type), fb = ["kids", "family"].includes(state.meta[b].type);
-          if (fa !== fb) return fb - fa;
-        }
-        return state.meta[b].base_wait - state.meta[a].base_wait;
-      });
+      .filter((id) => (!q || rideName(id).toLowerCase().includes(q)) && catMatch("must", id))
+      .sort((a, b) => state.meta[b].base_wait - state.meta[a].base_wait);
     if (!ids.length) return "";
     return `<div class="group-title"><span class="dot ${p.group}"></span>${p.emoji} ${p.name}</div>` + ids.map((id) => {
       const m = state.meta[id];
-      const fam = kids && ["kids", "family"].includes(m.type);
-      return `<label class="must-item ${fam ? "fam" : ""}">
+      return `<label class="must-item">
         <input type="checkbox" data-must="${id}" ${s.mustDo.includes(id) ? "checked" : ""}>
         <span class="grow"><span class="name">${esc(rideName(id))}</span>
           <span class="badges">${tierBadge(id)}${typeBadge(id)}<span class="badge">${m.height ? t("height_min", { cm: m.height }) : t("no_height")}</span></span></span>
       </label>`;
     }).join("");
   }).join("");
+  return html || `<p class="muted small">${t("filter_empty")}</p>`;
+}
+
+function stepRecap(s) {
+  const n = STEPS.indexOf.bind(STEPS);
+  const days = P.dateRange(s.start, s.end).length;
+  const total = P.totalVisits(s.visits);
+  const forcedRest = P.restDays(s);
+  const freeDays = Math.max(0, days - forcedRest - total);
+  const row = (label, value, step) => `
+    <div class="recap-row">
+      <div class="grow"><div class="small muted">${label}</div><div>${value}</div></div>
+      <button type="button" class="link" data-action="step" data-step="${n(step)}" aria-label="${esc(t("edit") + " : " + label)}">${t("edit")}</button>
+    </div>`;
+  const yes = (b) => (b ? t("yes") : t("no"));
+  const passes = [];
+  if (s.parks.some((p) => parkOf(p).group === "disney")) {
+    passes.push(`${t("ll_multi")} : ${yes(s.ll.multi)}`, `${t("ll_single")} : ${yes(s.ll.single)}`);
+  }
+  if (s.parks.some((p) => parkOf(p).group === "universal")) passes.push(`${t("express")} : ${yes(s.express)}`);
+  const forced = s.forced.length
+    ? s.forced.map((f) => `${esc(fmtDate(f.date))} → ${f.park === "rest" ? "😴 " + t("rest_day") : parkOf(f.park).emoji + " " + parkOf(f.park).name}`).join("<br>")
+    : t("forced_none");
+  const must = s.surprise
+    ? `🎲 ${t("surprise")}`
+    : s.mustDo.length
+      ? `${t("must_count", { n: s.mustDo.length })}<ul class="recap-list">${s.mustDo.map((id) => `<li>${esc(rideName(id))}</li>`).join("")}</ul>`
+      : t("must_none");
+  return `<h2>${t("s_recap")}</h2><p class="muted small">${t("s_recap_help")}</p>
+    ${row(t("s_dates"), `${esc(fmtDate(s.start, { day: "numeric", month: "long" }))} → ${esc(fmtDate(s.end, { day: "numeric", month: "long", year: "numeric" }))} · ${t("days_count", { n: days })}`, "dates")}
+    ${row(t("recap_rest"), t("recap_rest_v", { n: forcedRest + freeDays, forced: forcedRest, free: freeDays }), "forced")}
+    ${row(t("s_parks"), P.PARKS.filter((p) => s.visits?.[p.id]).map((p) => `${p.emoji} ${p.name} × ${s.visits[p.id]}`).join("<br>") + `<br><b>${t("visits_total", { n: total, max: P.visitLimit(s) })}</b>`, "parks")}
+    ${row(t("s_passes"), passes.join("<br>") || "—", "passes")}
+    ${row(t("s_pace"), t("pace_" + s.pace), "pace")}
+    ${row(t("lunch_on"), s.lunch.enabled ? `${t("yes")} · ${P.fmtTime(+s.lunch.at)}` : t("no"), "pace")}
+    ${row(t("s_forced"), forced, "forced")}
+    ${row(t("s_must"), must, "must")}
+    <div class="recap-row">
+      <div class="grow"><div class="small muted">${t("imports_title")}</div><div>${esc(importsSummary())}</div></div>
+      <button type="button" class="link" data-action="open-notes">${t("edit")}</button>
+    </div>`;
+}
+
+// ------------------------------------------------------------------ visites
+
+/** Applique les limites de visites ; signale si on a dû en retirer */
+function applyVisitLimits() {
+  const s = state.settings;
+  const { visits, reduced } = P.normalizeVisits(s);
+  s.visits = visits;
+  syncParks();
+  if (reduced) state.visitMsg = t("visits_reduced", { n: reduced, max: P.visitLimit(s) });
+}
+
+/** La liste des parcs visités découle du nombre de visites */
+function syncParks() {
+  const s = state.settings;
+  s.parks = P.PARKS.map((p) => p.id).filter((p) => (s.visits?.[p] || 0) > 0);
+  s.mustDo = s.mustDo.filter((id) => s.parks.includes(state.meta[id]?.park));
+  s.forced = s.forced.filter((f) => f.park === "rest" || s.parks.includes(f.park));
+}
+
+function ensureVisits() {
+  const s = state.settings;
+  if (!s.visits || typeof s.visits !== "object") {
+    s.visits = P.defaultVisits(s, (s.parks || []).filter((p) => P.PARK_BY_ID[p]), state.meta);
+  }
+  applyVisitLimits();
+  state.visitMsg = "";
+  saveSettings();
 }
 
 // ------------------------------------------------------------------ calendrier
@@ -402,13 +527,13 @@ function sparkline(id, wd, from, to, highlight) {
     const bh = Math.max(2, (p.wait / max) * (h - 2));
     const on = highlight != null && highlight >= p.min && highlight < p.min + 30;
     return `<rect x="${i * bw + 0.5}" y="${h - bh}" width="${bw - 1.5}" height="${bh}" rx="1.5"
-      fill="var(--${P.waitLevel(p.wait)})" opacity="${on ? 1 : 0.35}"><title>${P.fmtTime(p.min)} · ${p.wait} min</title></rect>`;
+      fill="var(--bar-${P.waitLevel(p.wait)})" opacity="${on ? 1 : 0.4}"><title>${P.fmtTime(p.min)} · ${p.wait} min</title></rect>`;
   }).join("");
   return `<svg class="spark" viewBox="0 0 ${pts.length * bw} ${h}" preserveAspectRatio="none" role="img" aria-label="${t("curve")}">${bars}</svg>
     <div class="spark-axis"><span>${P.fmtTime(pts[0].min)}</span><span>${P.fmtTime(pts[pts.length - 1].min + 30)}</span></div>`;
 }
 
-function timelineHtml(plan, wd, opts = {}) {
+function timelineHtml(plan, wd) {
   const items = plan.items.map((it) => {
     const time = `<div class="tl-time">${P.fmtTime(it.at)}</div>`;
     if (it.kind === "start") return `<li class="tl">${time}<div class="tl-body"><div class="tl-note">🚪 ${t("arrive")}</div></div></li>`;
@@ -423,8 +548,6 @@ function timelineHtml(plan, wd, opts = {}) {
       it.ll ? `<span class="badge ll">⚡ ${it.ll === "single" ? "LL Single" : "LL Multi"}</span>` : "",
       it.express ? `<span class="badge express">⚡ Express</span>` : "",
     ].join("");
-    const doneBtn = opts.live
-      ? `<button class="pill ghost" data-action="done" data-id="${it.id}">✓ ${t("done")}</button>` : "";
     return `<li class="tl">${time}<div class="tl-body">
       ${it.walk ? `<div class="tl-walk">🚶 ${t("walk", { n: it.walk })}</div>` : ""}
       <div class="tl-card ${it.must ? "must" : ""}">
@@ -432,9 +555,9 @@ function timelineHtml(plan, wd, opts = {}) {
           <div class="title">${esc(rideName(it.id))}</div>
           <div class="meta">${esc(state.catalog[it.id]?.land || "")} · ${t("ride_dur", { n: m.duration })}</div>
           <div class="badges">${badges}</div>
-          ${opts.spark !== false ? sparkline(it.id, wd, plan.hours.open, plan.hours.close, it.at) : ""}
+          ${sparkline(it.id, wd, plan.hours.open, plan.hours.close, it.at)}
         </div>
-        <div class="col" style="display:grid;gap:6px;justify-items:end">${waitChip(it.wait)}${doneBtn}</div>
+        ${waitChip(it.wait)}
       </div></div></li>`;
   }).join("");
   return `<ol class="timeline">${items}</ol>`;
@@ -473,7 +596,7 @@ function viewDay() {
         </div>
       </div>
       <p class="small" style="margin:10px 0 0">${t("total_wait", { n: plan.totalWait })}</p>
-      ${plan.skippedMust.length ? `<p class="small" style="color:var(--red)">${esc(t("skipped_must", { list: plan.skippedMust.map(rideName).join(", ") }))}</p>` : ""}
+      ${plan.skippedMust.length ? `<p class="small err">${esc(t("skipped_must", { list: plan.skippedMust.map(rideName).join(", ") }))}</p>` : ""}
       ${sparse ? `<p class="small muted">ℹ️ ${t("estimate_note")}</p>` : ""}
       ${state.settings.surprise ? `<button class="pill ghost" data-action="reshuffle" data-date="${day.date}">🎲 ${t("reshuffle")}</button>` : ""}
     </section>
@@ -484,77 +607,67 @@ function viewDay() {
 
 const doneKey = (date, park) => `done.${date}.${park}`;
 
+/** Emplacement « Spectacles dans l'heure » : rempli au tour 2, masqué tant qu'il n'y a pas de données */
+function showsSoonHtml() {
+  const shows = []; // à venir : horaires des spectacles
+  return `<section class="card" id="shows-soon" ${shows.length ? "" : "hidden"}>
+    <h3>🎭 ${t("shows_soon")}</h3><div class="shows-list"></div></section>`;
+}
+
 function viewLive() {
   const now = P.orlandoNow();
   const days = state.configured ? trip() : [];
   const todayPlan = days.find((d) => d.date === now.date);
-  const inTrip = !!todayPlan;
   const selected = state.settings.parks.length ? state.settings.parks : P.PARKS.map((p) => p.id);
   if (!state.livePark || !P.PARK_BY_ID[state.livePark]) state.livePark = todayPlan?.park || selected[0];
   const park = state.livePark;
   const waits = state.latest?.parks?.[park] || {};
   const done = new Set(store.get(doneKey(now.date, park), []));
   const model = getModel();
-  const hours = model.parkHours(park, now.wd);
   const stale = state.latest?.updated && Date.now() - new Date(state.latest.updated) > 40 * 60000;
 
-  const parkSelect = `<select id="live-park">${P.PARKS.map((p) => `<option value="${p.id}" ${p.id === park ? "selected" : ""}>${p.emoji} ${p.name}</option>`).join("")}</select>`;
+  const parkSelect = `<select id="live-park" aria-label="${t("live_park")}">${P.PARKS.map((p) => `<option value="${p.id}" ${p.id === park ? "selected" : ""}>${p.emoji} ${p.name}</option>`).join("")}</select>`;
 
-  const head = `
+  // attractions décrites dans rides_meta.json, plus leurs files Single Rider (même type que l'attraction)
+  const liveRide = (id) => state.meta[id] || / single rider$/i.test(state.catalog[id]?.name || "");
+  const ids = Object.keys(waits).filter((id) => liveRide(id) && catMatch("live", id));
+  const isOpen = (id) => waits[id].open && typeof waits[id].wait === "number";
+  const open = ids.filter(isOpen).sort((a, b) => waits[a].wait - waits[b].wait || rideName(a).localeCompare(rideName(b)));
+  const closed = ids.filter((id) => !isOpen(id)).sort((a, b) => rideName(a).localeCompare(rideName(b)));
+
+  const row = (id) => {
+    const w = waits[id];
+    const isDone = done.has(id);
+    const usual = state.meta[id] ? model.expected(id, now.wd, now.min) : null;
+    const good = isOpen(id) && usual != null && usual - w.wait >= 10 && w.wait <= usual * 0.7;
+    return `<div class="live-row ${isOpen(id) ? "" : "closed"} ${isDone ? "done" : ""}">
+      ${isOpen(id) ? waitChip(w.wait) : `<span class="wait none">${t("closed")}</span>`}
+      <div class="grow">
+        <div class="name">${esc(rideName(id))}${isDone ? ` <span class="sr-done">✓ ${t("done")}</span>` : ""}</div>
+        <div class="badges">${tierBadge(id)}${typeBadge(id)}${good ? `<span class="badge good">👍 ${t("live_good", { n: usual })}</span>` : ""}</div>
+      </div>
+      ${isDone
+        ? `<button type="button" class="link small" data-action="undo" data-id="${id}">${t("undo")}</button>`
+        : isOpen(id) ? `<button type="button" class="pill ghost small-btn" data-action="done" data-id="${id}">✓ ${t("done")}</button>` : ""}
+    </div>`;
+  };
+
+  return `
+    ${showsSoonHtml()}
     <section class="card">
       <div class="row gap between"><h2>📡 ${t("live_title")}</h2>
         <button class="pill ghost" data-action="refresh">↻ ${t("live_refresh")}</button></div>
       <label class="field"><span>${t("live_park")}</span>${parkSelect}</label>
-      <p class="small muted" style="margin:0">${state.latest?.updated ? esc(t("data_updated", { ago: ago(state.latest.updated) })) : ""}</p>
-      ${stale ? `<p class="small" style="color:var(--orange)">⚠️ ${esc(t("live_stale", { ago: ago(state.latest.updated) }))}</p>` : ""}
-      ${!inTrip ? `<p class="small muted">${t("live_not_trip")}</p>` : ""}
-    </section>`;
-
-  const open = now.min >= hours.open - 60 && now.min < hours.close;
-  const anyOpen = Object.values(waits).some((w) => w.open);
-  let body = "";
-  if (!open && !anyOpen) {
-    body = `<section class="card center muted">🌙 ${t("live_closed_park")}</section>`;
-  } else {
-    const sugg = P.suggestNow({ park, wd: now.wd, settings: state.settings, model, meta: state.meta,
-      catalog: state.catalog, waits, now: now.min, done }).slice(0, 3);
-    body += `<section class="card"><h3>✨ ${t("now_title")}</h3>
-      ${sugg.length ? sugg.map((s) => `
-        <div class="now-card">
-          ${waitChip(s.wait)}
-          <div class="grow"><div style="font-weight:700">${esc(rideName(s.id))}</div>
-            <div class="small muted">${t("now_usual", { n: s.usual })} · ${t("now_later", { n: s.later })}</div>
-            <div class="badges">${tierBadge(s.id)}${typeBadge(s.id)}${s.must ? `<span class="badge must">★ ${t("must")}</span>` : ""}</div></div>
-          <button class="pill ghost" data-action="done" data-id="${s.id}">✓</button>
-        </div>`).join("") : `<p class="muted small">${t("now_none")}</p>`}
-    </section>`;
-
-    const plan = P.planDay({
-      park, date: now.date, wd: now.wd, settings: state.settings, model, meta: state.meta, catalog: state.catalog,
-      from: Math.max(now.min, hours.open), done, alreadyDone: done.size, seed: state.seeds[now.date] || 0,
-      live: { waits, now: now.min }, priorities: prioById(),
-    });
-    body += `<h3 class="section-title">${t("rest_of_day")}</h3>`;
-    if (plan.closed.length) body += `<p class="small muted">${esc(t("closed_planned", { list: plan.closed.map(rideName).join(", ") }))}</p>`;
-    body += timelineHtml(plan, now.wd, { live: true, spark: false });
-  }
-
-  // toutes les attractions du parc, triées par attente
-  const ids = Object.keys(waits).filter((id) => state.meta[id] || state.catalog[id]);
-  ids.sort((a, b) => (waits[b].open - waits[a].open) || (waits[a].wait - waits[b].wait));
-  const list = ids.map((id) => {
-    const w = waits[id];
-    const isDone = done.has(id);
-    return `<div class="live-row ${w.open ? "" : "closed"}">
-      ${w.open ? waitChip(w.wait) : `<span class="wait none">${t("closed")}</span>`}
-      <span class="name">${esc(rideName(id))}${isDone ? " ✓" : ""}</span>${tierBadge(id)}
-      ${isDone ? `<button class="link small" data-action="undo" data-id="${id}">${t("undo")}</button>` : ""}
-    </div>`;
-  }).join("");
-  const doneList = [...done].filter((id) => !waits[id]);
-
-  return head + body + `<h3 class="section-title">${t("all_rides")}</h3><div class="live-list">${list}</div>`
-    + (doneList.length ? `<p class="small muted">✓ ${esc(doneList.map(rideName).join(", "))}</p>` : "");
+      <p class="small muted" style="margin:0">${state.latest?.updated ? esc(t("data_updated", { ago: ago(state.latest.updated) })) + " · " + t("live_auto") : t("live_nodata")}</p>
+      ${stale ? `<p class="small notice">⚠️ ${esc(t("live_stale", { ago: ago(state.latest.updated) }))}</p>` : ""}
+      ${catChips("live")}
+      ${state.liveCats.length ? "" : `<p class="small muted" style="margin:6px 0 0">${t("live_hidden_cats")}</p>`}
+    </section>
+    <h3 class="section-title">${t("live_open", { n: open.length })}</h3>
+    ${open.length ? `<div class="live-list">${open.map(row).join("")}</div>`
+      : `<section class="card center muted">🌙 ${t(Object.keys(waits).length ? "live_none_open" : "live_nodata")}</section>`}
+    ${closed.length ? `<details class="closed-list"><summary class="section-title">${t("live_closed", { n: closed.length })}</summary>
+      <div class="live-list">${closed.map(row).join("")}</div></details>` : ""}`;
 }
 
 function markDone(id, value) {
@@ -695,9 +808,31 @@ document.addEventListener("click", (e) => {
       const dates = P.dateRange(s.start, s.end);
       const used = new Set(s.forced.map((f) => f.date));
       s.forced.push({ date: dates.find((d) => !used.has(d)) || dates[0], park: s.parks[0] || "rest" });
-      saveSettings(); render(); break;
+      state.visitMsg = ""; applyVisitLimits(); saveSettings(); render(); break;
     }
-    case "forced-del": s.forced.splice(+el.dataset.i, 1); saveSettings(); render(); break;
+    case "forced-del": s.forced.splice(+el.dataset.i, 1); state.visitMsg = ""; applyVisitLimits(); saveSettings(); render(); break;
+    case "visit": {
+      const p = el.dataset.park;
+      if (!P.PARK_BY_ID[p]) break;
+      const d = +el.dataset.d;
+      if (d > 0 && P.totalVisits(s.visits) >= P.visitLimit(s)) break;
+      s.visits = { ...s.visits, [p]: Math.max(0, (s.visits?.[p] || 0) + d) };
+      state.visitMsg = "";
+      applyVisitLimits(); saveSettings(); render();
+      $(`[data-action=visit][data-park="${p}"][data-d="${d}"]`)?.focus();
+      break;
+    }
+    case "cat": {
+      const key = el.dataset.scope + "Cats";
+      const c = el.dataset.cat;
+      state[key] = c === "all" ? [] : state[key].includes(c) ? state[key].filter((x) => x !== c) : [...state[key], c];
+      store.set(key, state[key]);
+      render();
+      $(`[data-action=cat][data-scope="${el.dataset.scope}"][data-cat="${c}"]`)?.focus();
+      break;
+    }
+    case "theme": setTheme(el.dataset.theme); break;
+    case "open-notes": notesStatus(); $("#notes-dialog").showModal(); break;
     case "open-day": state.dayDate = el.dataset.date; go("day"); break;
     case "pick-day": state.dayDate = el.dataset.date; render(); break;
     case "reshuffle":
@@ -717,23 +852,22 @@ document.addEventListener("change", (e) => {
   if (el.id === "live-park") { state.livePark = el.value; render(); return; }
   if (el.dataset.set) {
     let v = el.type === "checkbox" ? el.checked : el.value;
-    if (el.dataset.set === "kids.height" || el.dataset.set === "lunch.at") v = +v;
+    if (el.dataset.set === "lunch.at") v = +v;
     setPath(s, el.dataset.set, v);
     if (el.dataset.set === "start" && s.end < s.start) s.end = s.start;
     // les contraintes hors des dates du séjour sont retirées
-    if (el.dataset.set === "start" || el.dataset.set === "end") s.forced = s.forced.filter((f) => f.date >= s.start && f.date <= s.end);
-    saveSettings(); render(); return;
-  }
-  if (el.dataset.park) {
-    s.parks = el.checked ? [...new Set([...s.parks, el.dataset.park])] : s.parks.filter((p) => p !== el.dataset.park);
-    s.parks = P.PARKS.map((p) => p.id).filter((p) => s.parks.includes(p));
-    s.mustDo = s.mustDo.filter((id) => s.parks.includes(state.meta[id]?.park));
-    s.forced = s.forced.filter((f) => f.park === "rest" || s.parks.includes(f.park));
+    if (el.dataset.set === "start" || el.dataset.set === "end") {
+      s.forced = s.forced.filter((f) => f.date >= s.start && f.date <= s.end);
+      // dates raccourcies : on réduit les visites si besoin et on le signale
+      state.visitMsg = "";
+      if (stepValid("dates")) applyVisitLimits();
+    }
     saveSettings(); render(); return;
   }
   if (el.dataset.forced != null) {
     s.forced[+el.dataset.forced][el.dataset.key] = el.value;
-    saveSettings(); return;
+    state.visitMsg = ""; applyVisitLimits();
+    saveSettings(); render(); return;
   }
   if (el.dataset.must) {
     s.mustDo = el.checked ? [...new Set([...s.mustDo, el.dataset.must])] : s.mustDo.filter((id) => id !== el.dataset.must);
@@ -747,6 +881,41 @@ document.addEventListener("input", (e) => {
     state.search = e.target.value;
     $("#must-list").innerHTML = mustList();
   }
+});
+
+// ------------------------------------------------------------------ thème clair / sombre
+
+const THEME_COLORS = { light: "#FFF8E8", dark: "#2A2A31" };
+const darkQuery = window.matchMedia?.("(prefers-color-scheme: dark)");
+
+function applyTheme() {
+  const root = document.documentElement;
+  if (state.theme === "auto") delete root.dataset.theme; else root.dataset.theme = state.theme;
+  const effective = state.theme === "auto" ? (darkQuery?.matches ? "dark" : "light") : state.theme;
+  // les deux balises theme-color (claire / sombre) suivent le choix forcé, sinon le réglage du téléphone
+  for (const m of document.querySelectorAll('meta[name="theme-color"]')) {
+    m.content = state.theme === "auto" ? THEME_COLORS[m.dataset.mode] : THEME_COLORS[effective];
+  }
+  const icon = { auto: "🌗", light: "☀️", dark: "🌙" }[state.theme];
+  $("#theme-icon").textContent = icon;
+  $("#theme-summary").setAttribute("aria-label", `${t("theme")} : ${t("theme_" + state.theme)}`);
+  for (const b of document.querySelectorAll("[data-action=theme]")) {
+    b.setAttribute("aria-checked", String(b.dataset.theme === state.theme));
+    b.lastElementChild.textContent = t("theme_" + b.dataset.theme);
+  }
+}
+
+function setTheme(theme) {
+  if (!["auto", "light", "dark"].includes(theme)) return;
+  state.theme = theme;
+  store.set("theme", theme);
+  applyTheme();
+  $("#theme-menu").open = false;
+}
+darkQuery?.addEventListener?.("change", applyTheme);
+document.addEventListener("click", (e) => {
+  const menu = $("#theme-menu");
+  if (menu?.open && !menu.contains(e.target)) menu.open = false;
 });
 
 $("#btn-lang").addEventListener("click", () => {
@@ -796,6 +965,7 @@ async function init() {
     const [i18n, meta] = await Promise.all([fetchJson("i18n.json"), fetchJson("rides_meta.json")]);
     state.i18n = i18n;
     state.meta = meta.rides;
+    ensureVisits();
   } catch {
     $("#main").innerHTML = `<div class="card center">Erreur de chargement / Loading error.</div>`;
     return;

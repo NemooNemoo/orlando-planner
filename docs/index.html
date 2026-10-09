@@ -5,7 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Orlando Park Planner</title>
   <meta name="description" content="Planificateur Walt Disney World + Universal Orlando basé sur les temps d'attente réels.">
-  <meta name="theme-color" content="#c8643b">
+  <meta name="theme-color" content="#FFF8E8" media="(prefers-color-scheme: light)" data-mode="light">
+  <meta name="theme-color" content="#2A2A31" media="(prefers-color-scheme: dark)" data-mode="dark">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    // Thème choisi appliqué avant l'affichage (évite un flash de la mauvaise couleur)
+    try {
+      const th = JSON.parse(localStorage.getItem("op.theme"));
+      if (th === "light" || th === "dark") document.documentElement.dataset.theme = th;
+    } catch (e) { /* stockage indisponible */ }
+  </script>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icons/icon-180.png">
@@ -26,6 +35,14 @@
     </div>
     <div class="top-actions">
       <button class="pill ghost" id="btn-install" hidden data-i18n="install"></button>
+      <details class="theme-menu" id="theme-menu">
+        <summary class="pill ghost" id="theme-summary" aria-label="Thème"><span id="theme-icon" aria-hidden="true">🌗</span></summary>
+        <div class="menu" role="radiogroup">
+          <button type="button" role="radio" data-action="theme" data-theme="auto"><span aria-hidden="true">🌗</span><span>Auto</span></button>
+          <button type="button" role="radio" data-action="theme" data-theme="light"><span aria-hidden="true">☀️</span><span>Clair</span></button>
+          <button type="button" role="radio" data-action="theme" data-theme="dark"><span aria-hidden="true">🌙</span><span>Sombre</span></button>
+        </div>
+      </details>
       <button class="pill ghost" id="btn-notes">📥 <span class="hide-sm" data-i18n="notes_import">Importer mes notes</span></button>
       <button class="pill" id="btn-lang" aria-label="Language">EN</button>
     </div>
