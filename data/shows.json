@@ -1068,18 +1068,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-10-09T18:10-04:00",
-    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
-    "name": "The Untrainable Dragon",
-    "start": "2026-10-09T18:10-04:00"
-   },
-   {
-    "end": "2026-10-09T18:20-04:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-10-09T18:20-04:00"
-   },
-   {
     "end": "2026-10-09T18:40-04:00",
     "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
     "name": "Meet Mario and Luigi",
@@ -2015,5 +2003,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-09T18:03-04:00"
+ "updated": "2026-10-09T18:15-04:00"
 }
