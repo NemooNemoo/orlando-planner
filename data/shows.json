@@ -1104,12 +1104,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-10-10T15:20-04:00",
-    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
-    "name": "The Untrainable Dragon",
-    "start": "2026-10-10T15:20-04:00"
-   },
-   {
     "end": "2026-10-10T15:40-04:00",
     "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
     "name": "Meet Mario and Luigi",
@@ -2090,18 +2084,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-10T15:25-04:00",
-    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
-    "name": "Meet SpongeBob SquarePants and Friends",
-    "start": "2026-10-10T15:25-04:00"
-   },
-   {
-    "end": "2026-10-10T15:25-04:00",
-    "id": "2f4690b4-72b0-4845-bcce-9e735397d60b",
-    "name": "The Blues Brothers® Show",
-    "start": "2026-10-10T15:25-04:00"
-   },
-   {
     "end": "2026-10-10T15:30-04:00",
     "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
     "name": "Celestina Warbeck and the Banshees",
@@ -2231,5 +2213,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-10T15:21-04:00"
+ "updated": "2026-10-10T15:30-04:00"
 }
