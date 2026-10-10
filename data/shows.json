@@ -1104,12 +1104,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-10-10T17:30-04:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-10-10T17:30-04:00"
-   },
-   {
     "end": "2026-10-10T17:40-04:00",
     "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
     "name": "Meet Mario and Luigi",
@@ -2003,5 +1997,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-10T17:15-04:00"
+ "updated": "2026-10-10T17:30-04:00"
 }
