@@ -1933,12 +1933,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-09T20:00-04:00",
-    "id": "06ed53f9-3f1b-4ff2-94f2-0ce45015b62a",
-    "name": "Nightmare Fuel: Blood Noir",
-    "start": "2026-10-09T20:00-04:00"
-   },
-   {
     "end": "2026-10-09T21:00-04:00",
     "id": "c08df5ba-1141-4968-b748-5e7802885ec0",
     "name": "Stranger Things: Return to Hawkins",
@@ -1978,5 +1972,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-09T19:45-04:00"
+ "updated": "2026-10-09T20:01-04:00"
 }
