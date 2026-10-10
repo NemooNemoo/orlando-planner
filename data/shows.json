@@ -1104,12 +1104,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-10-10T10:50-04:00",
-    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
-    "name": "The Untrainable Dragon",
-    "start": "2026-10-10T10:50-04:00"
-   },
-   {
     "end": "2026-10-10T11:00-04:00",
     "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
     "name": "Meet Mario and Luigi",
@@ -2432,12 +2426,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-10T10:55-04:00",
-    "id": "55222885-493c-4280-b295-6fd7c609f12d",
-    "name": "Hollywood Character Zone",
-    "start": "2026-10-10T10:55-04:00"
-   },
-   {
     "end": "2026-10-10T11:00-04:00",
     "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
     "name": "Celestina Warbeck and the Banshees",
@@ -3179,5 +3167,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-10T10:45-04:00"
+ "updated": "2026-10-10T11:01-04:00"
 }
