@@ -2,6 +2,12 @@
  "parks": {
   "animal_kingdom": [
    {
+    "end": "2026-10-10T18:00-04:00",
+    "id": "13d7c9d1-a785-403d-9ba8-71fee2f02d55",
+    "name": "Meet Favorite Disney Pals at Adventurers Outpost",
+    "start": "2026-10-10T08:00-04:00"
+   },
+   {
     "end": "2026-10-10T08:10-04:00",
     "id": "d8497541-53a2-4206-b95f-39cb238ae511",
     "name": "Tam Tam Drummers of Harambe",
@@ -12,6 +18,12 @@
     "id": "93d3c183-737f-4e26-98f9-b18a3e190393",
     "name": "Animal Encounters: Winged Encounters – The Kingdom Takes Flight",
     "start": "2026-10-10T08:15-04:00"
+   },
+   {
+    "end": "2026-10-10T12:15-04:00",
+    "id": "f526f3ab-190b-4576-8c79-e2968d171b4e",
+    "name": "Meet Moana at Character Landing",
+    "start": "2026-10-10T08:30-04:00"
    },
    {
     "end": "2026-10-10T13:55-04:00",
@@ -278,6 +290,12 @@
     "start": "2026-10-10T13:45-04:00"
    },
    {
+    "end": "2026-10-10T15:45-04:00",
+    "id": "f526f3ab-190b-4576-8c79-e2968d171b4e",
+    "name": "Meet Moana at Character Landing",
+    "start": "2026-10-10T13:45-04:00"
+   },
+   {
     "end": "2026-10-10T14:00-04:00",
     "id": "f7830bfd-3d25-4ba2-8021-b0d429ef0193",
     "name": "Eco-Rhythmics",
@@ -460,6 +478,12 @@
     "start": "2026-10-10T08:30-04:00"
    },
    {
+    "end": "2026-10-10T21:00-04:00",
+    "id": "67612787-fbd3-44b7-869f-123f55d78584",
+    "name": "Meet Beloved Disney Pals at Mickey & Friends",
+    "start": "2026-10-10T09:00-04:00"
+   },
+   {
     "end": "2026-10-10T12:30-04:00",
     "id": "a70b81bf-2934-433c-9723-afb2f24112bf",
     "name": "Meet Figment Inside ImageWorks",
@@ -470,6 +494,12 @@
     "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
     "name": "Meet Pluto Near EPCOT Main Entrance",
     "start": "2026-10-10T09:00-04:00"
+   },
+   {
+    "end": "2026-10-10T18:30-04:00",
+    "id": "33bd3bad-6803-4c5e-97ac-f7e31261a604",
+    "name": "Meet Anna and Elsa at Royal Sommerhus",
+    "start": "2026-10-10T09:15-04:00"
    },
    {
     "end": "2026-10-10T09:30-04:00",
@@ -1075,9 +1105,33 @@
   "epic_universe": [],
   "hollywood_studios": [
    {
+    "end": "2026-10-10T15:45-04:00",
+    "id": "c113b1cf-7b6d-416a-8e21-bf8f387ecd77",
+    "name": "Meet Ariel at Walt Disney Presents",
+    "start": "2026-10-10T09:00-04:00"
+   },
+   {
+    "end": "2026-10-10T20:00-04:00",
+    "id": "02861a9b-584d-47d5-a8d0-98e05c3b5dce",
+    "name": "Meet Disney Stars at Red Carpet Dreams",
+    "start": "2026-10-10T09:00-04:00"
+   },
+   {
+    "end": "2026-10-10T16:30-04:00",
+    "id": "79860074-658f-49bc-8c1b-624af8b4718e",
+    "name": "Meet Edna Mode at the Edna Mode Experience",
+    "start": "2026-10-10T09:00-04:00"
+   },
+   {
     "end": "2026-10-10T09:00-04:00",
     "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
     "name": "Meet Joy at Pixar Plaza",
+    "start": "2026-10-10T09:00-04:00"
+   },
+   {
+    "end": "2026-10-10T18:00-04:00",
+    "id": "27f9fc86-2341-4bf4-8cbf-67fc16a841f1",
+    "name": "Meet Olaf at Celebrity Spotlight",
     "start": "2026-10-10T09:00-04:00"
    },
    {
@@ -1618,6 +1672,24 @@
   "islands_of_adventure": [],
   "magic_kingdom": [
    {
+    "end": "2026-10-10T22:30-04:00",
+    "id": "a2d92647-634d-4eb4-886b-9da858e871f1",
+    "name": "Meet Mickey at Town Square Theater",
+    "start": "2026-10-10T08:00-04:00"
+   },
+   {
+    "end": "2026-10-10T21:00-04:00",
+    "id": "40737d3d-0ff6-4a9e-a050-beb87bf90120",
+    "name": "Meet Cinderella and a Visiting Princess at Princess Fairytale Hall",
+    "start": "2026-10-10T09:00-04:00"
+   },
+   {
+    "end": "2026-10-10T21:00-04:00",
+    "id": "cf4b2ba4-3626-4de7-9d07-abe8a65b1665",
+    "name": "Meet Princess Tiana and a Visiting Princess at Princess Fairytale Hall",
+    "start": "2026-10-10T09:00-04:00"
+   },
+   {
     "end": "2026-10-10T09:00-04:00",
     "id": "1eee22e8-1d0a-4809-a42b-df3ae55c69d5",
     "name": "The Dapper Dans",
@@ -1628,6 +1700,24 @@
     "id": "1eee22e8-1d0a-4809-a42b-df3ae55c69d5",
     "name": "The Dapper Dans",
     "start": "2026-10-10T09:50-04:00"
+   },
+   {
+    "end": "2026-10-10T19:00-04:00",
+    "id": "012a211b-4c91-451c-8a0e-5e3ab398eda8",
+    "name": "Meet Ariel at Her Grotto",
+    "start": "2026-10-10T10:00-04:00"
+   },
+   {
+    "end": "2026-10-10T19:00-04:00",
+    "id": "166f2985-7b27-4eff-a8b3-29c3448ba198",
+    "name": "Meet Daring Disney Pals as Circus Stars at Pete's Silly Sideshow",
+    "start": "2026-10-10T10:00-04:00"
+   },
+   {
+    "end": "2026-10-10T19:00-04:00",
+    "id": "b5d6d1d1-e960-4c8f-a8a4-b9748b386b64",
+    "name": "Meet Dashing Disney Pals as Circus Stars at Pete's Silly Sideshow",
+    "start": "2026-10-10T10:00-04:00"
    },
    {
     "end": "2026-10-10T10:00-04:00",
@@ -1796,5 +1886,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-10T03:01-04:00"
+ "updated": "2026-10-10T03:15-04:00"
 }
