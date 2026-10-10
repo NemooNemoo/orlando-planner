@@ -1104,18 +1104,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-10-10T12:30-04:00",
-    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
-    "name": "The Untrainable Dragon",
-    "start": "2026-10-10T12:30-04:00"
-   },
-   {
-    "end": "2026-10-10T12:40-04:00",
-    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
-    "name": "Meet Princess Peach",
-    "start": "2026-10-10T12:40-04:00"
-   },
-   {
     "end": "2026-10-10T12:50-04:00",
     "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
     "name": "Meet Mario and Luigi",
@@ -1822,30 +1810,6 @@
   ],
   "islands_of_adventure": [
    {
-    "end": "2026-10-10T12:30-04:00",
-    "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
-    "name": "Classic Comic Book Characters",
-    "start": "2026-10-10T12:30-04:00"
-   },
-   {
-    "end": "2026-10-10T12:30-04:00",
-    "id": "f6d4294c-8825-4712-a891-36d45b5eb0f4",
-    "name": "Seuss Character Zone",
-    "start": "2026-10-10T12:30-04:00"
-   },
-   {
-    "end": "2026-10-10T12:30-04:00",
-    "id": "cc2f2601-09d2-43b8-83ef-2a367b929761",
-    "name": "Triwizard Spirit Rally",
-    "start": "2026-10-10T12:30-04:00"
-   },
-   {
-    "end": "2026-10-10T12:40-04:00",
-    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
-    "name": "Raptor Encounter",
-    "start": "2026-10-10T12:40-04:00"
-   },
-   {
     "end": "2026-10-10T13:00-04:00",
     "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
     "name": "Classic Comic Book Characters",
@@ -2311,30 +2275,6 @@
    }
   ],
   "universal_studios_florida": [
-   {
-    "end": "2026-10-10T12:30-04:00",
-    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
-    "name": "DreamWorks Character Zone",
-    "start": "2026-10-10T12:30-04:00"
-   },
-   {
-    "end": "2026-10-10T12:30-04:00",
-    "id": "c85d936f-c5b7-490b-880b-6f0bf44ba557",
-    "name": "DreamWorks Imagination Celebration",
-    "start": "2026-10-10T12:30-04:00"
-   },
-   {
-    "end": "2026-10-10T12:30-04:00",
-    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
-    "name": "Illumination Theater",
-    "start": "2026-10-10T12:30-04:00"
-   },
-   {
-    "end": "2026-10-10T12:40-04:00",
-    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
-    "name": "DreamWorks Character Zone",
-    "start": "2026-10-10T12:40-04:00"
-   },
    {
     "end": "2026-10-10T12:45-04:00",
     "id": "079c0df0-7305-4f61-ab0e-c7725f4fe1b6",
@@ -2867,5 +2807,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-10T12:30-04:00"
+ "updated": "2026-10-10T12:45-04:00"
 }
