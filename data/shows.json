@@ -1102,7 +1102,236 @@
     "start": "2026-10-10T21:00-04:00"
    }
   ],
-  "epic_universe": [],
+  "epic_universe": [
+   {
+    "end": "2026-10-10T08:00-04:00",
+    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
+    "name": "Meet Mario and Luigi",
+    "start": "2026-10-10T08:00-04:00"
+   },
+   {
+    "end": "2026-10-10T09:00-04:00",
+    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
+    "name": "Meet Mario and Luigi",
+    "start": "2026-10-10T09:00-04:00"
+   },
+   {
+    "end": "2026-10-10T09:40-04:00",
+    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
+    "name": "Meet Princess Peach",
+    "start": "2026-10-10T09:40-04:00"
+   },
+   {
+    "end": "2026-10-10T10:00-04:00",
+    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
+    "name": "Meet Mario and Luigi",
+    "start": "2026-10-10T10:00-04:00"
+   },
+   {
+    "end": "2026-10-10T10:30-04:00",
+    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
+    "name": "Le Cirque Arcanus™",
+    "start": "2026-10-10T10:30-04:00"
+   },
+   {
+    "end": "2026-10-10T10:40-04:00",
+    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
+    "name": "Meet Princess Peach",
+    "start": "2026-10-10T10:40-04:00"
+   },
+   {
+    "end": "2026-10-10T10:50-04:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
+    "start": "2026-10-10T10:50-04:00"
+   },
+   {
+    "end": "2026-10-10T11:00-04:00",
+    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
+    "name": "Meet Mario and Luigi",
+    "start": "2026-10-10T11:00-04:00"
+   },
+   {
+    "end": "2026-10-10T11:20-04:00",
+    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
+    "name": "Le Cirque Arcanus™",
+    "start": "2026-10-10T11:20-04:00"
+   },
+   {
+    "end": "2026-10-10T11:40-04:00",
+    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
+    "name": "Meet Princess Peach",
+    "start": "2026-10-10T11:40-04:00"
+   },
+   {
+    "end": "2026-10-10T11:40-04:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
+    "start": "2026-10-10T11:40-04:00"
+   },
+   {
+    "end": "2026-10-10T11:50-04:00",
+    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
+    "name": "Meet Mario and Luigi",
+    "start": "2026-10-10T11:50-04:00"
+   },
+   {
+    "end": "2026-10-10T12:10-04:00",
+    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
+    "name": "Le Cirque Arcanus™",
+    "start": "2026-10-10T12:10-04:00"
+   },
+   {
+    "end": "2026-10-10T12:25-04:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
+    "start": "2026-10-10T12:25-04:00"
+   },
+   {
+    "end": "2026-10-10T12:40-04:00",
+    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
+    "name": "Meet Princess Peach",
+    "start": "2026-10-10T12:40-04:00"
+   },
+   {
+    "end": "2026-10-10T12:50-04:00",
+    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
+    "name": "Meet Mario and Luigi",
+    "start": "2026-10-10T12:50-04:00"
+   },
+   {
+    "end": "2026-10-10T12:55-04:00",
+    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
+    "name": "Le Cirque Arcanus™",
+    "start": "2026-10-10T12:55-04:00"
+   },
+   {
+    "end": "2026-10-10T13:20-04:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
+    "start": "2026-10-10T13:20-04:00"
+   },
+   {
+    "end": "2026-10-10T13:40-04:00",
+    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
+    "name": "Le Cirque Arcanus™",
+    "start": "2026-10-10T13:40-04:00"
+   },
+   {
+    "end": "2026-10-10T13:50-04:00",
+    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
+    "name": "Meet Mario and Luigi",
+    "start": "2026-10-10T13:50-04:00"
+   },
+   {
+    "end": "2026-10-10T14:00-04:00",
+    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
+    "name": "Meet Princess Peach",
+    "start": "2026-10-10T14:00-04:00"
+   },
+   {
+    "end": "2026-10-10T14:10-04:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
+    "start": "2026-10-10T14:10-04:00"
+   },
+   {
+    "end": "2026-10-10T14:30-04:00",
+    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
+    "name": "Le Cirque Arcanus™",
+    "start": "2026-10-10T14:30-04:00"
+   },
+   {
+    "end": "2026-10-10T14:50-04:00",
+    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
+    "name": "Meet Mario and Luigi",
+    "start": "2026-10-10T14:50-04:00"
+   },
+   {
+    "end": "2026-10-10T15:00-04:00",
+    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
+    "name": "Meet Princess Peach",
+    "start": "2026-10-10T15:00-04:00"
+   },
+   {
+    "end": "2026-10-10T15:10-04:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
+    "start": "2026-10-10T15:10-04:00"
+   },
+   {
+    "end": "2026-10-10T15:15-04:00",
+    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
+    "name": "Le Cirque Arcanus™",
+    "start": "2026-10-10T15:15-04:00"
+   },
+   {
+    "end": "2026-10-10T15:40-04:00",
+    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
+    "name": "Meet Mario and Luigi",
+    "start": "2026-10-10T15:40-04:00"
+   },
+   {
+    "end": "2026-10-10T16:00-04:00",
+    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
+    "name": "Le Cirque Arcanus™",
+    "start": "2026-10-10T16:00-04:00"
+   },
+   {
+    "end": "2026-10-10T16:00-04:00",
+    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
+    "name": "Meet Princess Peach",
+    "start": "2026-10-10T16:00-04:00"
+   },
+   {
+    "end": "2026-10-10T16:10-04:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
+    "start": "2026-10-10T16:10-04:00"
+   },
+   {
+    "end": "2026-10-10T16:40-04:00",
+    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
+    "name": "Meet Mario and Luigi",
+    "start": "2026-10-10T16:40-04:00"
+   },
+   {
+    "end": "2026-10-10T16:45-04:00",
+    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
+    "name": "Le Cirque Arcanus™",
+    "start": "2026-10-10T16:45-04:00"
+   },
+   {
+    "end": "2026-10-10T17:00-04:00",
+    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
+    "name": "Meet Princess Peach",
+    "start": "2026-10-10T17:00-04:00"
+   },
+   {
+    "end": "2026-10-10T17:00-04:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
+    "start": "2026-10-10T17:00-04:00"
+   },
+   {
+    "end": "2026-10-10T17:30-04:00",
+    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
+    "name": "Le Cirque Arcanus™",
+    "start": "2026-10-10T17:30-04:00"
+   },
+   {
+    "end": "2026-10-10T17:40-04:00",
+    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
+    "name": "Meet Mario and Luigi",
+    "start": "2026-10-10T17:40-04:00"
+   },
+   {
+    "end": "2026-10-10T21:30-04:00",
+    "id": "a872883d-761b-4dda-a124-5dadcfa9e5ae",
+    "name": "Universal Celestial Goodnight",
+    "start": "2026-10-10T21:30-04:00"
+   }
+  ],
   "hollywood_studios": [
    {
     "end": "2026-10-10T15:45-04:00",
@@ -1669,7 +1898,410 @@
     "start": "2026-10-10T21:30-04:00"
    }
   ],
-  "islands_of_adventure": [],
+  "islands_of_adventure": [
+   {
+    "end": "2026-10-10T09:45-04:00",
+    "id": "c6c26dd9-bb82-49de-9fca-9245be6a8081",
+    "name": "Meet Spider-Man and the Marvel® Super Heroes",
+    "start": "2026-10-10T09:45-04:00"
+   },
+   {
+    "end": "2026-10-10T10:00-04:00",
+    "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
+    "name": "Classic Comic Book Characters",
+    "start": "2026-10-10T10:00-04:00"
+   },
+   {
+    "end": "2026-10-10T10:00-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T10:00-04:00"
+   },
+   {
+    "end": "2026-10-10T10:20-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T10:20-04:00"
+   },
+   {
+    "end": "2026-10-10T10:30-04:00",
+    "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
+    "name": "Classic Comic Book Characters",
+    "start": "2026-10-10T10:30-04:00"
+   },
+   {
+    "end": "2026-10-10T10:30-04:00",
+    "id": "f6d4294c-8825-4712-a891-36d45b5eb0f4",
+    "name": "Seuss Character Zone",
+    "start": "2026-10-10T10:30-04:00"
+   },
+   {
+    "end": "2026-10-10T10:30-04:00",
+    "id": "cc2f2601-09d2-43b8-83ef-2a367b929761",
+    "name": "Triwizard Spirit Rally",
+    "start": "2026-10-10T10:30-04:00"
+   },
+   {
+    "end": "2026-10-10T10:40-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T10:40-04:00"
+   },
+   {
+    "end": "2026-10-10T11:00-04:00",
+    "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
+    "name": "Classic Comic Book Characters",
+    "start": "2026-10-10T11:00-04:00"
+   },
+   {
+    "end": "2026-10-10T11:00-04:00",
+    "id": "97b25fe9-eb81-46bd-b57f-8b2fbbe85249",
+    "name": "Frog Choir",
+    "start": "2026-10-10T11:00-04:00"
+   },
+   {
+    "end": "2026-10-10T11:00-04:00",
+    "id": "9ad98d6a-e81a-4408-b5df-1ea832fe0b19",
+    "name": "Oh! The Stories You'll Hear!™",
+    "start": "2026-10-10T11:00-04:00"
+   },
+   {
+    "end": "2026-10-10T11:00-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T11:00-04:00"
+   },
+   {
+    "end": "2026-10-10T11:20-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T11:20-04:00"
+   },
+   {
+    "end": "2026-10-10T11:30-04:00",
+    "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
+    "name": "Classic Comic Book Characters",
+    "start": "2026-10-10T11:30-04:00"
+   },
+   {
+    "end": "2026-10-10T11:30-04:00",
+    "id": "f6d4294c-8825-4712-a891-36d45b5eb0f4",
+    "name": "Seuss Character Zone",
+    "start": "2026-10-10T11:30-04:00"
+   },
+   {
+    "end": "2026-10-10T11:30-04:00",
+    "id": "cc2f2601-09d2-43b8-83ef-2a367b929761",
+    "name": "Triwizard Spirit Rally",
+    "start": "2026-10-10T11:30-04:00"
+   },
+   {
+    "end": "2026-10-10T11:40-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T11:40-04:00"
+   },
+   {
+    "end": "2026-10-10T12:00-04:00",
+    "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
+    "name": "Classic Comic Book Characters",
+    "start": "2026-10-10T12:00-04:00"
+   },
+   {
+    "end": "2026-10-10T12:00-04:00",
+    "id": "97b25fe9-eb81-46bd-b57f-8b2fbbe85249",
+    "name": "Frog Choir",
+    "start": "2026-10-10T12:00-04:00"
+   },
+   {
+    "end": "2026-10-10T12:00-04:00",
+    "id": "9ad98d6a-e81a-4408-b5df-1ea832fe0b19",
+    "name": "Oh! The Stories You'll Hear!™",
+    "start": "2026-10-10T12:00-04:00"
+   },
+   {
+    "end": "2026-10-10T12:20-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T12:20-04:00"
+   },
+   {
+    "end": "2026-10-10T12:30-04:00",
+    "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
+    "name": "Classic Comic Book Characters",
+    "start": "2026-10-10T12:30-04:00"
+   },
+   {
+    "end": "2026-10-10T12:30-04:00",
+    "id": "f6d4294c-8825-4712-a891-36d45b5eb0f4",
+    "name": "Seuss Character Zone",
+    "start": "2026-10-10T12:30-04:00"
+   },
+   {
+    "end": "2026-10-10T12:30-04:00",
+    "id": "cc2f2601-09d2-43b8-83ef-2a367b929761",
+    "name": "Triwizard Spirit Rally",
+    "start": "2026-10-10T12:30-04:00"
+   },
+   {
+    "end": "2026-10-10T12:40-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T12:40-04:00"
+   },
+   {
+    "end": "2026-10-10T13:00-04:00",
+    "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
+    "name": "Classic Comic Book Characters",
+    "start": "2026-10-10T13:00-04:00"
+   },
+   {
+    "end": "2026-10-10T13:00-04:00",
+    "id": "97b25fe9-eb81-46bd-b57f-8b2fbbe85249",
+    "name": "Frog Choir",
+    "start": "2026-10-10T13:00-04:00"
+   },
+   {
+    "end": "2026-10-10T13:00-04:00",
+    "id": "9ad98d6a-e81a-4408-b5df-1ea832fe0b19",
+    "name": "Oh! The Stories You'll Hear!™",
+    "start": "2026-10-10T13:00-04:00"
+   },
+   {
+    "end": "2026-10-10T13:00-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T13:00-04:00"
+   },
+   {
+    "end": "2026-10-10T13:20-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T13:20-04:00"
+   },
+   {
+    "end": "2026-10-10T13:30-04:00",
+    "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
+    "name": "Classic Comic Book Characters",
+    "start": "2026-10-10T13:30-04:00"
+   },
+   {
+    "end": "2026-10-10T13:40-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T13:40-04:00"
+   },
+   {
+    "end": "2026-10-10T14:00-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T14:00-04:00"
+   },
+   {
+    "end": "2026-10-10T14:00-04:00",
+    "id": "cc2f2601-09d2-43b8-83ef-2a367b929761",
+    "name": "Triwizard Spirit Rally",
+    "start": "2026-10-10T14:00-04:00"
+   },
+   {
+    "end": "2026-10-10T14:15-04:00",
+    "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
+    "name": "Classic Comic Book Characters",
+    "start": "2026-10-10T14:15-04:00"
+   },
+   {
+    "end": "2026-10-10T14:15-04:00",
+    "id": "f6d4294c-8825-4712-a891-36d45b5eb0f4",
+    "name": "Seuss Character Zone",
+    "start": "2026-10-10T14:15-04:00"
+   },
+   {
+    "end": "2026-10-10T14:20-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T14:20-04:00"
+   },
+   {
+    "end": "2026-10-10T14:30-04:00",
+    "id": "97b25fe9-eb81-46bd-b57f-8b2fbbe85249",
+    "name": "Frog Choir",
+    "start": "2026-10-10T14:30-04:00"
+   },
+   {
+    "end": "2026-10-10T14:40-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T14:40-04:00"
+   },
+   {
+    "end": "2026-10-10T14:45-04:00",
+    "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
+    "name": "Classic Comic Book Characters",
+    "start": "2026-10-10T14:45-04:00"
+   },
+   {
+    "end": "2026-10-10T14:45-04:00",
+    "id": "9ad98d6a-e81a-4408-b5df-1ea832fe0b19",
+    "name": "Oh! The Stories You'll Hear!™",
+    "start": "2026-10-10T14:45-04:00"
+   },
+   {
+    "end": "2026-10-10T15:00-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T15:00-04:00"
+   },
+   {
+    "end": "2026-10-10T15:00-04:00",
+    "id": "cc2f2601-09d2-43b8-83ef-2a367b929761",
+    "name": "Triwizard Spirit Rally",
+    "start": "2026-10-10T15:00-04:00"
+   },
+   {
+    "end": "2026-10-10T15:15-04:00",
+    "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
+    "name": "Classic Comic Book Characters",
+    "start": "2026-10-10T15:15-04:00"
+   },
+   {
+    "end": "2026-10-10T15:15-04:00",
+    "id": "f6d4294c-8825-4712-a891-36d45b5eb0f4",
+    "name": "Seuss Character Zone",
+    "start": "2026-10-10T15:15-04:00"
+   },
+   {
+    "end": "2026-10-10T15:30-04:00",
+    "id": "97b25fe9-eb81-46bd-b57f-8b2fbbe85249",
+    "name": "Frog Choir",
+    "start": "2026-10-10T15:30-04:00"
+   },
+   {
+    "end": "2026-10-10T15:40-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T15:40-04:00"
+   },
+   {
+    "end": "2026-10-10T15:45-04:00",
+    "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
+    "name": "Classic Comic Book Characters",
+    "start": "2026-10-10T15:45-04:00"
+   },
+   {
+    "end": "2026-10-10T15:45-04:00",
+    "id": "9ad98d6a-e81a-4408-b5df-1ea832fe0b19",
+    "name": "Oh! The Stories You'll Hear!™",
+    "start": "2026-10-10T15:45-04:00"
+   },
+   {
+    "end": "2026-10-10T16:00-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T16:00-04:00"
+   },
+   {
+    "end": "2026-10-10T16:00-04:00",
+    "id": "cc2f2601-09d2-43b8-83ef-2a367b929761",
+    "name": "Triwizard Spirit Rally",
+    "start": "2026-10-10T16:00-04:00"
+   },
+   {
+    "end": "2026-10-10T16:15-04:00",
+    "id": "f6d4294c-8825-4712-a891-36d45b5eb0f4",
+    "name": "Seuss Character Zone",
+    "start": "2026-10-10T16:15-04:00"
+   },
+   {
+    "end": "2026-10-10T16:20-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T16:20-04:00"
+   },
+   {
+    "end": "2026-10-10T16:30-04:00",
+    "id": "97b25fe9-eb81-46bd-b57f-8b2fbbe85249",
+    "name": "Frog Choir",
+    "start": "2026-10-10T16:30-04:00"
+   },
+   {
+    "end": "2026-10-10T16:40-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T16:40-04:00"
+   },
+   {
+    "end": "2026-10-10T16:45-04:00",
+    "id": "9ad98d6a-e81a-4408-b5df-1ea832fe0b19",
+    "name": "Oh! The Stories You'll Hear!™",
+    "start": "2026-10-10T16:45-04:00"
+   },
+   {
+    "end": "2026-10-10T17:00-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T17:00-04:00"
+   },
+   {
+    "end": "2026-10-10T17:20-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T17:20-04:00"
+   },
+   {
+    "end": "2026-10-10T17:40-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T17:40-04:00"
+   },
+   {
+    "end": "2026-10-10T18:20-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T18:20-04:00"
+   },
+   {
+    "end": "2026-10-10T18:40-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T18:40-04:00"
+   },
+   {
+    "end": "2026-10-10T19:00-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T19:00-04:00"
+   },
+   {
+    "end": "2026-10-10T19:20-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T19:20-04:00"
+   },
+   {
+    "end": "2026-10-10T19:40-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T19:40-04:00"
+   },
+   {
+    "end": "2026-10-10T20:00-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T20:00-04:00"
+   },
+   {
+    "end": "2026-10-10T20:20-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T20:20-04:00"
+   },
+   {
+    "end": "2026-10-10T20:40-04:00",
+    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
+    "name": "Raptor Encounter",
+    "start": "2026-10-10T20:40-04:00"
+   }
+  ],
   "magic_kingdom": [
    {
     "end": "2026-10-10T22:30-04:00",
@@ -1884,6 +2516,924 @@
   ],
   "universal_studios_florida": [
    {
+    "end": "2026-10-10T09:00-04:00",
+    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
+    "name": "DreamWorks Character Zone",
+    "start": "2026-10-10T09:00-04:00"
+   },
+   {
+    "end": "2026-10-10T09:00-04:00",
+    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
+    "name": "Illumination Theater",
+    "start": "2026-10-10T09:00-04:00"
+   },
+   {
+    "end": "2026-10-10T09:00-04:00",
+    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
+    "name": "Meet The TRANSFORMERS™",
+    "start": "2026-10-10T09:00-04:00"
+   },
+   {
+    "end": "2026-10-10T09:15-04:00",
+    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
+    "name": "Meet SpongeBob SquarePants and Friends",
+    "start": "2026-10-10T09:15-04:00"
+   },
+   {
+    "end": "2026-10-10T09:20-04:00",
+    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
+    "name": "Illumination Theater",
+    "start": "2026-10-10T09:20-04:00"
+   },
+   {
+    "end": "2026-10-10T09:20-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
+    "start": "2026-10-10T09:20-04:00"
+   },
+   {
+    "end": "2026-10-10T09:25-04:00",
+    "id": "55222885-493c-4280-b295-6fd7c609f12d",
+    "name": "Hollywood Character Zone",
+    "start": "2026-10-10T09:25-04:00"
+   },
+   {
+    "end": "2026-10-10T09:25-04:00",
+    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
+    "name": "Meet The TRANSFORMERS™",
+    "start": "2026-10-10T09:25-04:00"
+   },
+   {
+    "end": "2026-10-10T09:30-04:00",
+    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
+    "name": "DreamWorks Character Zone",
+    "start": "2026-10-10T09:30-04:00"
+   },
+   {
+    "end": "2026-10-10T09:30-04:00",
+    "id": "ec4c8603-5ccd-4af2-a7b1-0684664c0bc1",
+    "name": "The Tales of Beedle the Bard",
+    "start": "2026-10-10T09:30-04:00"
+   },
+   {
+    "end": "2026-10-10T09:40-04:00",
+    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
+    "name": "Illumination Theater",
+    "start": "2026-10-10T09:40-04:00"
+   },
+   {
+    "end": "2026-10-10T09:40-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
+    "start": "2026-10-10T09:40-04:00"
+   },
+   {
+    "end": "2026-10-10T09:45-04:00",
+    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
+    "name": "Meet SpongeBob SquarePants and Friends",
+    "start": "2026-10-10T09:45-04:00"
+   },
+   {
+    "end": "2026-10-10T09:50-04:00",
+    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
+    "name": "Meet The TRANSFORMERS™",
+    "start": "2026-10-10T09:50-04:00"
+   },
+   {
+    "end": "2026-10-10T09:55-04:00",
+    "id": "55222885-493c-4280-b295-6fd7c609f12d",
+    "name": "Hollywood Character Zone",
+    "start": "2026-10-10T09:55-04:00"
+   },
+   {
+    "end": "2026-10-10T10:00-04:00",
+    "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
+    "name": "Celestina Warbeck and the Banshees",
+    "start": "2026-10-10T10:00-04:00"
+   },
+   {
+    "end": "2026-10-10T10:00-04:00",
+    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
+    "name": "DreamWorks Character Zone",
+    "start": "2026-10-10T10:00-04:00"
+   },
+   {
+    "end": "2026-10-10T10:00-04:00",
+    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
+    "name": "Illumination Theater",
+    "start": "2026-10-10T10:00-04:00"
+   },
+   {
+    "end": "2026-10-10T10:00-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
+    "start": "2026-10-10T10:00-04:00"
+   },
+   {
+    "end": "2026-10-10T10:15-04:00",
+    "id": "079c0df0-7305-4f61-ab0e-c7725f4fe1b6",
+    "name": "Animal Actors on Location!™",
+    "start": "2026-10-10T10:15-04:00"
+   },
+   {
+    "end": "2026-10-10T10:15-04:00",
+    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
+    "name": "Meet SpongeBob SquarePants and Friends",
+    "start": "2026-10-10T10:15-04:00"
+   },
+   {
+    "end": "2026-10-10T10:15-04:00",
+    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
+    "name": "Meet The TRANSFORMERS™",
+    "start": "2026-10-10T10:15-04:00"
+   },
+   {
+    "end": "2026-10-10T10:15-04:00",
+    "id": "2436bad1-f319-44d5-98ac-a283b81956c6",
+    "name": "The Bourne Stuntacular",
+    "start": "2026-10-10T10:15-04:00"
+   },
+   {
+    "end": "2026-10-10T10:20-04:00",
+    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
+    "name": "Illumination Theater",
+    "start": "2026-10-10T10:20-04:00"
+   },
+   {
+    "end": "2026-10-10T10:20-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
+    "start": "2026-10-10T10:20-04:00"
+   },
+   {
+    "end": "2026-10-10T10:25-04:00",
+    "id": "55222885-493c-4280-b295-6fd7c609f12d",
+    "name": "Hollywood Character Zone",
+    "start": "2026-10-10T10:25-04:00"
+   },
+   {
+    "end": "2026-10-10T10:25-04:00",
+    "id": "fa701040-b46a-4291-afb9-b8dc2c8e9a16",
+    "name": "¡Vamos! – Báilalo",
+    "start": "2026-10-10T10:25-04:00"
+   },
+   {
+    "end": "2026-10-10T10:30-04:00",
+    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
+    "name": "DreamWorks Character Zone",
+    "start": "2026-10-10T10:30-04:00"
+   },
+   {
+    "end": "2026-10-10T10:30-04:00",
+    "id": "c85d936f-c5b7-490b-880b-6f0bf44ba557",
+    "name": "DreamWorks Imagination Celebration",
+    "start": "2026-10-10T10:30-04:00"
+   },
+   {
+    "end": "2026-10-10T10:30-04:00",
+    "id": "ec4c8603-5ccd-4af2-a7b1-0684664c0bc1",
+    "name": "The Tales of Beedle the Bard",
+    "start": "2026-10-10T10:30-04:00"
+   },
+   {
+    "end": "2026-10-10T10:40-04:00",
+    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
+    "name": "Illumination Theater",
+    "start": "2026-10-10T10:40-04:00"
+   },
+   {
+    "end": "2026-10-10T10:40-04:00",
+    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
+    "name": "Meet The TRANSFORMERS™",
+    "start": "2026-10-10T10:40-04:00"
+   },
+   {
+    "end": "2026-10-10T10:40-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
+    "start": "2026-10-10T10:40-04:00"
+   },
+   {
+    "end": "2026-10-10T10:45-04:00",
+    "id": "41d282f8-2015-4caa-9591-9faa948e263e",
+    "name": "Beat Builders",
+    "start": "2026-10-10T10:45-04:00"
+   },
+   {
+    "end": "2026-10-10T10:45-04:00",
+    "id": "bf89766b-1d19-428f-9e68-71e12f25287b",
+    "name": "Marilyn and the Diamond Bellas",
+    "start": "2026-10-10T10:45-04:00"
+   },
+   {
+    "end": "2026-10-10T10:45-04:00",
+    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
+    "name": "Meet SpongeBob SquarePants and Friends",
+    "start": "2026-10-10T10:45-04:00"
+   },
+   {
+    "end": "2026-10-10T10:55-04:00",
+    "id": "55222885-493c-4280-b295-6fd7c609f12d",
+    "name": "Hollywood Character Zone",
+    "start": "2026-10-10T10:55-04:00"
+   },
+   {
+    "end": "2026-10-10T11:00-04:00",
+    "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
+    "name": "Celestina Warbeck and the Banshees",
+    "start": "2026-10-10T11:00-04:00"
+   },
+   {
+    "end": "2026-10-10T11:00-04:00",
+    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
+    "name": "DreamWorks Character Zone",
+    "start": "2026-10-10T11:00-04:00"
+   },
+   {
+    "end": "2026-10-10T11:00-04:00",
+    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
+    "name": "Illumination Theater",
+    "start": "2026-10-10T11:00-04:00"
+   },
+   {
+    "end": "2026-10-10T11:00-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
+    "start": "2026-10-10T11:00-04:00"
+   },
+   {
+    "end": "2026-10-10T11:00-04:00",
+    "id": "2f4690b4-72b0-4845-bcce-9e735397d60b",
+    "name": "The Blues Brothers® Show",
+    "start": "2026-10-10T11:00-04:00"
+   },
+   {
+    "end": "2026-10-10T11:00-04:00",
+    "id": "2436bad1-f319-44d5-98ac-a283b81956c6",
+    "name": "The Bourne Stuntacular",
+    "start": "2026-10-10T11:00-04:00"
+   },
+   {
+    "end": "2026-10-10T11:05-04:00",
+    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
+    "name": "Meet The TRANSFORMERS™",
+    "start": "2026-10-10T11:05-04:00"
+   },
+   {
+    "end": "2026-10-10T11:15-04:00",
+    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
+    "name": "Meet SpongeBob SquarePants and Friends",
+    "start": "2026-10-10T11:15-04:00"
+   },
+   {
+    "end": "2026-10-10T11:20-04:00",
+    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
+    "name": "Illumination Theater",
+    "start": "2026-10-10T11:20-04:00"
+   },
+   {
+    "end": "2026-10-10T11:20-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
+    "start": "2026-10-10T11:20-04:00"
+   },
+   {
+    "end": "2026-10-10T11:25-04:00",
+    "id": "55222885-493c-4280-b295-6fd7c609f12d",
+    "name": "Hollywood Character Zone",
+    "start": "2026-10-10T11:25-04:00"
+   },
+   {
+    "end": "2026-10-10T11:25-04:00",
+    "id": "fa701040-b46a-4291-afb9-b8dc2c8e9a16",
+    "name": "¡Vamos! – Báilalo",
+    "start": "2026-10-10T11:25-04:00"
+   },
+   {
+    "end": "2026-10-10T11:30-04:00",
+    "id": "079c0df0-7305-4f61-ab0e-c7725f4fe1b6",
+    "name": "Animal Actors on Location!™",
+    "start": "2026-10-10T11:30-04:00"
+   },
+   {
+    "end": "2026-10-10T11:30-04:00",
+    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
+    "name": "DreamWorks Character Zone",
+    "start": "2026-10-10T11:30-04:00"
+   },
+   {
+    "end": "2026-10-10T11:30-04:00",
+    "id": "c85d936f-c5b7-490b-880b-6f0bf44ba557",
+    "name": "DreamWorks Imagination Celebration",
+    "start": "2026-10-10T11:30-04:00"
+   },
+   {
+    "end": "2026-10-10T11:30-04:00",
+    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
+    "name": "Meet The TRANSFORMERS™",
+    "start": "2026-10-10T11:30-04:00"
+   },
+   {
+    "end": "2026-10-10T11:30-04:00",
+    "id": "ec4c8603-5ccd-4af2-a7b1-0684664c0bc1",
+    "name": "The Tales of Beedle the Bard",
+    "start": "2026-10-10T11:30-04:00"
+   },
+   {
+    "end": "2026-10-10T11:40-04:00",
+    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
+    "name": "Illumination Theater",
+    "start": "2026-10-10T11:40-04:00"
+   },
+   {
+    "end": "2026-10-10T11:40-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
+    "start": "2026-10-10T11:40-04:00"
+   },
+   {
+    "end": "2026-10-10T11:45-04:00",
+    "id": "41d282f8-2015-4caa-9591-9faa948e263e",
+    "name": "Beat Builders",
+    "start": "2026-10-10T11:45-04:00"
+   },
+   {
+    "end": "2026-10-10T11:45-04:00",
+    "id": "bf89766b-1d19-428f-9e68-71e12f25287b",
+    "name": "Marilyn and the Diamond Bellas",
+    "start": "2026-10-10T11:45-04:00"
+   },
+   {
+    "end": "2026-10-10T11:45-04:00",
+    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
+    "name": "Meet SpongeBob SquarePants and Friends",
+    "start": "2026-10-10T11:45-04:00"
+   },
+   {
+    "end": "2026-10-10T11:50-04:00",
+    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
+    "name": "Illumination Theater",
+    "start": "2026-10-10T11:50-04:00"
+   },
+   {
+    "end": "2026-10-10T11:55-04:00",
+    "id": "55222885-493c-4280-b295-6fd7c609f12d",
+    "name": "Hollywood Character Zone",
+    "start": "2026-10-10T11:55-04:00"
+   },
+   {
+    "end": "2026-10-10T11:55-04:00",
+    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
+    "name": "Meet The TRANSFORMERS™",
+    "start": "2026-10-10T11:55-04:00"
+   },
+   {
+    "end": "2026-10-10T12:00-04:00",
+    "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
+    "name": "Celestina Warbeck and the Banshees",
+    "start": "2026-10-10T12:00-04:00"
+   },
+   {
+    "end": "2026-10-10T12:00-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
+    "start": "2026-10-10T12:00-04:00"
+   },
+   {
+    "end": "2026-10-10T12:00-04:00",
+    "id": "2f4690b4-72b0-4845-bcce-9e735397d60b",
+    "name": "The Blues Brothers® Show",
+    "start": "2026-10-10T12:00-04:00"
+   },
+   {
+    "end": "2026-10-10T12:00-04:00",
+    "id": "2436bad1-f319-44d5-98ac-a283b81956c6",
+    "name": "The Bourne Stuntacular",
+    "start": "2026-10-10T12:00-04:00"
+   },
+   {
+    "end": "2026-10-10T12:20-04:00",
+    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
+    "name": "Meet The TRANSFORMERS™",
+    "start": "2026-10-10T12:20-04:00"
+   },
+   {
+    "end": "2026-10-10T12:25-04:00",
+    "id": "fa701040-b46a-4291-afb9-b8dc2c8e9a16",
+    "name": "¡Vamos! – Báilalo",
+    "start": "2026-10-10T12:25-04:00"
+   },
+   {
+    "end": "2026-10-10T12:30-04:00",
+    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
+    "name": "DreamWorks Character Zone",
+    "start": "2026-10-10T12:30-04:00"
+   },
+   {
+    "end": "2026-10-10T12:30-04:00",
+    "id": "c85d936f-c5b7-490b-880b-6f0bf44ba557",
+    "name": "DreamWorks Imagination Celebration",
+    "start": "2026-10-10T12:30-04:00"
+   },
+   {
+    "end": "2026-10-10T12:30-04:00",
+    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
+    "name": "Illumination Theater",
+    "start": "2026-10-10T12:30-04:00"
+   },
+   {
+    "end": "2026-10-10T12:40-04:00",
+    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
+    "name": "DreamWorks Character Zone",
+    "start": "2026-10-10T12:40-04:00"
+   },
+   {
+    "end": "2026-10-10T12:45-04:00",
+    "id": "079c0df0-7305-4f61-ab0e-c7725f4fe1b6",
+    "name": "Animal Actors on Location!™",
+    "start": "2026-10-10T12:45-04:00"
+   },
+   {
+    "end": "2026-10-10T12:45-04:00",
+    "id": "41d282f8-2015-4caa-9591-9faa948e263e",
+    "name": "Beat Builders",
+    "start": "2026-10-10T12:45-04:00"
+   },
+   {
+    "end": "2026-10-10T12:45-04:00",
+    "id": "bf89766b-1d19-428f-9e68-71e12f25287b",
+    "name": "Marilyn and the Diamond Bellas",
+    "start": "2026-10-10T12:45-04:00"
+   },
+   {
+    "end": "2026-10-10T12:45-04:00",
+    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
+    "name": "Meet The TRANSFORMERS™",
+    "start": "2026-10-10T12:45-04:00"
+   },
+   {
+    "end": "2026-10-10T12:45-04:00",
+    "id": "2436bad1-f319-44d5-98ac-a283b81956c6",
+    "name": "The Bourne Stuntacular",
+    "start": "2026-10-10T12:45-04:00"
+   },
+   {
+    "end": "2026-10-10T12:50-04:00",
+    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
+    "name": "Illumination Theater",
+    "start": "2026-10-10T12:50-04:00"
+   },
+   {
+    "end": "2026-10-10T12:50-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
+    "start": "2026-10-10T12:50-04:00"
+   },
+   {
+    "end": "2026-10-10T12:55-04:00",
+    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
+    "name": "Meet SpongeBob SquarePants and Friends",
+    "start": "2026-10-10T12:55-04:00"
+   },
+   {
+    "end": "2026-10-10T13:00-04:00",
+    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
+    "name": "DreamWorks Character Zone",
+    "start": "2026-10-10T13:00-04:00"
+   },
+   {
+    "end": "2026-10-10T13:00-04:00",
+    "id": "55222885-493c-4280-b295-6fd7c609f12d",
+    "name": "Hollywood Character Zone",
+    "start": "2026-10-10T13:00-04:00"
+   },
+   {
+    "end": "2026-10-10T13:00-04:00",
+    "id": "2f4690b4-72b0-4845-bcce-9e735397d60b",
+    "name": "The Blues Brothers® Show",
+    "start": "2026-10-10T13:00-04:00"
+   },
+   {
+    "end": "2026-10-10T13:00-04:00",
+    "id": "ec4c8603-5ccd-4af2-a7b1-0684664c0bc1",
+    "name": "The Tales of Beedle the Bard",
+    "start": "2026-10-10T13:00-04:00"
+   },
+   {
+    "end": "2026-10-10T13:10-04:00",
+    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
+    "name": "DreamWorks Character Zone",
+    "start": "2026-10-10T13:10-04:00"
+   },
+   {
+    "end": "2026-10-10T13:10-04:00",
+    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
+    "name": "Illumination Theater",
+    "start": "2026-10-10T13:10-04:00"
+   },
+   {
+    "end": "2026-10-10T13:10-04:00",
+    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
+    "name": "Meet The TRANSFORMERS™",
+    "start": "2026-10-10T13:10-04:00"
+   },
+   {
+    "end": "2026-10-10T13:10-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
+    "start": "2026-10-10T13:10-04:00"
+   },
+   {
+    "end": "2026-10-10T13:25-04:00",
+    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
+    "name": "Meet SpongeBob SquarePants and Friends",
+    "start": "2026-10-10T13:25-04:00"
+   },
+   {
+    "end": "2026-10-10T13:30-04:00",
+    "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
+    "name": "Celestina Warbeck and the Banshees",
+    "start": "2026-10-10T13:30-04:00"
+   },
+   {
+    "end": "2026-10-10T13:30-04:00",
+    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
+    "name": "DreamWorks Character Zone",
+    "start": "2026-10-10T13:30-04:00"
+   },
+   {
+    "end": "2026-10-10T13:30-04:00",
+    "id": "55222885-493c-4280-b295-6fd7c609f12d",
+    "name": "Hollywood Character Zone",
+    "start": "2026-10-10T13:30-04:00"
+   },
+   {
+    "end": "2026-10-10T13:30-04:00",
+    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
+    "name": "Illumination Theater",
+    "start": "2026-10-10T13:30-04:00"
+   },
+   {
+    "end": "2026-10-10T13:30-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
+    "start": "2026-10-10T13:30-04:00"
+   },
+   {
+    "end": "2026-10-10T13:35-04:00",
+    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
+    "name": "Meet The TRANSFORMERS™",
+    "start": "2026-10-10T13:35-04:00"
+   },
+   {
+    "end": "2026-10-10T13:40-04:00",
+    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
+    "name": "DreamWorks Character Zone",
+    "start": "2026-10-10T13:40-04:00"
+   },
+   {
+    "end": "2026-10-10T13:45-04:00",
+    "id": "c85d936f-c5b7-490b-880b-6f0bf44ba557",
+    "name": "DreamWorks Imagination Celebration",
+    "start": "2026-10-10T13:45-04:00"
+   },
+   {
+    "end": "2026-10-10T13:45-04:00",
+    "id": "2436bad1-f319-44d5-98ac-a283b81956c6",
+    "name": "The Bourne Stuntacular",
+    "start": "2026-10-10T13:45-04:00"
+   },
+   {
+    "end": "2026-10-10T13:45-04:00",
+    "id": "fa701040-b46a-4291-afb9-b8dc2c8e9a16",
+    "name": "¡Vamos! – Báilalo",
+    "start": "2026-10-10T13:45-04:00"
+   },
+   {
+    "end": "2026-10-10T13:50-04:00",
+    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
+    "name": "Illumination Theater",
+    "start": "2026-10-10T13:50-04:00"
+   },
+   {
+    "end": "2026-10-10T13:50-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
+    "start": "2026-10-10T13:50-04:00"
+   },
+   {
+    "end": "2026-10-10T13:55-04:00",
+    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
+    "name": "Meet SpongeBob SquarePants and Friends",
+    "start": "2026-10-10T13:55-04:00"
+   },
+   {
+    "end": "2026-10-10T14:00-04:00",
+    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
+    "name": "DreamWorks Character Zone",
+    "start": "2026-10-10T14:00-04:00"
+   },
+   {
+    "end": "2026-10-10T14:00-04:00",
+    "id": "55222885-493c-4280-b295-6fd7c609f12d",
+    "name": "Hollywood Character Zone",
+    "start": "2026-10-10T14:00-04:00"
+   },
+   {
+    "end": "2026-10-10T14:00-04:00",
+    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
+    "name": "Meet The TRANSFORMERS™",
+    "start": "2026-10-10T14:00-04:00"
+   },
+   {
+    "end": "2026-10-10T14:00-04:00",
+    "id": "ec4c8603-5ccd-4af2-a7b1-0684664c0bc1",
+    "name": "The Tales of Beedle the Bard",
+    "start": "2026-10-10T14:00-04:00"
+   },
+   {
+    "end": "2026-10-10T14:10-04:00",
+    "id": "41d282f8-2015-4caa-9591-9faa948e263e",
+    "name": "Beat Builders",
+    "start": "2026-10-10T14:10-04:00"
+   },
+   {
+    "end": "2026-10-10T14:10-04:00",
+    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
+    "name": "DreamWorks Character Zone",
+    "start": "2026-10-10T14:10-04:00"
+   },
+   {
+    "end": "2026-10-10T14:10-04:00",
+    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
+    "name": "Illumination Theater",
+    "start": "2026-10-10T14:10-04:00"
+   },
+   {
+    "end": "2026-10-10T14:10-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
+    "start": "2026-10-10T14:10-04:00"
+   },
+   {
+    "end": "2026-10-10T14:15-04:00",
+    "id": "bf89766b-1d19-428f-9e68-71e12f25287b",
+    "name": "Marilyn and the Diamond Bellas",
+    "start": "2026-10-10T14:15-04:00"
+   },
+   {
+    "end": "2026-10-10T14:25-04:00",
+    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
+    "name": "Meet SpongeBob SquarePants and Friends",
+    "start": "2026-10-10T14:25-04:00"
+   },
+   {
+    "end": "2026-10-10T14:25-04:00",
+    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
+    "name": "Meet The TRANSFORMERS™",
+    "start": "2026-10-10T14:25-04:00"
+   },
+   {
+    "end": "2026-10-10T14:25-04:00",
+    "id": "2f4690b4-72b0-4845-bcce-9e735397d60b",
+    "name": "The Blues Brothers® Show",
+    "start": "2026-10-10T14:25-04:00"
+   },
+   {
+    "end": "2026-10-10T14:30-04:00",
+    "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
+    "name": "Celestina Warbeck and the Banshees",
+    "start": "2026-10-10T14:30-04:00"
+   },
+   {
+    "end": "2026-10-10T14:30-04:00",
+    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
+    "name": "DreamWorks Character Zone",
+    "start": "2026-10-10T14:30-04:00"
+   },
+   {
+    "end": "2026-10-10T14:30-04:00",
+    "id": "55222885-493c-4280-b295-6fd7c609f12d",
+    "name": "Hollywood Character Zone",
+    "start": "2026-10-10T14:30-04:00"
+   },
+   {
+    "end": "2026-10-10T14:30-04:00",
+    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
+    "name": "Illumination Theater",
+    "start": "2026-10-10T14:30-04:00"
+   },
+   {
+    "end": "2026-10-10T14:30-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
+    "start": "2026-10-10T14:30-04:00"
+   },
+   {
+    "end": "2026-10-10T14:30-04:00",
+    "id": "2436bad1-f319-44d5-98ac-a283b81956c6",
+    "name": "The Bourne Stuntacular",
+    "start": "2026-10-10T14:30-04:00"
+   },
+   {
+    "end": "2026-10-10T14:40-04:00",
+    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
+    "name": "DreamWorks Character Zone",
+    "start": "2026-10-10T14:40-04:00"
+   },
+   {
+    "end": "2026-10-10T14:45-04:00",
+    "id": "079c0df0-7305-4f61-ab0e-c7725f4fe1b6",
+    "name": "Animal Actors on Location!™",
+    "start": "2026-10-10T14:45-04:00"
+   },
+   {
+    "end": "2026-10-10T14:45-04:00",
+    "id": "c85d936f-c5b7-490b-880b-6f0bf44ba557",
+    "name": "DreamWorks Imagination Celebration",
+    "start": "2026-10-10T14:45-04:00"
+   },
+   {
+    "end": "2026-10-10T14:45-04:00",
+    "id": "fa701040-b46a-4291-afb9-b8dc2c8e9a16",
+    "name": "¡Vamos! – Báilalo",
+    "start": "2026-10-10T14:45-04:00"
+   },
+   {
+    "end": "2026-10-10T14:50-04:00",
+    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
+    "name": "Illumination Theater",
+    "start": "2026-10-10T14:50-04:00"
+   },
+   {
+    "end": "2026-10-10T14:50-04:00",
+    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
+    "name": "Meet The TRANSFORMERS™",
+    "start": "2026-10-10T14:50-04:00"
+   },
+   {
+    "end": "2026-10-10T14:50-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
+    "start": "2026-10-10T14:50-04:00"
+   },
+   {
+    "end": "2026-10-10T14:55-04:00",
+    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
+    "name": "Meet SpongeBob SquarePants and Friends",
+    "start": "2026-10-10T14:55-04:00"
+   },
+   {
+    "end": "2026-10-10T15:00-04:00",
+    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
+    "name": "DreamWorks Character Zone",
+    "start": "2026-10-10T15:00-04:00"
+   },
+   {
+    "end": "2026-10-10T15:00-04:00",
+    "id": "55222885-493c-4280-b295-6fd7c609f12d",
+    "name": "Hollywood Character Zone",
+    "start": "2026-10-10T15:00-04:00"
+   },
+   {
+    "end": "2026-10-10T15:00-04:00",
+    "id": "ec4c8603-5ccd-4af2-a7b1-0684664c0bc1",
+    "name": "The Tales of Beedle the Bard",
+    "start": "2026-10-10T15:00-04:00"
+   },
+   {
+    "end": "2026-10-10T15:10-04:00",
+    "id": "41d282f8-2015-4caa-9591-9faa948e263e",
+    "name": "Beat Builders",
+    "start": "2026-10-10T15:10-04:00"
+   },
+   {
+    "end": "2026-10-10T15:10-04:00",
+    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
+    "name": "DreamWorks Character Zone",
+    "start": "2026-10-10T15:10-04:00"
+   },
+   {
+    "end": "2026-10-10T15:10-04:00",
+    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
+    "name": "Illumination Theater",
+    "start": "2026-10-10T15:10-04:00"
+   },
+   {
+    "end": "2026-10-10T15:10-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
+    "start": "2026-10-10T15:10-04:00"
+   },
+   {
+    "end": "2026-10-10T15:15-04:00",
+    "id": "bf89766b-1d19-428f-9e68-71e12f25287b",
+    "name": "Marilyn and the Diamond Bellas",
+    "start": "2026-10-10T15:15-04:00"
+   },
+   {
+    "end": "2026-10-10T15:15-04:00",
+    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
+    "name": "Meet The TRANSFORMERS™",
+    "start": "2026-10-10T15:15-04:00"
+   },
+   {
+    "end": "2026-10-10T15:25-04:00",
+    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
+    "name": "Meet SpongeBob SquarePants and Friends",
+    "start": "2026-10-10T15:25-04:00"
+   },
+   {
+    "end": "2026-10-10T15:25-04:00",
+    "id": "2f4690b4-72b0-4845-bcce-9e735397d60b",
+    "name": "The Blues Brothers® Show",
+    "start": "2026-10-10T15:25-04:00"
+   },
+   {
+    "end": "2026-10-10T15:30-04:00",
+    "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
+    "name": "Celestina Warbeck and the Banshees",
+    "start": "2026-10-10T15:30-04:00"
+   },
+   {
+    "end": "2026-10-10T15:30-04:00",
+    "id": "55222885-493c-4280-b295-6fd7c609f12d",
+    "name": "Hollywood Character Zone",
+    "start": "2026-10-10T15:30-04:00"
+   },
+   {
+    "end": "2026-10-10T15:30-04:00",
+    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
+    "name": "Illumination Theater",
+    "start": "2026-10-10T15:30-04:00"
+   },
+   {
+    "end": "2026-10-10T15:30-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
+    "start": "2026-10-10T15:30-04:00"
+   },
+   {
+    "end": "2026-10-10T15:30-04:00",
+    "id": "2436bad1-f319-44d5-98ac-a283b81956c6",
+    "name": "The Bourne Stuntacular",
+    "start": "2026-10-10T15:30-04:00"
+   },
+   {
+    "end": "2026-10-10T15:40-04:00",
+    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
+    "name": "Meet The TRANSFORMERS™",
+    "start": "2026-10-10T15:40-04:00"
+   },
+   {
+    "end": "2026-10-10T15:45-04:00",
+    "id": "c85d936f-c5b7-490b-880b-6f0bf44ba557",
+    "name": "DreamWorks Imagination Celebration",
+    "start": "2026-10-10T15:45-04:00"
+   },
+   {
+    "end": "2026-10-10T15:45-04:00",
+    "id": "fa701040-b46a-4291-afb9-b8dc2c8e9a16",
+    "name": "¡Vamos! – Báilalo",
+    "start": "2026-10-10T15:45-04:00"
+   },
+   {
+    "end": "2026-10-10T16:00-04:00",
+    "id": "079c0df0-7305-4f61-ab0e-c7725f4fe1b6",
+    "name": "Animal Actors on Location!™",
+    "start": "2026-10-10T16:00-04:00"
+   },
+   {
+    "end": "2026-10-10T16:05-04:00",
+    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
+    "name": "Meet The TRANSFORMERS™",
+    "start": "2026-10-10T16:05-04:00"
+   },
+   {
+    "end": "2026-10-10T16:10-04:00",
+    "id": "41d282f8-2015-4caa-9591-9faa948e263e",
+    "name": "Beat Builders",
+    "start": "2026-10-10T16:10-04:00"
+   },
+   {
+    "end": "2026-10-10T16:15-04:00",
+    "id": "bf89766b-1d19-428f-9e68-71e12f25287b",
+    "name": "Marilyn and the Diamond Bellas",
+    "start": "2026-10-10T16:15-04:00"
+   },
+   {
+    "end": "2026-10-10T16:15-04:00",
+    "id": "2436bad1-f319-44d5-98ac-a283b81956c6",
+    "name": "The Bourne Stuntacular",
+    "start": "2026-10-10T16:15-04:00"
+   },
+   {
+    "end": "2026-10-10T16:30-04:00",
+    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
+    "name": "Meet The TRANSFORMERS™",
+    "start": "2026-10-10T16:30-04:00"
+   },
+   {
     "end": "2026-10-10T20:00-04:00",
     "id": "06ed53f9-3f1b-4ff2-94f2-0ce45015b62a",
     "name": "Nightmare Fuel: Blood Noir",
@@ -1929,5 +3479,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-10T06:01-04:00"
+ "updated": "2026-10-10T06:15-04:00"
 }
