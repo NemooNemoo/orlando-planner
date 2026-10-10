@@ -1822,12 +1822,6 @@
   ],
   "islands_of_adventure": [
    {
-    "end": "2026-10-10T12:20-04:00",
-    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
-    "name": "Raptor Encounter",
-    "start": "2026-10-10T12:20-04:00"
-   },
-   {
     "end": "2026-10-10T12:30-04:00",
     "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
     "name": "Classic Comic Book Characters",
@@ -2317,18 +2311,6 @@
    }
   ],
   "universal_studios_florida": [
-   {
-    "end": "2026-10-10T12:20-04:00",
-    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
-    "name": "Meet The TRANSFORMERS™",
-    "start": "2026-10-10T12:20-04:00"
-   },
-   {
-    "end": "2026-10-10T12:25-04:00",
-    "id": "fa701040-b46a-4291-afb9-b8dc2c8e9a16",
-    "name": "¡Vamos! – Báilalo",
-    "start": "2026-10-10T12:25-04:00"
-   },
    {
     "end": "2026-10-10T12:30-04:00",
     "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
@@ -2885,5 +2867,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-10T12:15-04:00"
+ "updated": "2026-10-10T12:30-04:00"
 }
