@@ -1104,12 +1104,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-10-10T08:00-04:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
-    "start": "2026-10-10T08:00-04:00"
-   },
-   {
     "end": "2026-10-10T09:00-04:00",
     "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
     "name": "Meet Mario and Luigi",
@@ -3479,5 +3473,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-10T08:01-04:00"
+ "updated": "2026-10-10T08:15-04:00"
 }
