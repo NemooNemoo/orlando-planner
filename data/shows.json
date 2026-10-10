@@ -1104,12 +1104,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-10-10T12:10-04:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-10-10T12:10-04:00"
-   },
-   {
     "end": "2026-10-10T12:30-04:00",
     "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
     "name": "The Untrainable Dragon",
@@ -1828,24 +1822,6 @@
   ],
   "islands_of_adventure": [
    {
-    "end": "2026-10-10T12:00-04:00",
-    "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
-    "name": "Classic Comic Book Characters",
-    "start": "2026-10-10T12:00-04:00"
-   },
-   {
-    "end": "2026-10-10T12:00-04:00",
-    "id": "97b25fe9-eb81-46bd-b57f-8b2fbbe85249",
-    "name": "Frog Choir",
-    "start": "2026-10-10T12:00-04:00"
-   },
-   {
-    "end": "2026-10-10T12:00-04:00",
-    "id": "9ad98d6a-e81a-4408-b5df-1ea832fe0b19",
-    "name": "Oh! The Stories You'll Hear!™",
-    "start": "2026-10-10T12:00-04:00"
-   },
-   {
     "end": "2026-10-10T12:20-04:00",
     "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
     "name": "Raptor Encounter",
@@ -2341,30 +2317,6 @@
    }
   ],
   "universal_studios_florida": [
-   {
-    "end": "2026-10-10T12:00-04:00",
-    "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
-    "name": "Celestina Warbeck and the Banshees",
-    "start": "2026-10-10T12:00-04:00"
-   },
-   {
-    "end": "2026-10-10T12:00-04:00",
-    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
-    "name": "Shrek’s Swamp Meet",
-    "start": "2026-10-10T12:00-04:00"
-   },
-   {
-    "end": "2026-10-10T12:00-04:00",
-    "id": "2f4690b4-72b0-4845-bcce-9e735397d60b",
-    "name": "The Blues Brothers® Show",
-    "start": "2026-10-10T12:00-04:00"
-   },
-   {
-    "end": "2026-10-10T12:00-04:00",
-    "id": "2436bad1-f319-44d5-98ac-a283b81956c6",
-    "name": "The Bourne Stuntacular",
-    "start": "2026-10-10T12:00-04:00"
-   },
    {
     "end": "2026-10-10T12:20-04:00",
     "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
@@ -2933,5 +2885,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-10T12:01-04:00"
+ "updated": "2026-10-10T12:15-04:00"
 }
