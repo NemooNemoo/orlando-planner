@@ -1104,12 +1104,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-10-10T11:00-04:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
-    "start": "2026-10-10T11:00-04:00"
-   },
-   {
     "end": "2026-10-10T11:20-04:00",
     "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
     "name": "Le Cirque Arcanus™",
@@ -1858,30 +1852,6 @@
   ],
   "islands_of_adventure": [
    {
-    "end": "2026-10-10T11:00-04:00",
-    "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
-    "name": "Classic Comic Book Characters",
-    "start": "2026-10-10T11:00-04:00"
-   },
-   {
-    "end": "2026-10-10T11:00-04:00",
-    "id": "97b25fe9-eb81-46bd-b57f-8b2fbbe85249",
-    "name": "Frog Choir",
-    "start": "2026-10-10T11:00-04:00"
-   },
-   {
-    "end": "2026-10-10T11:00-04:00",
-    "id": "9ad98d6a-e81a-4408-b5df-1ea832fe0b19",
-    "name": "Oh! The Stories You'll Hear!™",
-    "start": "2026-10-10T11:00-04:00"
-   },
-   {
-    "end": "2026-10-10T11:00-04:00",
-    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
-    "name": "Raptor Encounter",
-    "start": "2026-10-10T11:00-04:00"
-   },
-   {
     "end": "2026-10-10T11:20-04:00",
     "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
     "name": "Raptor Encounter",
@@ -2425,48 +2395,6 @@
    }
   ],
   "universal_studios_florida": [
-   {
-    "end": "2026-10-10T11:00-04:00",
-    "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
-    "name": "Celestina Warbeck and the Banshees",
-    "start": "2026-10-10T11:00-04:00"
-   },
-   {
-    "end": "2026-10-10T11:00-04:00",
-    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
-    "name": "DreamWorks Character Zone",
-    "start": "2026-10-10T11:00-04:00"
-   },
-   {
-    "end": "2026-10-10T11:00-04:00",
-    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
-    "name": "Illumination Theater",
-    "start": "2026-10-10T11:00-04:00"
-   },
-   {
-    "end": "2026-10-10T11:00-04:00",
-    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
-    "name": "Shrek’s Swamp Meet",
-    "start": "2026-10-10T11:00-04:00"
-   },
-   {
-    "end": "2026-10-10T11:00-04:00",
-    "id": "2f4690b4-72b0-4845-bcce-9e735397d60b",
-    "name": "The Blues Brothers® Show",
-    "start": "2026-10-10T11:00-04:00"
-   },
-   {
-    "end": "2026-10-10T11:00-04:00",
-    "id": "2436bad1-f319-44d5-98ac-a283b81956c6",
-    "name": "The Bourne Stuntacular",
-    "start": "2026-10-10T11:00-04:00"
-   },
-   {
-    "end": "2026-10-10T11:05-04:00",
-    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
-    "name": "Meet The TRANSFORMERS™",
-    "start": "2026-10-10T11:05-04:00"
-   },
    {
     "end": "2026-10-10T11:15-04:00",
     "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
@@ -3167,5 +3095,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-10T11:01-04:00"
+ "updated": "2026-10-10T11:15-04:00"
 }
