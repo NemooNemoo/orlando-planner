@@ -1104,18 +1104,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-10-10T11:40-04:00",
-    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
-    "name": "Meet Princess Peach",
-    "start": "2026-10-10T11:40-04:00"
-   },
-   {
-    "end": "2026-10-10T11:40-04:00",
-    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
-    "name": "The Untrainable Dragon",
-    "start": "2026-10-10T11:40-04:00"
-   },
-   {
     "end": "2026-10-10T11:50-04:00",
     "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
     "name": "Meet Mario and Luigi",
@@ -1846,30 +1834,6 @@
   ],
   "islands_of_adventure": [
    {
-    "end": "2026-10-10T11:30-04:00",
-    "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
-    "name": "Classic Comic Book Characters",
-    "start": "2026-10-10T11:30-04:00"
-   },
-   {
-    "end": "2026-10-10T11:30-04:00",
-    "id": "f6d4294c-8825-4712-a891-36d45b5eb0f4",
-    "name": "Seuss Character Zone",
-    "start": "2026-10-10T11:30-04:00"
-   },
-   {
-    "end": "2026-10-10T11:30-04:00",
-    "id": "cc2f2601-09d2-43b8-83ef-2a367b929761",
-    "name": "Triwizard Spirit Rally",
-    "start": "2026-10-10T11:30-04:00"
-   },
-   {
-    "end": "2026-10-10T11:40-04:00",
-    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
-    "name": "Raptor Encounter",
-    "start": "2026-10-10T11:40-04:00"
-   },
-   {
     "end": "2026-10-10T12:00-04:00",
     "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
     "name": "Classic Comic Book Characters",
@@ -2383,18 +2347,6 @@
    }
   ],
   "universal_studios_florida": [
-   {
-    "end": "2026-10-10T11:40-04:00",
-    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
-    "name": "Illumination Theater",
-    "start": "2026-10-10T11:40-04:00"
-   },
-   {
-    "end": "2026-10-10T11:40-04:00",
-    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
-    "name": "Shrek’s Swamp Meet",
-    "start": "2026-10-10T11:40-04:00"
-   },
    {
     "end": "2026-10-10T11:45-04:00",
     "id": "41d282f8-2015-4caa-9591-9faa948e263e",
@@ -3023,5 +2975,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-10T11:30-04:00"
+ "updated": "2026-10-10T11:45-04:00"
 }
