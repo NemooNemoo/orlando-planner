@@ -1062,12 +1062,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-10-11T11:20-04:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-10-11T11:20-04:00"
-   },
-   {
     "end": "2026-10-11T11:40-04:00",
     "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
     "name": "Meet Princess Peach",
@@ -2348,36 +2342,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-11T11:15-04:00",
-    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
-    "name": "Meet SpongeBob SquarePants and Friends",
-    "start": "2026-10-11T11:15-04:00"
-   },
-   {
-    "end": "2026-10-11T11:20-04:00",
-    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
-    "name": "Illumination Theater",
-    "start": "2026-10-11T11:20-04:00"
-   },
-   {
-    "end": "2026-10-11T11:20-04:00",
-    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
-    "name": "Shrek’s Swamp Meet",
-    "start": "2026-10-11T11:20-04:00"
-   },
-   {
-    "end": "2026-10-11T11:25-04:00",
-    "id": "55222885-493c-4280-b295-6fd7c609f12d",
-    "name": "Hollywood Character Zone",
-    "start": "2026-10-11T11:25-04:00"
-   },
-   {
-    "end": "2026-10-11T11:25-04:00",
-    "id": "fa701040-b46a-4291-afb9-b8dc2c8e9a16",
-    "name": "¡Vamos! – Báilalo",
-    "start": "2026-10-11T11:25-04:00"
-   },
-   {
     "end": "2026-10-11T11:30-04:00",
     "id": "079c0df0-7305-4f61-ab0e-c7725f4fe1b6",
     "name": "Animal Actors on Location!™",
@@ -3047,5 +3011,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-11T11:15-04:00"
+ "updated": "2026-10-11T11:30-04:00"
 }
