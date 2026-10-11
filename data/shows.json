@@ -1672,12 +1672,6 @@
   ],
   "islands_of_adventure": [
    {
-    "end": "2026-10-11T16:15-04:00",
-    "id": "f6d4294c-8825-4712-a891-36d45b5eb0f4",
-    "name": "Seuss Character Zone",
-    "start": "2026-10-11T16:15-04:00"
-   },
-   {
     "end": "2026-10-11T16:30-04:00",
     "id": "97b25fe9-eb81-46bd-b57f-8b2fbbe85249",
     "name": "Frog Choir",
@@ -1952,12 +1946,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-11T16:30-04:00",
-    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
-    "name": "Meet The TRANSFORMERS™",
-    "start": "2026-10-11T16:30-04:00"
-   },
-   {
     "end": "2026-10-11T20:00-04:00",
     "id": "06ed53f9-3f1b-4ff2-94f2-0ce45015b62a",
     "name": "Nightmare Fuel: Blood Noir",
@@ -2003,5 +1991,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-11T16:15-04:00"
+ "updated": "2026-10-11T16:30-04:00"
 }
