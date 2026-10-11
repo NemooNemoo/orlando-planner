@@ -1062,12 +1062,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-10-11T19:10-04:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-10-11T19:10-04:00"
-   },
-   {
     "end": "2026-10-11T20:30-04:00",
     "id": "a872883d-761b-4dda-a124-5dadcfa9e5ae",
     "name": "Universal Celestial Goodnight",
@@ -1883,5 +1877,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-11T19:01-04:00"
+ "updated": "2026-10-11T19:15-04:00"
 }
