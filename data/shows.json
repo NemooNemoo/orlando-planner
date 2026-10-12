@@ -1044,12 +1044,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-10-12T11:10-04:00",
-    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
-    "name": "The Untrainable Dragon",
-    "start": "2026-10-12T11:10-04:00"
-   },
-   {
     "end": "2026-10-12T11:20-04:00",
     "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
     "name": "Le Cirque Arcanus™",
@@ -2330,18 +2324,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-12T11:05-04:00",
-    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
-    "name": "Meet The TRANSFORMERS™",
-    "start": "2026-10-12T11:05-04:00"
-   },
-   {
-    "end": "2026-10-12T11:15-04:00",
-    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
-    "name": "Meet SpongeBob SquarePants and Friends",
-    "start": "2026-10-12T11:15-04:00"
-   },
-   {
     "end": "2026-10-12T11:20-04:00",
     "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
     "name": "Illumination Theater",
@@ -3035,5 +3017,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-12T11:01-04:00"
+ "updated": "2026-10-12T11:15-04:00"
 }
