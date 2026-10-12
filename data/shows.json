@@ -1044,12 +1044,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-10-12T15:15-04:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-10-12T15:15-04:00"
-   },
-   {
     "end": "2026-10-12T15:40-04:00",
     "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
     "name": "The Untrainable Dragon",
@@ -2036,30 +2030,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-12T15:10-04:00",
-    "id": "41d282f8-2015-4caa-9591-9faa948e263e",
-    "name": "Beat Builders",
-    "start": "2026-10-12T15:10-04:00"
-   },
-   {
-    "end": "2026-10-12T15:10-04:00",
-    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
-    "name": "DreamWorks Character Zone",
-    "start": "2026-10-12T15:10-04:00"
-   },
-   {
-    "end": "2026-10-12T15:10-04:00",
-    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
-    "name": "Illumination Theater",
-    "start": "2026-10-12T15:10-04:00"
-   },
-   {
-    "end": "2026-10-12T15:10-04:00",
-    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
-    "name": "Shrek’s Swamp Meet",
-    "start": "2026-10-12T15:10-04:00"
-   },
-   {
     "end": "2026-10-12T15:15-04:00",
     "id": "bf89766b-1d19-428f-9e68-71e12f25287b",
     "name": "Marilyn and the Diamond Bellas",
@@ -2213,5 +2183,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-12T15:01-04:00"
+ "updated": "2026-10-12T15:15-04:00"
 }
