@@ -2468,12 +2468,6 @@
     "start": "2026-10-12T09:30-04:00"
    },
    {
-    "end": "2026-10-12T09:30-04:00",
-    "id": "ec4c8603-5ccd-4af2-a7b1-0684664c0bc1",
-    "name": "The Tales of Beedle the Bard",
-    "start": "2026-10-12T09:30-04:00"
-   },
-   {
     "end": "2026-10-12T09:40-04:00",
     "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
     "name": "Illumination Theater",
@@ -3377,5 +3371,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-12T09:01-04:00"
+ "updated": "2026-10-12T09:15-04:00"
 }
