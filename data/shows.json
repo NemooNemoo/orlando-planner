@@ -1864,12 +1864,6 @@
   ],
   "islands_of_adventure": [
    {
-    "end": "2026-10-12T09:45-04:00",
-    "id": "c6c26dd9-bb82-49de-9fca-9245be6a8081",
-    "name": "Meet Spider-Man and the Marvel® Super Heroes",
-    "start": "2026-10-12T09:45-04:00"
-   },
-   {
     "end": "2026-10-12T10:00-04:00",
     "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
     "name": "Classic Comic Book Characters",
@@ -2431,18 +2425,6 @@
    }
   ],
   "universal_studios_florida": [
-   {
-    "end": "2026-10-12T09:40-04:00",
-    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
-    "name": "Illumination Theater",
-    "start": "2026-10-12T09:40-04:00"
-   },
-   {
-    "end": "2026-10-12T09:40-04:00",
-    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
-    "name": "Shrek’s Swamp Meet",
-    "start": "2026-10-12T09:40-04:00"
-   },
    {
     "end": "2026-10-12T09:45-04:00",
     "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
@@ -3335,5 +3317,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-12T09:31-04:00"
+ "updated": "2026-10-12T09:45-04:00"
 }
