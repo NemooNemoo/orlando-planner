@@ -1280,9 +1280,27 @@
     "start": "2026-10-13T09:00-04:00"
    },
    {
+    "end": "2026-10-13T20:00-04:00",
+    "id": "02861a9b-584d-47d5-a8d0-98e05c3b5dce",
+    "name": "Meet Disney Stars at Red Carpet Dreams",
+    "start": "2026-10-13T09:00-04:00"
+   },
+   {
+    "end": "2026-10-13T16:30-04:00",
+    "id": "79860074-658f-49bc-8c1b-624af8b4718e",
+    "name": "Meet Edna Mode at the Edna Mode Experience",
+    "start": "2026-10-13T09:00-04:00"
+   },
+   {
     "end": "2026-10-13T09:00-04:00",
     "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
     "name": "Meet Joy at Pixar Plaza",
+    "start": "2026-10-13T09:00-04:00"
+   },
+   {
+    "end": "2026-10-13T18:00-04:00",
+    "id": "27f9fc86-2341-4bf4-8cbf-67fc16a841f1",
+    "name": "Meet Olaf at Celebrity Spotlight",
     "start": "2026-10-13T09:00-04:00"
    },
    {
@@ -2208,9 +2226,21 @@
   ],
   "magic_kingdom": [
    {
+    "end": "2026-10-13T17:00-04:00",
+    "id": "40737d3d-0ff6-4a9e-a050-beb87bf90120",
+    "name": "Meet Cinderella and a Visiting Princess at Princess Fairytale Hall",
+    "start": "2026-10-13T09:00-04:00"
+   },
+   {
     "end": "2026-10-13T17:30-04:00",
     "id": "a2d92647-634d-4eb4-886b-9da858e871f1",
     "name": "Meet Mickey at Town Square Theater",
+    "start": "2026-10-13T09:00-04:00"
+   },
+   {
+    "end": "2026-10-13T17:00-04:00",
+    "id": "cf4b2ba4-3626-4de7-9d07-abe8a65b1665",
+    "name": "Meet Princess Tiana and a Visiting Princess at Princess Fairytale Hall",
     "start": "2026-10-13T09:00-04:00"
    },
    {
@@ -3431,5 +3461,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-13T09:01-04:00"
+ "updated": "2026-10-13T09:15-04:00"
 }
