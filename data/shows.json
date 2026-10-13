@@ -1520,12 +1520,6 @@
     "start": "2026-10-13T19:10-04:00"
    },
    {
-    "end": "2026-10-13T19:20-04:00",
-    "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
-    "name": "The Little Mermaid – A Musical Adventure",
-    "start": "2026-10-13T19:20-04:00"
-   },
-   {
     "end": "2026-10-13T19:50-04:00",
     "id": "69cb35f2-c58e-4b44-88c9-ea0cc720e075",
     "name": "Disney Villains: Unfairly Ever After",
@@ -1875,5 +1869,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-13T19:15-04:00"
+ "updated": "2026-10-13T19:30-04:00"
 }
