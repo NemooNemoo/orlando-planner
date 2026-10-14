@@ -948,12 +948,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-10-14T15:50-04:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
-    "start": "2026-10-14T15:50-04:00"
-   },
-   {
     "end": "2026-10-14T16:00-04:00",
     "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
     "name": "Le Cirque Arcanus™",
@@ -1612,30 +1606,6 @@
   ],
   "islands_of_adventure": [
    {
-    "end": "2026-10-14T15:45-04:00",
-    "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
-    "name": "Classic Comic Book Characters",
-    "start": "2026-10-14T15:45-04:00"
-   },
-   {
-    "end": "2026-10-14T15:45-04:00",
-    "id": "9ad98d6a-e81a-4408-b5df-1ea832fe0b19",
-    "name": "Oh! The Stories You'll Hear!™",
-    "start": "2026-10-14T15:45-04:00"
-   },
-   {
-    "end": "2026-10-14T16:00-04:00",
-    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
-    "name": "Raptor Encounter",
-    "start": "2026-10-14T16:00-04:00"
-   },
-   {
-    "end": "2026-10-14T16:00-04:00",
-    "id": "cc2f2601-09d2-43b8-83ef-2a367b929761",
-    "name": "Triwizard Spirit Rally",
-    "start": "2026-10-14T16:00-04:00"
-   },
-   {
     "end": "2026-10-14T16:15-04:00",
     "id": "f6d4294c-8825-4712-a891-36d45b5eb0f4",
     "name": "Seuss Character Zone",
@@ -1898,24 +1868,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-14T15:45-04:00",
-    "id": "c85d936f-c5b7-490b-880b-6f0bf44ba557",
-    "name": "DreamWorks Imagination Celebration",
-    "start": "2026-10-14T15:45-04:00"
-   },
-   {
-    "end": "2026-10-14T15:45-04:00",
-    "id": "fa701040-b46a-4291-afb9-b8dc2c8e9a16",
-    "name": "¡Vamos! – Báilalo",
-    "start": "2026-10-14T15:45-04:00"
-   },
-   {
-    "end": "2026-10-14T16:00-04:00",
-    "id": "079c0df0-7305-4f61-ab0e-c7725f4fe1b6",
-    "name": "Animal Actors on Location!™",
-    "start": "2026-10-14T16:00-04:00"
-   },
-   {
     "end": "2026-10-14T16:05-04:00",
     "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
     "name": "Meet The TRANSFORMERS™",
@@ -1991,5 +1943,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-14T15:46-04:00"
+ "updated": "2026-10-14T16:01-04:00"
 }
