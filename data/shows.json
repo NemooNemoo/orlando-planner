@@ -2420,12 +2420,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-15T10:55-04:00",
-    "id": "55222885-493c-4280-b295-6fd7c609f12d",
-    "name": "Hollywood Character Zone",
-    "start": "2026-10-15T10:55-04:00"
-   },
-   {
     "end": "2026-10-15T11:00-04:00",
     "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
     "name": "Celestina Warbeck and the Banshees",
@@ -3167,5 +3161,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-15T10:45-04:00"
+ "updated": "2026-10-15T10:58-04:00"
 }
