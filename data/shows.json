@@ -1774,12 +1774,6 @@
   ],
   "islands_of_adventure": [
    {
-    "end": "2026-10-16T14:00-04:00",
-    "id": "cc2f2601-09d2-43b8-83ef-2a367b929761",
-    "name": "Triwizard Spirit Rally",
-    "start": "2026-10-16T14:00-04:00"
-   },
-   {
     "end": "2026-10-16T14:15-04:00",
     "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
     "name": "Classic Comic Book Characters",
@@ -2264,30 +2258,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-16T14:10-04:00",
-    "id": "41d282f8-2015-4caa-9591-9faa948e263e",
-    "name": "Beat Builders",
-    "start": "2026-10-16T14:10-04:00"
-   },
-   {
-    "end": "2026-10-16T14:10-04:00",
-    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
-    "name": "DreamWorks Character Zone",
-    "start": "2026-10-16T14:10-04:00"
-   },
-   {
-    "end": "2026-10-16T14:10-04:00",
-    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
-    "name": "Illumination Theater",
-    "start": "2026-10-16T14:10-04:00"
-   },
-   {
-    "end": "2026-10-16T14:10-04:00",
-    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
-    "name": "Shrek’s Swamp Meet",
-    "start": "2026-10-16T14:10-04:00"
-   },
-   {
     "end": "2026-10-16T14:15-04:00",
     "id": "bf89766b-1d19-428f-9e68-71e12f25287b",
     "name": "Marilyn and the Diamond Bellas",
@@ -2591,5 +2561,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-16T14:01-04:00"
+ "updated": "2026-10-16T14:14-04:00"
 }
