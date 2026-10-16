@@ -1080,12 +1080,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-10-16T16:00-04:00",
-    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
-    "name": "Meet Princess Peach",
-    "start": "2026-10-16T16:00-04:00"
-   },
-   {
     "end": "2026-10-16T16:30-04:00",
     "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
     "name": "The Untrainable Dragon",
@@ -2102,18 +2096,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-16T16:05-04:00",
-    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
-    "name": "Meet The TRANSFORMERS™",
-    "start": "2026-10-16T16:05-04:00"
-   },
-   {
-    "end": "2026-10-16T16:10-04:00",
-    "id": "41d282f8-2015-4caa-9591-9faa948e263e",
-    "name": "Beat Builders",
-    "start": "2026-10-16T16:10-04:00"
-   },
-   {
     "end": "2026-10-16T16:15-04:00",
     "id": "bf89766b-1d19-428f-9e68-71e12f25287b",
     "name": "Marilyn and the Diamond Bellas",
@@ -2177,5 +2159,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-16T16:01-04:00"
+ "updated": "2026-10-16T16:15-04:00"
 }
