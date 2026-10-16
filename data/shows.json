@@ -1104,15 +1104,15 @@
     "start": "2026-10-16T11:00-04:00"
    },
    {
-    "end": "2026-10-16T11:20-04:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-10-16T11:20-04:00"
+    "end": "2026-10-16T11:10-04:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
+    "start": "2026-10-16T11:10-04:00"
    },
    {
     "end": "2026-10-16T11:20-04:00",
-    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
-    "name": "The Untrainable Dragon",
+    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
+    "name": "Le Cirque Arcanus™",
     "start": "2026-10-16T11:20-04:00"
    },
    {
@@ -1900,12 +1900,6 @@
   ],
   "islands_of_adventure": [
    {
-    "end": "2026-10-16T09:45-04:00",
-    "id": "c6c26dd9-bb82-49de-9fca-9245be6a8081",
-    "name": "Meet Spider-Man and the Marvel® Super Heroes",
-    "start": "2026-10-16T09:45-04:00"
-   },
-   {
     "end": "2026-10-16T10:00-04:00",
     "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
     "name": "Classic Comic Book Characters",
@@ -2593,24 +2587,6 @@
    }
   ],
   "universal_studios_florida": [
-   {
-    "end": "2026-10-16T09:40-04:00",
-    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
-    "name": "Illumination Theater",
-    "start": "2026-10-16T09:40-04:00"
-   },
-   {
-    "end": "2026-10-16T09:40-04:00",
-    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
-    "name": "Shrek’s Swamp Meet",
-    "start": "2026-10-16T09:40-04:00"
-   },
-   {
-    "end": "2026-10-16T09:45-04:00",
-    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
-    "name": "Meet SpongeBob SquarePants and Friends",
-    "start": "2026-10-16T09:45-04:00"
-   },
    {
     "end": "2026-10-16T09:50-04:00",
     "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
@@ -3497,5 +3473,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-16T09:31-04:00"
+ "updated": "2026-10-16T09:45-04:00"
 }
