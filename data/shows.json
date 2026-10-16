@@ -20,6 +20,12 @@
     "start": "2026-10-16T08:15-04:00"
    },
    {
+    "end": "2026-10-16T12:15-04:00",
+    "id": "f526f3ab-190b-4576-8c79-e2968d171b4e",
+    "name": "Meet Moana at Character Landing",
+    "start": "2026-10-16T08:30-04:00"
+   },
+   {
     "end": "2026-10-16T13:55-04:00",
     "id": "a08d9f84-fbdf-45f3-9b68-645d296de307",
     "name": "DiVine",
@@ -269,6 +275,12 @@
     "end": "2026-10-16T13:45-04:00",
     "id": "dd142c0b-622a-4b44-8e22-c0facb2b20a8",
     "name": "Kora Tinga Tinga",
+    "start": "2026-10-16T13:45-04:00"
+   },
+   {
+    "end": "2026-10-16T15:45-04:00",
+    "id": "f526f3ab-190b-4576-8c79-e2968d171b4e",
+    "name": "Meet Moana at Character Landing",
     "start": "2026-10-16T13:45-04:00"
    },
    {
@@ -1069,6 +1081,12 @@
   "epic_universe": [],
   "hollywood_studios": [
    {
+    "end": "2026-10-16T15:45-04:00",
+    "id": "c113b1cf-7b6d-416a-8e21-bf8f387ecd77",
+    "name": "Meet Ariel at Walt Disney Presents",
+    "start": "2026-10-16T09:00-04:00"
+   },
+   {
     "end": "2026-10-16T20:00-04:00",
     "id": "02861a9b-584d-47d5-a8d0-98e05c3b5dce",
     "name": "Meet Disney Stars at Red Carpet Dreams",
@@ -1834,6 +1852,24 @@
     "start": "2026-10-16T19:00-04:00"
    },
    {
+    "end": "2026-10-16T23:30-04:00",
+    "id": "a74421f2-5de4-4425-bd06-8b4639b29826",
+    "name": "Meet Festive Disney Pals at Mickey’s Not-So-Scary Halloween Party",
+    "start": "2026-10-16T19:00-04:00"
+   },
+   {
+    "end": "2026-10-16T23:30-04:00",
+    "id": "947edbee-85a5-4aa0-99f3-14c7de539542",
+    "name": "Meet Jack Skellington and Sally at Mickey's Not-So-Scary Halloween Party",
+    "start": "2026-10-16T19:00-04:00"
+   },
+   {
+    "end": "2026-10-16T23:30-04:00",
+    "id": "5564113f-25b4-4646-ac35-aacf983e2fd6",
+    "name": "Meet Mickey Mouse and Minnie Mouse at Mickey's Not-So-Scary Halloween Party",
+    "start": "2026-10-16T19:00-04:00"
+   },
+   {
     "end": "2026-10-17T00:00-04:00",
     "id": "97c837c3-4a0f-4d52-b93c-074cf31d6f41",
     "name": "Stitch’s Masquerade Mashup at Mickey’s Not-So-Scary Halloween Party",
@@ -1922,5 +1958,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-16T04:30-04:00"
+ "updated": "2026-10-16T04:45-04:00"
 }
