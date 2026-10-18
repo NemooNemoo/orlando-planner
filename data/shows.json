@@ -2564,18 +2564,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-18T09:40-04:00",
-    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
-    "name": "Illumination Theater",
-    "start": "2026-10-18T09:40-04:00"
-   },
-   {
-    "end": "2026-10-18T09:40-04:00",
-    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
-    "name": "Shrek’s Swamp Meet",
-    "start": "2026-10-18T09:40-04:00"
-   },
-   {
     "end": "2026-10-18T09:45-04:00",
     "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
     "name": "Meet SpongeBob SquarePants and Friends",
@@ -3455,5 +3443,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-18T09:31-04:00"
+ "updated": "2026-10-18T09:45-04:00"
 }
