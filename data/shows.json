@@ -1126,14 +1126,7 @@
     "start": "2026-10-17T21:00-04:00"
    }
   ],
-  "epic_universe": [
-   {
-    "end": "2026-10-17T22:15-04:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-10-17T22:15-04:00"
-   }
-  ],
+  "epic_universe": [],
   "hollywood_studios": [
    {
     "end": "2026-10-17T15:45-04:00",
@@ -1888,5 +1881,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-17T22:15-04:00"
+ "updated": "2026-10-17T22:30-04:00"
 }
