@@ -1126,14 +1126,7 @@
     "start": "2026-10-17T21:00-04:00"
    }
   ],
-  "epic_universe": [
-   {
-    "end": "2026-10-17T20:00-04:00",
-    "id": "a872883d-761b-4dda-a124-5dadcfa9e5ae",
-    "name": "Universal Celestial Goodnight",
-    "start": "2026-10-17T20:00-04:00"
-   }
-  ],
+  "epic_universe": [],
   "hollywood_studios": [
    {
     "end": "2026-10-17T15:45-04:00",
@@ -1867,12 +1860,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-17T20:00-04:00",
-    "id": "06ed53f9-3f1b-4ff2-94f2-0ce45015b62a",
-    "name": "Nightmare Fuel: Blood Noir",
-    "start": "2026-10-17T20:00-04:00"
-   },
-   {
     "end": "2026-10-17T21:00-04:00",
     "id": "c08df5ba-1141-4968-b748-5e7802885ec0",
     "name": "Stranger Things: Return to Hawkins",
@@ -1912,5 +1899,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-17T20:01-04:00"
+ "updated": "2026-10-17T20:15-04:00"
 }
