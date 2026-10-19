@@ -2414,24 +2414,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-19T09:40-04:00",
-    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
-    "name": "Illumination Theater",
-    "start": "2026-10-19T09:40-04:00"
-   },
-   {
-    "end": "2026-10-19T09:40-04:00",
-    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
-    "name": "Shrek’s Swamp Meet",
-    "start": "2026-10-19T09:40-04:00"
-   },
-   {
-    "end": "2026-10-19T09:45-04:00",
-    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
-    "name": "Meet SpongeBob SquarePants and Friends",
-    "start": "2026-10-19T09:45-04:00"
-   },
-   {
     "end": "2026-10-19T09:50-04:00",
     "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
     "name": "Meet The TRANSFORMERS™",
@@ -3305,5 +3287,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-19T09:30-04:00"
+ "updated": "2026-10-19T09:45-04:00"
 }
