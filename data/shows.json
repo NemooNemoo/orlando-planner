@@ -478,6 +478,12 @@
     "start": "2026-10-20T09:00-04:00"
    },
    {
+    "end": "2026-10-20T18:30-04:00",
+    "id": "33bd3bad-6803-4c5e-97ac-f7e31261a604",
+    "name": "Meet Anna and Elsa at Royal Sommerhus",
+    "start": "2026-10-20T09:15-04:00"
+   },
+   {
     "end": "2026-10-20T09:30-04:00",
     "id": "3beaa9a5-6404-4446-bfd1-e0d0eea65e85",
     "name": "JAMMitors",
@@ -3179,5 +3185,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-20T09:15-04:00"
+ "updated": "2026-10-20T09:30-04:00"
 }
