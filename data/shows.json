@@ -978,12 +978,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-10-20T17:00-04:00",
-    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
-    "name": "Meet Princess Peach",
-    "start": "2026-10-20T17:00-04:00"
-   },
-   {
     "end": "2026-10-20T17:20-04:00",
     "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
     "name": "The Untrainable Dragon",
@@ -1748,12 +1742,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-20T17:05-04:00",
-    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
-    "name": "Meet The TRANSFORMERS™",
-    "start": "2026-10-20T17:05-04:00"
-   },
-   {
     "end": "2026-10-20T17:30-04:00",
     "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
     "name": "Meet The TRANSFORMERS™",
@@ -1769,5 +1757,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-20T17:01-04:00"
+ "updated": "2026-10-20T17:15-04:00"
 }
