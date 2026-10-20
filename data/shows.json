@@ -2258,12 +2258,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-20T10:15-04:00",
-    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
-    "name": "Meet SpongeBob SquarePants and Friends",
-    "start": "2026-10-20T10:15-04:00"
-   },
-   {
     "end": "2026-10-20T10:20-04:00",
     "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
     "name": "Illumination Theater",
@@ -3149,5 +3143,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-20T10:01-04:00"
+ "updated": "2026-10-20T10:15-04:00"
 }
