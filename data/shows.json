@@ -1293,12 +1293,6 @@
    },
    {
     "end": "2026-10-20T10:30-04:00",
-    "id": "69cb35f2-c58e-4b44-88c9-ea0cc720e075",
-    "name": "Disney Villains: Unfairly Ever After",
-    "start": "2026-10-20T10:30-04:00"
-   },
-   {
-    "end": "2026-10-20T10:30-04:00",
     "id": "d91a0e9a-8652-4036-822f-e7b12b381273",
     "name": "For the First Time in Forever: A Frozen Sing-Along Celebration",
     "start": "2026-10-20T10:30-04:00"
@@ -1689,30 +1683,6 @@
    }
   ],
   "islands_of_adventure": [
-   {
-    "end": "2026-10-20T09:45-04:00",
-    "id": "c6c26dd9-bb82-49de-9fca-9245be6a8081",
-    "name": "Meet Spider-Man and the Marvel® Super Heroes",
-    "start": "2026-10-20T09:45-04:00"
-   },
-   {
-    "end": "2026-10-20T10:00-04:00",
-    "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
-    "name": "Classic Comic Book Characters",
-    "start": "2026-10-20T10:00-04:00"
-   },
-   {
-    "end": "2026-10-20T10:00-04:00",
-    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
-    "name": "Raptor Encounter",
-    "start": "2026-10-20T10:00-04:00"
-   },
-   {
-    "end": "2026-10-20T10:20-04:00",
-    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
-    "name": "Raptor Encounter",
-    "start": "2026-10-20T10:20-04:00"
-   },
    {
     "end": "2026-10-20T10:30-04:00",
     "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
@@ -2106,6 +2076,24 @@
     "start": "2026-10-20T09:50-04:00"
    },
    {
+    "end": "2026-10-20T19:00-04:00",
+    "id": "012a211b-4c91-451c-8a0e-5e3ab398eda8",
+    "name": "Meet Ariel at Her Grotto",
+    "start": "2026-10-20T10:00-04:00"
+   },
+   {
+    "end": "2026-10-20T19:00-04:00",
+    "id": "166f2985-7b27-4eff-a8b3-29c3448ba198",
+    "name": "Meet Daring Disney Pals as Circus Stars at Pete's Silly Sideshow",
+    "start": "2026-10-20T10:00-04:00"
+   },
+   {
+    "end": "2026-10-20T19:00-04:00",
+    "id": "b5d6d1d1-e960-4c8f-a8a4-b9748b386b64",
+    "name": "Meet Dashing Disney Pals as Circus Stars at Pete's Silly Sideshow",
+    "start": "2026-10-20T10:00-04:00"
+   },
+   {
     "end": "2026-10-20T10:00-04:00",
     "id": "4c31b3ad-5dc9-437f-ac1a-0fdff36a2818",
     "name": "Mickey's Magical Friendship Faire",
@@ -2269,24 +2257,6 @@
    }
   ],
   "universal_studios_florida": [
-   {
-    "end": "2026-10-20T10:00-04:00",
-    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
-    "name": "DreamWorks Character Zone",
-    "start": "2026-10-20T10:00-04:00"
-   },
-   {
-    "end": "2026-10-20T10:00-04:00",
-    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
-    "name": "Illumination Theater",
-    "start": "2026-10-20T10:00-04:00"
-   },
-   {
-    "end": "2026-10-20T10:00-04:00",
-    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
-    "name": "Meet The TRANSFORMERS™",
-    "start": "2026-10-20T10:00-04:00"
-   },
    {
     "end": "2026-10-20T10:15-04:00",
     "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
@@ -3179,5 +3149,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-20T09:45-04:00"
+ "updated": "2026-10-20T10:01-04:00"
 }
