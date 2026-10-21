@@ -460,6 +460,12 @@
     "start": "2026-10-21T08:30-04:00"
    },
    {
+    "end": "2026-10-21T21:00-04:00",
+    "id": "67612787-fbd3-44b7-869f-123f55d78584",
+    "name": "Meet Beloved Disney Pals at Mickey & Friends",
+    "start": "2026-10-21T09:00-04:00"
+   },
+   {
     "end": "2026-10-21T12:30-04:00",
     "id": "a70b81bf-2934-433c-9723-afb2f24112bf",
     "name": "Meet Figment Inside ImageWorks",
@@ -1207,6 +1213,12 @@
    }
   ],
   "hollywood_studios": [
+   {
+    "end": "2026-10-21T15:45-04:00",
+    "id": "c113b1cf-7b6d-416a-8e21-bf8f387ecd77",
+    "name": "Meet Ariel at Walt Disney Presents",
+    "start": "2026-10-21T09:00-04:00"
+   },
    {
     "end": "2026-10-21T20:00-04:00",
     "id": "02861a9b-584d-47d5-a8d0-98e05c3b5dce",
@@ -2348,12 +2360,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-21T09:15-04:00",
-    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
-    "name": "Meet SpongeBob SquarePants and Friends",
-    "start": "2026-10-21T09:15-04:00"
-   },
-   {
     "end": "2026-10-21T09:20-04:00",
     "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
     "name": "Illumination Theater",
@@ -3281,5 +3287,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-21T09:01-04:00"
+ "updated": "2026-10-21T09:15-04:00"
 }
