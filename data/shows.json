@@ -954,12 +954,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-10-21T15:40-04:00",
-    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
-    "name": "The Untrainable Dragon",
-    "start": "2026-10-21T15:40-04:00"
-   },
-   {
     "end": "2026-10-21T16:00-04:00",
     "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
     "name": "Le Cirque Arcanus™",
@@ -1630,30 +1624,6 @@
   ],
   "islands_of_adventure": [
    {
-    "end": "2026-10-21T15:30-04:00",
-    "id": "97b25fe9-eb81-46bd-b57f-8b2fbbe85249",
-    "name": "Frog Choir",
-    "start": "2026-10-21T15:30-04:00"
-   },
-   {
-    "end": "2026-10-21T15:40-04:00",
-    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
-    "name": "Raptor Encounter",
-    "start": "2026-10-21T15:40-04:00"
-   },
-   {
-    "end": "2026-10-21T15:45-04:00",
-    "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
-    "name": "Classic Comic Book Characters",
-    "start": "2026-10-21T15:45-04:00"
-   },
-   {
-    "end": "2026-10-21T15:45-04:00",
-    "id": "9ad98d6a-e81a-4408-b5df-1ea832fe0b19",
-    "name": "Oh! The Stories You'll Hear!™",
-    "start": "2026-10-21T15:45-04:00"
-   },
-   {
     "end": "2026-10-21T16:00-04:00",
     "id": "cc2f2601-09d2-43b8-83ef-2a367b929761",
     "name": "Triwizard Spirit Rally",
@@ -1934,12 +1904,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-21T15:40-04:00",
-    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
-    "name": "Meet The TRANSFORMERS™",
-    "start": "2026-10-21T15:40-04:00"
-   },
-   {
     "end": "2026-10-21T15:45-04:00",
     "id": "c85d936f-c5b7-490b-880b-6f0bf44ba557",
     "name": "DreamWorks Imagination Celebration",
@@ -2033,5 +1997,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-21T15:31-04:00"
+ "updated": "2026-10-21T15:45-04:00"
 }
