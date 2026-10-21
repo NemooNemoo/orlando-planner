@@ -509,12 +509,6 @@
    },
    {
     "end": "2026-10-21T10:45-04:00",
-    "id": "99087d9a-4380-4ab6-b088-20816e233c6f",
-    "name": "Meet Asha Near World Showcase Plaza",
-    "start": "2026-10-21T10:45-04:00"
-   },
-   {
-    "end": "2026-10-21T10:45-04:00",
     "id": "e9c1bff6-c9c1-4275-8f3d-44226f0fdfbb",
     "name": "Meet Princess Aurora in France",
     "start": "2026-10-21T10:45-04:00"
@@ -584,12 +578,6 @@
     "id": "83fed9d1-c25f-497c-ab8e-21e4dd7ce655",
     "name": "Sergio",
     "start": "2026-10-21T11:50-04:00"
-   },
-   {
-    "end": "2026-10-21T11:55-04:00",
-    "id": "99087d9a-4380-4ab6-b088-20816e233c6f",
-    "name": "Meet Asha Near World Showcase Plaza",
-    "start": "2026-10-21T11:55-04:00"
    },
    {
     "end": "2026-10-21T11:55-04:00",
@@ -712,12 +700,6 @@
     "start": "2026-10-21T14:00-04:00"
    },
    {
-    "end": "2026-10-21T14:00-04:00",
-    "id": "99087d9a-4380-4ab6-b088-20816e233c6f",
-    "name": "Meet Asha Near World Showcase Plaza",
-    "start": "2026-10-21T14:00-04:00"
-   },
-   {
     "end": "2026-10-21T14:10-04:00",
     "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
     "name": "Meet One of the Three Caballeros in Mexico",
@@ -787,12 +769,6 @@
     "end": "2026-10-21T15:00-04:00",
     "id": "ea730d0c-7723-429d-89a4-9e76f053f5ac",
     "name": "Mariachi Cobre",
-    "start": "2026-10-21T15:00-04:00"
-   },
-   {
-    "end": "2026-10-21T15:00-04:00",
-    "id": "99087d9a-4380-4ab6-b088-20816e233c6f",
-    "name": "Meet Asha Near World Showcase Plaza",
     "start": "2026-10-21T15:00-04:00"
    },
    {
@@ -3263,5 +3239,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-21T07:40-04:00"
+ "updated": "2026-10-21T07:45-04:00"
 }
