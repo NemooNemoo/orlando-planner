@@ -1648,18 +1648,6 @@
   ],
   "islands_of_adventure": [
    {
-    "end": "2026-10-21T14:30-04:00",
-    "id": "97b25fe9-eb81-46bd-b57f-8b2fbbe85249",
-    "name": "Frog Choir",
-    "start": "2026-10-21T14:30-04:00"
-   },
-   {
-    "end": "2026-10-21T14:40-04:00",
-    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
-    "name": "Raptor Encounter",
-    "start": "2026-10-21T14:40-04:00"
-   },
-   {
     "end": "2026-10-21T14:45-04:00",
     "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
     "name": "Classic Comic Book Characters",
@@ -2006,12 +1994,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-21T14:40-04:00",
-    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
-    "name": "DreamWorks Character Zone",
-    "start": "2026-10-21T14:40-04:00"
-   },
-   {
     "end": "2026-10-21T14:45-04:00",
     "id": "079c0df0-7305-4f61-ab0e-c7725f4fe1b6",
     "name": "Animal Actors on Location!™",
@@ -2249,5 +2231,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-21T14:31-04:00"
+ "updated": "2026-10-21T14:45-04:00"
 }
