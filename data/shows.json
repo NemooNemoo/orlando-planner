@@ -1640,14 +1640,7 @@
     "start": "2026-10-22T21:30-04:00"
    }
   ],
-  "islands_of_adventure": [
-   {
-    "end": "2026-10-22T16:45-04:00",
-    "id": "9ad98d6a-e81a-4408-b5df-1ea832fe0b19",
-    "name": "Oh! The Stories You'll Hear!™",
-    "start": "2026-10-22T16:45-04:00"
-   }
-  ],
+  "islands_of_adventure": [],
   "magic_kingdom": [
    {
     "end": "2026-10-22T17:00-04:00",
@@ -1986,5 +1979,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-22T16:45-04:00"
+ "updated": "2026-10-22T16:47-04:00"
 }
