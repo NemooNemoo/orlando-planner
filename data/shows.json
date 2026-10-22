@@ -2184,6 +2184,18 @@
     "start": "2026-10-22T09:50-04:00"
    },
    {
+    "end": "2026-10-22T17:00-04:00",
+    "id": "166f2985-7b27-4eff-a8b3-29c3448ba198",
+    "name": "Meet Daring Disney Pals as Circus Stars at Pete's Silly Sideshow",
+    "start": "2026-10-22T10:00-04:00"
+   },
+   {
+    "end": "2026-10-22T17:00-04:00",
+    "id": "b5d6d1d1-e960-4c8f-a8a4-b9748b386b64",
+    "name": "Meet Dashing Disney Pals as Circus Stars at Pete's Silly Sideshow",
+    "start": "2026-10-22T10:00-04:00"
+   },
+   {
     "end": "2026-10-22T10:00-04:00",
     "id": "4c31b3ad-5dc9-437f-ac1a-0fdff36a2818",
     "name": "Mickey's Magical Friendship Faire",
@@ -3264,5 +3276,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-22T10:01-04:00"
+ "updated": "2026-10-22T10:15-04:00"
 }
