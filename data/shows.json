@@ -460,6 +460,12 @@
     "start": "2026-10-22T09:00-04:00"
    },
    {
+    "end": "2026-10-22T18:30-04:00",
+    "id": "33bd3bad-6803-4c5e-97ac-f7e31261a604",
+    "name": "Meet Anna and Elsa at Royal Sommerhus",
+    "start": "2026-10-22T09:15-04:00"
+   },
+   {
     "end": "2026-10-22T09:30-04:00",
     "id": "3beaa9a5-6404-4446-bfd1-e0d0eea65e85",
     "name": "JAMMitors",
@@ -2190,6 +2196,12 @@
     "start": "2026-10-22T09:00-04:00"
    },
    {
+    "end": "2026-10-22T17:30-04:00",
+    "id": "012a211b-4c91-451c-8a0e-5e3ab398eda8",
+    "name": "Meet Ariel at Her Grotto",
+    "start": "2026-10-22T09:30-04:00"
+   },
+   {
     "end": "2026-10-22T09:50-04:00",
     "id": "1eee22e8-1d0a-4809-a42b-df3ae55c69d5",
     "name": "The Dapper Dans",
@@ -2437,42 +2449,6 @@
    }
   ],
   "universal_studios_florida": [
-   {
-    "end": "2026-10-22T09:20-04:00",
-    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
-    "name": "Illumination Theater",
-    "start": "2026-10-22T09:20-04:00"
-   },
-   {
-    "end": "2026-10-22T09:20-04:00",
-    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
-    "name": "Shrek’s Swamp Meet",
-    "start": "2026-10-22T09:20-04:00"
-   },
-   {
-    "end": "2026-10-22T09:25-04:00",
-    "id": "55222885-493c-4280-b295-6fd7c609f12d",
-    "name": "Hollywood Character Zone",
-    "start": "2026-10-22T09:25-04:00"
-   },
-   {
-    "end": "2026-10-22T09:25-04:00",
-    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
-    "name": "Meet The TRANSFORMERS™",
-    "start": "2026-10-22T09:25-04:00"
-   },
-   {
-    "end": "2026-10-22T09:30-04:00",
-    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
-    "name": "DreamWorks Character Zone",
-    "start": "2026-10-22T09:30-04:00"
-   },
-   {
-    "end": "2026-10-22T09:30-04:00",
-    "id": "ec4c8603-5ccd-4af2-a7b1-0684664c0bc1",
-    "name": "The Tales of Beedle the Bard",
-    "start": "2026-10-22T09:30-04:00"
-   },
    {
     "end": "2026-10-22T09:40-04:00",
     "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
@@ -3366,5 +3342,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-22T09:15-04:00"
+ "updated": "2026-10-22T09:31-04:00"
 }
