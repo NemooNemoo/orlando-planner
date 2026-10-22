@@ -1,5 +1,5 @@
 """
-Collecte les temps d'attente des 7 parcs d'Orlando depuis Queue-Times.com.
+Collecte les temps d'attente des 8 parcs d'Orlando (dont le parc aquatique Volcano Bay) depuis Queue-Times.com.
 Lancé automatiquement toutes les 15 min par GitHub Actions.
 
 Écrit :
@@ -25,6 +25,7 @@ PARKS = {
     7: "hollywood_studios",
     6: "magic_kingdom",
     5: "epcot",
+    67: "volcano_bay",
 }
 ORLANDO = ZoneInfo("America/New_York")
 DATA = Path(__file__).resolve().parent.parent / "data"

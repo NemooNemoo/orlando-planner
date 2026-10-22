@@ -22,25 +22,59 @@ const store = {
 const DEFAULT_SETTINGS = {
   start: "2027-05-01",
   end: "2027-05-15",
-  parks: P.PARKS.map((p) => p.id),
-  ll: { multi: true, single: false },
-  express: false,
+  parks: P.PARKS.map((p) => p.id).filter((p) => p !== "volcano_bay"), // parc aquatique : à ajouter soi-même
+  // coupe-files par jour : mode "all" (tous les jours), "none" ou "some" (dates cochées)
+  passes: { multi: { mode: "all", dates: [] }, single: { mode: "none", dates: [] }, express: { mode: "none", dates: [] } },
   visits: null, // { parc: nombre de visites } — calculé au démarrage si absent
   pace: "normal",
   lunch: { enabled: true, at: 720 },
-  hotelPerks: false, // accès hôtel : early entry et soirées prolongées
+  earlyDisney: false,    // Early Entry Disney (et soirées prolongées)
+  earlyUniversal: false, // Early Park Admission Universal
   hoursOverride: {}, // corrections manuelles { "AAAA-MM-JJ|parc": { open, close } } en minutes
-  forced: [],
+  dayTypes: {}, // { "AAAA-MM-JJ": "rest" | "park" | parc } ; absent = automatique
   mustDo: [],
   surprise: false,
 };
 
-// Anciennes valeurs ignorées sans erreur (ex. mode enfants supprimé)
+// Anciennes valeurs migrées ou ignorées sans erreur
 function loadSettings() {
   const saved = store.get("settings", {});
-  const s = { ...structuredClone(DEFAULT_SETTINGS), ...(saved && typeof saved === "object" ? saved : {}) };
-  delete s.kids;
+  const old = saved && typeof saved === "object" ? saved : {};
+  const s = { ...structuredClone(DEFAULT_SETTINGS), ...old };
+  delete s.kids; // mode enfants supprimé
+  // coupe-files : ancien choix oui / non -> tous les jours ou aucun
+  if (!old.passes && (old.ll || "express" in old)) {
+    const m = (on) => ({ mode: on ? "all" : "none", dates: [] });
+    s.passes = { multi: m(old.ll?.multi), single: m(old.ll?.single), express: m(old.express) };
+  }
+  delete s.ll; delete s.express;
+  // option unique « hôtel sur place » -> une option par resort
+  if ("hotelPerks" in old && !("earlyDisney" in old)) s.earlyDisney = s.earlyUniversal = !!old.hotelPerks;
+  delete s.hotelPerks;
+  // parcs / repos imposés -> type de chaque jour
+  if (Array.isArray(old.forced) && old.forced.length && !old.dayTypes) {
+    s.dayTypes = Object.fromEntries(old.forced.filter((f) => f.date && f.park).map((f) => [f.date, f.park]));
+  }
+  delete s.forced;
+  for (const k of ["multi", "single", "express"]) {
+    const v = s.passes?.[k];
+    if (!v || !["all", "none", "some"].includes(v.mode)) s.passes[k] = { mode: "none", dates: [] };
+    if (!Array.isArray(s.passes[k].dates)) s.passes[k].dates = [];
+  }
+  if (!s.dayTypes || typeof s.dayTypes !== "object") s.dayTypes = {};
   return s;
+}
+
+/** Coupe-file actif ce jour-là ? (k = multi | single | express) */
+function passOn(k, date) {
+  const v = state.settings.passes?.[k];
+  return v?.mode === "all" || (v?.mode === "some" && v.dates.includes(date));
+}
+
+/** Réglages du jour : coupe-files de la date (le planificateur ne les applique qu'à la bonne marque) */
+function settingsFor(date) {
+  const s = state.settings;
+  return { ...s, ll: { multi: passOn("multi", date), single: passOn("single", date) }, express: passOn("express", date) };
 }
 
 const storedList = (key) => {
@@ -236,12 +270,14 @@ function trip() {
 
 function hoursFor(date, park) {
   const s = state.settings;
-  return P.dayHours(park, date, { schedule: state.schedule, overrides: s.hoursOverride, model: getModel(), hotelPerks: s.hotelPerks });
+  // entrée anticipée seulement si l'option de la marque du parc est cochée
+  const early = parkOf(park)?.group === "disney" ? s.earlyDisney : s.earlyUniversal;
+  return P.dayHours(park, date, { schedule: state.schedule, overrides: s.hoursOverride, model: getModel(), hotelPerks: !!early });
 }
 
 function dayPlan(date, park) {
   return P.planDay({
-    park, date, wd: P.weekdayOf(date), settings: state.settings, model: getModel(),
+    park, date, wd: P.weekdayOf(date), settings: settingsFor(date), model: getModel(),
     meta: state.meta, catalog: state.catalog, seed: state.seeds[date] || 0, priorities: prioById(),
     hours: hoursFor(date, park),
   });
@@ -311,7 +347,7 @@ function go(tab) {
 
 // ------------------------------------------------------------------ assistant de configuration
 
-const STEPS = ["dates", "parks", "passes", "pace", "forced", "must", "recap"];
+const STEPS = ["dates", "parks", "days", "passes", "pace", "must", "recap"];
 
 function viewSetup() {
   const s = state.settings;
@@ -319,7 +355,7 @@ function viewSetup() {
   const valid = STEPS.slice(0, step + 1).every(stepValid);
   const last = step === STEPS.length - 1;
   const dots = STEPS.map((_, i) => `<span class="${i <= step ? "on" : ""}" data-action="step" data-step="${i}"></span>`).join("");
-  const STEP_VIEWS = { dates: stepDates, parks: stepParks, passes: stepPasses, pace: stepPace, forced: stepForced, must: stepMust, recap: stepRecap };
+  const STEP_VIEWS = { dates: stepDates, parks: stepParks, passes: stepPasses, pace: stepPace, days: stepDays, must: stepMust, recap: stepRecap };
   return `
   <section class="card">
     <div class="steps">${dots}</div>
@@ -373,6 +409,7 @@ function stepValid(name) {
     return !!(s.start && s.end && s.end >= s.start && P.dateRange(s.start, s.end, 46).length <= 45);
   }
   if (name === "parks") return P.totalVisits(s.visits) > 0;
+  if (name === "days" || name === "recap") return !P.normalizeVisits(s).missingVisits;
   return true;
 }
 
@@ -396,15 +433,18 @@ function stepParks(s) {
   const forcedRest = P.forcedRestDays(s);
   const days = stepValid("dates") ? P.tripDays(s) : 0;
   const full = total + rest >= days; // limite commune : visites + repos ≤ jours du séjour
-  const forcedCount = {};
-  for (const f of s.forced) if (f.park !== "rest") forcedCount[f.park] = (forcedCount[f.park] || 0) + 1;
-  const counter = ({ cls = "", label, sub, n, min, action, park = "", less, more }) => `
+  const counts = P.parkDayCounts(s);
+  const forcedCount = counts.specific;
+  const restMax = P.restLimit(s); // les jours « en parc » ne peuvent pas être des repos
+  const restFull = rest >= restMax;
+  const missing = P.normalizeVisits(s).missingVisits;
+  const counter = ({ cls = "", label, sub, n, min, action, park = "", less, more, plusOff = full }) => `
       <div class="counter-row ${n ? "on" : ""} ${cls}">
         <span class="grow">${label}<small class="muted">${sub}</small></span>
         <button type="button" class="round" data-action="${action}" data-park="${park}" data-d="-1" ${n <= min ? "disabled" : ""}
           aria-label="${esc(less)}">−</button>
         <output class="count" aria-live="polite">${n}</output>
-        <button type="button" class="round" data-action="${action}" data-park="${park}" data-d="1" ${full ? "disabled" : ""}
+        <button type="button" class="round" data-action="${action}" data-park="${park}" data-d="1" ${plusOff ? "disabled" : ""}
           aria-label="${esc(more)}">+</button>
       </div>`;
   const group = (g) => `
@@ -419,30 +459,64 @@ function stepParks(s) {
     <div class="group-title">🏖️ ${t("rest_days")}</div>
     ${counter({ cls: "rest", label: `<b>${t("rest_days")}</b>`,
       sub: forcedRest ? t("rest_forced_n", { n: forcedRest }) : t("rest_help"),
-      n: rest, min: forcedRest, action: "rest", less: t("rest_less"), more: t("rest_more") })}`;
+      n: rest, min: forcedRest, action: "rest", less: t("rest_less"), more: t("rest_more"), plusOff: full || restFull })}
+    ${restFull && !full ? `<p class="small notice" role="status">${t("rest_limit", { n: counts.total })}</p>` : ""}`;
   return `<h2>${t("s_parks")}</h2><p class="muted small">${t("s_parks_help")}</p>
     <p class="small total-line"><b>${t("days_total", { v: total, r: rest, sum: total + rest, days })}</b></p>
     ${full ? `<p class="small notice" role="status">${t("days_limit", { days })}</p>` : ""}
+    ${missing ? `<p class="small err" role="alert">${t("visits_missing", { n: counts.total, v: total })}</p>` : ""}
     ${visitMsgHtml()}
     ${group("disney")}${group("universal")}${restRow}
+    ${closedWarnings(s)}
+    ${(s.visits?.volcano_bay || 0) > 0 ? `<p class="small muted">🌋 ${t("vb_closed_note")}</p>` : ""}
     ${total ? "" : `<p class="small err">${t("parks_none")}</p>`}`;
+}
+
+/** Parcs avec plus de visites que de jours d'ouverture pendant le séjour (fermeture pour rénovation) */
+function closedWarnings(s) {
+  const dates = stepValid("dates") ? P.dateRange(s.start, s.end) : [];
+  return P.PARKS.filter((p) => (s.visits?.[p.id] || 0) > 0).map((p) => {
+    const open = dates.filter((d) => !P.parkClosed(p.id, d)).length;
+    return open < s.visits[p.id]
+      ? `<p class="small err" role="alert">${p.emoji} ${esc(t("park_closed_trip", { park: p.name, n: s.visits[p.id], open }))}</p>` : "";
+  }).join("");
 }
 
 function stepPasses(s) {
   const hasDisney = s.parks.some((p) => parkOf(p).group === "disney");
   const hasUni = s.parks.some((p) => parkOf(p).group === "universal");
+  const dates = stepValid("dates") ? P.dateRange(s.start, s.end) : [];
+  const days = state.configured ? Object.fromEntries(trip().map((d) => [d.date, d])) : {};
+  const passBlock = (k, brand, title, help) => {
+    const v = s.passes[k];
+    const n = dates.filter((d) => passOn(k, d)).length;
+    return `<div class="pass-block">
+      <div class="row gap between"><b>${t(title)}</b><span class="badge">${v.mode === "all" ? t("pass_all") : t("pass_n", { n })}</span></div>
+      <small class="muted">${t(help)}</small>
+      <div class="row gap" style="margin:6px 0">
+        <button type="button" class="pill ghost small-btn" data-action="pass-mode" data-pass="${k}" data-mode="all">${t("pass_all_btn")}</button>
+        <button type="button" class="pill ghost small-btn" data-action="pass-mode" data-pass="${k}" data-mode="none">${t("pass_none_btn")}</button>
+      </div>
+      <div class="date-chips" role="group" aria-label="${esc(t(title))}">${dates.map((d) => {
+        const on = passOn(k, d);
+        const park = days[d]?.park;
+        const other = park && parkOf(park).group !== brand; // ce jour-là, parc de l'autre marque
+        return `<button type="button" class="dchip ${on ? "on" : ""} ${other ? "other" : ""}" aria-pressed="${on}"
+          data-action="pass-day" data-pass="${k}" data-date="${d}"
+          title="${other ? esc(t("pass_other_brand")) : ""}">${esc(fmtDate(d, { weekday: "short", day: "numeric" }))}${park ? " " + parkOf(park).emoji : ""}</button>`;
+      }).join("")}</div>
+    </div>`;
+  };
   return `<h2>${t("s_passes")}</h2><p class="muted small">${t("s_passes_help")}</p>
     ${hasDisney ? `<div class="group-title"><span class="dot disney"></span>${t("disney")}</div>
-      <label class="choice"><input type="checkbox" data-set="ll.multi" ${s.ll.multi ? "checked" : ""}>
-        <span><b>${t("ll_multi")}</b><small>${t("ll_multi_help")}</small></span></label>
-      <label class="choice"><input type="checkbox" data-set="ll.single" ${s.ll.single ? "checked" : ""}>
-        <span><b>${t("ll_single")}</b><small>${t("ll_single_help")}</small></span></label>` : ""}
+      ${passBlock("multi", "disney", "ll_multi", "ll_multi_help")}
+      ${passBlock("single", "disney", "ll_single", "ll_single_help")}
+      <label class="choice"><input type="checkbox" data-set="earlyDisney" ${s.earlyDisney ? "checked" : ""}>
+        <span><b>${t("early_disney")}</b><small>${t("early_disney_help")}</small></span></label>` : ""}
     ${hasUni ? `<div class="group-title"><span class="dot universal"></span>${t("universal")}</div>
-      <label class="choice"><input type="checkbox" data-set="express" ${s.express ? "checked" : ""}>
-        <span><b>${t("express")}</b><small>${t("express_help")}</small></span></label>` : ""}
-    <div class="group-title">🏨 ${t("hotel_title")}</div>
-    <label class="choice"><input type="checkbox" data-set="hotelPerks" ${s.hotelPerks ? "checked" : ""}>
-      <span><b>${t("hotel_perks")}</b><small>${t("hotel_perks_help")}</small></span></label>`;
+      ${passBlock("express", "universal", "express", "express_help")}
+      <label class="choice"><input type="checkbox" data-set="earlyUniversal" ${s.earlyUniversal ? "checked" : ""}>
+        <span><b>${t("early_universal")}</b><small>${t("early_universal_help")}</small></span></label>` : ""}`;
 }
 
 function stepPace(s) {
@@ -459,21 +533,32 @@ function stepPace(s) {
       <select data-set="lunch.at">${times.map((m) => `<option value="${m}" ${+s.lunch.at === m ? "selected" : ""}>${P.fmtTime(m)}</option>`).join("")}</select></label>` : ""}`;
 }
 
-function stepForced(s) {
+function stepDays(s) {
   const dates = stepValid("dates") ? P.dateRange(s.start, s.end) : [];
-  const rows = s.forced.map((f, i) => `
-    <div class="forced-row">
-      <select data-forced="${i}" data-key="date" aria-label="${t("date")}">${dates.map((d) => `<option value="${d}" ${d === f.date ? "selected" : ""}>${esc(fmtDate(d))}</option>`).join("")}</select>
-      <select data-forced="${i}" data-key="park" aria-label="${t("live_park")}">
-        ${s.parks.map((p) => `<option value="${p}" ${p === f.park ? "selected" : ""}>${parkOf(p).emoji} ${parkOf(p).name}</option>`).join("")}
-        <option value="rest" ${f.park === "rest" ? "selected" : ""}>🏖️ ${t("rest_day")}</option>
+  const types = P.dayTypes(s);
+  const counts = P.parkDayCounts(s);
+  const missing = P.normalizeVisits(s).missingVisits;
+  const rows = dates.map((d) => {
+    const v = types[d] || "auto";
+    const opt = (val, label, disabled = false) =>
+      `<option value="${val}" ${v === val ? "selected" : ""} ${disabled ? "disabled" : ""}>${label}</option>`;
+    return `<div class="day-type-row ${v !== "auto" ? "set" : ""}">
+      <span class="grow"><b>${esc(fmtDate(d, { weekday: "short", day: "numeric", month: "short" }))}</b></span>
+      <select data-daytype="${d}" aria-label="${esc(t("day_type_of", { date: fmtDate(d) }))}">
+        ${opt("auto", "✨ " + t("dt_auto"))}
+        ${opt("rest", "🏖️ " + t("dt_rest"))}
+        ${opt("park", "🎢 " + t("dt_park"))}
+        <optgroup label="${t("dt_specific")}">
+          ${P.PARKS.map((p) => opt(p.id, `${p.emoji} ${p.name}${P.parkClosed(p.id, d) ? " — " + t("closed") : ""}`, P.parkClosed(p.id, d))).join("")}
+        </optgroup>
       </select>
-      <button class="pill ghost danger" data-action="forced-del" data-i="${i}" aria-label="${t("remove")}">✕</button>
-    </div>`).join("");
-  return `<h2>${t("s_forced")}</h2><p class="muted small">${t("s_forced_help")}</p>
-    ${rows || `<p class="muted small">${t("forced_none")}</p>`}
+    </div>`;
+  }).join("");
+  return `<h2>${t("s_days")}</h2><p class="muted small">${t("s_days_help")}</p>
+    <p class="small"><b>${esc(t("days_summary", { rest: P.forcedRestDays(s), park: counts.total }))}</b></p>
+    ${missing ? `<p class="small err" role="alert">${t("visits_missing", { n: counts.total, v: P.totalVisits(s.visits) })}</p>` : ""}
     ${visitMsgHtml()}
-    <button class="pill ghost" data-action="forced-add" ${dates.length ? "" : "disabled"}>+ ${t("forced_add")}</button>`;
+    <div class="day-types">${rows}</div>`;
 }
 
 function stepMust(s) {
@@ -523,13 +608,21 @@ function stepRecap(s) {
     </div>`;
   const yes = (b) => (b ? t("yes") : t("no"));
   const passes = [];
+  const allDates = P.dateRange(s.start, s.end);
+  const passTxt = (k) => {
+    const n = allDates.filter((d) => passOn(k, d)).length;
+    return s.passes[k].mode === "all" ? t("pass_all") : n ? t("pass_n", { n }) : t("no");
+  };
   if (s.parks.some((p) => parkOf(p).group === "disney")) {
-    passes.push(`${t("ll_multi")} : ${yes(s.ll.multi)}`, `${t("ll_single")} : ${yes(s.ll.single)}`);
+    passes.push(`${t("ll_multi")} : ${passTxt("multi")}`, `${t("ll_single")} : ${passTxt("single")}`,
+      `${t("early_disney")} : ${yes(s.earlyDisney)}`);
   }
-  if (s.parks.some((p) => parkOf(p).group === "universal")) passes.push(`${t("express")} : ${yes(s.express)}`);
-  const forced = s.forced.length
-    ? s.forced.map((f) => `${esc(fmtDate(f.date))} → ${f.park === "rest" ? "🏖️ " + t("rest_day") : parkOf(f.park).emoji + " " + parkOf(f.park).name}`).join("<br>")
-    : t("forced_none");
+  if (s.parks.some((p) => parkOf(p).group === "universal")) {
+    passes.push(`${t("express")} : ${passTxt("express")}`, `${t("early_universal")} : ${yes(s.earlyUniversal)}`);
+  }
+  const types = Object.entries(P.dayTypes(s)).sort();
+  const dtLabel = (v) => (v === "rest" ? "🏖️ " + t("dt_rest") : v === "park" ? "🎢 " + t("dt_park") : parkOf(v).emoji + " " + parkOf(v).name);
+  const forced = types.length ? types.map(([d, v]) => `${esc(fmtDate(d))} → ${dtLabel(v)}`).join("<br>") : t("dt_all_auto");
   const must = s.surprise
     ? `🎲 ${t("surprise")}`
     : s.mustDo.length
@@ -542,7 +635,7 @@ function stepRecap(s) {
     ${row(t("s_passes"), passes.join("<br>") || "—", "passes")}
     ${row(t("s_pace"), t("pace_" + s.pace), "pace")}
     ${row(t("lunch_on"), s.lunch.enabled ? `${t("yes")} · ${P.fmtTime(+s.lunch.at)}` : t("no"), "pace")}
-    ${row(t("s_forced"), forced, "forced")}
+    ${row(t("s_days"), forced, "days")}
     ${row(t("s_must"), must, "must")}
     <div class="recap-row">
       <div class="grow"><div class="small muted">${t("imports_title")}</div><div>${esc(importsSummary())}</div></div>
@@ -572,7 +665,7 @@ function syncParks() {
   const s = state.settings;
   s.parks = P.PARKS.map((p) => p.id).filter((p) => (s.visits?.[p] || 0) > 0);
   s.mustDo = s.mustDo.filter((id) => s.parks.includes(state.meta[id]?.park));
-  s.forced = s.forced.filter((f) => f.park === "rest" || s.parks.includes(f.park));
+  // un jour imposé à un parc garde au moins une visite de ce parc (normalizeVisits) : rien à retirer ici
 }
 
 function ensureVisits() {
@@ -608,6 +701,7 @@ function viewCalendar() {
       <p class="muted small">${esc(fmtDate(state.settings.start, { day: "numeric", month: "long" }))} → ${esc(fmtDate(state.settings.end, { day: "numeric", month: "long", year: "numeric" }))} · ${t("summary_parks", { n: parkDays })}</p>
       <p class="muted small">${t("cal_help")}</p>
       <p class="small">${esc(notesInfo)}</p>
+      ${closedWarnings(state.settings)}
     </section>
     ${days.map((d) => {
       const p = d.park && parkOf(d.park);
@@ -616,7 +710,7 @@ function viewCalendar() {
         <span class="cal-emoji">${dayEmoji(d)}</span>
         <span class="grow">
           <span class="cal-park">${p ? p.name : d.rest ? t("rest_day") : t("free_day")}</span>
-          ${d.forced ? `<span class="badge">📌 ${t("forced")}</span>` : ""}<br>
+          ${d.forced ? `<span class="badge">📌 ${t("forced")}</span>` : d.anyPark ? `<span class="badge">📌 ${t("dt_park")}</span>` : ""}<br>
           ${p ? `${crowdTag(d.crowd)}<br>${hoursLine(hoursFor(d.date, d.park))}` : d.restAuto ? `<span class="small muted">${t("rest_auto")}</span>` : !d.rest ? `<span class="small muted">${t("free_help")}</span>` : ""}
         </span>
         <span class="muted">›</span>
@@ -650,7 +744,7 @@ const doneKey = (date, park) => `done.${date}.${park}`;
 
 /** Où en est la journée : programme recalculé, entrées, activités prévues qui ne tiennent plus */
 function computeDay(date, park) {
-  const s = state.settings;
+  const s = settingsFor(date); // coupe-files du jour
   const h = hoursFor(date, park);
   const wd = P.weekdayOf(date);
   const entries = getEntries(date).filter((e) => e.park === park).sort((a, b) => a.at - b.at);
@@ -1030,29 +1124,44 @@ function finishLater() {
 
 // ------------------------------------------------------------------ direct
 
-function showsSoon(park) {
+const SOON_WINDOW = 120; // les 2 prochaines heures, plus les séances commencées il y a moins de 10 min
+
+/** Rencontre à horaires fixes ? (nom « Meet … » ou fiche de type rencontre) */
+function isMeetShow(name) {
+  if (isMeetName(name)) return true;
+  const k = P.normName(name);
+  return Object.values(state.meta).some((m) => m.type === "meet" && P.normName(m.name) === k);
+}
+
+function showsSoon(park, meets) {
   const nowMs = Date.now();
   return (state.shows?.parks?.[park] || [])
+    .filter((sh) => isMeetShow(sh.name) === meets)
     .map((sh) => ({ ...sh, delta: Math.round((new Date(sh.start).getTime() - nowMs) / 60000) }))
-    .filter((sh) => isFinite(sh.delta) && sh.delta >= -10 && sh.delta <= 60)
+    .filter((sh) => isFinite(sh.delta) && sh.delta >= -10 && sh.delta <= SOON_WINDOW)
     .sort((a, b) => a.delta - b.delta);
 }
 
-function showsSoonHtml(park) {
-  const shows = showsSoon(park);
-  const next = shows.find((sh) => sh.delta >= 0) || shows[0];
-  const open = store.get("showsOpen", false);
-  return `<details class="card shows-card" id="shows-soon" ${open ? "open" : ""} ${shows.length ? "" : "hidden"}>
-    <summary><span class="grow"><b>🎭 ${t("shows_soon")}</b><br>
-      <span class="small muted">${next ? esc(t("shows_summary", { n: shows.length, time: fmtHour(isoMin(next.start)) })) : ""}</span></span>
+/** Section repliable « Spectacles » ou « Rencontres » ; masquée s'il n'y a rien dans les 2 h */
+function soonSectionHtml(park, meets) {
+  const list = showsSoon(park, meets);
+  const id = meets ? "meets-soon" : "shows-soon";
+  const open = store.get(meets ? "meetsOpen" : "showsOpen", false);
+  const next = list.find((sh) => sh.delta >= 0) || list[0];
+  const icon = meets ? "🤝" : "🎭";
+  return `<details class="card shows-card" id="${id}" ${open ? "open" : ""} ${list.length ? "" : "hidden"}>
+    <summary><span class="grow"><b>${icon} ${t(meets ? "meets_soon" : "shows_soon")}</b><br>
+      <span class="small muted">${next ? esc(t(meets ? "meets_summary" : "shows_summary", { n: list.length, time: fmtHour(isoMin(next.start)) })) : ""}</span></span>
       <span class="chev" aria-hidden="true">▾</span></summary>
-    <div class="shows-list">${shows.map((sh) => `
+    <div class="shows-list">${list.map((sh) => `
       <div class="show-row">
         <span class="show-time">${fmtHour(isoMin(sh.start))}</span>
-        <span class="grow name">${isMeetName(sh.name) ? "🤝" : "🎭"} ${esc(sh.name)}</span>
+        <span class="grow name">${esc(sh.name)}</span>
         <span class="badge ${sh.delta <= 0 ? "show-now" : ""}">${sh.delta <= 0 ? t("show_started", { n: -sh.delta }) : t("show_in", { n: sh.delta })}</span>
       </div>`).join("")}</div></details>`;
 }
+
+const showsSoonHtml = (park) => soonSectionHtml(park, false) + soonSectionHtml(park, true);
 
 function viewLive() {
   const now = P.orlandoNow();
@@ -1102,6 +1211,7 @@ function viewLive() {
     </div>`;
   };
 
+  // ordre : parc -> spectacles -> rencontres -> filtres et attractions
   return `
     <section class="card">
       <div class="row gap between"><h2>📡 ${t("live_title")}</h2>
@@ -1109,6 +1219,10 @@ function viewLive() {
       <label class="field"><span>${t("live_park")}</span>${parkSelect}</label>
       <p class="small muted" style="margin:0">${state.latest?.updated ? esc(t("data_updated", { ago: ago(state.latest.updated) })) + " · " + t("live_auto") : t("live_nodata")}</p>
       ${stale ? `<p class="small notice">⚠️ ${esc(t("live_stale", { ago: ago(state.latest.updated) }))}</p>` : ""}
+      ${P.parkClosed(park, now.date) ? `<p class="small notice">🌋 ${t("vb_closed_now")}</p>` : ""}
+    </section>
+    <div id="soon-sections">${showsSoonHtml(park)}</div>
+    <section class="card">
       ${catChips("live")}
       ${state.liveCats.length ? "" : `<p class="small muted" style="margin:6px 0 0">${t("live_hidden_cats")}</p>`}
     </section>
@@ -1117,8 +1231,7 @@ function viewLive() {
       : `<section class="card center muted">🌙 ${t(Object.keys(waits).length ? "live_none_open" : "live_nodata")}</section>`}
     ${shows.length ? `<h3 class="section-title">🎭 ${t("cat_show")} · ${shows.length}</h3><div class="live-list">${shows.map(row).join("")}</div>` : ""}
     ${closed.length ? `<details class="closed-list"><summary class="section-title">${t("live_closed", { n: closed.length })}</summary>
-      <div class="live-list">${closed.map(row).join("")}</div></details>` : ""}
-    ${showsSoonHtml(park)}`;
+      <div class="live-list">${closed.map(row).join("")}</div></details>` : ""}`;
 }
 
 function markDone(id, value) {
@@ -1255,13 +1368,20 @@ document.addEventListener("click", (e) => {
     case "prev": state.step = Math.max(0, state.step - 1); store.set("step", state.step); render(); break;
     case "next": state.step = Math.min(STEPS.length - 1, state.step + 1); store.set("step", state.step); render(); break;
     case "finish": state.configured = true; store.set("configured", true); go("calendar"); break;
-    case "forced-add": {
-      const dates = P.dateRange(s.start, s.end);
-      const used = new Set(s.forced.map((f) => f.date));
-      s.forced.push({ date: dates.find((d) => !used.has(d)) || dates[0], park: s.parks[0] || "rest" });
-      state.visitMsg = ""; applyVisitLimits(); saveSettings(); render(); break;
+    case "pass-mode": {
+      s.passes[el.dataset.pass] = { mode: el.dataset.mode, dates: [] };
+      saveSettings(); render(); break;
     }
-    case "forced-del": s.forced.splice(+el.dataset.i, 1); state.visitMsg = ""; applyVisitLimits(); saveSettings(); render(); break;
+    case "pass-day": {
+      const k = el.dataset.pass, d = el.dataset.date;
+      const all = P.dateRange(s.start, s.end);
+      const cur = all.filter((x) => passOn(k, x));
+      const next = cur.includes(d) ? cur.filter((x) => x !== d) : [...cur, d];
+      s.passes[k] = next.length === all.length ? { mode: "all", dates: [] } : next.length ? { mode: "some", dates: next } : { mode: "none", dates: [] };
+      saveSettings(); render();
+      $(`[data-action=pass-day][data-pass="${k}"][data-date="${d}"]`)?.focus();
+      break;
+    }
     case "visit": {
       const p = el.dataset.park;
       if (!P.PARK_BY_ID[p]) break;
@@ -1275,7 +1395,7 @@ document.addEventListener("click", (e) => {
     }
     case "rest": {
       const d = +el.dataset.d;
-      if (d > 0 && P.totalVisits(s.visits) + P.restDays(s) >= P.tripDays(s)) break;
+      if (d > 0 && (P.totalVisits(s.visits) + P.restDays(s) >= P.tripDays(s) || P.restDays(s) >= P.restLimit(s))) break;
       s.restDays = Math.max(P.forcedRestDays(s), P.restDays(s) + d);
       state.visitMsg = "";
       applyVisitLimits(); saveSettings(); render();
@@ -1377,17 +1497,31 @@ document.addEventListener("change", (e) => {
     if (el.dataset.set === "start" && s.end < s.start) s.end = s.start;
     // les contraintes hors des dates du séjour sont retirées
     if (el.dataset.set === "start" || el.dataset.set === "end") {
-      s.forced = s.forced.filter((f) => f.date >= s.start && f.date <= s.end);
+      s.dayTypes = Object.fromEntries(Object.entries(s.dayTypes || {}).filter(([d]) => d >= s.start && d <= s.end));
+      for (const k of ["multi", "single", "express"]) {
+        const v = s.passes[k];
+        if (v.mode === "some") { v.dates = v.dates.filter((d) => d >= s.start && d <= s.end); if (!v.dates.length) v.mode = "none"; }
+      }
       // dates raccourcies : on réduit les visites si besoin et on le signale
       state.visitMsg = "";
       if (stepValid("dates")) applyVisitLimits();
     }
     saveSettings(); render(); return;
   }
-  if (el.dataset.forced != null) {
-    s.forced[+el.dataset.forced][el.dataset.key] = el.value;
+  if (el.dataset.daytype) {
+    const d = el.dataset.daytype, v = el.value;
+    const types = { ...(s.dayTypes || {}) };
+    if (v === "auto") delete types[d]; else types[d] = v;
+    s.dayTypes = types;
+    // un parc précis compte dans ses visites : on en ajoute une si besoin (normalizeVisits ajuste le reste)
+    if (P.PARK_BY_ID[v]) {
+      const need = P.parkDayCounts(s).specific[v] || 0;
+      if ((s.visits?.[v] || 0) < need) s.visits = { ...s.visits, [v]: need };
+    }
     state.visitMsg = ""; applyVisitLimits();
-    saveSettings(); render(); return;
+    saveSettings(); render();
+    $(`[data-daytype="${d}"]`)?.focus();
+    return;
   }
   if (el.dataset.must) {
     s.mustDo = el.checked ? [...new Set([...s.mustDo, el.dataset.must])] : s.mustDo.filter((id) => id !== el.dataset.must);
@@ -1477,6 +1611,7 @@ $("#plus-sheet").addEventListener("close", () => maybeOpenOverflow());
 // section spectacles de Direct : état ouvert / fermé mémorisé
 document.addEventListener("toggle", (e) => {
   if (e.target.id === "shows-soon") store.set("showsOpen", e.target.open);
+  if (e.target.id === "meets-soon") store.set("meetsOpen", e.target.open);
 }, true);
 
 $("#btn-notes").addEventListener("click", () => { notesStatus(); $("#notes-dialog").showModal(); });
@@ -1509,6 +1644,27 @@ function updateOnline() {
 window.addEventListener("online", () => { updateOnline(); refreshLatest(); });
 window.addEventListener("offline", updateOnline);
 
+/**
+ * Fiches saisies avant que queue-times ne publie leurs identifiants (ex. Volcano Bay, clés « vb-… ») :
+ * reliées à l'identifiant de rides.json qui porte le même nom dans le même parc.
+ */
+function linkMetaToCatalog() {
+  const byName = {};
+  for (const [id, r] of Object.entries(state.catalog)) byName[`${r.park}|${P.normName(r.name)}`] = id;
+  const renamed = {};
+  for (const [key, m] of Object.entries(state.meta)) {
+    if (state.catalog[key]) continue;
+    const id = byName[`${m.park}|${P.normName(m.name)}`];
+    if (id && !state.meta[id]) { state.meta[id] = m; delete state.meta[key]; renamed[key] = id; }
+  }
+  if (Object.keys(renamed).length) {
+    const s = state.settings;
+    s.mustDo = s.mustDo.map((id) => renamed[id] || id);
+    saveSettings();
+    model = null; // le modèle d'attente doit relire les fiches
+  }
+}
+
 // ------------------------------------------------------------------ démarrage
 
 async function init() {
@@ -1526,6 +1682,7 @@ async function init() {
   }
   try {
     await loadData();
+    linkMetaToCatalog();
   } catch {
     // sans stats : le planificateur fonctionne quand même avec les attentes typiques
     state.stats = { rides: {}, parks: {} };
@@ -1539,8 +1696,8 @@ async function init() {
   setInterval(() => {
     updateClock();
     // « dans X min » des spectacles tenu à jour sans recharger toute la page
-    const box = $("#shows-soon");
-    if (box && state.tab === "live") box.outerHTML = showsSoonHtml(state.livePark);
+    const box = $("#soon-sections");
+    if (box && state.tab === "live") box.innerHTML = showsSoonHtml(state.livePark);
   }, 30000);
   setInterval(() => { if (state.tab === "live" && document.visibilityState === "visible") refreshLatest(); }, 5 * 60000);
 }

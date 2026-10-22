@@ -8,7 +8,7 @@ Planificateur de séjour Walt Disney World + Universal Orlando basé sur les tem
 
 | Fichier | Rôle |
 |---|---|
-| `scripts/collect.py` | Récupère les temps d'attente des 7 parcs (toutes les 15 min via GitHub Actions) |
+| `scripts/collect.py` | Récupère les temps d'attente des 8 parcs (toutes les 15 min via GitHub Actions) |
 | `scripts/stats.py` | Calcule les moyennes par attraction / jour de semaine / créneau de 30 min (1x/jour) |
 | `.github/workflows/collect.yml` | Automatisation GitHub Actions |
 | `data/latest.json` | Temps d'attente en direct |
@@ -16,12 +16,13 @@ Planificateur de séjour Walt Disney World + Universal Orlando basé sur les tem
 | `data/stats.json` | Statistiques pour le planificateur |
 | `data/raw/<parc>/<mois>.csv` | Historique brut (heure d'Orlando) |
 | `scripts/themeparks.py` | Horaires des parcs (1x / 20 h) et spectacles du jour (à chaque collecte) depuis ThemeParks.wiki ; ne fait jamais échouer la collecte |
-| `data/themeparks_ids.json` | Correspondance de nos 7 parcs avec les identifiants ThemeParks.wiki (découverte via `/destinations`) |
+| `data/themeparks_ids.json` | Correspondance de nos 8 parcs avec les identifiants ThemeParks.wiki (découverte via `/destinations`) |
 | `data/schedule.json` | Horaires par parc et par date : ouverture, fermeture, early entry, soirées prolongées, événements payants |
 | `data/shows.json` | Spectacles du jour et leurs séances (heure d'Orlando) |
 
 Parcs suivis : Epic Universe (334), Islands of Adventure (64), Universal Studios Florida (65),
-Animal Kingdom (8), Hollywood Studios (7), Magic Kingdom (6), Epcot (5).
+Animal Kingdom (8), Hollywood Studios (7), Magic Kingdom (6), Epcot (5), Volcano Bay (67, parc aquatique ;
+annoncé fermé pour rénovation du 26 octobre 2026 au 24 mars 2027, le site n'y place aucune visite pendant cette période).
 
 Le dépôt doit être **public** : Actions et Pages sont alors gratuits et illimités.
 
@@ -35,7 +36,7 @@ Site statique (HTML/CSS/JS, sans framework ni build), cahier des charges dans `B
 | `docs/js/app.js` | Interface : assistant, calendrier, journée, direct |
 | `docs/js/planner.js` | Calculs (sans DOM) : modèle d'attente, choix des parcs, programme du jour, « que faire maintenant ? » |
 | `docs/config.js` | Adresse des données (`raw.githubusercontent.com/<user>/<repo>/main/data/`) |
-| `docs/rides_meta.json` | Saisi à la main : taille mini, type, Lightning Lane / Express, durée, attente typique |
+| `docs/rides_meta.json` | Saisi à la main : taille mini, type, Lightning Lane / Express, durée, attente typique ; Volcano Bay en clés provisoires « vb-… » reliées par nom aux identifiants queue-times |
 | `docs/i18n.json` | Textes FR / EN |
 | `docs/sw.js`, `docs/manifest.webmanifest` | Installation sur téléphone + hors connexion (changer `VERSION` dans `sw.js` après une modif du site) |
 
@@ -46,13 +47,16 @@ Site statique (HTML/CSS/JS, sans framework ni build), cahier des charges dans `B
 
 **Fonctions de l'interface** :
 - Réglages en 7 étapes : dates, parcs et nombre de visites par parc + jours de repos (compteurs − / +,
-  visites + repos ≤ jours du séjour ; dates raccourcies : on retire d'abord les repos non imposés), coupe-files, rythme et déjeuner, parcs imposés, incontournables
+  visites + repos ≤ jours du séjour ; dates raccourcies : on retire d'abord les repos non imposés), type de chaque
+  jour (Automatique / Repos / En parc / parc précis, cohérent avec les compteurs), coupe-files par jour
+  (Lightning Lane Multi / Single Pass, Universal Express : jours cochés, appliqués seulement à la bonne marque)
+  et entrée anticipée par resort (Early Entry Disney, Early Park Admission Universal), rythme et déjeuner, incontournables
   (filtres par catégorie), récapitulatif avec liens « Modifier » puis « Créer mon séjour ».
 - Calendrier : les jours de repos non imposés vont sur les journées les plus chargées (si possible pas
   deux d'affilée, mention « choisi car journée chargée ») ; chaque parc reçoit ensuite son nombre de
   visites sur ses jours les plus calmes, si possible jamais deux jours de suite. Les jours restants sont
   des jours libres non attribués.
-- Journée : programme de l'ouverture (ou early entry avec « hôtel sur place ») jusqu'à la fermeture, rempli
+- Journée : programme de l'ouverture (ou entrée anticipée si l'option de la marque du parc est cochée) jusqu'à la fermeture, rempli
   dans cet ordre : incontournables (tiers A/B/C, coupe-files), attractions pas encore faites (meilleur
   créneau de chacune), puis deuxièmes tours des préférées. On entre dans une file au plus tard à la fermeture.
   « Fin de journée » réglable pour chaque jour (tout est alors fini à cette heure), avec retour « jusqu'à la fermeture ».
@@ -65,9 +69,11 @@ Site statique (HTML/CSS/JS, sans framework ni build), cahier des charges dans `B
   tard » si une fin de journée a été choisie.
 - Direct : le temps réel uniquement (attractions ouvertes de la plus courte à la plus longue attente, filtres,
   bouton « Fait » — repris dans la Journée —, actualisation toutes les 5 min). Les spectacles affichent leurs
-  prochaines séances ; « Spectacles dans l'heure » est en bas, repliable (🤝 pour les rencontres à horaires fixes).
+  prochaines séances. Ordre : parc → « Spectacles dans les 2 h » → « Rencontres dans les 2 h » (sections séparées,
+  repliables, état mémorisé) → filtres et attractions.
 - Horaires (`schedule.json`) : affichés dans le calendrier et la journée (le programme suit l'ouverture et la
-  fermeture du jour, early entry / soirée prolongée si l'option « hôtel sur place » est cochée). Jour pas encore
+  fermeture du jour, entrée anticipée selon l'option Disney / Universal). `themeparks.py` range Early Entry /
+  Early Park Admission parmi les entrées anticipées (le site reclasse aussi les anciennes données). Jour pas encore
   publié : « horaire estimé » (médiane des horaires connus du parc ce jour de semaine). Correction manuelle d'un
   jour dans les Réglages (« horaire modifié », annulable).
 - Thème Auto / Clair / Sombre (bouton en en-tête, choix mémorisé).

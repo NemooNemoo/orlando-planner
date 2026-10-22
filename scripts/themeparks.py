@@ -50,7 +50,9 @@ PARK_KEYWORDS = {
     "universal_studios_florida": "universal studios florida",
     "islands_of_adventure": "islands of adventure",
     "epic_universe": "epic universe",
+    "volcano_bay": "volcano bay",  # « Universal Volcano Bay » / « Universal's Volcano Bay »
 }
+IDS_RETRY_HOURS = 24  # parc introuvable : on ne réinterroge /destinations qu'une fois par jour
 
 
 class RateLimited(Exception):
@@ -67,7 +69,10 @@ _failures = 0
 
 
 def log(*args):
-    print(*args, flush=True)
+    try:
+        print(*args, flush=True)
+    except (OSError, ValueError):  # journal indisponible : ne doit jamais faire échouer le script
+        pass
 
 
 def get(path):
@@ -158,9 +163,12 @@ def to_orlando(iso):
 
 def discover_ids():
     """Associe nos parcs aux entités ThemeParks.wiki (par leur nom), en réutilisant le fichier existant."""
-    known = load_json(IDS_FILE, {}).get("parks", {})
+    saved = load_json(IDS_FILE, {})
+    known = saved.get("parks", {})
     if all(slug in known and known[slug].get("id") for slug in PARK_KEYWORDS):
         return known
+    if age_hours(saved.get("checked")) < IDS_RETRY_HOURS:
+        return known  # recherche déjà faite aujourd'hui, parcs manquants signalés à ce moment-là
 
     payload = get("/destinations") or {}
     found = dict(known)
@@ -177,9 +185,9 @@ def discover_ids():
     missing = [slug for slug in PARK_KEYWORDS if slug not in found]
     for slug in missing:
         log(f"  ATTENTION : parc « {slug} » introuvable dans /destinations (ThemeParks.wiki)")
-    if found != known:
-        write_json(IDS_FILE, {"generated": utc_stamp(), "source": "https://themeparks.wiki", "parks": found})
-        log(f"  themeparks_ids.json : {len(found)}/{len(PARK_KEYWORDS)} parcs associés")
+    write_json(IDS_FILE, {"generated": saved.get("generated") if found == known else utc_stamp(),
+                          "checked": utc_stamp(), "source": "https://themeparks.wiki", "parks": found})
+    log(f"  themeparks_ids.json : {len(found)}/{len(PARK_KEYWORDS)} parcs associés")
     return found
 
 
@@ -192,6 +200,21 @@ def months_to_fetch(today):
         m += 1
         if m > 12:
             y, m = y + 1, 1
+
+
+EARLY_WORDS = ("early entry", "early park admission", "early admission", "early morning")
+EVENING_WORDS = ("extended evening", "extended hours", "evening hours")
+
+
+def extra_kind(entry):
+    """Entrée anticipée / soirée prolongée d'après la description, quel que soit le type donné par l'API
+    (ThemeParks.wiki range parfois « Early Entry » parmi les événements payants)."""
+    desc = norm(entry.get("description"))
+    if any(k in desc for k in EARLY_WORDS):
+        return "early"
+    if any(k in desc for k in EVENING_WORDS):
+        return "evening"
+    return None
 
 
 def classify_extra(entry, opening):
@@ -242,10 +265,11 @@ def parse_schedule(entries):
             slot = {"start": start.strftime("%H:%M"), "end": end.strftime("%H:%M")}
             if e.get("description"):
                 slot["name"] = e["description"]
+            kind = extra_kind(e)
             if typ == "EXTRA_HOURS":
-                day[classify_extra(e, opening)].append(slot)
+                day[kind or classify_extra(e, opening)].append(slot)
             elif typ in ("TICKETED_EVENT", "PRIVATE_EVENT"):
-                day["events"].append(slot)
+                day[kind or "events"].append(slot)
         for k in ("early", "evening", "events"):
             if not day[k]:
                 del day[k]
@@ -373,5 +397,5 @@ if __name__ == "__main__":
     try:
         main()
     except BaseException as err:  # même un arrêt imprévu ne doit pas faire échouer la collecte
-        print("ERREUR themeparks.py :", repr(err))
+        log("ERREUR themeparks.py :", repr(err))
     sys.exit(0)
