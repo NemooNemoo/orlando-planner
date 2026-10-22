@@ -442,6 +442,12 @@
     "start": "2026-10-22T08:30-04:00"
    },
    {
+    "end": "2026-10-22T21:00-04:00",
+    "id": "67612787-fbd3-44b7-869f-123f55d78584",
+    "name": "Meet Beloved Disney Pals at Mickey & Friends",
+    "start": "2026-10-22T09:00-04:00"
+   },
+   {
     "end": "2026-10-22T12:30-04:00",
     "id": "a70b81bf-2934-433c-9723-afb2f24112bf",
     "name": "Meet Figment Inside ImageWorks",
@@ -990,12 +996,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-10-22T09:00-04:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
-    "start": "2026-10-22T09:00-04:00"
-   },
-   {
     "end": "2026-10-22T10:00-04:00",
     "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
     "name": "Meet Mario and Luigi",
@@ -1249,6 +1249,12 @@
    }
   ],
   "hollywood_studios": [
+   {
+    "end": "2026-10-22T15:45-04:00",
+    "id": "c113b1cf-7b6d-416a-8e21-bf8f387ecd77",
+    "name": "Meet Ariel at Walt Disney Presents",
+    "start": "2026-10-22T09:00-04:00"
+   },
    {
     "end": "2026-10-22T09:00-04:00",
     "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
@@ -2396,24 +2402,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-22T09:00-04:00",
-    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
-    "name": "DreamWorks Character Zone",
-    "start": "2026-10-22T09:00-04:00"
-   },
-   {
-    "end": "2026-10-22T09:00-04:00",
-    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
-    "name": "Illumination Theater",
-    "start": "2026-10-22T09:00-04:00"
-   },
-   {
-    "end": "2026-10-22T09:00-04:00",
-    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
-    "name": "Meet The TRANSFORMERS™",
-    "start": "2026-10-22T09:00-04:00"
-   },
-   {
     "end": "2026-10-22T09:15-04:00",
     "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
     "name": "Meet SpongeBob SquarePants and Friends",
@@ -3348,5 +3336,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-22T08:45-04:00"
+ "updated": "2026-10-22T09:01-04:00"
 }
