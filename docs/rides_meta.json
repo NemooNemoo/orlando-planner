@@ -1,5 +1,5 @@
 {
- "_info": "Saisi à la main. height = taille minimale en cm (0 = aucune) ; type = thrill (sensations) | family (famille) | show (spectacle) | meet (rencontre de personnages) ; ll = Lightning Lane Disney (multi | single | null) ; express = Universal Express ; duration = durée approximative de l'expérience en min (hors file) ; base_wait = attente moyenne typique en min, utilisée tant que stats.json n'a pas assez de données.",
+ "_info": "Saisi à la main. height = taille minimale en cm (0 = aucune) ; type = thrill (sensations) | family (famille) | show (spectacle) | meet (rencontre de personnages) ; ll = Lightning Lane Disney (multi | single | null) ; express = Universal Express ; duration = durée approximative de l'expérience en min (hors file) ; base_wait = attente moyenne typique en min, utilisée tant que stats.json n'a pas assez de données. Volcano Bay : clés provisoires « vb-… », reliées automatiquement par le site aux identifiants queue-times dès qu'ils apparaissent dans rides.json (correspondance de nom tolérante). Express non appliqué (non confirmé).",
  "rides": {
   "11527": {
    "name": "TRON Lightcycle / Run",
@@ -1143,6 +1143,114 @@
    "duration": 5,
    "base_wait": 20,
    "ll": null
+  },
+  "vb-krakatau": {
+   "name": "Krakatau™ Aqua Coaster",
+   "park": "volcano_bay",
+   "height": 107,
+   "type": "thrill",
+   "duration": 5,
+   "base_wait": 45,
+   "express": false
+  },
+  "vb-kookiri": {
+   "name": "Ko'okiri Body Plunge",
+   "park": "volcano_bay",
+   "height": 122,
+   "type": "thrill",
+   "duration": 5,
+   "base_wait": 25,
+   "express": false
+  },
+  "vb-kala-tai-nui": {
+   "name": "Kala and Tai Nui Serpentine Body Slides",
+   "park": "volcano_bay",
+   "height": 122,
+   "type": "thrill",
+   "duration": 5,
+   "base_wait": 20,
+   "express": false
+  },
+  "vb-ohyah-ohno": {
+   "name": "Ohyah and Ohno Drop Slides",
+   "park": "volcano_bay",
+   "height": 122,
+   "type": "thrill",
+   "duration": 5,
+   "base_wait": 15,
+   "express": false
+  },
+  "vb-punga": {
+   "name": "Punga Racers",
+   "park": "volcano_bay",
+   "height": 107,
+   "type": "family",
+   "duration": 5,
+   "base_wait": 15,
+   "express": false
+  },
+  "vb-maku": {
+   "name": "Maku Round Raft Ride",
+   "park": "volcano_bay",
+   "height": 107,
+   "type": "family",
+   "duration": 5,
+   "base_wait": 25,
+   "express": false
+  },
+  "vb-puihi": {
+   "name": "Puihi Round Raft Ride",
+   "park": "volcano_bay",
+   "height": 107,
+   "type": "family",
+   "duration": 5,
+   "base_wait": 25,
+   "express": false
+  },
+  "vb-taniwha": {
+   "name": "Taniwha Tubes",
+   "park": "volcano_bay",
+   "height": 107,
+   "type": "family",
+   "duration": 5,
+   "base_wait": 20,
+   "express": false
+  },
+  "vb-honu": {
+   "name": "Honu",
+   "park": "volcano_bay",
+   "height": 122,
+   "type": "family",
+   "duration": 5,
+   "base_wait": 20,
+   "express": false
+  },
+  "vb-ika-moana": {
+   "name": "Ika Moana",
+   "park": "volcano_bay",
+   "height": 107,
+   "type": "family",
+   "duration": 5,
+   "base_wait": 20,
+   "express": false
+  },
+  "vb-teawa": {
+   "name": "TeAwa The Fearless River",
+   "park": "volcano_bay",
+   "height": 102,
+   "type": "family",
+   "duration": 15,
+   "base_wait": 10,
+   "express": false
+  },
+  "vb-kopiko": {
+   "name": "Kopiko Wai Winding River",
+   "park": "volcano_bay",
+   "height": 0,
+   "type": "family",
+   "duration": 25,
+   "base_wait": 5,
+   "express": false
   }
  }
 }

@@ -10,8 +10,15 @@ export const PARKS = [
   { id: "universal_studios_florida", group: "universal", name: "Universal Studios Florida", emoji: "🎞️", open: 540, close: 1260, weight: 1.1 },
   { id: "islands_of_adventure", group: "universal", name: "Islands of Adventure", emoji: "🦖", open: 540, close: 1260, weight: 1.15 },
   { id: "epic_universe", group: "universal", name: "Epic Universe", emoji: "🪐", open: 540, close: 1260, weight: 1.4 },
+  // parc aquatique ; fermé pour rénovation (annonce Universal) : ces dates ne reçoivent jamais de visite
+  { id: "volcano_bay", group: "universal", name: "Volcano Bay", emoji: "🌋", open: 600, close: 1080, weight: 0.7,
+    closed: [["2026-10-26", "2027-03-24"]] },
 ];
 export const PARK_BY_ID = Object.fromEntries(PARKS.map((p) => [p.id, p]));
+
+/** Parc fermé ce jour-là (rénovation annoncée) */
+export const parkClosed = (park, date) =>
+  (PARK_BY_ID[park]?.closed || []).some(([a, b]) => date >= a && date <= b);
 
 export const PACES = {
   chill:  { maxRides: 6,  walk: 1.3,  breakEvery: 150, breakLen: 30, arriveAfter: 60,  leaveBefore: 150, lunchLen: 75 },
@@ -298,7 +305,7 @@ export function parseCsv(text) {
 }
 
 const PARK_NUMERIC = { 334: "epic_universe", 64: "islands_of_adventure", 65: "universal_studios_florida",
-  8: "animal_kingdom", 7: "hollywood_studios", 6: "magic_kingdom", 5: "epcot" };
+  8: "animal_kingdom", 7: "hollywood_studios", 6: "magic_kingdom", 5: "epcot", 67: "volcano_bay" };
 
 /** Normalise un nom d'attraction : sans majuscules, accents, ™ ® ©, apostrophes, guillemets, ponctuation */
 export function normName(s) {
@@ -487,10 +494,34 @@ export const crowdLevel = (s) => (s < 0.34 ? "low" : s < 0.67 ? "mid" : "high");
  */
 // ------------------------------------------------------------------ visites par parc
 
+/**
+ * Type de chaque date du séjour : "rest" (repos), "park" (en parc, n'importe lequel) ou un identifiant de parc.
+ * Absent = automatique. Accepte aussi l'ancien format settings.forced [{date, park|'rest'}].
+ */
+export function dayTypes(settings) {
+  const dates = new Set(dateRange(settings.start, settings.end));
+  const out = {};
+  for (const f of settings.forced || []) if (dates.has(f.date) && f.park) out[f.date] = f.park;
+  for (const [d, v] of Object.entries(settings.dayTypes || {})) {
+    if (dates.has(d) && (v === "rest" || v === "park" || PARK_BY_ID[v])) out[d] = v;
+  }
+  return out;
+}
+
 /** Jours de repos imposés à une date (dans les dates du séjour) */
 export function forcedRestDays(settings) {
-  const dates = new Set(dateRange(settings.start, settings.end));
-  return new Set((settings.forced || []).filter((f) => f.park === "rest" && dates.has(f.date)).map((f) => f.date)).size;
+  return Object.values(dayTypes(settings)).filter((v) => v === "rest").length;
+}
+
+/** Jours obligatoirement en parc : { specific: {parc: n}, any: n } */
+export function parkDayCounts(settings) {
+  const specific = {};
+  let any = 0;
+  for (const v of Object.values(dayTypes(settings))) {
+    if (v === "park") any++;
+    else if (v !== "rest") specific[v] = (specific[v] || 0) + 1;
+  }
+  return { specific, any, total: any + Object.values(specific).reduce((a, b) => a + b, 0) };
 }
 
 /** Jours de repos voulus (compteur), jamais moins que les jours de repos imposés */
@@ -505,14 +536,12 @@ export function visitLimit(settings) {
   return Math.max(0, tripDays(settings) - restDays(settings));
 }
 
-function forcedVisits(settings) {
-  const dates = new Set(dateRange(settings.start, settings.end));
-  const byDate = {};
-  for (const f of settings.forced || []) if (dates.has(f.date) && f.park && f.park !== "rest") byDate[f.date] = f.park;
-  const count = {};
-  for (const p of Object.values(byDate)) count[p] = (count[p] || 0) + 1;
-  return count;
+/** Nombre maximal de jours de repos : les jours imposés « en parc » ne peuvent pas être des repos */
+export function restLimit(settings) {
+  return Math.max(0, tripDays(settings) - parkDayCounts(settings).total);
 }
+
+const forcedVisits = (settings) => parkDayCounts(settings).specific;
 
 export const totalVisits = (visits) => Object.values(visits || {}).reduce((a, b) => a + (+b || 0), 0);
 
@@ -554,8 +583,8 @@ export function normalizeVisits(settings) {
   for (const [p, n] of Object.entries(forced)) if (p in v) v[p] = Math.max(v[p], n);
   const days = tripDays(settings);
   const minRest = forcedRestDays(settings);
-  let rest = restDays(settings);
-  let reducedRest = 0;
+  let rest = Math.min(restDays(settings), Math.max(minRest, restLimit(settings)));
+  let reducedRest = Math.max(0, restDays(settings) - rest);
   while (rest > minRest && totalVisits(v) + rest > days) { rest--; reducedRest++; }
   const limit = Math.max(0, days - rest);
   let reduced = 0;
@@ -566,24 +595,28 @@ export function normalizeVisits(settings) {
     if (!p) break;
     v[p]--; reduced++;
   }
-  return { visits: v, restDays: rest, reduced, reducedRest };
+  // jours imposés en parc sans assez de visites : à corriger par l'utilisatrice (on ne devine pas le parc)
+  const missingVisits = Math.max(0, parkDayCounts(settings).total - totalVisits(v));
+  return { visits: v, restDays: rest, reduced, reducedRest, missingVisits };
 }
 
 // ------------------------------------------------------------------ calendrier du séjour
 
 /**
  * Choisit un parc par jour.
- * settings : { start, end, visits:{parc:n}, forced:[{date, park|'rest'}], mustDo:[] }
+ * settings : { start, end, visits:{parc:n}, restDays, dayTypes:{date: 'rest'|'park'|parc}, mustDo:[] }
  * Les jours de repos non imposés vont sur les journées les plus chargées (si possible pas deux
  * d'affilée) ; chaque parc reçoit ensuite son nombre de visites sur ses jours les plus calmes.
  * Les jours qui restent sont libres (non attribués).
- * Renvoie [{ date, wd, park|null, rest, restAuto, free, forced, crowd }]
+ * Renvoie [{ date, wd, park|null, rest, restAuto, free, forced, anyPark, crowd }]
  */
 export function planTrip(settings, stats, notes, meta, patterns) {
   const dates = dateRange(settings.start, settings.end);
   const scorer = crowdScorer(stats, notes, patterns);
-  const forced = {};
-  for (const f of settings.forced || []) if (dates.includes(f.date) && f.park) forced[f.date] = f.park;
+  const types = dayTypes(settings);
+  const forced = {}; // repos ou parc précis
+  const anyPark = new Set(); // « en parc », parc au choix du planificateur
+  for (const [d, v] of Object.entries(types)) { if (v === "park") anyPark.add(d); else forced[d] = v; }
   const target = settings.visits
     ? normalizeVisits(settings).visits
     : defaultVisits(settings, settings.parks || [], meta);
@@ -598,7 +631,7 @@ export function planTrip(settings, stats, notes, meta, patterns) {
   const nAuto = settings.visits ? Math.max(0, normalizeVisits(settings).restDays - forcedRestDays(settings)) : 0;
   if (nAuto) {
     const busy = (d) => mean(selected.map((p) => scorer(p, d).score)) + ({ 5: 0.002, 6: 0.001 }[weekdayOf(d)] || 0);
-    const cands = dates.filter((d) => !forced[d]).sort((a, b) => busy(b) - busy(a) || a.localeCompare(b));
+    const cands = dates.filter((d) => !forced[d] && !anyPark.has(d)).sort((a, b) => busy(b) - busy(a) || a.localeCompare(b));
     const isRest = (d) => autoRest.has(d) || forced[d] === "rest";
     const nextTo = (d) => isRest(addDays(d, -1)) || isRest(addDays(d, 1));
     for (const pass of [false, true]) { // 1er passage : jamais deux jours de repos d'affilée
@@ -614,12 +647,21 @@ export function planTrip(settings, stats, notes, meta, patterns) {
   for (const p of Object.values(forced)) if (p in visits) visits[p]++;
   const need = Object.fromEntries(selected.map((p) => [p, Math.max(0, target[p] - visits[p])]));
 
-  // Affectation gloutonne : les couples (parc, jour) les plus calmes d'abord
+  // Affectation gloutonne : les couples (parc, jour) les plus calmes d'abord, en remplissant
+  // d'abord les jours « en parc » ; jamais un parc fermé ce jour-là
   const pairs = [];
-  for (const p of selected) for (const d of free) pairs.push({ p, d, s: scorer(p, d).score });
+  for (const p of selected) for (const d of free) if (!parkClosed(p, d)) pairs.push({ p, d, s: scorer(p, d).score });
   pairs.sort((a, b) => a.s - b.s || a.d.localeCompare(b.d));
-  for (const { p, d } of pairs) {
-    if (need[p] > 0 && !assign[d]) { assign[d] = p; need[p]--; }
+  for (const onlyAny of [true, false]) {
+    for (const { p, d } of pairs) {
+      if ((!onlyAny || anyPark.has(d)) && need[p] > 0 && !assign[d]) { assign[d] = p; need[p]--; }
+    }
+  }
+  // jour « en parc » encore vide (pas assez de visites) : le parc le plus calme, en visite en plus
+  for (const d of anyPark) {
+    if (assign[d]) continue;
+    const p = pairs.filter((x) => x.d === d)[0]?.p;
+    if (p) assign[d] = p;
   }
 
   // Amélioration par échanges : moins d'affluence, pas deux jours de suite au même parc
@@ -627,7 +669,9 @@ export function planTrip(settings, stats, notes, meta, patterns) {
     let c = 0;
     dates.forEach((d, i) => {
       const p = assign[d];
-      if (!p || p === "rest") return;
+      if (!p) { if (anyPark.has(d)) c += 100; return; } // un jour « en parc » ne reste jamais vide
+      if (p === "rest") return;
+      if (parkClosed(p, d)) c += 100;
       c += scorer(p, d).score;
       if (i > 0 && assign[dates[i - 1]] === p) c += 0.6;
     });
@@ -650,7 +694,7 @@ export function planTrip(settings, stats, notes, meta, patterns) {
     const p = assign[date];
     const park = p && p !== "rest" ? p : null;
     return { date, wd: weekdayOf(date), park, rest: p === "rest", restAuto: autoRest.has(date), free: !p,
-      forced: !!forced[date],
+      forced: !!forced[date], anyPark: anyPark.has(date),
       crowd: park ? scorer(park, date) : null };
   });
 }
