@@ -514,6 +514,86 @@
   "name": "Soarin' Across America",
   "park": "epcot"
  },
+ "16595": {
+  "land": "",
+  "name": "Krakatau Aqua Coaster",
+  "park": "volcano_bay"
+ },
+ "16596": {
+  "land": "",
+  "name": "Punga Racers",
+  "park": "volcano_bay"
+ },
+ "16598": {
+  "land": "",
+  "name": "Kala & Tai Nui Serpentine Body Slides",
+  "park": "volcano_bay"
+ },
+ "16599": {
+  "land": "",
+  "name": "The Reef",
+  "park": "volcano_bay"
+ },
+ "16600": {
+  "land": "",
+  "name": "Maku of Maku Puihi Round Raft Rides™",
+  "park": "volcano_bay"
+ },
+ "16601": {
+  "land": "",
+  "name": "Runamukka Reef",
+  "park": "volcano_bay"
+ },
+ "16602": {
+  "land": "",
+  "name": "Taniwha Tubes™",
+  "park": "volcano_bay"
+ },
+ "16605": {
+  "land": "",
+  "name": "Honu of Honu ika Moana",
+  "park": "volcano_bay"
+ },
+ "16607": {
+  "land": "",
+  "name": "Ohyah of Ohyah & Ohno Drop Slides",
+  "park": "volcano_bay"
+ },
+ "16609": {
+  "land": "",
+  "name": "ika Moana of Honu ika Moana",
+  "park": "volcano_bay"
+ },
+ "16610": {
+  "land": "",
+  "name": "Puka Uli Lagoon",
+  "park": "volcano_bay"
+ },
+ "16612": {
+  "land": "",
+  "name": "Ohno of Ohyah & Ohno Drop Slides",
+  "park": "volcano_bay"
+ },
+ "16614": {
+  "land": "",
+  "name": "Ko'okiri Body Plunge",
+  "park": "volcano_bay"
+ },
+ "16616": {
+  "land": "",
+  "name": "Kopiko Wai Winding River",
+  "park": "volcano_bay"
+ },
+ "16618": {
+  "land": "",
+  "name": "TeAwa The Fearless River",
+  "park": "volcano_bay"
+ },
+ "16620": {
+  "land": "",
+  "name": "Puihi of Maku Puihi Round Raft Rides™",
+  "park": "volcano_bay"
+ },
  "16640": {
   "land": "Celestial Park",
   "name": "Stardust Racers Single Rider",
@@ -828,6 +908,16 @@
   "land": "New York",
   "name": "Race Through New York Starring Jimmy Fallon",
   "park": "universal_studios_florida"
+ },
+ "6035": {
+  "land": "",
+  "name": "Tot Tiki Reef",
+  "park": "volcano_bay"
+ },
+ "6036": {
+  "land": "",
+  "name": "Waturi Beach",
+  "park": "volcano_bay"
  },
  "6361": {
   "land": "Hollywood Boulevard",
