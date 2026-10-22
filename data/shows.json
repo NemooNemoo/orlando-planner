@@ -2318,42 +2318,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-22T11:55-04:00",
-    "id": "55222885-493c-4280-b295-6fd7c609f12d",
-    "name": "Hollywood Character Zone",
-    "start": "2026-10-22T11:55-04:00"
-   },
-   {
-    "end": "2026-10-22T11:55-04:00",
-    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
-    "name": "Meet The TRANSFORMERS™",
-    "start": "2026-10-22T11:55-04:00"
-   },
-   {
-    "end": "2026-10-22T12:00-04:00",
-    "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
-    "name": "Celestina Warbeck and the Banshees",
-    "start": "2026-10-22T12:00-04:00"
-   },
-   {
-    "end": "2026-10-22T12:00-04:00",
-    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
-    "name": "Shrek’s Swamp Meet",
-    "start": "2026-10-22T12:00-04:00"
-   },
-   {
-    "end": "2026-10-22T12:00-04:00",
-    "id": "2f4690b4-72b0-4845-bcce-9e735397d60b",
-    "name": "The Blues Brothers® Show",
-    "start": "2026-10-22T12:00-04:00"
-   },
-   {
-    "end": "2026-10-22T12:00-04:00",
-    "id": "2436bad1-f319-44d5-98ac-a283b81956c6",
-    "name": "The Bourne Stuntacular",
-    "start": "2026-10-22T12:00-04:00"
-   },
-   {
     "end": "2026-10-22T12:20-04:00",
     "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
     "name": "Meet The TRANSFORMERS™",
@@ -2916,5 +2880,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-22T11:45-04:00"
+ "updated": "2026-10-22T12:01-04:00"
 }
