@@ -2244,6 +2244,12 @@
   ],
   "magic_kingdom": [
    {
+    "end": "2026-10-24T22:30-04:00",
+    "id": "a2d92647-634d-4eb4-886b-9da858e871f1",
+    "name": "Meet Mickey at Town Square Theater",
+    "start": "2026-10-24T08:00-04:00"
+   },
+   {
     "end": "2026-10-24T09:00-04:00",
     "id": "1eee22e8-1d0a-4809-a42b-df3ae55c69d5",
     "name": "The Dapper Dans",
@@ -3326,10 +3332,22 @@
     "start": "2026-10-24T16:30-04:00"
    },
    {
+    "end": "2026-10-24T20:00-04:00",
+    "id": "06ed53f9-3f1b-4ff2-94f2-0ce45015b62a",
+    "name": "Nightmare Fuel: Blood Noir",
+    "start": "2026-10-24T20:00-04:00"
+   },
+   {
     "end": "2026-10-24T21:00-04:00",
     "id": "c08df5ba-1141-4968-b748-5e7802885ec0",
     "name": "Stranger Things: Return to Hawkins",
     "start": "2026-10-24T21:00-04:00"
+   },
+   {
+    "end": "2026-10-24T21:30-04:00",
+    "id": "06ed53f9-3f1b-4ff2-94f2-0ce45015b62a",
+    "name": "Nightmare Fuel: Blood Noir",
+    "start": "2026-10-24T21:30-04:00"
    },
    {
     "end": "2026-10-24T21:45-04:00",
@@ -3344,6 +3362,12 @@
     "start": "2026-10-24T22:30-04:00"
    },
    {
+    "end": "2026-10-24T23:00-04:00",
+    "id": "06ed53f9-3f1b-4ff2-94f2-0ce45015b62a",
+    "name": "Nightmare Fuel: Blood Noir",
+    "start": "2026-10-24T23:00-04:00"
+   },
+   {
     "end": "2026-10-24T23:15-04:00",
     "id": "c08df5ba-1141-4968-b748-5e7802885ec0",
     "name": "Stranger Things: Return to Hawkins",
@@ -3354,5 +3378,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-24T07:45-04:00"
+ "updated": "2026-10-24T08:01-04:00"
 }
