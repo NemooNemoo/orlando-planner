@@ -1308,10 +1308,10 @@
     "start": "2026-10-24T19:40-04:00"
    },
    {
-    "end": "2026-10-24T20:30-04:00",
+    "end": "2026-10-24T20:00-04:00",
     "id": "a872883d-761b-4dda-a124-5dadcfa9e5ae",
     "name": "Universal Celestial Goodnight",
-    "start": "2026-10-24T20:30-04:00"
+    "start": "2026-10-24T20:00-04:00"
    }
   ],
   "hollywood_studios": [
@@ -3354,5 +3354,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-24T06:45-04:00"
+ "updated": "2026-10-24T07:01-04:00"
 }
