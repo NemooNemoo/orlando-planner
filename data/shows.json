@@ -1110,15 +1110,15 @@
     "start": "2026-10-24T12:00-04:00"
    },
    {
-    "end": "2026-10-24T12:10-04:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-10-24T12:10-04:00"
+    "end": "2026-10-24T12:00-04:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
+    "start": "2026-10-24T12:00-04:00"
    },
    {
     "end": "2026-10-24T12:10-04:00",
-    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
-    "name": "The Untrainable Dragon",
+    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
+    "name": "Le Cirque Arcanus™",
     "start": "2026-10-24T12:10-04:00"
    },
    {
@@ -3354,5 +3354,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-24T07:01-04:00"
+ "updated": "2026-10-24T07:15-04:00"
 }
