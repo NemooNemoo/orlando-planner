@@ -1394,12 +1394,6 @@
     "start": "2026-10-24T10:00-04:00"
    },
    {
-    "end": "2026-10-24T10:00-04:00",
-    "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
-    "name": "The Little Mermaid – A Musical Adventure",
-    "start": "2026-10-24T10:00-04:00"
-   },
-   {
     "end": "2026-10-24T10:15-04:00",
     "id": "1bbce25c-36eb-4d16-9216-4a1bbd46932b",
     "name": "Disney Jr. Mickey Mouse Clubhouse Live!",
@@ -2486,18 +2480,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-24T09:40-04:00",
-    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
-    "name": "Illumination Theater",
-    "start": "2026-10-24T09:40-04:00"
-   },
-   {
-    "end": "2026-10-24T09:40-04:00",
-    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
-    "name": "Shrek’s Swamp Meet",
-    "start": "2026-10-24T09:40-04:00"
-   },
-   {
     "end": "2026-10-24T09:45-04:00",
     "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
     "name": "Meet SpongeBob SquarePants and Friends",
@@ -3378,5 +3360,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-24T09:30-04:00"
+ "updated": "2026-10-24T09:45-04:00"
 }
