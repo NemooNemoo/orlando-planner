@@ -2292,6 +2292,24 @@
     "start": "2026-10-24T09:50-04:00"
    },
    {
+    "end": "2026-10-24T19:00-04:00",
+    "id": "012a211b-4c91-451c-8a0e-5e3ab398eda8",
+    "name": "Meet Ariel at Her Grotto",
+    "start": "2026-10-24T10:00-04:00"
+   },
+   {
+    "end": "2026-10-24T19:00-04:00",
+    "id": "166f2985-7b27-4eff-a8b3-29c3448ba198",
+    "name": "Meet Daring Disney Pals as Circus Stars at Pete's Silly Sideshow",
+    "start": "2026-10-24T10:00-04:00"
+   },
+   {
+    "end": "2026-10-24T19:00-04:00",
+    "id": "b5d6d1d1-e960-4c8f-a8a4-b9748b386b64",
+    "name": "Meet Dashing Disney Pals as Circus Stars at Pete's Silly Sideshow",
+    "start": "2026-10-24T10:00-04:00"
+   },
+   {
     "end": "2026-10-24T10:00-04:00",
     "id": "4c31b3ad-5dc9-437f-ac1a-0fdff36a2818",
     "name": "Mickey's Magical Friendship Faire",
@@ -2455,30 +2473,6 @@
    }
   ],
   "universal_studios_florida": [
-   {
-    "end": "2026-10-24T10:15-04:00",
-    "id": "079c0df0-7305-4f61-ab0e-c7725f4fe1b6",
-    "name": "Animal Actors on Location!™",
-    "start": "2026-10-24T10:15-04:00"
-   },
-   {
-    "end": "2026-10-24T10:15-04:00",
-    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
-    "name": "Meet SpongeBob SquarePants and Friends",
-    "start": "2026-10-24T10:15-04:00"
-   },
-   {
-    "end": "2026-10-24T10:15-04:00",
-    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
-    "name": "Meet The TRANSFORMERS™",
-    "start": "2026-10-24T10:15-04:00"
-   },
-   {
-    "end": "2026-10-24T10:15-04:00",
-    "id": "2436bad1-f319-44d5-98ac-a283b81956c6",
-    "name": "The Bourne Stuntacular",
-    "start": "2026-10-24T10:15-04:00"
-   },
    {
     "end": "2026-10-24T10:20-04:00",
     "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
@@ -3294,5 +3288,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-24T10:01-04:00"
+ "updated": "2026-10-24T10:15-04:00"
 }
