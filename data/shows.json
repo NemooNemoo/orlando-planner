@@ -2,6 +2,12 @@
  "parks": {
   "animal_kingdom": [
    {
+    "end": "2026-10-25T18:00-04:00",
+    "id": "13d7c9d1-a785-403d-9ba8-71fee2f02d55",
+    "name": "Meet Favorite Disney Pals at Adventurers Outpost",
+    "start": "2026-10-25T08:00-04:00"
+   },
+   {
     "end": "2026-10-25T08:10-04:00",
     "id": "d8497541-53a2-4206-b95f-39cb238ae511",
     "name": "Tam Tam Drummers of Harambe",
@@ -3372,5 +3378,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-25T08:01-04:00"
+ "updated": "2026-10-25T08:07-04:00"
 }
