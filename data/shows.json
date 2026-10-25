@@ -1050,12 +1050,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-10-25T18:20-04:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-10-25T18:20-04:00"
-   },
-   {
     "end": "2026-10-25T18:40-04:00",
     "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
     "name": "Meet Mario and Luigi",
@@ -1648,12 +1642,6 @@
   ],
   "islands_of_adventure": [
    {
-    "end": "2026-10-25T18:20-04:00",
-    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
-    "name": "Raptor Encounter",
-    "start": "2026-10-25T18:20-04:00"
-   },
-   {
     "end": "2026-10-25T18:40-04:00",
     "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
     "name": "Raptor Encounter",
@@ -1986,5 +1974,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-25T18:15-04:00"
+ "updated": "2026-10-25T18:30-04:00"
 }
