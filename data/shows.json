@@ -2294,18 +2294,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-25T12:30-04:00",
-    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
-    "name": "DreamWorks Character Zone",
-    "start": "2026-10-25T12:30-04:00"
-   },
-   {
-    "end": "2026-10-25T12:30-04:00",
-    "id": "c85d936f-c5b7-490b-880b-6f0bf44ba557",
-    "name": "DreamWorks Imagination Celebration",
-    "start": "2026-10-25T12:30-04:00"
-   },
-   {
     "end": "2026-10-25T12:40-04:00",
     "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
     "name": "DreamWorks Character Zone",
@@ -2838,5 +2826,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-25T12:30-04:00"
+ "updated": "2026-10-25T12:35-04:00"
 }
