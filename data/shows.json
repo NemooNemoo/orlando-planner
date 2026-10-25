@@ -1086,12 +1086,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-10-24T21:15-04:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-10-24T21:15-04:00"
-   },
-   {
     "end": "2026-10-24T21:40-04:00",
     "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
     "name": "Meet Mario and Luigi",
@@ -1891,12 +1885,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-24T21:30-04:00",
-    "id": "06ed53f9-3f1b-4ff2-94f2-0ce45015b62a",
-    "name": "Nightmare Fuel: Blood Noir",
-    "start": "2026-10-24T21:30-04:00"
-   },
-   {
     "end": "2026-10-24T21:45-04:00",
     "id": "c08df5ba-1141-4968-b748-5e7802885ec0",
     "name": "Stranger Things: Return to Hawkins",
@@ -1925,5 +1913,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-24T21:15-04:00"
+ "updated": "2026-10-24T21:30-04:00"
 }
