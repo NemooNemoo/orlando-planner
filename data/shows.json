@@ -1676,14 +1676,7 @@
     "start": "2026-10-26T21:30-04:00"
    }
   ],
-  "islands_of_adventure": [
-   {
-    "end": "2026-10-26T16:45-04:00",
-    "id": "9ad98d6a-e81a-4408-b5df-1ea832fe0b19",
-    "name": "Oh! The Stories You'll Hear!™",
-    "start": "2026-10-26T16:45-04:00"
-   }
-  ],
+  "islands_of_adventure": [],
   "magic_kingdom": [
    {
     "end": "2026-10-26T21:00-04:00",
@@ -1874,30 +1867,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-26T16:45-04:00",
-    "id": "c85d936f-c5b7-490b-880b-6f0bf44ba557",
-    "name": "DreamWorks Imagination Celebration",
-    "start": "2026-10-26T16:45-04:00"
-   },
-   {
-    "end": "2026-10-26T16:45-04:00",
-    "id": "2436bad1-f319-44d5-98ac-a283b81956c6",
-    "name": "The Bourne Stuntacular",
-    "start": "2026-10-26T16:45-04:00"
-   },
-   {
-    "end": "2026-10-26T17:00-04:00",
-    "id": "079c0df0-7305-4f61-ab0e-c7725f4fe1b6",
-    "name": "Animal Actors on Location!™",
-    "start": "2026-10-26T17:00-04:00"
-   },
-   {
-    "end": "2026-10-26T17:00-04:00",
-    "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
-    "name": "Celestina Warbeck and the Banshees",
-    "start": "2026-10-26T17:00-04:00"
-   },
-   {
     "end": "2026-10-26T17:05-04:00",
     "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
     "name": "Meet The TRANSFORMERS™",
@@ -1962,5 +1931,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-26T16:45-04:00"
+ "updated": "2026-10-26T17:01-04:00"
 }
