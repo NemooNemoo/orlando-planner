@@ -1696,18 +1696,6 @@
   ],
   "islands_of_adventure": [
    {
-    "end": "2026-10-26T16:15-04:00",
-    "id": "f6d4294c-8825-4712-a891-36d45b5eb0f4",
-    "name": "Seuss Character Zone",
-    "start": "2026-10-26T16:15-04:00"
-   },
-   {
-    "end": "2026-10-26T16:20-04:00",
-    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
-    "name": "Raptor Encounter",
-    "start": "2026-10-26T16:20-04:00"
-   },
-   {
     "end": "2026-10-26T16:30-04:00",
     "id": "97b25fe9-eb81-46bd-b57f-8b2fbbe85249",
     "name": "Frog Choir",
@@ -1916,24 +1904,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-26T16:15-04:00",
-    "id": "bf89766b-1d19-428f-9e68-71e12f25287b",
-    "name": "Marilyn and the Diamond Bellas",
-    "start": "2026-10-26T16:15-04:00"
-   },
-   {
-    "end": "2026-10-26T16:15-04:00",
-    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
-    "name": "Meet The TRANSFORMERS™",
-    "start": "2026-10-26T16:15-04:00"
-   },
-   {
-    "end": "2026-10-26T16:25-04:00",
-    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
-    "name": "Meet SpongeBob SquarePants and Friends",
-    "start": "2026-10-26T16:25-04:00"
-   },
-   {
     "end": "2026-10-26T16:30-04:00",
     "id": "55222885-493c-4280-b295-6fd7c609f12d",
     "name": "Hollywood Character Zone",
@@ -2052,5 +2022,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-26T16:15-04:00"
+ "updated": "2026-10-26T16:30-04:00"
 }
