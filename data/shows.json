@@ -1044,12 +1044,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-10-26T12:10-04:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-10-26T12:10-04:00"
-   },
-   {
     "end": "2026-10-26T12:40-04:00",
     "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
     "name": "Meet Princess Peach",
@@ -2210,12 +2204,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-26T12:05-04:00",
-    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
-    "name": "Meet The TRANSFORMERS™",
-    "start": "2026-10-26T12:05-04:00"
-   },
-   {
     "end": "2026-10-26T12:15-04:00",
     "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
     "name": "Meet SpongeBob SquarePants and Friends",
@@ -2880,5 +2868,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-26T12:01-04:00"
+ "updated": "2026-10-26T12:15-04:00"
 }
