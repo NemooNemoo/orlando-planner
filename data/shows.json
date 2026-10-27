@@ -557,12 +557,6 @@
    },
    {
     "end": "2026-10-27T11:15-04:00",
-    "id": "7b79e739-c540-4ea5-a4c8-f8d8bac5719b",
-    "name": "Meet the Legendary Warrior in China",
-    "start": "2026-10-27T11:15-04:00"
-   },
-   {
-    "end": "2026-10-27T11:15-04:00",
     "id": "c5f6c7e4-d5cd-4d71-8e02-57d8bb43b3ba",
     "name": "Voices of Liberty",
     "start": "2026-10-27T11:15-04:00"
@@ -626,12 +620,6 @@
     "id": "c5f6c7e4-d5cd-4d71-8e02-57d8bb43b3ba",
     "name": "Voices of Liberty",
     "start": "2026-10-27T12:00-04:00"
-   },
-   {
-    "end": "2026-10-27T12:25-04:00",
-    "id": "7b79e739-c540-4ea5-a4c8-f8d8bac5719b",
-    "name": "Meet the Legendary Warrior in China",
-    "start": "2026-10-27T12:25-04:00"
    },
    {
     "end": "2026-10-27T12:30-04:00",
@@ -760,12 +748,6 @@
     "start": "2026-10-27T14:15-04:00"
    },
    {
-    "end": "2026-10-27T14:20-04:00",
-    "id": "7b79e739-c540-4ea5-a4c8-f8d8bac5719b",
-    "name": "Meet the Legendary Warrior in China",
-    "start": "2026-10-27T14:20-04:00"
-   },
-   {
     "end": "2026-10-27T14:30-04:00",
     "id": "fd8afd63-0cb5-4f77-b47b-fb277f12d9f8",
     "name": "¡Celebración Encanto!",
@@ -836,12 +818,6 @@
     "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
     "name": "Meet Pluto Near EPCOT Main Entrance",
     "start": "2026-10-27T15:15-04:00"
-   },
-   {
-    "end": "2026-10-27T15:30-04:00",
-    "id": "7b79e739-c540-4ea5-a4c8-f8d8bac5719b",
-    "name": "Meet the Legendary Warrior in China",
-    "start": "2026-10-27T15:30-04:00"
    },
    {
     "end": "2026-10-27T15:30-04:00",
@@ -1756,12 +1732,6 @@
     "start": "2026-10-27T12:00-04:00"
    },
    {
-    "end": "2026-10-27T12:00-04:00",
-    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
-    "name": "Raptor Encounter",
-    "start": "2026-10-27T12:00-04:00"
-   },
-   {
     "end": "2026-10-27T12:20-04:00",
     "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
     "name": "Raptor Encounter",
@@ -2323,30 +2293,6 @@
    }
   ],
   "universal_studios_florida": [
-   {
-    "end": "2026-10-27T11:45-04:00",
-    "id": "41d282f8-2015-4caa-9591-9faa948e263e",
-    "name": "Beat Builders",
-    "start": "2026-10-27T11:45-04:00"
-   },
-   {
-    "end": "2026-10-27T11:45-04:00",
-    "id": "bf89766b-1d19-428f-9e68-71e12f25287b",
-    "name": "Marilyn and the Diamond Bellas",
-    "start": "2026-10-27T11:45-04:00"
-   },
-   {
-    "end": "2026-10-27T11:45-04:00",
-    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
-    "name": "Meet SpongeBob SquarePants and Friends",
-    "start": "2026-10-27T11:45-04:00"
-   },
-   {
-    "end": "2026-10-27T11:55-04:00",
-    "id": "55222885-493c-4280-b295-6fd7c609f12d",
-    "name": "Hollywood Character Zone",
-    "start": "2026-10-27T11:55-04:00"
-   },
    {
     "end": "2026-10-27T12:00-04:00",
     "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
@@ -3060,5 +3006,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-27T11:45-04:00"
+ "updated": "2026-10-27T12:01-04:00"
 }
