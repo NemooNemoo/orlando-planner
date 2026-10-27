@@ -990,12 +990,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-10-27T11:00-04:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
-    "start": "2026-10-27T11:00-04:00"
-   },
-   {
     "end": "2026-10-27T11:20-04:00",
     "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
     "name": "Le Cirque Arcanus™",
@@ -1755,24 +1749,6 @@
    }
   ],
   "islands_of_adventure": [
-   {
-    "end": "2026-10-27T11:00-04:00",
-    "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
-    "name": "Classic Comic Book Characters",
-    "start": "2026-10-27T11:00-04:00"
-   },
-   {
-    "end": "2026-10-27T11:00-04:00",
-    "id": "97b25fe9-eb81-46bd-b57f-8b2fbbe85249",
-    "name": "Frog Choir",
-    "start": "2026-10-27T11:00-04:00"
-   },
-   {
-    "end": "2026-10-27T11:00-04:00",
-    "id": "9ad98d6a-e81a-4408-b5df-1ea832fe0b19",
-    "name": "Oh! The Stories You'll Hear!™",
-    "start": "2026-10-27T11:00-04:00"
-   },
    {
     "end": "2026-10-27T11:30-04:00",
     "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
@@ -3204,5 +3180,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-27T11:01-04:00"
+ "updated": "2026-10-27T11:15-04:00"
 }
