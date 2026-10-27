@@ -20,12 +20,6 @@
     "start": "2026-10-27T08:15-04:00"
    },
    {
-    "end": "2026-10-27T12:15-04:00",
-    "id": "f526f3ab-190b-4576-8c79-e2968d171b4e",
-    "name": "Meet Moana at Character Landing",
-    "start": "2026-10-27T08:30-04:00"
-   },
-   {
     "end": "2026-10-27T13:55-04:00",
     "id": "a08d9f84-fbdf-45f3-9b68-645d296de307",
     "name": "DiVine",
@@ -287,12 +281,6 @@
     "end": "2026-10-27T13:45-04:00",
     "id": "dd142c0b-622a-4b44-8e22-c0facb2b20a8",
     "name": "Kora Tinga Tinga",
-    "start": "2026-10-27T13:45-04:00"
-   },
-   {
-    "end": "2026-10-27T15:45-04:00",
-    "id": "f526f3ab-190b-4576-8c79-e2968d171b4e",
-    "name": "Meet Moana at Character Landing",
     "start": "2026-10-27T13:45-04:00"
    },
    {
@@ -1002,6 +990,18 @@
   ],
   "epic_universe": [
    {
+    "end": "2026-10-27T09:00-04:00",
+    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
+    "name": "Meet Mario and Luigi",
+    "start": "2026-10-27T09:00-04:00"
+   },
+   {
+    "end": "2026-10-27T10:00-04:00",
+    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
+    "name": "Meet Mario and Luigi",
+    "start": "2026-10-27T10:00-04:00"
+   },
+   {
     "end": "2026-10-27T10:30-04:00",
     "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
     "name": "Le Cirque Arcanus™",
@@ -1020,6 +1020,12 @@
     "start": "2026-10-27T11:00-04:00"
    },
    {
+    "end": "2026-10-27T11:10-04:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
+    "start": "2026-10-27T11:10-04:00"
+   },
+   {
     "end": "2026-10-27T11:20-04:00",
     "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
     "name": "Le Cirque Arcanus™",
@@ -1035,6 +1041,12 @@
     "end": "2026-10-27T12:00-04:00",
     "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
     "name": "Meet Mario and Luigi",
+    "start": "2026-10-27T12:00-04:00"
+   },
+   {
+    "end": "2026-10-27T12:00-04:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
     "start": "2026-10-27T12:00-04:00"
    },
    {
@@ -1056,6 +1068,12 @@
     "start": "2026-10-27T12:50-04:00"
    },
    {
+    "end": "2026-10-27T12:50-04:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
+    "start": "2026-10-27T12:50-04:00"
+   },
+   {
     "end": "2026-10-27T12:55-04:00",
     "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
     "name": "Le Cirque Arcanus™",
@@ -1071,6 +1089,12 @@
     "end": "2026-10-27T13:40-04:00",
     "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
     "name": "Meet Princess Peach",
+    "start": "2026-10-27T13:40-04:00"
+   },
+   {
+    "end": "2026-10-27T13:40-04:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
     "start": "2026-10-27T13:40-04:00"
    },
    {
@@ -1238,12 +1262,6 @@
     "start": "2026-10-27T09:00-04:00"
    },
    {
-    "end": "2026-10-27T09:00-04:00",
-    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
-    "name": "Meet Joy at Pixar Plaza",
-    "start": "2026-10-27T09:00-04:00"
-   },
-   {
     "end": "2026-10-27T18:00-04:00",
     "id": "27f9fc86-2341-4bf4-8cbf-67fc16a841f1",
     "name": "Meet Olaf at Celebrity Spotlight",
@@ -1265,12 +1283,6 @@
     "end": "2026-10-27T10:00-04:00",
     "id": "bc2c2ffe-3cf0-4e75-a408-bf5e86515c4c",
     "name": "Green Army Drum Corps",
-    "start": "2026-10-27T10:00-04:00"
-   },
-   {
-    "end": "2026-10-27T10:00-04:00",
-    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
-    "name": "Meet Joy at Pixar Plaza",
     "start": "2026-10-27T10:00-04:00"
    },
    {
@@ -3426,5 +3438,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-27T08:15-04:00"
+ "updated": "2026-10-27T08:27-04:00"
 }
