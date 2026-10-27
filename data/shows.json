@@ -1042,14 +1042,7 @@
     "start": "2026-10-26T21:00-04:00"
    }
   ],
-  "epic_universe": [
-   {
-    "end": "2026-10-26T20:30-04:00",
-    "id": "a872883d-761b-4dda-a124-5dadcfa9e5ae",
-    "name": "Universal Celestial Goodnight",
-    "start": "2026-10-26T20:30-04:00"
-   }
-  ],
+  "epic_universe": [],
   "hollywood_studios": [
    {
     "end": "2026-10-26T15:45-04:00",
@@ -1841,5 +1834,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-26T20:30-04:00"
+ "updated": "2026-10-26T20:45-04:00"
 }
