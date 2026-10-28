@@ -2396,24 +2396,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-28T09:00-04:00",
-    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
-    "name": "DreamWorks Character Zone",
-    "start": "2026-10-28T09:00-04:00"
-   },
-   {
-    "end": "2026-10-28T09:00-04:00",
-    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
-    "name": "Illumination Theater",
-    "start": "2026-10-28T09:00-04:00"
-   },
-   {
-    "end": "2026-10-28T09:00-04:00",
-    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
-    "name": "Meet The TRANSFORMERS™",
-    "start": "2026-10-28T09:00-04:00"
-   },
-   {
     "end": "2026-10-28T09:15-04:00",
     "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
     "name": "Meet SpongeBob SquarePants and Friends",
@@ -3342,5 +3324,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-28T08:45-04:00"
+ "updated": "2026-10-28T09:01-04:00"
 }
