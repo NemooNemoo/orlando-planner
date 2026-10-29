@@ -2,6 +2,12 @@
  "parks": {
   "animal_kingdom": [
    {
+    "end": "2026-10-29T18:00-04:00",
+    "id": "13d7c9d1-a785-403d-9ba8-71fee2f02d55",
+    "name": "Meet Favorite Disney Pals at Adventurers Outpost",
+    "start": "2026-10-29T08:00-04:00"
+   },
+   {
     "end": "2026-10-29T08:10-04:00",
     "id": "d8497541-53a2-4206-b95f-39cb238ae511",
     "name": "Tam Tam Drummers of Harambe",
@@ -1038,10 +1044,10 @@
     "start": "2026-10-29T12:00-04:00"
    },
    {
-    "end": "2026-10-29T12:05-04:00",
+    "end": "2026-10-29T12:00-04:00",
     "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
     "name": "The Untrainable Dragon",
-    "start": "2026-10-29T12:05-04:00"
+    "start": "2026-10-29T12:00-04:00"
    },
    {
     "end": "2026-10-29T12:10-04:00",
@@ -2618,6 +2624,12 @@
     "start": "2026-10-29T10:40-04:00"
    },
    {
+    "end": "2026-10-29T10:40-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
+    "start": "2026-10-29T10:40-04:00"
+   },
+   {
     "end": "2026-10-29T10:45-04:00",
     "id": "41d282f8-2015-4caa-9591-9faa948e263e",
     "name": "Beat Builders",
@@ -2661,6 +2673,18 @@
    },
    {
     "end": "2026-10-29T11:00-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
+    "start": "2026-10-29T11:00-04:00"
+   },
+   {
+    "end": "2026-10-29T11:00-04:00",
+    "id": "2f4690b4-72b0-4845-bcce-9e735397d60b",
+    "name": "The Blues Brothers® Show",
+    "start": "2026-10-29T11:00-04:00"
+   },
+   {
+    "end": "2026-10-29T11:00-04:00",
     "id": "2436bad1-f319-44d5-98ac-a283b81956c6",
     "name": "The Bourne Stuntacular",
     "start": "2026-10-29T11:00-04:00"
@@ -2681,6 +2705,12 @@
     "end": "2026-10-29T11:20-04:00",
     "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
     "name": "Illumination Theater",
+    "start": "2026-10-29T11:20-04:00"
+   },
+   {
+    "end": "2026-10-29T11:20-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
     "start": "2026-10-29T11:20-04:00"
    },
    {
@@ -2732,6 +2762,12 @@
     "start": "2026-10-29T11:40-04:00"
    },
    {
+    "end": "2026-10-29T11:40-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
+    "start": "2026-10-29T11:40-04:00"
+   },
+   {
     "end": "2026-10-29T11:45-04:00",
     "id": "41d282f8-2015-4caa-9591-9faa948e263e",
     "name": "Beat Builders",
@@ -2765,6 +2801,18 @@
     "end": "2026-10-29T12:00-04:00",
     "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
     "name": "Celestina Warbeck and the Banshees",
+    "start": "2026-10-29T12:00-04:00"
+   },
+   {
+    "end": "2026-10-29T12:00-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
+    "start": "2026-10-29T12:00-04:00"
+   },
+   {
+    "end": "2026-10-29T12:00-04:00",
+    "id": "2f4690b4-72b0-4845-bcce-9e735397d60b",
+    "name": "The Blues Brothers® Show",
     "start": "2026-10-29T12:00-04:00"
    },
    {
@@ -2840,6 +2888,12 @@
     "start": "2026-10-29T12:50-04:00"
    },
    {
+    "end": "2026-10-29T12:50-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
+    "start": "2026-10-29T12:50-04:00"
+   },
+   {
     "end": "2026-10-29T12:55-04:00",
     "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
     "name": "Meet SpongeBob SquarePants and Friends",
@@ -2888,6 +2942,12 @@
     "start": "2026-10-29T13:10-04:00"
    },
    {
+    "end": "2026-10-29T13:10-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
+    "start": "2026-10-29T13:10-04:00"
+   },
+   {
     "end": "2026-10-29T13:25-04:00",
     "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
     "name": "Meet SpongeBob SquarePants and Friends",
@@ -2915,6 +2975,12 @@
     "end": "2026-10-29T13:30-04:00",
     "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
     "name": "Illumination Theater",
+    "start": "2026-10-29T13:30-04:00"
+   },
+   {
+    "end": "2026-10-29T13:30-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
     "start": "2026-10-29T13:30-04:00"
    },
    {
@@ -2951,6 +3017,12 @@
     "end": "2026-10-29T13:50-04:00",
     "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
     "name": "Illumination Theater",
+    "start": "2026-10-29T13:50-04:00"
+   },
+   {
+    "end": "2026-10-29T13:50-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
     "start": "2026-10-29T13:50-04:00"
    },
    {
@@ -2999,6 +3071,12 @@
     "end": "2026-10-29T14:10-04:00",
     "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
     "name": "Illumination Theater",
+    "start": "2026-10-29T14:10-04:00"
+   },
+   {
+    "end": "2026-10-29T14:10-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
     "start": "2026-10-29T14:10-04:00"
    },
    {
@@ -3051,6 +3129,12 @@
    },
    {
     "end": "2026-10-29T14:30-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
+    "start": "2026-10-29T14:30-04:00"
+   },
+   {
+    "end": "2026-10-29T14:30-04:00",
     "id": "2436bad1-f319-44d5-98ac-a283b81956c6",
     "name": "The Bourne Stuntacular",
     "start": "2026-10-29T14:30-04:00"
@@ -3089,6 +3173,12 @@
     "end": "2026-10-29T14:50-04:00",
     "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
     "name": "Meet The TRANSFORMERS™",
+    "start": "2026-10-29T14:50-04:00"
+   },
+   {
+    "end": "2026-10-29T14:50-04:00",
+    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
+    "name": "Shrek’s Swamp Meet",
     "start": "2026-10-29T14:50-04:00"
    },
    {
@@ -3294,5 +3384,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-29T08:01-04:00"
+ "updated": "2026-10-29T08:15-04:00"
 }
