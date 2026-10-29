@@ -20,6 +20,12 @@
     "start": "2026-10-29T08:15-04:00"
    },
    {
+    "end": "2026-10-29T12:15-04:00",
+    "id": "f526f3ab-190b-4576-8c79-e2968d171b4e",
+    "name": "Meet Moana at Character Landing",
+    "start": "2026-10-29T08:30-04:00"
+   },
+   {
     "end": "2026-10-29T13:55-04:00",
     "id": "a08d9f84-fbdf-45f3-9b68-645d296de307",
     "name": "DiVine",
@@ -269,6 +275,12 @@
     "end": "2026-10-29T13:45-04:00",
     "id": "dd142c0b-622a-4b44-8e22-c0facb2b20a8",
     "name": "Kora Tinga Tinga",
+    "start": "2026-10-29T13:45-04:00"
+   },
+   {
+    "end": "2026-10-29T15:45-04:00",
+    "id": "f526f3ab-190b-4576-8c79-e2968d171b4e",
+    "name": "Meet Moana at Character Landing",
     "start": "2026-10-29T13:45-04:00"
    },
    {
@@ -1791,12 +1803,6 @@
    }
   ],
   "islands_of_adventure": [
-   {
-    "end": "2026-10-29T08:30-04:00",
-    "id": "c6c26dd9-bb82-49de-9fca-9245be6a8081",
-    "name": "Meet Spider-Man and the Marvel® Super Heroes",
-    "start": "2026-10-29T08:30-04:00"
-   },
    {
     "end": "2026-10-29T10:00-04:00",
     "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
@@ -3384,5 +3390,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-29T08:31-04:00"
+ "updated": "2026-10-29T08:45-04:00"
 }
