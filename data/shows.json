@@ -1080,12 +1080,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-10-30T10:00-04:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
-    "start": "2026-10-30T10:00-04:00"
-   },
-   {
     "end": "2026-10-30T10:30-04:00",
     "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
     "name": "Le Cirque Arcanus™",
@@ -1096,12 +1090,6 @@
     "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
     "name": "Meet Princess Peach",
     "start": "2026-10-30T10:40-04:00"
-   },
-   {
-    "end": "2026-10-30T11:00-04:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
-    "start": "2026-10-30T11:00-04:00"
    },
    {
     "end": "2026-10-30T11:10-04:00",
@@ -1120,12 +1108,6 @@
     "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
     "name": "Meet Princess Peach",
     "start": "2026-10-30T11:40-04:00"
-   },
-   {
-    "end": "2026-10-30T12:00-04:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
-    "start": "2026-10-30T12:00-04:00"
    },
    {
     "end": "2026-10-30T12:00-04:00",
@@ -2474,24 +2456,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-10-30T09:45-04:00",
-    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
-    "name": "Meet SpongeBob SquarePants and Friends",
-    "start": "2026-10-30T09:45-04:00"
-   },
-   {
-    "end": "2026-10-30T09:50-04:00",
-    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
-    "name": "Meet The TRANSFORMERS™",
-    "start": "2026-10-30T09:50-04:00"
-   },
-   {
-    "end": "2026-10-30T09:55-04:00",
-    "id": "55222885-493c-4280-b295-6fd7c609f12d",
-    "name": "Hollywood Character Zone",
-    "start": "2026-10-30T09:55-04:00"
-   },
-   {
     "end": "2026-10-30T10:00-04:00",
     "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
     "name": "Celestina Warbeck and the Banshees",
@@ -3354,5 +3318,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-30T09:45-04:00"
+ "updated": "2026-10-30T10:01-04:00"
 }
