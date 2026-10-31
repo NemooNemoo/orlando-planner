@@ -581,12 +581,6 @@
    },
    {
     "end": "2026-10-31T11:00-04:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-10-31T11:00-04:00"
-   },
-   {
-    "end": "2026-10-31T11:00-04:00",
     "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
     "name": "Meet Pluto Near EPCOT Main Entrance",
     "start": "2026-10-31T11:00-04:00"
@@ -661,12 +655,6 @@
     "end": "2026-10-31T12:00-04:00",
     "id": "296d164a-8b9a-49d3-a285-637b86731260",
     "name": "Matsuriza",
-    "start": "2026-10-31T12:00-04:00"
-   },
-   {
-    "end": "2026-10-31T12:00-04:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
     "start": "2026-10-31T12:00-04:00"
    },
    {
@@ -856,12 +844,6 @@
     "start": "2026-10-31T14:35-04:00"
    },
    {
-    "end": "2026-10-31T14:40-04:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-10-31T14:40-04:00"
-   },
-   {
     "end": "2026-10-31T14:45-04:00",
     "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
     "name": "Meet Pluto Near EPCOT Main Entrance",
@@ -944,12 +926,6 @@
     "id": "fd8afd63-0cb5-4f77-b47b-fb277f12d9f8",
     "name": "¡Celebración Encanto!",
     "start": "2026-10-31T15:30-04:00"
-   },
-   {
-    "end": "2026-10-31T15:40-04:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-10-31T15:40-04:00"
    },
    {
     "end": "2026-10-31T15:45-04:00",
@@ -1924,12 +1900,6 @@
     "start": "2026-10-31T11:00-04:00"
    },
    {
-    "end": "2026-10-31T11:00-04:00",
-    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
-    "name": "Raptor Encounter",
-    "start": "2026-10-31T11:00-04:00"
-   },
-   {
     "end": "2026-10-31T11:20-04:00",
     "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
     "name": "Raptor Encounter",
@@ -2527,12 +2497,6 @@
    }
   ],
   "universal_studios_florida": [
-   {
-    "end": "2026-10-31T10:55-04:00",
-    "id": "55222885-493c-4280-b295-6fd7c609f12d",
-    "name": "Hollywood Character Zone",
-    "start": "2026-10-31T10:55-04:00"
-   },
    {
     "end": "2026-10-31T11:00-04:00",
     "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
@@ -3264,5 +3228,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-10-31T10:51-04:00"
+ "updated": "2026-10-31T11:01-04:00"
 }
