@@ -1346,12 +1346,6 @@
     "start": "2026-11-01T10:30-05:00"
    },
    {
-    "end": "2026-11-01T10:35-05:00",
-    "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
-    "name": "The Little Mermaid – A Musical Adventure",
-    "start": "2026-11-01T10:35-05:00"
-   },
-   {
     "end": "2026-11-01T10:45-05:00",
     "id": "7357772c-6b11-4a8d-af97-05a1bb45f001",
     "name": "Indiana Jones™ Epic Stunt Spectacular!",
@@ -2444,24 +2438,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-11-01T09:45-05:00",
-    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
-    "name": "Meet SpongeBob SquarePants and Friends",
-    "start": "2026-11-01T09:45-05:00"
-   },
-   {
-    "end": "2026-11-01T09:50-05:00",
-    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
-    "name": "Meet The TRANSFORMERS™",
-    "start": "2026-11-01T09:50-05:00"
-   },
-   {
-    "end": "2026-11-01T09:55-05:00",
-    "id": "55222885-493c-4280-b295-6fd7c609f12d",
-    "name": "Hollywood Character Zone",
-    "start": "2026-11-01T09:55-05:00"
-   },
-   {
     "end": "2026-11-01T10:00-05:00",
     "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
     "name": "Celestina Warbeck and the Banshees",
@@ -3324,5 +3300,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-01T09:45-05:00"
+ "updated": "2026-11-01T10:01-05:00"
 }
