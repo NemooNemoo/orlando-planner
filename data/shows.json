@@ -1020,40 +1020,16 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-11-01T09:00-05:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
-    "start": "2026-11-01T09:00-05:00"
-   },
-   {
-    "end": "2026-11-01T09:30-05:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-11-01T09:30-05:00"
-   },
-   {
-    "end": "2026-11-01T09:40-05:00",
-    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
-    "name": "Meet Princess Peach",
-    "start": "2026-11-01T09:40-05:00"
-   },
-   {
     "end": "2026-11-01T10:00-05:00",
     "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
     "name": "Meet Mario and Luigi",
     "start": "2026-11-01T10:00-05:00"
    },
    {
-    "end": "2026-11-01T10:10-05:00",
-    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
-    "name": "The Untrainable Dragon",
-    "start": "2026-11-01T10:10-05:00"
-   },
-   {
-    "end": "2026-11-01T10:20-05:00",
+    "end": "2026-11-01T10:30-05:00",
     "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
     "name": "Le Cirque Arcanus™",
-    "start": "2026-11-01T10:20-05:00"
+    "start": "2026-11-01T10:30-05:00"
    },
    {
     "end": "2026-11-01T10:40-05:00",
@@ -1068,16 +1044,16 @@
     "start": "2026-11-01T11:00-05:00"
    },
    {
-    "end": "2026-11-01T11:00-05:00",
+    "end": "2026-11-01T11:10-05:00",
     "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
     "name": "The Untrainable Dragon",
-    "start": "2026-11-01T11:00-05:00"
+    "start": "2026-11-01T11:10-05:00"
    },
    {
-    "end": "2026-11-01T11:10-05:00",
+    "end": "2026-11-01T11:20-05:00",
     "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
     "name": "Le Cirque Arcanus™",
-    "start": "2026-11-01T11:10-05:00"
+    "start": "2026-11-01T11:20-05:00"
    },
    {
     "end": "2026-11-01T11:40-05:00",
@@ -1086,33 +1062,27 @@
     "start": "2026-11-01T11:40-05:00"
    },
    {
-    "end": "2026-11-01T11:50-05:00",
+    "end": "2026-11-01T12:00-05:00",
     "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
     "name": "Meet Mario and Luigi",
-    "start": "2026-11-01T11:50-05:00"
+    "start": "2026-11-01T12:00-05:00"
    },
    {
-    "end": "2026-11-01T11:55-05:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-11-01T11:55-05:00"
+    "end": "2026-11-01T12:00-05:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
+    "start": "2026-11-01T12:00-05:00"
    },
    {
-    "end": "2026-11-01T12:40-05:00",
+    "end": "2026-11-01T12:10-05:00",
     "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
     "name": "Le Cirque Arcanus™",
-    "start": "2026-11-01T12:40-05:00"
+    "start": "2026-11-01T12:10-05:00"
    },
    {
     "end": "2026-11-01T12:40-05:00",
     "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
     "name": "Meet Princess Peach",
-    "start": "2026-11-01T12:40-05:00"
-   },
-   {
-    "end": "2026-11-01T12:40-05:00",
-    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
-    "name": "The Untrainable Dragon",
     "start": "2026-11-01T12:40-05:00"
    },
    {
@@ -1122,16 +1092,34 @@
     "start": "2026-11-01T12:50-05:00"
    },
    {
-    "end": "2026-11-01T13:30-05:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-11-01T13:30-05:00"
-   },
-   {
-    "end": "2026-11-01T13:30-05:00",
+    "end": "2026-11-01T12:50-05:00",
     "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
     "name": "The Untrainable Dragon",
-    "start": "2026-11-01T13:30-05:00"
+    "start": "2026-11-01T12:50-05:00"
+   },
+   {
+    "end": "2026-11-01T12:55-05:00",
+    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
+    "name": "Le Cirque Arcanus™",
+    "start": "2026-11-01T12:55-05:00"
+   },
+   {
+    "end": "2026-11-01T13:40-05:00",
+    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
+    "name": "Le Cirque Arcanus™",
+    "start": "2026-11-01T13:40-05:00"
+   },
+   {
+    "end": "2026-11-01T13:40-05:00",
+    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
+    "name": "Meet Princess Peach",
+    "start": "2026-11-01T13:40-05:00"
+   },
+   {
+    "end": "2026-11-01T13:40-05:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
+    "start": "2026-11-01T13:40-05:00"
    },
    {
     "end": "2026-11-01T13:50-05:00",
@@ -1140,22 +1128,16 @@
     "start": "2026-11-01T13:50-05:00"
    },
    {
-    "end": "2026-11-01T14:00-05:00",
-    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
-    "name": "Meet Princess Peach",
-    "start": "2026-11-01T14:00-05:00"
-   },
-   {
-    "end": "2026-11-01T14:15-05:00",
+    "end": "2026-11-01T14:30-05:00",
     "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
     "name": "Le Cirque Arcanus™",
-    "start": "2026-11-01T14:15-05:00"
+    "start": "2026-11-01T14:30-05:00"
    },
    {
-    "end": "2026-11-01T14:40-05:00",
+    "end": "2026-11-01T14:30-05:00",
     "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
     "name": "The Untrainable Dragon",
-    "start": "2026-11-01T14:40-05:00"
+    "start": "2026-11-01T14:30-05:00"
    },
    {
     "end": "2026-11-01T14:50-05:00",
@@ -1165,33 +1147,33 @@
    },
    {
     "end": "2026-11-01T15:00-05:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-11-01T15:00-05:00"
-   },
-   {
-    "end": "2026-11-01T15:00-05:00",
     "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
     "name": "Meet Princess Peach",
     "start": "2026-11-01T15:00-05:00"
    },
    {
-    "end": "2026-11-01T15:30-05:00",
-    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
-    "name": "The Untrainable Dragon",
-    "start": "2026-11-01T15:30-05:00"
+    "end": "2026-11-01T15:15-05:00",
+    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
+    "name": "Le Cirque Arcanus™",
+    "start": "2026-11-01T15:15-05:00"
    },
    {
     "end": "2026-11-01T15:40-05:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
     "start": "2026-11-01T15:40-05:00"
    },
    {
-    "end": "2026-11-01T15:45-05:00",
+    "end": "2026-11-01T15:50-05:00",
+    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
+    "name": "Meet Mario and Luigi",
+    "start": "2026-11-01T15:50-05:00"
+   },
+   {
+    "end": "2026-11-01T16:00-05:00",
     "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
     "name": "Le Cirque Arcanus™",
-    "start": "2026-11-01T15:45-05:00"
+    "start": "2026-11-01T16:00-05:00"
    },
    {
     "end": "2026-11-01T16:00-05:00",
@@ -1200,15 +1182,9 @@
     "start": "2026-11-01T16:00-05:00"
    },
    {
-    "end": "2026-11-01T16:20-05:00",
+    "end": "2026-11-01T16:30-05:00",
     "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
     "name": "The Untrainable Dragon",
-    "start": "2026-11-01T16:20-05:00"
-   },
-   {
-    "end": "2026-11-01T16:30-05:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
     "start": "2026-11-01T16:30-05:00"
    },
    {
@@ -1218,22 +1194,28 @@
     "start": "2026-11-01T16:40-05:00"
    },
    {
+    "end": "2026-11-01T16:45-05:00",
+    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
+    "name": "Le Cirque Arcanus™",
+    "start": "2026-11-01T16:45-05:00"
+   },
+   {
     "end": "2026-11-01T17:00-05:00",
     "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
     "name": "Meet Princess Peach",
     "start": "2026-11-01T17:00-05:00"
    },
    {
-    "end": "2026-11-01T17:10-05:00",
+    "end": "2026-11-01T17:20-05:00",
     "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
     "name": "The Untrainable Dragon",
-    "start": "2026-11-01T17:10-05:00"
+    "start": "2026-11-01T17:20-05:00"
    },
    {
-    "end": "2026-11-01T17:20-05:00",
+    "end": "2026-11-01T17:30-05:00",
     "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
     "name": "Le Cirque Arcanus™",
-    "start": "2026-11-01T17:20-05:00"
+    "start": "2026-11-01T17:30-05:00"
    },
    {
     "end": "2026-11-01T17:40-05:00",
@@ -1243,15 +1225,21 @@
    },
    {
     "end": "2026-11-01T18:00-05:00",
-    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
-    "name": "The Untrainable Dragon",
+    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
+    "name": "Meet Princess Peach",
     "start": "2026-11-01T18:00-05:00"
    },
    {
     "end": "2026-11-01T18:10-05:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
+    "start": "2026-11-01T18:10-05:00"
+   },
+   {
+    "end": "2026-11-01T18:20-05:00",
     "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
     "name": "Le Cirque Arcanus™",
-    "start": "2026-11-01T18:10-05:00"
+    "start": "2026-11-01T18:20-05:00"
    },
    {
     "end": "2026-11-01T18:40-05:00",
@@ -1260,10 +1248,22 @@
     "start": "2026-11-01T18:40-05:00"
    },
    {
-    "end": "2026-11-01T19:30-05:00",
+    "end": "2026-11-01T19:10-05:00",
+    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
+    "name": "Le Cirque Arcanus™",
+    "start": "2026-11-01T19:10-05:00"
+   },
+   {
+    "end": "2026-11-01T19:40-05:00",
+    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
+    "name": "Meet Mario and Luigi",
+    "start": "2026-11-01T19:40-05:00"
+   },
+   {
+    "end": "2026-11-01T20:30-05:00",
     "id": "a872883d-761b-4dda-a124-5dadcfa9e5ae",
     "name": "Universal Celestial Goodnight",
-    "start": "2026-11-01T19:30-05:00"
+    "start": "2026-11-01T20:30-05:00"
    }
   ],
   "hollywood_studios": [
@@ -2450,36 +2450,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-11-01T08:15-05:00",
-    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
-    "name": "Meet SpongeBob SquarePants and Friends",
-    "start": "2026-11-01T08:15-05:00"
-   },
-   {
-    "end": "2026-11-01T08:20-05:00",
-    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
-    "name": "Illumination Theater",
-    "start": "2026-11-01T08:20-05:00"
-   },
-   {
-    "end": "2026-11-01T08:20-05:00",
-    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
-    "name": "Shrek’s Swamp Meet",
-    "start": "2026-11-01T08:20-05:00"
-   },
-   {
-    "end": "2026-11-01T08:25-05:00",
-    "id": "55222885-493c-4280-b295-6fd7c609f12d",
-    "name": "Hollywood Character Zone",
-    "start": "2026-11-01T08:25-05:00"
-   },
-   {
-    "end": "2026-11-01T08:25-05:00",
-    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
-    "name": "Meet The TRANSFORMERS™",
-    "start": "2026-11-01T08:25-05:00"
-   },
-   {
     "end": "2026-11-01T08:30-05:00",
     "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
     "name": "DreamWorks Character Zone",
@@ -3402,5 +3372,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-01T08:15-05:00"
+ "updated": "2026-11-01T08:30-05:00"
 }
