@@ -69,6 +69,11 @@
   "name": "Beauty and the Beast – Live on Stage",
   "park": "hollywood_studios"
  },
+ "1179": {
+  "land": "Frontierland",
+  "name": "Walt Disney World Railroad - Frontierland",
+  "park": "magic_kingdom"
+ },
  "1181": {
   "land": "Fantasyland",
   "name": "Walt Disney World Railroad - Fantasyland",
@@ -971,12 +976,12 @@
  },
  "6699": {
   "land": "Fantasyland",
-  "name": "Meet Princess Tiana and a Visiting Princess at Princess Fairytale Hall",
+  "name": "Meet Cinderella and Princess Tiana at Princess Fairytale Hall",
   "park": "magic_kingdom"
  },
  "6700": {
   "land": "Fantasyland",
-  "name": "Meet Cinderella and a Visiting Princess at Princess Fairytale Hall",
+  "name": "Meet Visiting Princesses at Princess Fairytale Hall",
   "park": "magic_kingdom"
  },
  "6701": {
