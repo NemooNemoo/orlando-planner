@@ -446,12 +446,6 @@
     "start": "2026-11-01T16:30-05:00"
    },
    {
-    "end": "2026-11-01T16:45-05:00",
-    "id": "d8214ba6-22a7-4a92-8977-bae3779d5c4c",
-    "name": "Feathered Friends in Flight!",
-    "start": "2026-11-01T16:45-05:00"
-   },
-   {
     "end": "2026-11-01T17:00-05:00",
     "id": "52be1d78-e0b4-433f-b1ce-0be4f7053813",
     "name": "Beats and Strings",
@@ -1630,12 +1624,6 @@
   ],
   "islands_of_adventure": [
    {
-    "end": "2026-11-01T16:45-05:00",
-    "id": "9ad98d6a-e81a-4408-b5df-1ea832fe0b19",
-    "name": "Oh! The Stories You'll Hear!™",
-    "start": "2026-11-01T16:45-05:00"
-   },
-   {
     "end": "2026-11-01T17:00-05:00",
     "id": "c6c26dd9-bb82-49de-9fca-9245be6a8081",
     "name": "Meet Spider-Man and the Marvel® Super Heroes",
@@ -1896,5 +1884,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-01T16:45-05:00"
+ "updated": "2026-11-01T17:01-05:00"
 }
