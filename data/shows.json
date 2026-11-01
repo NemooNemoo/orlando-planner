@@ -1497,12 +1497,6 @@
    },
    {
     "end": "2026-11-01T16:00-05:00",
-    "id": "375197ac-27ac-41f7-bd93-f4e9b9fc4d5d",
-    "name": "Beauty and the Beast – Live on Stage",
-    "start": "2026-11-01T16:00-05:00"
-   },
-   {
-    "end": "2026-11-01T16:00-05:00",
     "id": "bc2c2ffe-3cf0-4e75-a408-bf5e86515c4c",
     "name": "Green Army Drum Corps",
     "start": "2026-11-01T16:00-05:00"
@@ -1529,12 +1523,6 @@
     "end": "2026-11-01T16:30-05:00",
     "id": "d91a0e9a-8652-4036-822f-e7b12b381273",
     "name": "For the First Time in Forever: A Frozen Sing-Along Celebration",
-    "start": "2026-11-01T16:30-05:00"
-   },
-   {
-    "end": "2026-11-01T16:30-05:00",
-    "id": "7357772c-6b11-4a8d-af97-05a1bb45f001",
-    "name": "Indiana Jones™ Epic Stunt Spectacular!",
     "start": "2026-11-01T16:30-05:00"
    },
    {
@@ -1659,18 +1647,6 @@
    }
   ],
   "islands_of_adventure": [
-   {
-    "end": "2026-11-01T16:15-05:00",
-    "id": "f6d4294c-8825-4712-a891-36d45b5eb0f4",
-    "name": "Seuss Character Zone",
-    "start": "2026-11-01T16:15-05:00"
-   },
-   {
-    "end": "2026-11-01T16:20-05:00",
-    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
-    "name": "Raptor Encounter",
-    "start": "2026-11-01T16:20-05:00"
-   },
    {
     "end": "2026-11-01T16:30-05:00",
     "id": "97b25fe9-eb81-46bd-b57f-8b2fbbe85249",
@@ -1904,18 +1880,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-11-01T16:15-05:00",
-    "id": "bf89766b-1d19-428f-9e68-71e12f25287b",
-    "name": "Marilyn and the Diamond Bellas",
-    "start": "2026-11-01T16:15-05:00"
-   },
-   {
-    "end": "2026-11-01T16:15-05:00",
-    "id": "2436bad1-f319-44d5-98ac-a283b81956c6",
-    "name": "The Bourne Stuntacular",
-    "start": "2026-11-01T16:15-05:00"
-   },
-   {
     "end": "2026-11-01T16:30-05:00",
     "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
     "name": "Meet The TRANSFORMERS™",
@@ -1968,5 +1932,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-01T16:15-05:00"
+ "updated": "2026-11-01T16:30-05:00"
 }
