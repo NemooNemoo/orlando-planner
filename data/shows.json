@@ -575,12 +575,6 @@
    },
    {
     "end": "2026-11-01T11:15-05:00",
-    "id": "7b79e739-c540-4ea5-a4c8-f8d8bac5719b",
-    "name": "Meet the Legendary Warrior in China",
-    "start": "2026-11-01T11:15-05:00"
-   },
-   {
-    "end": "2026-11-01T11:15-05:00",
     "id": "c5f6c7e4-d5cd-4d71-8e02-57d8bb43b3ba",
     "name": "Voices of Liberty",
     "start": "2026-11-01T11:15-05:00"
@@ -650,12 +644,6 @@
     "id": "c5f6c7e4-d5cd-4d71-8e02-57d8bb43b3ba",
     "name": "Voices of Liberty",
     "start": "2026-11-01T12:00-05:00"
-   },
-   {
-    "end": "2026-11-01T12:25-05:00",
-    "id": "7b79e739-c540-4ea5-a4c8-f8d8bac5719b",
-    "name": "Meet the Legendary Warrior in China",
-    "start": "2026-11-01T12:25-05:00"
    },
    {
     "end": "2026-11-01T12:30-05:00",
@@ -790,12 +778,6 @@
     "start": "2026-11-01T14:15-05:00"
    },
    {
-    "end": "2026-11-01T14:20-05:00",
-    "id": "7b79e739-c540-4ea5-a4c8-f8d8bac5719b",
-    "name": "Meet the Legendary Warrior in China",
-    "start": "2026-11-01T14:20-05:00"
-   },
-   {
     "end": "2026-11-01T14:30-05:00",
     "id": "fd8afd63-0cb5-4f77-b47b-fb277f12d9f8",
     "name": "¡Celebración Encanto!",
@@ -877,12 +859,6 @@
     "end": "2026-11-01T15:30-05:00",
     "id": "6e70f3fb-faab-41b1-8d26-b85d1c5cfa26",
     "name": "Entertainment at Canada Mill Stage",
-    "start": "2026-11-01T15:30-05:00"
-   },
-   {
-    "end": "2026-11-01T15:30-05:00",
-    "id": "7b79e739-c540-4ea5-a4c8-f8d8bac5719b",
-    "name": "Meet the Legendary Warrior in China",
     "start": "2026-11-01T15:30-05:00"
    },
    {
@@ -3384,5 +3360,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-01T07:45-05:00"
+ "updated": "2026-11-01T08:01-05:00"
 }
