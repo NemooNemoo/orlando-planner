@@ -533,12 +533,6 @@
    },
    {
     "end": "2026-11-02T10:45-05:00",
-    "id": "99087d9a-4380-4ab6-b088-20816e233c6f",
-    "name": "Meet Asha Near World Showcase Plaza",
-    "start": "2026-11-02T10:45-05:00"
-   },
-   {
-    "end": "2026-11-02T10:45-05:00",
     "id": "e9c1bff6-c9c1-4275-8f3d-44226f0fdfbb",
     "name": "Meet Princess Aurora in France",
     "start": "2026-11-02T10:45-05:00"
@@ -3276,5 +3270,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-02T07:30-05:00"
+ "updated": "2026-11-02T07:45-05:00"
 }
