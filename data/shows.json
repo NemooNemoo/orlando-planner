@@ -20,6 +20,12 @@
     "start": "2026-11-02T08:15-05:00"
    },
    {
+    "end": "2026-11-02T12:15-05:00",
+    "id": "f526f3ab-190b-4576-8c79-e2968d171b4e",
+    "name": "Meet Moana at Character Landing",
+    "start": "2026-11-02T08:30-05:00"
+   },
+   {
     "end": "2026-11-02T08:35-05:00",
     "id": "f7830bfd-3d25-4ba2-8021-b0d429ef0193",
     "name": "Eco-Rhythmics",
@@ -278,6 +284,12 @@
     "start": "2026-11-02T13:45-05:00"
    },
    {
+    "end": "2026-11-02T15:45-05:00",
+    "id": "f526f3ab-190b-4576-8c79-e2968d171b4e",
+    "name": "Meet Moana at Character Landing",
+    "start": "2026-11-02T13:45-05:00"
+   },
+   {
     "end": "2026-11-02T14:00-05:00",
     "id": "f7830bfd-3d25-4ba2-8021-b0d429ef0193",
     "name": "Eco-Rhythmics",
@@ -478,27 +490,9 @@
     "start": "2026-11-02T09:00-05:00"
    },
    {
-    "end": "2026-11-02T09:00-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
-    "start": "2026-11-02T09:00-05:00"
-   },
-   {
     "end": "2026-11-02T09:30-05:00",
     "id": "3beaa9a5-6404-4446-bfd1-e0d0eea65e85",
     "name": "JAMMitors",
-    "start": "2026-11-02T09:30-05:00"
-   },
-   {
-    "end": "2026-11-02T09:30-05:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-02T09:30-05:00"
-   },
-   {
-    "end": "2026-11-02T09:30-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
     "start": "2026-11-02T09:30-05:00"
    },
    {
@@ -508,33 +502,9 @@
     "start": "2026-11-02T09:45-05:00"
    },
    {
-    "end": "2026-11-02T10:00-05:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-02T10:00-05:00"
-   },
-   {
-    "end": "2026-11-02T10:00-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
-    "start": "2026-11-02T10:00-05:00"
-   },
-   {
     "end": "2026-11-02T10:30-05:00",
     "id": "3beaa9a5-6404-4446-bfd1-e0d0eea65e85",
     "name": "JAMMitors",
-    "start": "2026-11-02T10:30-05:00"
-   },
-   {
-    "end": "2026-11-02T10:30-05:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-02T10:30-05:00"
-   },
-   {
-    "end": "2026-11-02T10:30-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
     "start": "2026-11-02T10:30-05:00"
    },
    {
@@ -547,18 +517,6 @@
     "end": "2026-11-02T11:00-05:00",
     "id": "296d164a-8b9a-49d3-a285-637b86731260",
     "name": "Matsuriza",
-    "start": "2026-11-02T11:00-05:00"
-   },
-   {
-    "end": "2026-11-02T11:00-05:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-02T11:00-05:00"
-   },
-   {
-    "end": "2026-11-02T11:00-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
     "start": "2026-11-02T11:00-05:00"
    },
    {
@@ -583,18 +541,6 @@
     "end": "2026-11-02T11:30-05:00",
     "id": "3beaa9a5-6404-4446-bfd1-e0d0eea65e85",
     "name": "JAMMitors",
-    "start": "2026-11-02T11:30-05:00"
-   },
-   {
-    "end": "2026-11-02T11:30-05:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-02T11:30-05:00"
-   },
-   {
-    "end": "2026-11-02T11:30-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
     "start": "2026-11-02T11:30-05:00"
    },
    {
@@ -623,18 +569,6 @@
    },
    {
     "end": "2026-11-02T12:00-05:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-02T12:00-05:00"
-   },
-   {
-    "end": "2026-11-02T12:00-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
-    "start": "2026-11-02T12:00-05:00"
-   },
-   {
-    "end": "2026-11-02T12:00-05:00",
     "id": "c5f6c7e4-d5cd-4d71-8e02-57d8bb43b3ba",
     "name": "Voices of Liberty",
     "start": "2026-11-02T12:00-05:00"
@@ -644,12 +578,6 @@
     "id": "7b79e739-c540-4ea5-a4c8-f8d8bac5719b",
     "name": "Meet the Legendary Warrior in China",
     "start": "2026-11-02T12:25-05:00"
-   },
-   {
-    "end": "2026-11-02T12:30-05:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-02T12:30-05:00"
    },
    {
     "end": "2026-11-02T12:40-05:00",
@@ -718,12 +646,6 @@
     "start": "2026-11-02T13:45-05:00"
    },
    {
-    "end": "2026-11-02T13:45-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
-    "start": "2026-11-02T13:45-05:00"
-   },
-   {
     "end": "2026-11-02T14:00-05:00",
     "id": "3beaa9a5-6404-4446-bfd1-e0d0eea65e85",
     "name": "JAMMitors",
@@ -740,18 +662,6 @@
     "id": "99087d9a-4380-4ab6-b088-20816e233c6f",
     "name": "Meet Asha Near World Showcase Plaza",
     "start": "2026-11-02T14:00-05:00"
-   },
-   {
-    "end": "2026-11-02T14:10-05:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-02T14:10-05:00"
-   },
-   {
-    "end": "2026-11-02T14:15-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
-    "start": "2026-11-02T14:15-05:00"
    },
    {
     "end": "2026-11-02T14:15-05:00",
@@ -782,18 +692,6 @@
     "id": "8e1a9a60-9311-4f79-b6a8-1b5172e4f7c9",
     "name": "Entertainment at Germany Gazebo",
     "start": "2026-11-02T14:35-05:00"
-   },
-   {
-    "end": "2026-11-02T14:40-05:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-02T14:40-05:00"
-   },
-   {
-    "end": "2026-11-02T14:45-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
-    "start": "2026-11-02T14:45-05:00"
    },
    {
     "end": "2026-11-02T15:00-05:00",
@@ -832,18 +730,6 @@
     "start": "2026-11-02T15:00-05:00"
    },
    {
-    "end": "2026-11-02T15:10-05:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-02T15:10-05:00"
-   },
-   {
-    "end": "2026-11-02T15:15-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
-    "start": "2026-11-02T15:15-05:00"
-   },
-   {
     "end": "2026-11-02T15:30-05:00",
     "id": "7b79e739-c540-4ea5-a4c8-f8d8bac5719b",
     "name": "Meet the Legendary Warrior in China",
@@ -856,21 +742,9 @@
     "start": "2026-11-02T15:30-05:00"
    },
    {
-    "end": "2026-11-02T15:40-05:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-02T15:40-05:00"
-   },
-   {
     "end": "2026-11-02T15:45-05:00",
     "id": "76eadac1-cdfa-45e5-a25c-54ed4c3a604f",
     "name": "Marimba de las Américas",
-    "start": "2026-11-02T15:45-05:00"
-   },
-   {
-    "end": "2026-11-02T15:45-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
     "start": "2026-11-02T15:45-05:00"
    },
    {
@@ -896,12 +770,6 @@
     "id": "41aba635-48e4-43bf-9bb1-3b811b5705d0",
     "name": "Rose & Crown Pub Musician",
     "start": "2026-11-02T16:00-05:00"
-   },
-   {
-    "end": "2026-11-02T16:10-05:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-02T16:10-05:00"
    },
    {
     "end": "2026-11-02T16:15-05:00",
@@ -3252,5 +3120,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-02T08:30-05:00"
+ "updated": "2026-11-02T08:45-05:00"
 }
