@@ -1013,16 +1013,696 @@
    }
   ],
   "epic_universe": [],
-  "hollywood_studios": [],
-  "islands_of_adventure": [],
-  "magic_kingdom": [],
-  "universal_studios_florida": [
+  "hollywood_studios": [
    {
-    "end": "2026-11-02T00:00-05:00",
-    "id": "c08df5ba-1141-4968-b748-5e7802885ec0",
-    "name": "Stranger Things: Return to Hawkins",
-    "start": "2026-11-02T00:00-05:00"
+    "end": "2026-11-02T09:00-05:00",
+    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
+    "name": "Meet Joy at Pixar Plaza",
+    "start": "2026-11-02T09:00-05:00"
    },
+   {
+    "end": "2026-11-02T09:30-05:00",
+    "id": "d91a0e9a-8652-4036-822f-e7b12b381273",
+    "name": "For the First Time in Forever: A Frozen Sing-Along Celebration",
+    "start": "2026-11-02T09:30-05:00"
+   },
+   {
+    "end": "2026-11-02T09:30-05:00",
+    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
+    "name": "Meet Joy at Pixar Plaza",
+    "start": "2026-11-02T09:30-05:00"
+   },
+   {
+    "end": "2026-11-02T10:00-05:00",
+    "id": "bc2c2ffe-3cf0-4e75-a408-bf5e86515c4c",
+    "name": "Green Army Drum Corps",
+    "start": "2026-11-02T10:00-05:00"
+   },
+   {
+    "end": "2026-11-02T10:00-05:00",
+    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
+    "name": "Meet Joy at Pixar Plaza",
+    "start": "2026-11-02T10:00-05:00"
+   },
+   {
+    "end": "2026-11-02T10:00-05:00",
+    "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
+    "name": "The Little Mermaid – A Musical Adventure",
+    "start": "2026-11-02T10:00-05:00"
+   },
+   {
+    "end": "2026-11-02T10:15-05:00",
+    "id": "1bbce25c-36eb-4d16-9216-4a1bbd46932b",
+    "name": "Disney Jr. Mickey Mouse Clubhouse Live!",
+    "start": "2026-11-02T10:15-05:00"
+   },
+   {
+    "end": "2026-11-02T10:30-05:00",
+    "id": "69cb35f2-c58e-4b44-88c9-ea0cc720e075",
+    "name": "Disney Villains: Unfairly Ever After",
+    "start": "2026-11-02T10:30-05:00"
+   },
+   {
+    "end": "2026-11-02T10:30-05:00",
+    "id": "d91a0e9a-8652-4036-822f-e7b12b381273",
+    "name": "For the First Time in Forever: A Frozen Sing-Along Celebration",
+    "start": "2026-11-02T10:30-05:00"
+   },
+   {
+    "end": "2026-11-02T10:30-05:00",
+    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
+    "name": "Meet Joy at Pixar Plaza",
+    "start": "2026-11-02T10:30-05:00"
+   },
+   {
+    "end": "2026-11-02T10:35-05:00",
+    "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
+    "name": "The Little Mermaid – A Musical Adventure",
+    "start": "2026-11-02T10:35-05:00"
+   },
+   {
+    "end": "2026-11-02T10:45-05:00",
+    "id": "7357772c-6b11-4a8d-af97-05a1bb45f001",
+    "name": "Indiana Jones™ Epic Stunt Spectacular!",
+    "start": "2026-11-02T10:45-05:00"
+   },
+   {
+    "end": "2026-11-02T11:00-05:00",
+    "id": "375197ac-27ac-41f7-bd93-f4e9b9fc4d5d",
+    "name": "Beauty and the Beast – Live on Stage",
+    "start": "2026-11-02T11:00-05:00"
+   },
+   {
+    "end": "2026-11-02T11:00-05:00",
+    "id": "bc2c2ffe-3cf0-4e75-a408-bf5e86515c4c",
+    "name": "Green Army Drum Corps",
+    "start": "2026-11-02T11:00-05:00"
+   },
+   {
+    "end": "2026-11-02T11:00-05:00",
+    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
+    "name": "Meet Joy at Pixar Plaza",
+    "start": "2026-11-02T11:00-05:00"
+   },
+   {
+    "end": "2026-11-02T11:10-05:00",
+    "id": "69cb35f2-c58e-4b44-88c9-ea0cc720e075",
+    "name": "Disney Villains: Unfairly Ever After",
+    "start": "2026-11-02T11:10-05:00"
+   },
+   {
+    "end": "2026-11-02T11:10-05:00",
+    "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
+    "name": "The Little Mermaid – A Musical Adventure",
+    "start": "2026-11-02T11:10-05:00"
+   },
+   {
+    "end": "2026-11-02T11:15-05:00",
+    "id": "1bbce25c-36eb-4d16-9216-4a1bbd46932b",
+    "name": "Disney Jr. Mickey Mouse Clubhouse Live!",
+    "start": "2026-11-02T11:15-05:00"
+   },
+   {
+    "end": "2026-11-02T11:30-05:00",
+    "id": "343de9f4-e100-4a52-9285-0fcc3a486603",
+    "name": "First Order Searches for the Resistance",
+    "start": "2026-11-02T11:30-05:00"
+   },
+   {
+    "end": "2026-11-02T11:30-05:00",
+    "id": "d91a0e9a-8652-4036-822f-e7b12b381273",
+    "name": "For the First Time in Forever: A Frozen Sing-Along Celebration",
+    "start": "2026-11-02T11:30-05:00"
+   },
+   {
+    "end": "2026-11-02T11:30-05:00",
+    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
+    "name": "Meet Joy at Pixar Plaza",
+    "start": "2026-11-02T11:30-05:00"
+   },
+   {
+    "end": "2026-11-02T11:45-05:00",
+    "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
+    "name": "The Little Mermaid – A Musical Adventure",
+    "start": "2026-11-02T11:45-05:00"
+   },
+   {
+    "end": "2026-11-02T11:50-05:00",
+    "id": "69cb35f2-c58e-4b44-88c9-ea0cc720e075",
+    "name": "Disney Villains: Unfairly Ever After",
+    "start": "2026-11-02T11:50-05:00"
+   },
+   {
+    "end": "2026-11-02T12:00-05:00",
+    "id": "bc2c2ffe-3cf0-4e75-a408-bf5e86515c4c",
+    "name": "Green Army Drum Corps",
+    "start": "2026-11-02T12:00-05:00"
+   },
+   {
+    "end": "2026-11-02T12:00-05:00",
+    "id": "7357772c-6b11-4a8d-af97-05a1bb45f001",
+    "name": "Indiana Jones™ Epic Stunt Spectacular!",
+    "start": "2026-11-02T12:00-05:00"
+   },
+   {
+    "end": "2026-11-02T12:00-05:00",
+    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
+    "name": "Meet Joy at Pixar Plaza",
+    "start": "2026-11-02T12:00-05:00"
+   },
+   {
+    "end": "2026-11-02T12:15-05:00",
+    "id": "1bbce25c-36eb-4d16-9216-4a1bbd46932b",
+    "name": "Disney Jr. Mickey Mouse Clubhouse Live!",
+    "start": "2026-11-02T12:15-05:00"
+   },
+   {
+    "end": "2026-11-02T12:20-05:00",
+    "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
+    "name": "The Little Mermaid – A Musical Adventure",
+    "start": "2026-11-02T12:20-05:00"
+   },
+   {
+    "end": "2026-11-02T12:30-05:00",
+    "id": "69cb35f2-c58e-4b44-88c9-ea0cc720e075",
+    "name": "Disney Villains: Unfairly Ever After",
+    "start": "2026-11-02T12:30-05:00"
+   },
+   {
+    "end": "2026-11-02T12:30-05:00",
+    "id": "343de9f4-e100-4a52-9285-0fcc3a486603",
+    "name": "First Order Searches for the Resistance",
+    "start": "2026-11-02T12:30-05:00"
+   },
+   {
+    "end": "2026-11-02T12:30-05:00",
+    "id": "d91a0e9a-8652-4036-822f-e7b12b381273",
+    "name": "For the First Time in Forever: A Frozen Sing-Along Celebration",
+    "start": "2026-11-02T12:30-05:00"
+   },
+   {
+    "end": "2026-11-02T12:30-05:00",
+    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
+    "name": "Meet Joy at Pixar Plaza",
+    "start": "2026-11-02T12:30-05:00"
+   },
+   {
+    "end": "2026-11-02T12:55-05:00",
+    "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
+    "name": "The Little Mermaid – A Musical Adventure",
+    "start": "2026-11-02T12:55-05:00"
+   },
+   {
+    "end": "2026-11-02T13:00-05:00",
+    "id": "375197ac-27ac-41f7-bd93-f4e9b9fc4d5d",
+    "name": "Beauty and the Beast – Live on Stage",
+    "start": "2026-11-02T13:00-05:00"
+   },
+   {
+    "end": "2026-11-02T13:10-05:00",
+    "id": "69cb35f2-c58e-4b44-88c9-ea0cc720e075",
+    "name": "Disney Villains: Unfairly Ever After",
+    "start": "2026-11-02T13:10-05:00"
+   },
+   {
+    "end": "2026-11-02T13:15-05:00",
+    "id": "1bbce25c-36eb-4d16-9216-4a1bbd46932b",
+    "name": "Disney Jr. Mickey Mouse Clubhouse Live!",
+    "start": "2026-11-02T13:15-05:00"
+   },
+   {
+    "end": "2026-11-02T13:15-05:00",
+    "id": "7357772c-6b11-4a8d-af97-05a1bb45f001",
+    "name": "Indiana Jones™ Epic Stunt Spectacular!",
+    "start": "2026-11-02T13:15-05:00"
+   },
+   {
+    "end": "2026-11-02T13:30-05:00",
+    "id": "343de9f4-e100-4a52-9285-0fcc3a486603",
+    "name": "First Order Searches for the Resistance",
+    "start": "2026-11-02T13:30-05:00"
+   },
+   {
+    "end": "2026-11-02T13:30-05:00",
+    "id": "d91a0e9a-8652-4036-822f-e7b12b381273",
+    "name": "For the First Time in Forever: A Frozen Sing-Along Celebration",
+    "start": "2026-11-02T13:30-05:00"
+   },
+   {
+    "end": "2026-11-02T13:30-05:00",
+    "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
+    "name": "The Little Mermaid – A Musical Adventure",
+    "start": "2026-11-02T13:30-05:00"
+   },
+   {
+    "end": "2026-11-02T13:50-05:00",
+    "id": "69cb35f2-c58e-4b44-88c9-ea0cc720e075",
+    "name": "Disney Villains: Unfairly Ever After",
+    "start": "2026-11-02T13:50-05:00"
+   },
+   {
+    "end": "2026-11-02T14:00-05:00",
+    "id": "375197ac-27ac-41f7-bd93-f4e9b9fc4d5d",
+    "name": "Beauty and the Beast – Live on Stage",
+    "start": "2026-11-02T14:00-05:00"
+   },
+   {
+    "end": "2026-11-02T14:00-05:00",
+    "id": "bc2c2ffe-3cf0-4e75-a408-bf5e86515c4c",
+    "name": "Green Army Drum Corps",
+    "start": "2026-11-02T14:00-05:00"
+   },
+   {
+    "end": "2026-11-02T14:00-05:00",
+    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
+    "name": "Meet Joy at Pixar Plaza",
+    "start": "2026-11-02T14:00-05:00"
+   },
+   {
+    "end": "2026-11-02T14:05-05:00",
+    "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
+    "name": "The Little Mermaid – A Musical Adventure",
+    "start": "2026-11-02T14:05-05:00"
+   },
+   {
+    "end": "2026-11-02T14:30-05:00",
+    "id": "69cb35f2-c58e-4b44-88c9-ea0cc720e075",
+    "name": "Disney Villains: Unfairly Ever After",
+    "start": "2026-11-02T14:30-05:00"
+   },
+   {
+    "end": "2026-11-02T14:30-05:00",
+    "id": "343de9f4-e100-4a52-9285-0fcc3a486603",
+    "name": "First Order Searches for the Resistance",
+    "start": "2026-11-02T14:30-05:00"
+   },
+   {
+    "end": "2026-11-02T14:30-05:00",
+    "id": "d91a0e9a-8652-4036-822f-e7b12b381273",
+    "name": "For the First Time in Forever: A Frozen Sing-Along Celebration",
+    "start": "2026-11-02T14:30-05:00"
+   },
+   {
+    "end": "2026-11-02T14:30-05:00",
+    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
+    "name": "Meet Joy at Pixar Plaza",
+    "start": "2026-11-02T14:30-05:00"
+   },
+   {
+    "end": "2026-11-02T14:40-05:00",
+    "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
+    "name": "The Little Mermaid – A Musical Adventure",
+    "start": "2026-11-02T14:40-05:00"
+   },
+   {
+    "end": "2026-11-02T15:00-05:00",
+    "id": "bc2c2ffe-3cf0-4e75-a408-bf5e86515c4c",
+    "name": "Green Army Drum Corps",
+    "start": "2026-11-02T15:00-05:00"
+   },
+   {
+    "end": "2026-11-02T15:00-05:00",
+    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
+    "name": "Meet Joy at Pixar Plaza",
+    "start": "2026-11-02T15:00-05:00"
+   },
+   {
+    "end": "2026-11-02T15:05-05:00",
+    "id": "1bbce25c-36eb-4d16-9216-4a1bbd46932b",
+    "name": "Disney Jr. Mickey Mouse Clubhouse Live!",
+    "start": "2026-11-02T15:05-05:00"
+   },
+   {
+    "end": "2026-11-02T15:10-05:00",
+    "id": "69cb35f2-c58e-4b44-88c9-ea0cc720e075",
+    "name": "Disney Villains: Unfairly Ever After",
+    "start": "2026-11-02T15:10-05:00"
+   },
+   {
+    "end": "2026-11-02T15:15-05:00",
+    "id": "7357772c-6b11-4a8d-af97-05a1bb45f001",
+    "name": "Indiana Jones™ Epic Stunt Spectacular!",
+    "start": "2026-11-02T15:15-05:00"
+   },
+   {
+    "end": "2026-11-02T15:15-05:00",
+    "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
+    "name": "The Little Mermaid – A Musical Adventure",
+    "start": "2026-11-02T15:15-05:00"
+   },
+   {
+    "end": "2026-11-02T15:30-05:00",
+    "id": "d91a0e9a-8652-4036-822f-e7b12b381273",
+    "name": "For the First Time in Forever: A Frozen Sing-Along Celebration",
+    "start": "2026-11-02T15:30-05:00"
+   },
+   {
+    "end": "2026-11-02T15:30-05:00",
+    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
+    "name": "Meet Joy at Pixar Plaza",
+    "start": "2026-11-02T15:30-05:00"
+   },
+   {
+    "end": "2026-11-02T15:50-05:00",
+    "id": "69cb35f2-c58e-4b44-88c9-ea0cc720e075",
+    "name": "Disney Villains: Unfairly Ever After",
+    "start": "2026-11-02T15:50-05:00"
+   },
+   {
+    "end": "2026-11-02T15:50-05:00",
+    "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
+    "name": "The Little Mermaid – A Musical Adventure",
+    "start": "2026-11-02T15:50-05:00"
+   },
+   {
+    "end": "2026-11-02T15:55-05:00",
+    "id": "1bbce25c-36eb-4d16-9216-4a1bbd46932b",
+    "name": "Disney Jr. Mickey Mouse Clubhouse Live!",
+    "start": "2026-11-02T15:55-05:00"
+   },
+   {
+    "end": "2026-11-02T16:00-05:00",
+    "id": "375197ac-27ac-41f7-bd93-f4e9b9fc4d5d",
+    "name": "Beauty and the Beast – Live on Stage",
+    "start": "2026-11-02T16:00-05:00"
+   },
+   {
+    "end": "2026-11-02T16:00-05:00",
+    "id": "bc2c2ffe-3cf0-4e75-a408-bf5e86515c4c",
+    "name": "Green Army Drum Corps",
+    "start": "2026-11-02T16:00-05:00"
+   },
+   {
+    "end": "2026-11-02T16:00-05:00",
+    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
+    "name": "Meet Joy at Pixar Plaza",
+    "start": "2026-11-02T16:00-05:00"
+   },
+   {
+    "end": "2026-11-02T16:25-05:00",
+    "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
+    "name": "The Little Mermaid – A Musical Adventure",
+    "start": "2026-11-02T16:25-05:00"
+   },
+   {
+    "end": "2026-11-02T16:30-05:00",
+    "id": "69cb35f2-c58e-4b44-88c9-ea0cc720e075",
+    "name": "Disney Villains: Unfairly Ever After",
+    "start": "2026-11-02T16:30-05:00"
+   },
+   {
+    "end": "2026-11-02T16:30-05:00",
+    "id": "343de9f4-e100-4a52-9285-0fcc3a486603",
+    "name": "First Order Searches for the Resistance",
+    "start": "2026-11-02T16:30-05:00"
+   },
+   {
+    "end": "2026-11-02T16:30-05:00",
+    "id": "d91a0e9a-8652-4036-822f-e7b12b381273",
+    "name": "For the First Time in Forever: A Frozen Sing-Along Celebration",
+    "start": "2026-11-02T16:30-05:00"
+   },
+   {
+    "end": "2026-11-02T16:30-05:00",
+    "id": "7357772c-6b11-4a8d-af97-05a1bb45f001",
+    "name": "Indiana Jones™ Epic Stunt Spectacular!",
+    "start": "2026-11-02T16:30-05:00"
+   },
+   {
+    "end": "2026-11-02T16:45-05:00",
+    "id": "1bbce25c-36eb-4d16-9216-4a1bbd46932b",
+    "name": "Disney Jr. Mickey Mouse Clubhouse Live!",
+    "start": "2026-11-02T16:45-05:00"
+   },
+   {
+    "end": "2026-11-02T17:00-05:00",
+    "id": "375197ac-27ac-41f7-bd93-f4e9b9fc4d5d",
+    "name": "Beauty and the Beast – Live on Stage",
+    "start": "2026-11-02T17:00-05:00"
+   },
+   {
+    "end": "2026-11-02T17:00-05:00",
+    "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
+    "name": "The Little Mermaid – A Musical Adventure",
+    "start": "2026-11-02T17:00-05:00"
+   },
+   {
+    "end": "2026-11-02T17:10-05:00",
+    "id": "69cb35f2-c58e-4b44-88c9-ea0cc720e075",
+    "name": "Disney Villains: Unfairly Ever After",
+    "start": "2026-11-02T17:10-05:00"
+   },
+   {
+    "end": "2026-11-02T17:30-05:00",
+    "id": "343de9f4-e100-4a52-9285-0fcc3a486603",
+    "name": "First Order Searches for the Resistance",
+    "start": "2026-11-02T17:30-05:00"
+   },
+   {
+    "end": "2026-11-02T17:30-05:00",
+    "id": "d91a0e9a-8652-4036-822f-e7b12b381273",
+    "name": "For the First Time in Forever: A Frozen Sing-Along Celebration",
+    "start": "2026-11-02T17:30-05:00"
+   },
+   {
+    "end": "2026-11-02T17:35-05:00",
+    "id": "1bbce25c-36eb-4d16-9216-4a1bbd46932b",
+    "name": "Disney Jr. Mickey Mouse Clubhouse Live!",
+    "start": "2026-11-02T17:35-05:00"
+   },
+   {
+    "end": "2026-11-02T17:35-05:00",
+    "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
+    "name": "The Little Mermaid – A Musical Adventure",
+    "start": "2026-11-02T17:35-05:00"
+   },
+   {
+    "end": "2026-11-02T17:50-05:00",
+    "id": "69cb35f2-c58e-4b44-88c9-ea0cc720e075",
+    "name": "Disney Villains: Unfairly Ever After",
+    "start": "2026-11-02T17:50-05:00"
+   },
+   {
+    "end": "2026-11-02T18:10-05:00",
+    "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
+    "name": "The Little Mermaid – A Musical Adventure",
+    "start": "2026-11-02T18:10-05:00"
+   },
+   {
+    "end": "2026-11-02T18:30-05:00",
+    "id": "69cb35f2-c58e-4b44-88c9-ea0cc720e075",
+    "name": "Disney Villains: Unfairly Ever After",
+    "start": "2026-11-02T18:30-05:00"
+   },
+   {
+    "end": "2026-11-02T18:30-05:00",
+    "id": "d91a0e9a-8652-4036-822f-e7b12b381273",
+    "name": "For the First Time in Forever: A Frozen Sing-Along Celebration",
+    "start": "2026-11-02T18:30-05:00"
+   },
+   {
+    "end": "2026-11-02T18:45-05:00",
+    "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
+    "name": "The Little Mermaid – A Musical Adventure",
+    "start": "2026-11-02T18:45-05:00"
+   },
+   {
+    "end": "2026-11-02T19:10-05:00",
+    "id": "69cb35f2-c58e-4b44-88c9-ea0cc720e075",
+    "name": "Disney Villains: Unfairly Ever After",
+    "start": "2026-11-02T19:10-05:00"
+   },
+   {
+    "end": "2026-11-02T19:20-05:00",
+    "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
+    "name": "The Little Mermaid – A Musical Adventure",
+    "start": "2026-11-02T19:20-05:00"
+   },
+   {
+    "end": "2026-11-02T19:50-05:00",
+    "id": "69cb35f2-c58e-4b44-88c9-ea0cc720e075",
+    "name": "Disney Villains: Unfairly Ever After",
+    "start": "2026-11-02T19:50-05:00"
+   },
+   {
+    "end": "2026-11-02T19:55-05:00",
+    "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
+    "name": "The Little Mermaid – A Musical Adventure",
+    "start": "2026-11-02T19:55-05:00"
+   },
+   {
+    "end": "2026-11-02T20:40-05:00",
+    "id": "90ab2c64-e05c-4783-bde5-fddf41f78402",
+    "name": "Disney Movie Magic",
+    "start": "2026-11-02T20:40-05:00"
+   },
+   {
+    "end": "2026-11-02T21:00-05:00",
+    "id": "b1ed574f-40f2-4132-a1ee-893a276633c8",
+    "name": "Wonderful World of Animation",
+    "start": "2026-11-02T21:00-05:00"
+   },
+   {
+    "end": "2026-11-02T21:30-05:00",
+    "id": "42328c39-76ab-4f03-b862-4206c8d9f7bb",
+    "name": "Fantasmic!",
+    "start": "2026-11-02T21:30-05:00"
+   }
+  ],
+  "islands_of_adventure": [],
+  "magic_kingdom": [
+   {
+    "end": "2026-11-02T09:00-05:00",
+    "id": "1eee22e8-1d0a-4809-a42b-df3ae55c69d5",
+    "name": "The Dapper Dans",
+    "start": "2026-11-02T09:00-05:00"
+   },
+   {
+    "end": "2026-11-02T09:50-05:00",
+    "id": "1eee22e8-1d0a-4809-a42b-df3ae55c69d5",
+    "name": "The Dapper Dans",
+    "start": "2026-11-02T09:50-05:00"
+   },
+   {
+    "end": "2026-11-02T10:00-05:00",
+    "id": "4c31b3ad-5dc9-437f-ac1a-0fdff36a2818",
+    "name": "Mickey's Magical Friendship Faire",
+    "start": "2026-11-02T10:00-05:00"
+   },
+   {
+    "end": "2026-11-02T10:40-05:00",
+    "id": "1eee22e8-1d0a-4809-a42b-df3ae55c69d5",
+    "name": "The Dapper Dans",
+    "start": "2026-11-02T10:40-05:00"
+   },
+   {
+    "end": "2026-11-02T10:50-05:00",
+    "id": "a0613b70-293f-4a5b-8169-357be1777c62",
+    "name": "Casey's Corner Pianist",
+    "start": "2026-11-02T10:50-05:00"
+   },
+   {
+    "end": "2026-11-02T11:05-05:00",
+    "id": "f819079e-644e-4fce-bda3-26b899ac7027",
+    "name": "Disney Adventure Friends Cavalcade",
+    "start": "2026-11-02T11:05-05:00"
+   },
+   {
+    "end": "2026-11-02T11:35-05:00",
+    "id": "4c31b3ad-5dc9-437f-ac1a-0fdff36a2818",
+    "name": "Mickey's Magical Friendship Faire",
+    "start": "2026-11-02T11:35-05:00"
+   },
+   {
+    "end": "2026-11-02T12:00-05:00",
+    "id": "a0613b70-293f-4a5b-8169-357be1777c62",
+    "name": "Casey's Corner Pianist",
+    "start": "2026-11-02T12:00-05:00"
+   },
+   {
+    "end": "2026-11-02T12:05-05:00",
+    "id": "1eee22e8-1d0a-4809-a42b-df3ae55c69d5",
+    "name": "The Dapper Dans",
+    "start": "2026-11-02T12:05-05:00"
+   },
+   {
+    "end": "2026-11-02T12:45-05:00",
+    "id": "4c31b3ad-5dc9-437f-ac1a-0fdff36a2818",
+    "name": "Mickey's Magical Friendship Faire",
+    "start": "2026-11-02T12:45-05:00"
+   },
+   {
+    "end": "2026-11-02T13:10-05:00",
+    "id": "1eee22e8-1d0a-4809-a42b-df3ae55c69d5",
+    "name": "The Dapper Dans",
+    "start": "2026-11-02T13:10-05:00"
+   },
+   {
+    "end": "2026-11-02T13:15-05:00",
+    "id": "a0613b70-293f-4a5b-8169-357be1777c62",
+    "name": "Casey's Corner Pianist",
+    "start": "2026-11-02T13:15-05:00"
+   },
+   {
+    "end": "2026-11-02T14:00-05:00",
+    "id": "ee56b2f3-fd49-4a29-ae1a-2d321549a633",
+    "name": "Disney Festival of Fantasy Parade",
+    "start": "2026-11-02T14:00-05:00"
+   },
+   {
+    "end": "2026-11-02T14:35-05:00",
+    "id": "a0613b70-293f-4a5b-8169-357be1777c62",
+    "name": "Casey's Corner Pianist",
+    "start": "2026-11-02T14:35-05:00"
+   },
+   {
+    "end": "2026-11-02T14:55-05:00",
+    "id": "4c31b3ad-5dc9-437f-ac1a-0fdff36a2818",
+    "name": "Mickey's Magical Friendship Faire",
+    "start": "2026-11-02T14:55-05:00"
+   },
+   {
+    "end": "2026-11-02T14:55-05:00",
+    "id": "1eee22e8-1d0a-4809-a42b-df3ae55c69d5",
+    "name": "The Dapper Dans",
+    "start": "2026-11-02T14:55-05:00"
+   },
+   {
+    "end": "2026-11-02T15:15-05:00",
+    "id": "a0613b70-293f-4a5b-8169-357be1777c62",
+    "name": "Casey's Corner Pianist",
+    "start": "2026-11-02T15:15-05:00"
+   },
+   {
+    "end": "2026-11-02T15:55-05:00",
+    "id": "1eee22e8-1d0a-4809-a42b-df3ae55c69d5",
+    "name": "The Dapper Dans",
+    "start": "2026-11-02T15:55-05:00"
+   },
+   {
+    "end": "2026-11-02T16:00-05:00",
+    "id": "4c31b3ad-5dc9-437f-ac1a-0fdff36a2818",
+    "name": "Mickey's Magical Friendship Faire",
+    "start": "2026-11-02T16:00-05:00"
+   },
+   {
+    "end": "2026-11-02T16:35-05:00",
+    "id": "a0613b70-293f-4a5b-8169-357be1777c62",
+    "name": "Casey's Corner Pianist",
+    "start": "2026-11-02T16:35-05:00"
+   },
+   {
+    "end": "2026-11-02T17:00-05:00",
+    "id": "1c708beb-41e1-43ae-8dd8-1e85075aeb38",
+    "name": "Flag Retreat",
+    "start": "2026-11-02T17:00-05:00"
+   },
+   {
+    "end": "2026-11-02T17:30-05:00",
+    "id": "a0613b70-293f-4a5b-8169-357be1777c62",
+    "name": "Casey's Corner Pianist",
+    "start": "2026-11-02T17:30-05:00"
+   },
+   {
+    "end": "2026-11-02T18:45-05:00",
+    "id": "d69261dc-62b8-434c-83bd-93649b43c408",
+    "name": "Disney Starlight: Dream the Night Away",
+    "start": "2026-11-02T18:45-05:00"
+   },
+   {
+    "end": "2026-11-02T20:00-05:00",
+    "id": "22b78ed9-a692-47cb-b6a4-6d1224ff67e3",
+    "name": "Happily Ever After",
+    "start": "2026-11-02T20:00-05:00"
+   },
+   {
+    "end": "2026-11-02T21:00-05:00",
+    "id": "d69261dc-62b8-434c-83bd-93649b43c408",
+    "name": "Disney Starlight: Dream the Night Away",
+    "start": "2026-11-02T21:00-05:00"
+   }
+  ],
+  "universal_studios_florida": [
    {
     "end": "2026-11-02T00:45-05:00",
     "id": "c08df5ba-1141-4968-b748-5e7802885ec0",
@@ -1034,5 +1714,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-02T00:01-05:00"
+ "updated": "2026-11-02T00:15-05:00"
 }
