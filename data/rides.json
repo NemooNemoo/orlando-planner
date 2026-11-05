@@ -724,6 +724,11 @@
   "name": "Jingle Cruise",
   "park": "magic_kingdom"
  },
+ "17951": {
+  "land": "",
+  "name": "Meet the Toys in Toy Story Land",
+  "park": "hollywood_studios"
+ },
  "2297": {
   "land": "Other",
   "name": "Trick-or-Treat Locations at Mickey's Not-So-Scary Halloween Party",
@@ -738,6 +743,11 @@
   "land": "World Celebration",
   "name": "Disney and Pixar Short Film Festival",
   "park": "epcot"
+ },
+ "2602": {
+  "land": "",
+  "name": "Character Greetings at Mickey's Very Merry Christmas Party",
+  "park": "magic_kingdom"
  },
  "2679": {
   "land": "World Showcase",
