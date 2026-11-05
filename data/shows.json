@@ -472,6 +472,12 @@
     "start": "2026-11-05T09:45-05:00"
    },
    {
+    "end": "2026-11-05T18:30-05:00",
+    "id": "33bd3bad-6803-4c5e-97ac-f7e31261a604",
+    "name": "Meet Anna and Elsa at Royal Sommerhus",
+    "start": "2026-11-05T10:00-05:00"
+   },
+   {
     "end": "2026-11-05T10:00-05:00",
     "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
     "name": "Meet One of the Three Caballeros in Mexico",
@@ -3222,5 +3228,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-05T09:45-05:00"
+ "updated": "2026-11-05T10:01-05:00"
 }
