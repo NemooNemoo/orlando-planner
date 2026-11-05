@@ -2136,6 +2136,12 @@
   ],
   "magic_kingdom": [
    {
+    "end": "2026-11-05T21:30-05:00",
+    "id": "a2d92647-634d-4eb4-886b-9da858e871f1",
+    "name": "Meet Mickey at Town Square Theater",
+    "start": "2026-11-05T09:00-05:00"
+   },
+   {
     "end": "2026-11-05T09:00-05:00",
     "id": "1eee22e8-1d0a-4809-a42b-df3ae55c69d5",
     "name": "The Dapper Dans",
@@ -3186,5 +3192,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-05T08:45-05:00"
+ "updated": "2026-11-05T09:01-05:00"
 }
