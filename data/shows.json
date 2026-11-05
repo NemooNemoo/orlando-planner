@@ -20,6 +20,12 @@
     "start": "2026-11-05T08:15-05:00"
    },
    {
+    "end": "2026-11-05T12:15-05:00",
+    "id": "f526f3ab-190b-4576-8c79-e2968d171b4e",
+    "name": "Meet Moana at Character Landing",
+    "start": "2026-11-05T08:30-05:00"
+   },
+   {
     "end": "2026-11-05T08:35-05:00",
     "id": "f7830bfd-3d25-4ba2-8021-b0d429ef0193",
     "name": "Eco-Rhythmics",
@@ -257,6 +263,12 @@
     "end": "2026-11-05T13:45-05:00",
     "id": "dd142c0b-622a-4b44-8e22-c0facb2b20a8",
     "name": "Kora Tinga Tinga",
+    "start": "2026-11-05T13:45-05:00"
+   },
+   {
+    "end": "2026-11-05T15:45-05:00",
+    "id": "f526f3ab-190b-4576-8c79-e2968d171b4e",
+    "name": "Meet Moana at Character Landing",
     "start": "2026-11-05T13:45-05:00"
    },
    {
@@ -1774,15 +1786,15 @@
   ],
   "islands_of_adventure": [
    {
-    "end": "2026-11-05T09:45-05:00",
-    "id": "c6c26dd9-bb82-49de-9fca-9245be6a8081",
-    "name": "Meet Spider-Man and the Marvel® Super Heroes",
-    "start": "2026-11-05T09:45-05:00"
-   },
-   {
     "end": "2026-11-05T10:00-05:00",
     "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
     "name": "Classic Comic Book Characters",
+    "start": "2026-11-05T10:00-05:00"
+   },
+   {
+    "end": "2026-11-05T10:00-05:00",
+    "id": "c6c26dd9-bb82-49de-9fca-9245be6a8081",
+    "name": "Meet Spider-Man and the Marvel® Super Heroes",
     "start": "2026-11-05T10:00-05:00"
    },
    {
@@ -3174,5 +3186,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-05T08:30-05:00"
+ "updated": "2026-11-05T08:45-05:00"
 }
