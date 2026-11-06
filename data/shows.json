@@ -1696,18 +1696,6 @@
   ],
   "islands_of_adventure": [
    {
-    "end": "2026-11-06T15:45-05:00",
-    "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
-    "name": "Classic Comic Book Characters",
-    "start": "2026-11-06T15:45-05:00"
-   },
-   {
-    "end": "2026-11-06T15:45-05:00",
-    "id": "9ad98d6a-e81a-4408-b5df-1ea832fe0b19",
-    "name": "Oh! The Stories You'll Hear!™",
-    "start": "2026-11-06T15:45-05:00"
-   },
-   {
     "end": "2026-11-06T16:00-05:00",
     "id": "c6c26dd9-bb82-49de-9fca-9245be6a8081",
     "name": "Meet Spider-Man and the Marvel® Super Heroes",
@@ -2000,24 +1988,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-11-06T15:45-05:00",
-    "id": "c85d936f-c5b7-490b-880b-6f0bf44ba557",
-    "name": "DreamWorks Imagination Celebration",
-    "start": "2026-11-06T15:45-05:00"
-   },
-   {
-    "end": "2026-11-06T15:45-05:00",
-    "id": "2436bad1-f319-44d5-98ac-a283b81956c6",
-    "name": "The Bourne Stuntacular",
-    "start": "2026-11-06T15:45-05:00"
-   },
-   {
-    "end": "2026-11-06T15:45-05:00",
-    "id": "fa701040-b46a-4291-afb9-b8dc2c8e9a16",
-    "name": "¡Vamos! – Báilalo",
-    "start": "2026-11-06T15:45-05:00"
-   },
-   {
     "end": "2026-11-06T15:50-05:00",
     "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
     "name": "Illumination Theater",
@@ -2172,5 +2142,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-06T15:45-05:00"
+ "updated": "2026-11-06T15:50-05:00"
 }
