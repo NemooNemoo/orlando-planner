@@ -1660,12 +1660,6 @@
   ],
   "islands_of_adventure": [
    {
-    "end": "2026-11-06T16:45-05:00",
-    "id": "9ad98d6a-e81a-4408-b5df-1ea832fe0b19",
-    "name": "Oh! The Stories You'll Hear!™",
-    "start": "2026-11-06T16:45-05:00"
-   },
-   {
     "end": "2026-11-06T17:00-05:00",
     "id": "c6c26dd9-bb82-49de-9fca-9245be6a8081",
     "name": "Meet Spider-Man and the Marvel® Super Heroes",
@@ -1910,24 +1904,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-11-06T16:45-05:00",
-    "id": "c85d936f-c5b7-490b-880b-6f0bf44ba557",
-    "name": "DreamWorks Imagination Celebration",
-    "start": "2026-11-06T16:45-05:00"
-   },
-   {
-    "end": "2026-11-06T16:45-05:00",
-    "id": "2436bad1-f319-44d5-98ac-a283b81956c6",
-    "name": "The Bourne Stuntacular",
-    "start": "2026-11-06T16:45-05:00"
-   },
-   {
-    "end": "2026-11-06T17:00-05:00",
-    "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
-    "name": "Celestina Warbeck and the Banshees",
-    "start": "2026-11-06T17:00-05:00"
-   },
-   {
     "end": "2026-11-06T17:05-05:00",
     "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
     "name": "Meet The TRANSFORMERS™",
@@ -1950,5 +1926,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-06T16:45-05:00"
+ "updated": "2026-11-06T17:01-05:00"
 }
