@@ -3398,12 +3398,6 @@
     "start": "2026-11-07T16:30-05:00"
    },
    {
-    "end": "2026-11-07T16:40-05:00",
-    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
-    "name": "Meet The TRANSFORMERS™",
-    "start": "2026-11-07T16:40-05:00"
-   },
-   {
     "end": "2026-11-07T16:45-05:00",
     "id": "c85d936f-c5b7-490b-880b-6f0bf44ba557",
     "name": "DreamWorks Imagination Celebration",
@@ -3444,5 +3438,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-07T09:30-05:00"
+ "updated": "2026-11-07T09:45-05:00"
 }
