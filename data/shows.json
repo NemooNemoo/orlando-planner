@@ -1038,12 +1038,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-11-06T20:00-05:00",
-    "id": "a872883d-761b-4dda-a124-5dadcfa9e5ae",
-    "name": "Universal Celestial Goodnight",
-    "start": "2026-11-06T20:00-05:00"
-   },
-   {
     "end": "2026-11-06T21:00-05:00",
     "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
     "name": "The Untrainable Dragon",
@@ -1834,5 +1828,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-06T19:45-05:00"
+ "updated": "2026-11-06T20:01-05:00"
 }
