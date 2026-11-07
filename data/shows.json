@@ -1845,12 +1845,6 @@
    },
    {
     "end": "2026-11-07T17:35-05:00",
-    "id": "1bbce25c-36eb-4d16-9216-4a1bbd46932b",
-    "name": "Disney Jr. Mickey Mouse Clubhouse Live!",
-    "start": "2026-11-07T17:35-05:00"
-   },
-   {
-    "end": "2026-11-07T17:35-05:00",
     "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
     "name": "The Little Mermaid – A Musical Adventure",
     "start": "2026-11-07T17:35-05:00"
@@ -3474,5 +3468,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-07T07:01-05:00"
+ "updated": "2026-11-07T07:15-05:00"
 }
