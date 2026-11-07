@@ -20,12 +20,6 @@
     "start": "2026-11-07T08:15-05:00"
    },
    {
-    "end": "2026-11-07T12:15-05:00",
-    "id": "f526f3ab-190b-4576-8c79-e2968d171b4e",
-    "name": "Meet Moana at Character Landing",
-    "start": "2026-11-07T08:30-05:00"
-   },
-   {
     "end": "2026-11-07T08:35-05:00",
     "id": "f7830bfd-3d25-4ba2-8021-b0d429ef0193",
     "name": "Eco-Rhythmics",
@@ -65,6 +59,12 @@
     "end": "2026-11-07T10:00-05:00",
     "id": "3a4e0f49-f9ff-4481-a95b-d4952cdf6097",
     "name": "Festival of the Lion King",
+    "start": "2026-11-07T10:00-05:00"
+   },
+   {
+    "end": "2026-11-07T12:15-05:00",
+    "id": "f526f3ab-190b-4576-8c79-e2968d171b4e",
+    "name": "Meet Moana at Character Landing",
     "start": "2026-11-07T10:00-05:00"
    },
    {
@@ -2002,12 +2002,6 @@
     "start": "2026-11-07T10:00-05:00"
    },
    {
-    "end": "2026-11-07T10:00-05:00",
-    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
-    "name": "Raptor Encounter",
-    "start": "2026-11-07T10:00-05:00"
-   },
-   {
     "end": "2026-11-07T10:20-05:00",
     "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
     "name": "Raptor Encounter",
@@ -3438,5 +3432,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-07T09:45-05:00"
+ "updated": "2026-11-07T10:01-05:00"
 }
