@@ -2,6 +2,12 @@
  "parks": {
   "animal_kingdom": [
    {
+    "end": "2026-11-08T18:00-05:00",
+    "id": "13d7c9d1-a785-403d-9ba8-71fee2f02d55",
+    "name": "Meet Favorite Disney Pals at Adventurers Outpost",
+    "start": "2026-11-08T08:00-05:00"
+   },
+   {
     "end": "2026-11-08T08:10-05:00",
     "id": "d8497541-53a2-4206-b95f-39cb238ae511",
     "name": "Tam Tam Drummers of Harambe",
@@ -2172,6 +2178,12 @@
   ],
   "magic_kingdom": [
    {
+    "end": "2026-11-08T17:30-05:00",
+    "id": "a2d92647-634d-4eb4-886b-9da858e871f1",
+    "name": "Meet Mickey at Town Square Theater",
+    "start": "2026-11-08T08:00-05:00"
+   },
+   {
     "end": "2026-11-08T09:00-05:00",
     "id": "1eee22e8-1d0a-4809-a42b-df3ae55c69d5",
     "name": "The Dapper Dans",
@@ -2338,6 +2350,12 @@
     "id": "46a67154-8d90-427a-ad5c-700b41d90966",
     "name": "Frozen Holiday Surprise",
     "start": "2026-11-08T18:15-05:00"
+   },
+   {
+    "end": "2026-11-09T00:00-05:00",
+    "id": "a2d92647-634d-4eb4-886b-9da858e871f1",
+    "name": "Meet Mickey at Town Square Theater",
+    "start": "2026-11-08T19:00-05:00"
    },
    {
     "end": "2026-11-08T19:40-05:00",
@@ -3270,5 +3288,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-08T08:01-05:00"
+ "updated": "2026-11-08T08:15-05:00"
 }
