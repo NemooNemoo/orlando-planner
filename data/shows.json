@@ -1804,10 +1804,10 @@
   ],
   "islands_of_adventure": [
    {
-    "end": "2026-11-08T08:30-05:00",
+    "end": "2026-11-08T09:45-05:00",
     "id": "c6c26dd9-bb82-49de-9fca-9245be6a8081",
     "name": "Meet Spider-Man and the Marvel® Super Heroes",
-    "start": "2026-11-08T08:30-05:00"
+    "start": "2026-11-08T09:45-05:00"
    },
    {
     "end": "2026-11-08T10:00-05:00",
@@ -3270,5 +3270,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-08T07:01-05:00"
+ "updated": "2026-11-08T07:15-05:00"
 }
