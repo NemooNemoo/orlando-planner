@@ -1719,12 +1719,6 @@
    },
    {
     "end": "2026-11-08T17:00-05:00",
-    "id": "375197ac-27ac-41f7-bd93-f4e9b9fc4d5d",
-    "name": "Beauty and the Beast – Live on Stage",
-    "start": "2026-11-08T17:00-05:00"
-   },
-   {
-    "end": "2026-11-08T17:00-05:00",
     "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
     "name": "The Little Mermaid – A Musical Adventure",
     "start": "2026-11-08T17:00-05:00"
@@ -1734,6 +1728,12 @@
     "id": "69cb35f2-c58e-4b44-88c9-ea0cc720e075",
     "name": "Disney Villains: Unfairly Ever After",
     "start": "2026-11-08T17:10-05:00"
+   },
+   {
+    "end": "2026-11-08T17:15-05:00",
+    "id": "375197ac-27ac-41f7-bd93-f4e9b9fc4d5d",
+    "name": "Beauty and the Beast – Live on Stage",
+    "start": "2026-11-08T17:15-05:00"
    },
    {
     "end": "2026-11-08T17:30-05:00",
@@ -1839,12 +1839,6 @@
    }
   ],
   "islands_of_adventure": [
-   {
-    "end": "2026-11-08T09:45-05:00",
-    "id": "c6c26dd9-bb82-49de-9fca-9245be6a8081",
-    "name": "Meet Spider-Man and the Marvel® Super Heroes",
-    "start": "2026-11-08T09:45-05:00"
-   },
    {
     "end": "2026-11-08T10:00-05:00",
     "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
@@ -3336,5 +3330,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-08T09:45-05:00"
+ "updated": "2026-11-08T10:01-05:00"
 }
