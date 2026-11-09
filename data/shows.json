@@ -966,12 +966,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-11-09T16:45-05:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-11-09T16:45-05:00"
-   },
-   {
     "end": "2026-11-09T17:00-05:00",
     "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
     "name": "Meet Princess Peach",
@@ -1606,18 +1600,6 @@
   ],
   "islands_of_adventure": [
    {
-    "end": "2026-11-09T16:45-05:00",
-    "id": "9ad98d6a-e81a-4408-b5df-1ea832fe0b19",
-    "name": "Oh! The Stories You'll Hear!™",
-    "start": "2026-11-09T16:45-05:00"
-   },
-   {
-    "end": "2026-11-09T17:00-05:00",
-    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
-    "name": "Raptor Encounter",
-    "start": "2026-11-09T17:00-05:00"
-   },
-   {
     "end": "2026-11-09T17:20-05:00",
     "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
     "name": "Raptor Encounter",
@@ -1868,18 +1850,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-11-09T16:45-05:00",
-    "id": "c85d936f-c5b7-490b-880b-6f0bf44ba557",
-    "name": "DreamWorks Imagination Celebration",
-    "start": "2026-11-09T16:45-05:00"
-   },
-   {
-    "end": "2026-11-09T16:45-05:00",
-    "id": "2436bad1-f319-44d5-98ac-a283b81956c6",
-    "name": "The Bourne Stuntacular",
-    "start": "2026-11-09T16:45-05:00"
-   },
-   {
     "end": "2026-11-09T17:00-05:00",
     "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
     "name": "Celestina Warbeck and the Banshees",
@@ -1908,5 +1878,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-09T16:45-05:00"
+ "updated": "2026-11-09T17:01-05:00"
 }
