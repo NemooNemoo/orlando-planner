@@ -447,12 +447,6 @@
    },
    {
     "end": "2026-11-09T17:00-05:00",
-    "id": "52be1d78-e0b4-433f-b1ce-0be4f7053813",
-    "name": "Beats and Strings",
-    "start": "2026-11-09T17:00-05:00"
-   },
-   {
-    "end": "2026-11-09T17:00-05:00",
     "id": "a349429a-5ef8-41c4-9a28-84ed4f7a0465",
     "name": "Viva Gaia Street Band!",
     "start": "2026-11-09T17:00-05:00"
@@ -462,6 +456,12 @@
     "id": "a8781403-1344-4c06-89ef-b7a39b99ae59",
     "name": "Harambe Village Street Band – Burudika",
     "start": "2026-11-09T17:10-05:00"
+   },
+   {
+    "end": "2026-11-09T17:30-05:00",
+    "id": "52be1d78-e0b4-433f-b1ce-0be4f7053813",
+    "name": "Beats and Strings",
+    "start": "2026-11-09T17:30-05:00"
    },
    {
     "end": "2026-11-09T19:00-05:00",
@@ -1780,12 +1780,6 @@
     "start": "2026-11-09T11:00-05:00"
    },
    {
-    "end": "2026-11-09T11:00-05:00",
-    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
-    "name": "Raptor Encounter",
-    "start": "2026-11-09T11:00-05:00"
-   },
-   {
     "end": "2026-11-09T11:20-05:00",
     "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
     "name": "Raptor Encounter",
@@ -2058,19 +2052,19 @@
     "start": "2026-11-09T09:00-05:00"
    },
    {
+    "end": "2026-11-09T17:30-05:00",
+    "id": "012a211b-4c91-451c-8a0e-5e3ab398eda8",
+    "name": "Meet Ariel at Her Grotto",
+    "start": "2026-11-09T09:30-05:00"
+   },
+   {
     "end": "2026-11-09T09:50-05:00",
     "id": "1eee22e8-1d0a-4809-a42b-df3ae55c69d5",
     "name": "The Dapper Dans",
     "start": "2026-11-09T09:50-05:00"
    },
    {
-    "end": "2026-11-09T17:30-05:00",
-    "id": "012a211b-4c91-451c-8a0e-5e3ab398eda8",
-    "name": "Meet Ariel at Her Grotto",
-    "start": "2026-11-09T10:00-05:00"
-   },
-   {
-    "end": "2026-11-09T19:00-05:00",
+    "end": "2026-11-09T17:00-05:00",
     "id": "166f2985-7b27-4eff-a8b3-29c3448ba198",
     "name": "Meet Daring Disney Pals as Circus Stars at Pete's Silly Sideshow",
     "start": "2026-11-09T10:00-05:00"
@@ -2214,12 +2208,6 @@
     "start": "2026-11-09T18:15-05:00"
    },
    {
-    "end": "2026-11-10T00:00-05:00",
-    "id": "a2d92647-634d-4eb4-886b-9da858e871f1",
-    "name": "Meet Mickey at Town Square Theater",
-    "start": "2026-11-09T19:00-05:00"
-   },
-   {
     "end": "2026-11-09T23:30-05:00",
     "id": "6d3b1129-b34c-4b44-bba2-0e1790fef705",
     "name": "Meet Santa Jack and Sally at Mickey’s Very Merry Christmas Party",
@@ -2275,36 +2263,6 @@
    }
   ],
   "universal_studios_florida": [
-   {
-    "end": "2026-11-09T10:45-05:00",
-    "id": "41d282f8-2015-4caa-9591-9faa948e263e",
-    "name": "Beat Builders",
-    "start": "2026-11-09T10:45-05:00"
-   },
-   {
-    "end": "2026-11-09T10:45-05:00",
-    "id": "bf89766b-1d19-428f-9e68-71e12f25287b",
-    "name": "Marilyn and the Diamond Bellas",
-    "start": "2026-11-09T10:45-05:00"
-   },
-   {
-    "end": "2026-11-09T10:45-05:00",
-    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
-    "name": "Meet SpongeBob SquarePants and Friends",
-    "start": "2026-11-09T10:45-05:00"
-   },
-   {
-    "end": "2026-11-09T10:50-05:00",
-    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
-    "name": "Meet The TRANSFORMERS™",
-    "start": "2026-11-09T10:50-05:00"
-   },
-   {
-    "end": "2026-11-09T10:55-05:00",
-    "id": "55222885-493c-4280-b295-6fd7c609f12d",
-    "name": "Hollywood Character Zone",
-    "start": "2026-11-09T10:55-05:00"
-   },
    {
     "end": "2026-11-09T11:00-05:00",
     "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
@@ -3084,5 +3042,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-09T10:45-05:00"
+ "updated": "2026-11-09T11:01-05:00"
 }
