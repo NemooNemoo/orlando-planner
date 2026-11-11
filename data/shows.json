@@ -460,6 +460,12 @@
     "start": "2026-11-11T08:30-05:00"
    },
    {
+    "end": "2026-11-11T21:00-05:00",
+    "id": "67612787-fbd3-44b7-869f-123f55d78584",
+    "name": "Meet Beloved Disney Pals at Mickey & Friends",
+    "start": "2026-11-11T09:00-05:00"
+   },
+   {
     "end": "2026-11-11T12:30-05:00",
     "id": "a70b81bf-2934-433c-9723-afb2f24112bf",
     "name": "Meet Figment Inside ImageWorks",
@@ -1262,9 +1268,21 @@
   ],
   "hollywood_studios": [
    {
+    "end": "2026-11-11T20:00-05:00",
+    "id": "02861a9b-584d-47d5-a8d0-98e05c3b5dce",
+    "name": "Meet Disney Stars at Red Carpet Dreams",
+    "start": "2026-11-11T09:00-05:00"
+   },
+   {
     "end": "2026-11-11T09:00-05:00",
     "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
     "name": "Meet Joy at Pixar Plaza",
+    "start": "2026-11-11T09:00-05:00"
+   },
+   {
+    "end": "2026-11-11T18:00-05:00",
+    "id": "27f9fc86-2341-4bf4-8cbf-67fc16a841f1",
+    "name": "Meet Olaf at Celebrity Spotlight",
     "start": "2026-11-11T09:00-05:00"
    },
    {
@@ -2166,6 +2184,12 @@
   ],
   "magic_kingdom": [
    {
+    "end": "2026-11-11T22:30-05:00",
+    "id": "a2d92647-634d-4eb4-886b-9da858e871f1",
+    "name": "Meet Mickey at Town Square Theater",
+    "start": "2026-11-11T09:00-05:00"
+   },
+   {
     "end": "2026-11-11T09:00-05:00",
     "id": "1eee22e8-1d0a-4809-a42b-df3ae55c69d5",
     "name": "The Dapper Dans",
@@ -2496,6 +2520,12 @@
     "id": "fa701040-b46a-4291-afb9-b8dc2c8e9a16",
     "name": "¡Vamos! – Báilalo",
     "start": "2026-11-11T11:25-05:00"
+   },
+   {
+    "end": "2026-11-11T11:30-05:00",
+    "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
+    "name": "Celestina Warbeck and the Banshees",
+    "start": "2026-11-11T11:30-05:00"
    },
    {
     "end": "2026-11-11T11:30-05:00",
@@ -3069,6 +3099,12 @@
    },
    {
     "end": "2026-11-11T16:00-05:00",
+    "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
+    "name": "Celestina Warbeck and the Banshees",
+    "start": "2026-11-11T16:00-05:00"
+   },
+   {
+    "end": "2026-11-11T16:00-05:00",
     "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
     "name": "DreamWorks Character Zone",
     "start": "2026-11-11T16:00-05:00"
@@ -3164,6 +3200,12 @@
     "start": "2026-11-11T16:45-05:00"
    },
    {
+    "end": "2026-11-11T17:00-05:00",
+    "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
+    "name": "Celestina Warbeck and the Banshees",
+    "start": "2026-11-11T17:00-05:00"
+   },
+   {
     "end": "2026-11-11T17:05-05:00",
     "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
     "name": "Meet The TRANSFORMERS™",
@@ -3186,5 +3228,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-11T08:45-05:00"
+ "updated": "2026-11-11T09:01-05:00"
 }
