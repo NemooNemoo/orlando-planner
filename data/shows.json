@@ -1026,12 +1026,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-11-11T09:00-05:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
-    "start": "2026-11-11T09:00-05:00"
-   },
-   {
     "end": "2026-11-11T10:00-05:00",
     "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
     "name": "Meet Mario and Luigi",
@@ -1271,6 +1265,12 @@
     "end": "2026-11-11T20:00-05:00",
     "id": "02861a9b-584d-47d5-a8d0-98e05c3b5dce",
     "name": "Meet Disney Stars at Red Carpet Dreams",
+    "start": "2026-11-11T09:00-05:00"
+   },
+   {
+    "end": "2026-11-11T16:30-05:00",
+    "id": "79860074-658f-49bc-8c1b-624af8b4718e",
+    "name": "Meet Edna Mode at the Edna Mode Experience",
     "start": "2026-11-11T09:00-05:00"
    },
    {
@@ -2184,9 +2184,21 @@
   ],
   "magic_kingdom": [
    {
+    "end": "2026-11-11T21:00-05:00",
+    "id": "cf4b2ba4-3626-4de7-9d07-abe8a65b1665",
+    "name": "Meet Cinderella and Princess Tiana at Princess Fairytale Hall",
+    "start": "2026-11-11T09:00-05:00"
+   },
+   {
     "end": "2026-11-11T22:30-05:00",
     "id": "a2d92647-634d-4eb4-886b-9da858e871f1",
     "name": "Meet Mickey at Town Square Theater",
+    "start": "2026-11-11T09:00-05:00"
+   },
+   {
+    "end": "2026-11-11T21:00-05:00",
+    "id": "40737d3d-0ff6-4a9e-a050-beb87bf90120",
+    "name": "Meet Visiting Princesses at Princess Fairytale Hall",
     "start": "2026-11-11T09:00-05:00"
    },
    {
@@ -3228,5 +3240,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-11T09:01-05:00"
+ "updated": "2026-11-11T09:16-05:00"
 }
