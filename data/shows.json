@@ -454,12 +454,6 @@
     "start": "2026-11-12T09:00-05:00"
    },
    {
-    "end": "2026-11-12T09:00-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
-    "start": "2026-11-12T09:00-05:00"
-   },
-   {
     "end": "2026-11-12T18:30-05:00",
     "id": "33bd3bad-6803-4c5e-97ac-f7e31261a604",
     "name": "Meet Anna and Elsa at Royal Sommerhus",
@@ -478,12 +472,6 @@
     "start": "2026-11-12T09:30-05:00"
    },
    {
-    "end": "2026-11-12T09:30-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
-    "start": "2026-11-12T09:30-05:00"
-   },
-   {
     "end": "2026-11-12T09:45-05:00",
     "id": "fd8afd63-0cb5-4f77-b47b-fb277f12d9f8",
     "name": "¡Celebración Encanto!",
@@ -496,12 +484,6 @@
     "start": "2026-11-12T10:00-05:00"
    },
    {
-    "end": "2026-11-12T10:00-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
-    "start": "2026-11-12T10:00-05:00"
-   },
-   {
     "end": "2026-11-12T10:30-05:00",
     "id": "3beaa9a5-6404-4446-bfd1-e0d0eea65e85",
     "name": "JAMMitors",
@@ -511,12 +493,6 @@
     "end": "2026-11-12T10:30-05:00",
     "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
     "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-12T10:30-05:00"
-   },
-   {
-    "end": "2026-11-12T10:30-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
     "start": "2026-11-12T10:30-05:00"
    },
    {
@@ -541,12 +517,6 @@
     "end": "2026-11-12T11:00-05:00",
     "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
     "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-12T11:00-05:00"
-   },
-   {
-    "end": "2026-11-12T11:00-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
     "start": "2026-11-12T11:00-05:00"
    },
    {
@@ -577,12 +547,6 @@
     "end": "2026-11-12T11:30-05:00",
     "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
     "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-12T11:30-05:00"
-   },
-   {
-    "end": "2026-11-12T11:30-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
     "start": "2026-11-12T11:30-05:00"
    },
    {
@@ -619,12 +583,6 @@
     "end": "2026-11-12T12:00-05:00",
     "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
     "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-12T12:00-05:00"
-   },
-   {
-    "end": "2026-11-12T12:00-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
     "start": "2026-11-12T12:00-05:00"
    },
    {
@@ -712,12 +670,6 @@
     "start": "2026-11-12T13:45-05:00"
    },
    {
-    "end": "2026-11-12T13:45-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
-    "start": "2026-11-12T13:45-05:00"
-   },
-   {
     "end": "2026-11-12T13:50-05:00",
     "id": "e9c1bff6-c9c1-4275-8f3d-44226f0fdfbb",
     "name": "Meet Princess Aurora in France",
@@ -751,12 +703,6 @@
     "end": "2026-11-12T14:15-05:00",
     "id": "6e70f3fb-faab-41b1-8d26-b85d1c5cfa26",
     "name": "Entertainment at Canada Mill Stage",
-    "start": "2026-11-12T14:15-05:00"
-   },
-   {
-    "end": "2026-11-12T14:15-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
     "start": "2026-11-12T14:15-05:00"
    },
    {
@@ -796,12 +742,6 @@
     "start": "2026-11-12T14:40-05:00"
    },
    {
-    "end": "2026-11-12T14:45-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
-    "start": "2026-11-12T14:45-05:00"
-   },
-   {
     "end": "2026-11-12T15:00-05:00",
     "id": "3beaa9a5-6404-4446-bfd1-e0d0eea65e85",
     "name": "JAMMitors",
@@ -850,12 +790,6 @@
     "start": "2026-11-12T15:10-05:00"
    },
    {
-    "end": "2026-11-12T15:15-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
-    "start": "2026-11-12T15:15-05:00"
-   },
-   {
     "end": "2026-11-12T15:30-05:00",
     "id": "6e70f3fb-faab-41b1-8d26-b85d1c5cfa26",
     "name": "Entertainment at Canada Mill Stage",
@@ -883,12 +817,6 @@
     "end": "2026-11-12T15:45-05:00",
     "id": "ea730d0c-7723-429d-89a4-9e76f053f5ac",
     "name": "Mariachi Cobre",
-    "start": "2026-11-12T15:45-05:00"
-   },
-   {
-    "end": "2026-11-12T15:45-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
     "start": "2026-11-12T15:45-05:00"
    },
    {
@@ -995,24 +923,6 @@
    }
   ],
   "epic_universe": [
-   {
-    "end": "2026-11-12T12:00-05:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
-    "start": "2026-11-12T12:00-05:00"
-   },
-   {
-    "end": "2026-11-12T12:05-05:00",
-    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
-    "name": "The Untrainable Dragon",
-    "start": "2026-11-12T12:05-05:00"
-   },
-   {
-    "end": "2026-11-12T12:10-05:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-11-12T12:10-05:00"
-   },
    {
     "end": "2026-11-12T12:40-05:00",
     "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
@@ -1382,12 +1292,6 @@
     "start": "2026-11-12T12:00-05:00"
    },
    {
-    "end": "2026-11-12T12:15-05:00",
-    "id": "1bbce25c-36eb-4d16-9216-4a1bbd46932b",
-    "name": "Disney Jr. Mickey Mouse Clubhouse Live!",
-    "start": "2026-11-12T12:15-05:00"
-   },
-   {
     "end": "2026-11-12T12:20-05:00",
     "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
     "name": "The Little Mermaid – A Musical Adventure",
@@ -1755,24 +1659,6 @@
    }
   ],
   "islands_of_adventure": [
-   {
-    "end": "2026-11-12T12:00-05:00",
-    "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
-    "name": "Classic Comic Book Characters",
-    "start": "2026-11-12T12:00-05:00"
-   },
-   {
-    "end": "2026-11-12T12:00-05:00",
-    "id": "97b25fe9-eb81-46bd-b57f-8b2fbbe85249",
-    "name": "Frog Choir",
-    "start": "2026-11-12T12:00-05:00"
-   },
-   {
-    "end": "2026-11-12T12:00-05:00",
-    "id": "9ad98d6a-e81a-4408-b5df-1ea832fe0b19",
-    "name": "Oh! The Stories You'll Hear!™",
-    "start": "2026-11-12T12:00-05:00"
-   },
    {
     "end": "2026-11-12T12:20-05:00",
     "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
@@ -2269,48 +2155,6 @@
    }
   ],
   "universal_studios_florida": [
-   {
-    "end": "2026-11-12T12:00-05:00",
-    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
-    "name": "DreamWorks Character Zone",
-    "start": "2026-11-12T12:00-05:00"
-   },
-   {
-    "end": "2026-11-12T12:00-05:00",
-    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
-    "name": "Illumination Theater",
-    "start": "2026-11-12T12:00-05:00"
-   },
-   {
-    "end": "2026-11-12T12:00-05:00",
-    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
-    "name": "Shrek’s Swamp Meet",
-    "start": "2026-11-12T12:00-05:00"
-   },
-   {
-    "end": "2026-11-12T12:00-05:00",
-    "id": "2f4690b4-72b0-4845-bcce-9e735397d60b",
-    "name": "The Blues Brothers® Show",
-    "start": "2026-11-12T12:00-05:00"
-   },
-   {
-    "end": "2026-11-12T12:00-05:00",
-    "id": "2436bad1-f319-44d5-98ac-a283b81956c6",
-    "name": "The Bourne Stuntacular",
-    "start": "2026-11-12T12:00-05:00"
-   },
-   {
-    "end": "2026-11-12T12:00-05:00",
-    "id": "ec4c8603-5ccd-4af2-a7b1-0684664c0bc1",
-    "name": "The Tales of Beedle the Bard",
-    "start": "2026-11-12T12:00-05:00"
-   },
-   {
-    "end": "2026-11-12T12:05-05:00",
-    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
-    "name": "Meet The TRANSFORMERS™",
-    "start": "2026-11-12T12:05-05:00"
-   },
    {
     "end": "2026-11-12T12:15-05:00",
     "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
@@ -2916,5 +2760,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-12T12:01-05:00"
+ "updated": "2026-11-12T12:15-05:00"
 }
