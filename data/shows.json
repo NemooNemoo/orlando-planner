@@ -1002,10 +1002,10 @@
     "start": "2026-11-12T12:00-05:00"
    },
    {
-    "end": "2026-11-12T12:00-05:00",
+    "end": "2026-11-12T12:05-05:00",
     "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
     "name": "The Untrainable Dragon",
-    "start": "2026-11-12T12:00-05:00"
+    "start": "2026-11-12T12:05-05:00"
    },
    {
     "end": "2026-11-12T12:10-05:00",
@@ -2270,12 +2270,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-11-12T11:55-05:00",
-    "id": "55222885-493c-4280-b295-6fd7c609f12d",
-    "name": "Hollywood Character Zone",
-    "start": "2026-11-12T11:55-05:00"
-   },
-   {
     "end": "2026-11-12T12:00-05:00",
     "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
     "name": "DreamWorks Character Zone",
@@ -2922,5 +2916,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-12T11:54-05:00"
+ "updated": "2026-11-12T12:01-05:00"
 }
