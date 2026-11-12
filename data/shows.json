@@ -2,6 +2,12 @@
  "parks": {
   "animal_kingdom": [
    {
+    "end": "2026-11-12T18:00-05:00",
+    "id": "13d7c9d1-a785-403d-9ba8-71fee2f02d55",
+    "name": "Meet Favorite Disney Pals at Adventurers Outpost",
+    "start": "2026-11-12T08:00-05:00"
+   },
+   {
     "end": "2026-11-12T08:10-05:00",
     "id": "d8497541-53a2-4206-b95f-39cb238ae511",
     "name": "Tam Tam Drummers of Harambe",
@@ -497,12 +503,6 @@
    },
    {
     "end": "2026-11-12T10:45-05:00",
-    "id": "e9c1bff6-c9c1-4275-8f3d-44226f0fdfbb",
-    "name": "Meet Princess Aurora in France",
-    "start": "2026-11-12T10:45-05:00"
-   },
-   {
-    "end": "2026-11-12T10:45-05:00",
     "id": "fd8afd63-0cb5-4f77-b47b-fb277f12d9f8",
     "name": "¡Celebración Encanto!",
     "start": "2026-11-12T10:45-05:00"
@@ -577,12 +577,6 @@
     "end": "2026-11-12T11:55-05:00",
     "id": "99087d9a-4380-4ab6-b088-20816e233c6f",
     "name": "Meet Asha Near World Showcase Plaza",
-    "start": "2026-11-12T11:55-05:00"
-   },
-   {
-    "end": "2026-11-12T11:55-05:00",
-    "id": "e9c1bff6-c9c1-4275-8f3d-44226f0fdfbb",
-    "name": "Meet Princess Aurora in France",
     "start": "2026-11-12T11:55-05:00"
    },
    {
@@ -1098,15 +1092,15 @@
     "start": "2026-11-12T14:30-05:00"
    },
    {
-    "end": "2026-11-12T14:50-05:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
-    "start": "2026-11-12T14:50-05:00"
+    "end": "2026-11-12T14:30-05:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
+    "start": "2026-11-12T14:30-05:00"
    },
    {
     "end": "2026-11-12T14:50-05:00",
-    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
-    "name": "The Untrainable Dragon",
+    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
+    "name": "Meet Mario and Luigi",
     "start": "2026-11-12T14:50-05:00"
    },
    {
@@ -2135,6 +2129,12 @@
    }
   ],
   "magic_kingdom": [
+   {
+    "end": "2026-11-12T17:30-05:00",
+    "id": "a2d92647-634d-4eb4-886b-9da858e871f1",
+    "name": "Meet Mickey at Town Square Theater",
+    "start": "2026-11-12T08:00-05:00"
+   },
    {
     "end": "2026-11-12T09:00-05:00",
     "id": "1eee22e8-1d0a-4809-a42b-df3ae55c69d5",
@@ -3234,5 +3234,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-12T08:01-05:00"
+ "updated": "2026-11-12T08:15-05:00"
 }
