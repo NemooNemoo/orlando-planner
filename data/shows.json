@@ -2402,30 +2402,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-11-14T12:15-05:00",
-    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
-    "name": "Meet SpongeBob SquarePants and Friends",
-    "start": "2026-11-14T12:15-05:00"
-   },
-   {
-    "end": "2026-11-14T12:20-05:00",
-    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
-    "name": "Illumination Theater",
-    "start": "2026-11-14T12:20-05:00"
-   },
-   {
-    "end": "2026-11-14T12:20-05:00",
-    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
-    "name": "Shrek’s Swamp Meet",
-    "start": "2026-11-14T12:20-05:00"
-   },
-   {
-    "end": "2026-11-14T12:20-05:00",
-    "id": "2f4690b4-72b0-4845-bcce-9e735397d60b",
-    "name": "The Blues Brothers® Show",
-    "start": "2026-11-14T12:20-05:00"
-   },
-   {
     "end": "2026-11-14T12:30-05:00",
     "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
     "name": "Celestina Warbeck and the Banshees",
@@ -2976,5 +2952,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-14T12:15-05:00"
+ "updated": "2026-11-14T12:30-05:00"
 }
