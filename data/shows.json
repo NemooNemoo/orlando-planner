@@ -2,6 +2,12 @@
  "parks": {
   "animal_kingdom": [
    {
+    "end": "2026-11-15T18:00-05:00",
+    "id": "13d7c9d1-a785-403d-9ba8-71fee2f02d55",
+    "name": "Meet Favorite Disney Pals at Adventurers Outpost",
+    "start": "2026-11-15T08:00-05:00"
+   },
+   {
     "end": "2026-11-15T08:15-05:00",
     "id": "93d3c183-737f-4e26-98f9-b18a3e190393",
     "name": "Animal Encounters: Winged Encounters – The Kingdom Takes Flight",
@@ -2202,6 +2208,12 @@
   ],
   "magic_kingdom": [
    {
+    "end": "2026-11-15T17:30-05:00",
+    "id": "a2d92647-634d-4eb4-886b-9da858e871f1",
+    "name": "Meet Mickey at Town Square Theater",
+    "start": "2026-11-15T08:00-05:00"
+   },
+   {
     "end": "2026-11-15T09:00-05:00",
     "id": "1eee22e8-1d0a-4809-a42b-df3ae55c69d5",
     "name": "The Dapper Dans",
@@ -3264,5 +3276,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-15T08:01-05:00"
+ "updated": "2026-11-15T08:15-05:00"
 }
