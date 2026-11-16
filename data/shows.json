@@ -1603,14 +1603,7 @@
     "start": "2026-11-15T21:30-05:00"
    }
   ],
-  "islands_of_adventure": [
-   {
-    "end": "2026-11-15T23:10-05:00",
-    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
-    "name": "Raptor Encounter",
-    "start": "2026-11-15T23:10-05:00"
-   }
-  ],
+  "islands_of_adventure": [],
   "magic_kingdom": [
    {
     "end": "2026-11-15T17:30-05:00",
@@ -1852,5 +1845,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-15T23:01-05:00"
+ "updated": "2026-11-15T23:15-05:00"
 }
