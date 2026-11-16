@@ -1002,12 +1002,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-11-16T17:00-05:00",
-    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
-    "name": "Meet Princess Peach",
-    "start": "2026-11-16T17:00-05:00"
-   },
-   {
     "end": "2026-11-16T17:20-05:00",
     "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
     "name": "The Untrainable Dragon",
@@ -1592,6 +1586,12 @@
     "start": "2026-11-16T19:00-05:00"
    },
    {
+    "end": "2026-11-16T19:30-05:00",
+    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
+    "name": "Meet Joy at Pixar Plaza",
+    "start": "2026-11-16T19:30-05:00"
+   },
+   {
     "end": "2026-11-16T21:30-05:00",
     "id": "71da34dd-a27e-4db5-aef3-f880ef939f98",
     "name": "Pixar Disco at Disney Jollywood Nights",
@@ -1602,6 +1602,12 @@
     "id": "50b2b97f-415d-447f-9198-cebf57755858",
     "name": "What’s This? Tim Burton’s The Nightmare Before Christmas Sing-Along at Disney Jollywood Nights",
     "start": "2026-11-16T19:30-05:00"
+   },
+   {
+    "end": "2026-11-16T20:00-05:00",
+    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
+    "name": "Meet Joy at Pixar Plaza",
+    "start": "2026-11-16T20:00-05:00"
    },
    {
     "end": "2026-11-16T20:05-05:00",
@@ -1617,9 +1623,21 @@
    },
    {
     "end": "2026-11-16T20:30-05:00",
+    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
+    "name": "Meet Joy at Pixar Plaza",
+    "start": "2026-11-16T20:30-05:00"
+   },
+   {
+    "end": "2026-11-16T20:30-05:00",
     "id": "50b2b97f-415d-447f-9198-cebf57755858",
     "name": "What’s This? Tim Burton’s The Nightmare Before Christmas Sing-Along at Disney Jollywood Nights",
     "start": "2026-11-16T20:30-05:00"
+   },
+   {
+    "end": "2026-11-16T21:00-05:00",
+    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
+    "name": "Meet Joy at Pixar Plaza",
+    "start": "2026-11-16T21:00-05:00"
    },
    {
     "end": "2026-11-16T21:05-05:00",
@@ -1635,6 +1653,12 @@
    },
    {
     "end": "2026-11-16T21:30-05:00",
+    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
+    "name": "Meet Joy at Pixar Plaza",
+    "start": "2026-11-16T21:30-05:00"
+   },
+   {
+    "end": "2026-11-16T21:30-05:00",
     "id": "50b2b97f-415d-447f-9198-cebf57755858",
     "name": "What’s This? Tim Burton’s The Nightmare Before Christmas Sing-Along at Disney Jollywood Nights",
     "start": "2026-11-16T21:30-05:00"
@@ -1646,9 +1670,21 @@
     "start": "2026-11-16T22:00-05:00"
    },
    {
+    "end": "2026-11-16T22:00-05:00",
+    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
+    "name": "Meet Joy at Pixar Plaza",
+    "start": "2026-11-16T22:00-05:00"
+   },
+   {
     "end": "2026-11-16T22:30-05:00",
     "id": "078e80f0-8569-45c9-a324-a767ef46ea98",
     "name": "Glisten! at Disney Jollywood Nights",
+    "start": "2026-11-16T22:30-05:00"
+   },
+   {
+    "end": "2026-11-16T22:30-05:00",
+    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
+    "name": "Meet Joy at Pixar Plaza",
     "start": "2026-11-16T22:30-05:00"
    },
    {
@@ -1664,10 +1700,22 @@
     "start": "2026-11-16T23:00-05:00"
    },
    {
+    "end": "2026-11-16T23:00-05:00",
+    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
+    "name": "Meet Joy at Pixar Plaza",
+    "start": "2026-11-16T23:00-05:00"
+   },
+   {
     "end": "2026-11-16T23:15-05:00",
     "id": "078e80f0-8569-45c9-a324-a767ef46ea98",
     "name": "Glisten! at Disney Jollywood Nights",
     "start": "2026-11-16T23:15-05:00"
+   },
+   {
+    "end": "2026-11-16T23:30-05:00",
+    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
+    "name": "Meet Joy at Pixar Plaza",
+    "start": "2026-11-16T23:30-05:00"
    },
    {
     "end": "2026-11-16T23:30-05:00",
@@ -1677,12 +1725,6 @@
    }
   ],
   "islands_of_adventure": [
-   {
-    "end": "2026-11-16T17:00-05:00",
-    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
-    "name": "Raptor Encounter",
-    "start": "2026-11-16T17:00-05:00"
-   },
    {
     "end": "2026-11-16T17:20-05:00",
     "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
@@ -1892,12 +1934,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-11-16T17:00-05:00",
-    "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
-    "name": "Celestina Warbeck and the Banshees",
-    "start": "2026-11-16T17:00-05:00"
-   },
-   {
     "end": "2026-11-16T17:05-05:00",
     "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
     "name": "Meet The TRANSFORMERS™",
@@ -1920,5 +1956,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-16T16:45-05:00"
+ "updated": "2026-11-16T17:01-05:00"
 }
