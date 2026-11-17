@@ -2216,12 +2216,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-11-17T12:45-05:00",
-    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
-    "name": "Meet SpongeBob SquarePants and Friends",
-    "start": "2026-11-17T12:45-05:00"
-   },
-   {
     "end": "2026-11-17T12:55-05:00",
     "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
     "name": "Meet The TRANSFORMERS™",
@@ -2736,5 +2730,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-17T12:45-05:00"
+ "updated": "2026-11-17T12:51-05:00"
 }
