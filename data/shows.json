@@ -587,12 +587,6 @@
    },
    {
     "end": "2026-11-17T11:15-05:00",
-    "id": "7b79e739-c540-4ea5-a4c8-f8d8bac5719b",
-    "name": "Meet the Legendary Warrior in China",
-    "start": "2026-11-17T11:15-05:00"
-   },
-   {
-    "end": "2026-11-17T11:15-05:00",
     "id": "c5f6c7e4-d5cd-4d71-8e02-57d8bb43b3ba",
     "name": "Voices of Liberty",
     "start": "2026-11-17T11:15-05:00"
@@ -662,12 +656,6 @@
     "id": "c5f6c7e4-d5cd-4d71-8e02-57d8bb43b3ba",
     "name": "Voices of Liberty",
     "start": "2026-11-17T12:00-05:00"
-   },
-   {
-    "end": "2026-11-17T12:25-05:00",
-    "id": "7b79e739-c540-4ea5-a4c8-f8d8bac5719b",
-    "name": "Meet the Legendary Warrior in China",
-    "start": "2026-11-17T12:25-05:00"
    },
    {
     "end": "2026-11-17T12:30-05:00",
@@ -3354,5 +3342,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-17T09:31-05:00"
+ "updated": "2026-11-17T09:45-05:00"
 }
