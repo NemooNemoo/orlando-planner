@@ -1293,12 +1293,6 @@
    },
    {
     "end": "2026-11-17T10:00-05:00",
-    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
-    "name": "Meet Joy at Pixar Plaza",
-    "start": "2026-11-17T10:00-05:00"
-   },
-   {
-    "end": "2026-11-17T10:00-05:00",
     "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
     "name": "The Little Mermaid – A Musical Adventure",
     "start": "2026-11-17T10:00-05:00"
@@ -3372,5 +3366,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-17T08:31-05:00"
+ "updated": "2026-11-17T08:45-05:00"
 }
