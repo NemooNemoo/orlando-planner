@@ -1026,6 +1026,12 @@
     "start": "2026-11-17T10:00-05:00"
    },
    {
+    "end": "2026-11-17T10:20-05:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
+    "start": "2026-11-17T10:20-05:00"
+   },
+   {
     "end": "2026-11-17T10:30-05:00",
     "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
     "name": "Le Cirque Arcanus™",
@@ -1044,15 +1050,15 @@
     "start": "2026-11-17T11:00-05:00"
    },
    {
-    "end": "2026-11-17T11:20-05:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-11-17T11:20-05:00"
+    "end": "2026-11-17T11:10-05:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
+    "start": "2026-11-17T11:10-05:00"
    },
    {
     "end": "2026-11-17T11:20-05:00",
-    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
-    "name": "The Untrainable Dragon",
+    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
+    "name": "Le Cirque Arcanus™",
     "start": "2026-11-17T11:20-05:00"
    },
    {
@@ -1068,15 +1074,15 @@
     "start": "2026-11-17T12:00-05:00"
    },
    {
-    "end": "2026-11-17T12:10-05:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-11-17T12:10-05:00"
+    "end": "2026-11-17T12:00-05:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
+    "start": "2026-11-17T12:00-05:00"
    },
    {
     "end": "2026-11-17T12:10-05:00",
-    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
-    "name": "The Untrainable Dragon",
+    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
+    "name": "Le Cirque Arcanus™",
     "start": "2026-11-17T12:10-05:00"
    },
    {
@@ -1092,15 +1098,15 @@
     "start": "2026-11-17T12:50-05:00"
    },
    {
-    "end": "2026-11-17T12:55-05:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-11-17T12:55-05:00"
+    "end": "2026-11-17T12:50-05:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
+    "start": "2026-11-17T12:50-05:00"
    },
    {
     "end": "2026-11-17T12:55-05:00",
-    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
-    "name": "The Untrainable Dragon",
+    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
+    "name": "Le Cirque Arcanus™",
     "start": "2026-11-17T12:55-05:00"
    },
    {
@@ -1134,15 +1140,15 @@
     "start": "2026-11-17T14:30-05:00"
    },
    {
-    "end": "2026-11-17T14:30-05:00",
-    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
-    "name": "The Untrainable Dragon",
-    "start": "2026-11-17T14:30-05:00"
-   },
-   {
     "end": "2026-11-17T14:50-05:00",
     "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
     "name": "Meet Mario and Luigi",
+    "start": "2026-11-17T14:50-05:00"
+   },
+   {
+    "end": "2026-11-17T14:50-05:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
     "start": "2026-11-17T14:50-05:00"
    },
    {
@@ -1243,12 +1249,6 @@
    },
    {
     "end": "2026-11-17T19:00-05:00",
-    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
-    "name": "The Untrainable Dragon",
-    "start": "2026-11-17T19:00-05:00"
-   },
-   {
-    "end": "2026-11-17T19:00-05:00",
     "id": "a872883d-761b-4dda-a124-5dadcfa9e5ae",
     "name": "Universal Celestial Goodnight",
     "start": "2026-11-17T19:00-05:00"
@@ -1265,12 +1265,6 @@
     "end": "2026-11-17T16:30-05:00",
     "id": "79860074-658f-49bc-8c1b-624af8b4718e",
     "name": "Meet Edna Mode at the Edna Mode Experience",
-    "start": "2026-11-17T09:00-05:00"
-   },
-   {
-    "end": "2026-11-17T09:00-05:00",
-    "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
-    "name": "Meet Joy at Pixar Plaza",
     "start": "2026-11-17T09:00-05:00"
    },
    {
@@ -2202,15 +2196,15 @@
   ],
   "magic_kingdom": [
    {
-    "end": "2026-11-17T17:30-05:00",
-    "id": "a2d92647-634d-4eb4-886b-9da858e871f1",
-    "name": "Meet Mickey at Town Square Theater",
-    "start": "2026-11-17T08:00-05:00"
-   },
-   {
     "end": "2026-11-17T17:00-05:00",
     "id": "cf4b2ba4-3626-4de7-9d07-abe8a65b1665",
     "name": "Meet Cinderella and Princess Tiana at Princess Fairytale Hall",
+    "start": "2026-11-17T09:00-05:00"
+   },
+   {
+    "end": "2026-11-17T17:00-05:00",
+    "id": "a2d92647-634d-4eb4-886b-9da858e871f1",
+    "name": "Meet Mickey at Town Square Theater",
     "start": "2026-11-17T09:00-05:00"
    },
    {
@@ -3378,5 +3372,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-17T08:15-05:00"
+ "updated": "2026-11-17T08:31-05:00"
 }
