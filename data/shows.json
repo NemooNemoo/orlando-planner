@@ -978,12 +978,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-11-18T11:20-05:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-11-18T11:20-05:00"
-   },
-   {
     "end": "2026-11-18T11:40-05:00",
     "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
     "name": "Meet Princess Peach",
@@ -2300,36 +2294,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-11-18T11:15-05:00",
-    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
-    "name": "Meet SpongeBob SquarePants and Friends",
-    "start": "2026-11-18T11:15-05:00"
-   },
-   {
-    "end": "2026-11-18T11:15-05:00",
-    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
-    "name": "Meet The TRANSFORMERS™",
-    "start": "2026-11-18T11:15-05:00"
-   },
-   {
-    "end": "2026-11-18T11:20-05:00",
-    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
-    "name": "Illumination Theater",
-    "start": "2026-11-18T11:20-05:00"
-   },
-   {
-    "end": "2026-11-18T11:20-05:00",
-    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
-    "name": "Shrek’s Swamp Meet",
-    "start": "2026-11-18T11:20-05:00"
-   },
-   {
-    "end": "2026-11-18T11:20-05:00",
-    "id": "2f4690b4-72b0-4845-bcce-9e735397d60b",
-    "name": "The Blues Brothers® Show",
-    "start": "2026-11-18T11:20-05:00"
-   },
-   {
     "end": "2026-11-18T11:30-05:00",
     "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
     "name": "Celestina Warbeck and the Banshees",
@@ -2411,12 +2375,6 @@
     "end": "2026-11-18T12:00-05:00",
     "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
     "name": "Shrek’s Swamp Meet",
-    "start": "2026-11-18T12:00-05:00"
-   },
-   {
-    "end": "2026-11-18T12:00-05:00",
-    "id": "2436bad1-f319-44d5-98ac-a283b81956c6",
-    "name": "The Bourne Stuntacular",
     "start": "2026-11-18T12:00-05:00"
    },
    {
@@ -3030,5 +2988,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-18T11:15-05:00"
+ "updated": "2026-11-18T11:31-05:00"
 }
