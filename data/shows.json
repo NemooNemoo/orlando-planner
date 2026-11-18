@@ -978,12 +978,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-11-18T09:00-05:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
-    "start": "2026-11-18T09:00-05:00"
-   },
-   {
     "end": "2026-11-18T10:00-05:00",
     "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
     "name": "Meet Mario and Luigi",
@@ -2510,6 +2504,12 @@
     "start": "2026-11-18T10:45-05:00"
    },
    {
+    "end": "2026-11-18T10:50-05:00",
+    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
+    "name": "Meet The TRANSFORMERS™",
+    "start": "2026-11-18T10:50-05:00"
+   },
+   {
     "end": "2026-11-18T11:00-05:00",
     "id": "41d282f8-2015-4caa-9591-9faa948e263e",
     "name": "Beat Builders",
@@ -3288,5 +3288,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-18T09:01-05:00"
+ "updated": "2026-11-18T09:15-05:00"
 }
