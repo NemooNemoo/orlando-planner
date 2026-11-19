@@ -886,14 +886,7 @@
     "start": "2026-11-19T21:00-05:00"
    }
   ],
-  "epic_universe": [
-   {
-    "end": "2026-11-19T17:40-05:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
-    "start": "2026-11-19T17:40-05:00"
-   }
-  ],
+  "epic_universe": [],
   "hollywood_studios": [
    {
     "end": "2026-11-19T20:00-05:00",
@@ -1466,14 +1459,7 @@
     "start": "2026-11-19T21:30-05:00"
    }
   ],
-  "islands_of_adventure": [
-   {
-    "end": "2026-11-19T17:40-05:00",
-    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
-    "name": "Raptor Encounter",
-    "start": "2026-11-19T17:40-05:00"
-   }
-  ],
+  "islands_of_adventure": [],
   "magic_kingdom": [
    {
     "end": "2026-11-19T17:00-05:00",
@@ -1769,5 +1755,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-19T17:31-05:00"
+ "updated": "2026-11-19T17:45-05:00"
 }
