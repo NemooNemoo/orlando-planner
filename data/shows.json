@@ -886,7 +886,26 @@
     "start": "2026-11-19T21:00-05:00"
    }
   ],
-  "epic_universe": [],
+  "epic_universe": [
+   {
+    "end": "2026-11-19T19:45-05:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
+    "start": "2026-11-19T19:45-05:00"
+   },
+   {
+    "end": "2026-11-19T20:45-05:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
+    "start": "2026-11-19T20:45-05:00"
+   },
+   {
+    "end": "2026-11-19T21:45-05:00",
+    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
+    "name": "The Untrainable Dragon",
+    "start": "2026-11-19T21:45-05:00"
+   }
+  ],
   "hollywood_studios": [
    {
     "end": "2026-11-19T20:00-05:00",
@@ -1666,6 +1685,12 @@
     "start": "2026-11-19T18:15-05:00"
    },
    {
+    "end": "2026-11-19T23:30-05:00",
+    "id": "6d3b1129-b34c-4b44-bba2-0e1790fef705",
+    "name": "Meet Santa Jack and Sally at Mickey’s Very Merry Christmas Party",
+    "start": "2026-11-19T19:00-05:00"
+   },
+   {
     "end": "2026-11-20T00:00-05:00",
     "id": "4514beed-faa9-4847-bc77-34f9c6b1f619",
     "name": "Stitchmas! at Mickey's Very Merry Christmas Party",
@@ -1755,5 +1780,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-19T18:45-05:00"
+ "updated": "2026-11-19T19:01-05:00"
 }
