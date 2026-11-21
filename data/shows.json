@@ -2,6 +2,12 @@
  "parks": {
   "animal_kingdom": [
    {
+    "end": "2026-11-21T18:00-05:00",
+    "id": "13d7c9d1-a785-403d-9ba8-71fee2f02d55",
+    "name": "Meet Favorite Disney Pals at Adventurers Outpost",
+    "start": "2026-11-21T08:00-05:00"
+   },
+   {
     "end": "2026-11-21T08:10-05:00",
     "id": "d8497541-53a2-4206-b95f-39cb238ae511",
     "name": "Tam Tam Drummers of Harambe",
@@ -1296,16 +1302,16 @@
     "start": "2026-11-21T19:40-05:00"
    },
    {
+    "end": "2026-11-21T20:00-05:00",
+    "id": "a872883d-761b-4dda-a124-5dadcfa9e5ae",
+    "name": "Universal Celestial Goodnight",
+    "start": "2026-11-21T20:00-05:00"
+   },
+   {
     "end": "2026-11-21T20:40-05:00",
     "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
     "name": "Meet Mario and Luigi",
     "start": "2026-11-21T20:40-05:00"
-   },
-   {
-    "end": "2026-11-21T21:30-05:00",
-    "id": "a872883d-761b-4dda-a124-5dadcfa9e5ae",
-    "name": "Universal Celestial Goodnight",
-    "start": "2026-11-21T21:30-05:00"
    }
   ],
   "hollywood_studios": [
@@ -3402,5 +3408,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-21T07:45-05:00"
+ "updated": "2026-11-21T08:01-05:00"
 }
