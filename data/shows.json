@@ -1310,6 +1310,12 @@
     "start": "2026-11-22T09:00-05:00"
    },
    {
+    "end": "2026-11-22T18:00-05:00",
+    "id": "27f9fc86-2341-4bf4-8cbf-67fc16a841f1",
+    "name": "Meet Olaf at Celebrity Spotlight",
+    "start": "2026-11-22T09:00-05:00"
+   },
+   {
     "end": "2026-11-22T09:30-05:00",
     "id": "d91a0e9a-8652-4036-822f-e7b12b381273",
     "name": "For the First Time in Forever: A Frozen Sing-Along Celebration",
@@ -2268,6 +2274,12 @@
   ],
   "magic_kingdom": [
    {
+    "end": "2026-11-22T22:30-05:00",
+    "id": "a2d92647-634d-4eb4-886b-9da858e871f1",
+    "name": "Meet Mickey at Town Square Theater",
+    "start": "2026-11-22T09:00-05:00"
+   },
+   {
     "end": "2026-11-22T09:00-05:00",
     "id": "1eee22e8-1d0a-4809-a42b-df3ae55c69d5",
     "name": "The Dapper Dans",
@@ -2487,12 +2499,6 @@
    },
    {
     "end": "2026-11-22T10:00-05:00",
-    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
-    "name": "DreamWorks Character Zone",
-    "start": "2026-11-22T10:00-05:00"
-   },
-   {
-    "end": "2026-11-22T10:00-05:00",
     "id": "55222885-493c-4280-b295-6fd7c609f12d",
     "name": "Hollywood Character Zone",
     "start": "2026-11-22T10:00-05:00"
@@ -2544,12 +2550,6 @@
     "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
     "name": "Meet The TRANSFORMERS™",
     "start": "2026-11-22T10:25-05:00"
-   },
-   {
-    "end": "2026-11-22T10:30-05:00",
-    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
-    "name": "DreamWorks Character Zone",
-    "start": "2026-11-22T10:30-05:00"
    },
    {
     "end": "2026-11-22T10:30-05:00",
@@ -3330,5 +3330,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-22T08:45-05:00"
+ "updated": "2026-11-22T09:01-05:00"
 }
