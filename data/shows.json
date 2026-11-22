@@ -581,12 +581,6 @@
    },
    {
     "end": "2026-11-22T11:15-05:00",
-    "id": "7b79e739-c540-4ea5-a4c8-f8d8bac5719b",
-    "name": "Meet the Legendary Warrior in China",
-    "start": "2026-11-22T11:15-05:00"
-   },
-   {
-    "end": "2026-11-22T11:15-05:00",
     "id": "c5f6c7e4-d5cd-4d71-8e02-57d8bb43b3ba",
     "name": "Voices of Liberty",
     "start": "2026-11-22T11:15-05:00"
@@ -656,12 +650,6 @@
     "id": "c5f6c7e4-d5cd-4d71-8e02-57d8bb43b3ba",
     "name": "Voices of Liberty",
     "start": "2026-11-22T12:00-05:00"
-   },
-   {
-    "end": "2026-11-22T12:25-05:00",
-    "id": "7b79e739-c540-4ea5-a4c8-f8d8bac5719b",
-    "name": "Meet the Legendary Warrior in China",
-    "start": "2026-11-22T12:25-05:00"
    },
    {
     "end": "2026-11-22T12:30-05:00",
@@ -796,12 +784,6 @@
     "start": "2026-11-22T14:15-05:00"
    },
    {
-    "end": "2026-11-22T14:20-05:00",
-    "id": "7b79e739-c540-4ea5-a4c8-f8d8bac5719b",
-    "name": "Meet the Legendary Warrior in China",
-    "start": "2026-11-22T14:20-05:00"
-   },
-   {
     "end": "2026-11-22T14:30-05:00",
     "id": "fd8afd63-0cb5-4f77-b47b-fb277f12d9f8",
     "name": "¡Celebración Encanto!",
@@ -883,12 +865,6 @@
     "end": "2026-11-22T15:30-05:00",
     "id": "6e70f3fb-faab-41b1-8d26-b85d1c5cfa26",
     "name": "Entertainment at Canada Mill Stage",
-    "start": "2026-11-22T15:30-05:00"
-   },
-   {
-    "end": "2026-11-22T15:30-05:00",
-    "id": "7b79e739-c540-4ea5-a4c8-f8d8bac5719b",
-    "name": "Meet the Legendary Warrior in China",
     "start": "2026-11-22T15:30-05:00"
    },
    {
@@ -1031,18 +1007,6 @@
    }
   ],
   "epic_universe": [
-   {
-    "end": "2026-11-22T10:20-05:00",
-    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
-    "name": "Meet Princess Peach",
-    "start": "2026-11-22T10:20-05:00"
-   },
-   {
-    "end": "2026-11-22T10:30-05:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-11-22T10:30-05:00"
-   },
    {
     "end": "2026-11-22T11:00-05:00",
     "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
@@ -1894,24 +1858,6 @@
   ],
   "islands_of_adventure": [
    {
-    "end": "2026-11-22T10:30-05:00",
-    "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
-    "name": "Classic Comic Book Characters",
-    "start": "2026-11-22T10:30-05:00"
-   },
-   {
-    "end": "2026-11-22T10:30-05:00",
-    "id": "f6d4294c-8825-4712-a891-36d45b5eb0f4",
-    "name": "Seuss Character Zone",
-    "start": "2026-11-22T10:30-05:00"
-   },
-   {
-    "end": "2026-11-22T10:30-05:00",
-    "id": "cc2f2601-09d2-43b8-83ef-2a367b929761",
-    "name": "Triwizard Spirit Rally",
-    "start": "2026-11-22T10:30-05:00"
-   },
-   {
     "end": "2026-11-22T10:40-05:00",
     "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
     "name": "Raptor Encounter",
@@ -2449,36 +2395,6 @@
    }
   ],
   "universal_studios_florida": [
-   {
-    "end": "2026-11-22T10:15-05:00",
-    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
-    "name": "Meet SpongeBob SquarePants and Friends",
-    "start": "2026-11-22T10:15-05:00"
-   },
-   {
-    "end": "2026-11-22T10:20-05:00",
-    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
-    "name": "Illumination Theater",
-    "start": "2026-11-22T10:20-05:00"
-   },
-   {
-    "end": "2026-11-22T10:20-05:00",
-    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
-    "name": "Shrek’s Swamp Meet",
-    "start": "2026-11-22T10:20-05:00"
-   },
-   {
-    "end": "2026-11-22T10:25-05:00",
-    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
-    "name": "Meet The TRANSFORMERS™",
-    "start": "2026-11-22T10:25-05:00"
-   },
-   {
-    "end": "2026-11-22T10:30-05:00",
-    "id": "55222885-493c-4280-b295-6fd7c609f12d",
-    "name": "Hollywood Character Zone",
-    "start": "2026-11-22T10:30-05:00"
-   },
    {
     "end": "2026-11-22T10:40-05:00",
     "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
@@ -3252,5 +3168,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-22T10:15-05:00"
+ "updated": "2026-11-22T10:31-05:00"
 }
