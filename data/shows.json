@@ -1050,12 +1050,6 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-11-23T19:40-05:00",
-    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
-    "name": "Meet Princess Peach",
-    "start": "2026-11-23T19:40-05:00"
-   },
-   {
     "end": "2026-11-23T21:30-05:00",
     "id": "a872883d-761b-4dda-a124-5dadcfa9e5ae",
     "name": "Universal Celestial Goodnight",
@@ -1912,5 +1906,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-23T19:30-05:00"
+ "updated": "2026-11-23T19:45-05:00"
 }
