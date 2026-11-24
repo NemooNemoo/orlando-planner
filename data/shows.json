@@ -1014,16 +1014,10 @@
     "start": "2026-11-24T17:20-05:00"
    },
    {
-    "end": "2026-11-24T17:20-05:00",
+    "end": "2026-11-24T17:25-05:00",
     "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
     "name": "The Untrainable Dragon",
-    "start": "2026-11-24T17:20-05:00"
-   },
-   {
-    "end": "2026-11-24T17:30-05:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-11-24T17:30-05:00"
+    "start": "2026-11-24T17:25-05:00"
    },
    {
     "end": "2026-11-24T17:40-05:00",
@@ -2048,18 +2042,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-11-24T17:00-05:00",
-    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
-    "name": "Shrek’s Swamp Meet",
-    "start": "2026-11-24T17:00-05:00"
-   },
-   {
-    "end": "2026-11-24T17:05-05:00",
-    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
-    "name": "Meet The TRANSFORMERS™",
-    "start": "2026-11-24T17:05-05:00"
-   },
-   {
     "end": "2026-11-24T17:30-05:00",
     "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
     "name": "Meet The TRANSFORMERS™",
@@ -2100,5 +2082,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-24T17:01-05:00"
+ "updated": "2026-11-24T17:15-05:00"
 }
