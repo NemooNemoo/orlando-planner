@@ -1756,12 +1756,6 @@
     "start": "2026-11-24T16:15-05:00"
    },
    {
-    "end": "2026-11-24T16:20-05:00",
-    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
-    "name": "Raptor Encounter",
-    "start": "2026-11-24T16:20-05:00"
-   },
-   {
     "end": "2026-11-24T16:30-05:00",
     "id": "97b25fe9-eb81-46bd-b57f-8b2fbbe85249",
     "name": "Frog Choir",
@@ -2108,12 +2102,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-11-24T16:10-05:00",
-    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
-    "name": "DreamWorks Character Zone",
-    "start": "2026-11-24T16:10-05:00"
-   },
-   {
     "end": "2026-11-24T16:15-05:00",
     "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
     "name": "Meet The TRANSFORMERS™",
@@ -2208,5 +2196,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-24T16:01-05:00"
+ "updated": "2026-11-24T16:15-05:00"
 }
