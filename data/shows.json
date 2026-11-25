@@ -490,6 +490,12 @@
     "start": "2026-11-25T09:00-05:00"
    },
    {
+    "end": "2026-11-25T18:30-05:00",
+    "id": "33bd3bad-6803-4c5e-97ac-f7e31261a604",
+    "name": "Meet Anna and Elsa at Royal Sommerhus",
+    "start": "2026-11-25T09:15-05:00"
+   },
+   {
     "end": "2026-11-25T12:30-05:00",
     "id": "a70b81bf-2934-433c-9723-afb2f24112bf",
     "name": "Meet Figment Inside ImageWorks",
@@ -499,12 +505,6 @@
     "end": "2026-11-25T09:30-05:00",
     "id": "3beaa9a5-6404-4446-bfd1-e0d0eea65e85",
     "name": "JAMMitors",
-    "start": "2026-11-25T09:30-05:00"
-   },
-   {
-    "end": "2026-11-25T09:30-05:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
     "start": "2026-11-25T09:30-05:00"
    },
    {
@@ -521,12 +521,6 @@
    },
    {
     "end": "2026-11-25T10:00-05:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-25T10:00-05:00"
-   },
-   {
-    "end": "2026-11-25T10:00-05:00",
     "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
     "name": "Meet Pluto Near EPCOT Main Entrance",
     "start": "2026-11-25T10:00-05:00"
@@ -539,33 +533,15 @@
    },
    {
     "end": "2026-11-25T10:30-05:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-25T10:30-05:00"
-   },
-   {
-    "end": "2026-11-25T10:30-05:00",
     "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
     "name": "Meet Pluto Near EPCOT Main Entrance",
     "start": "2026-11-25T10:30-05:00"
    },
    {
     "end": "2026-11-25T10:45-05:00",
-    "id": "e9c1bff6-c9c1-4275-8f3d-44226f0fdfbb",
-    "name": "Meet Princess Aurora in France",
-    "start": "2026-11-25T10:45-05:00"
-   },
-   {
-    "end": "2026-11-25T10:45-05:00",
     "id": "fd8afd63-0cb5-4f77-b47b-fb277f12d9f8",
     "name": "¡Celebración Encanto!",
     "start": "2026-11-25T10:45-05:00"
-   },
-   {
-    "end": "2026-11-25T11:00-05:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-25T11:00-05:00"
    },
    {
     "end": "2026-11-25T11:00-05:00",
@@ -595,12 +571,6 @@
     "end": "2026-11-25T11:30-05:00",
     "id": "3beaa9a5-6404-4446-bfd1-e0d0eea65e85",
     "name": "JAMMitors",
-    "start": "2026-11-25T11:30-05:00"
-   },
-   {
-    "end": "2026-11-25T11:30-05:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
     "start": "2026-11-25T11:30-05:00"
    },
    {
@@ -628,21 +598,9 @@
     "start": "2026-11-25T11:55-05:00"
    },
    {
-    "end": "2026-11-25T11:55-05:00",
-    "id": "e9c1bff6-c9c1-4275-8f3d-44226f0fdfbb",
-    "name": "Meet Princess Aurora in France",
-    "start": "2026-11-25T11:55-05:00"
-   },
-   {
     "end": "2026-11-25T12:00-05:00",
     "id": "ea730d0c-7723-429d-89a4-9e76f053f5ac",
     "name": "Mariachi Cobre",
-    "start": "2026-11-25T12:00-05:00"
-   },
-   {
-    "end": "2026-11-25T12:00-05:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
     "start": "2026-11-25T12:00-05:00"
    },
    {
@@ -662,12 +620,6 @@
     "id": "7b79e739-c540-4ea5-a4c8-f8d8bac5719b",
     "name": "Meet the Legendary Warrior in China",
     "start": "2026-11-25T12:25-05:00"
-   },
-   {
-    "end": "2026-11-25T12:30-05:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-25T12:30-05:00"
    },
    {
     "end": "2026-11-25T12:35-05:00",
@@ -730,12 +682,6 @@
     "start": "2026-11-25T13:45-05:00"
    },
    {
-    "end": "2026-11-25T13:50-05:00",
-    "id": "e9c1bff6-c9c1-4275-8f3d-44226f0fdfbb",
-    "name": "Meet Princess Aurora in France",
-    "start": "2026-11-25T13:50-05:00"
-   },
-   {
     "end": "2026-11-25T14:00-05:00",
     "id": "3beaa9a5-6404-4446-bfd1-e0d0eea65e85",
     "name": "JAMMitors",
@@ -752,12 +698,6 @@
     "id": "a70b81bf-2934-433c-9723-afb2f24112bf",
     "name": "Meet Figment Inside ImageWorks",
     "start": "2026-11-25T14:05-05:00"
-   },
-   {
-    "end": "2026-11-25T14:10-05:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-25T14:10-05:00"
    },
    {
     "end": "2026-11-25T14:15-05:00",
@@ -796,12 +736,6 @@
     "start": "2026-11-25T14:30-05:00"
    },
    {
-    "end": "2026-11-25T14:40-05:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-25T14:40-05:00"
-   },
-   {
     "end": "2026-11-25T14:45-05:00",
     "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
     "name": "Meet Pluto Near EPCOT Main Entrance",
@@ -827,21 +761,9 @@
    },
    {
     "end": "2026-11-25T15:00-05:00",
-    "id": "e9c1bff6-c9c1-4275-8f3d-44226f0fdfbb",
-    "name": "Meet Princess Aurora in France",
-    "start": "2026-11-25T15:00-05:00"
-   },
-   {
-    "end": "2026-11-25T15:00-05:00",
     "id": "c5f6c7e4-d5cd-4d71-8e02-57d8bb43b3ba",
     "name": "Voices of Liberty",
     "start": "2026-11-25T15:00-05:00"
-   },
-   {
-    "end": "2026-11-25T15:10-05:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-25T15:10-05:00"
    },
    {
     "end": "2026-11-25T15:10-05:00",
@@ -866,12 +788,6 @@
     "id": "fd8afd63-0cb5-4f77-b47b-fb277f12d9f8",
     "name": "¡Celebración Encanto!",
     "start": "2026-11-25T15:30-05:00"
-   },
-   {
-    "end": "2026-11-25T15:40-05:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-25T15:40-05:00"
    },
    {
     "end": "2026-11-25T15:45-05:00",
@@ -902,12 +818,6 @@
     "id": "41aba635-48e4-43bf-9bb1-3b811b5705d0",
     "name": "Rose & Crown Pub Musician",
     "start": "2026-11-25T16:00-05:00"
-   },
-   {
-    "end": "2026-11-25T16:10-05:00",
-    "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
-    "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-25T16:10-05:00"
    },
    {
     "end": "2026-11-25T16:30-05:00",
@@ -941,12 +851,6 @@
    }
   ],
   "epic_universe": [
-   {
-    "end": "2026-11-25T09:20-05:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
-    "start": "2026-11-25T09:20-05:00"
-   },
    {
     "end": "2026-11-25T10:00-05:00",
     "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
@@ -2474,24 +2378,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-11-25T09:15-05:00",
-    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
-    "name": "Meet SpongeBob SquarePants and Friends",
-    "start": "2026-11-25T09:15-05:00"
-   },
-   {
-    "end": "2026-11-25T09:20-05:00",
-    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
-    "name": "Illumination Theater",
-    "start": "2026-11-25T09:20-05:00"
-   },
-   {
-    "end": "2026-11-25T09:20-05:00",
-    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
-    "name": "Shrek’s Swamp Meet",
-    "start": "2026-11-25T09:20-05:00"
-   },
-   {
     "end": "2026-11-25T09:30-05:00",
     "id": "55222885-493c-4280-b295-6fd7c609f12d",
     "name": "Hollywood Character Zone",
@@ -3372,5 +3258,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-25T09:15-05:00"
+ "updated": "2026-11-25T09:31-05:00"
 }
