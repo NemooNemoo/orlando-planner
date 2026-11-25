@@ -478,6 +478,12 @@
     "start": "2026-11-25T08:30-05:00"
    },
    {
+    "end": "2026-11-25T21:00-05:00",
+    "id": "67612787-fbd3-44b7-869f-123f55d78584",
+    "name": "Meet Beloved Disney Pals at Mickey & Friends",
+    "start": "2026-11-25T09:00-05:00"
+   },
+   {
     "end": "2026-11-25T09:00-05:00",
     "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
     "name": "Meet Pluto Near EPCOT Main Entrance",
@@ -936,27 +942,21 @@
   ],
   "epic_universe": [
    {
-    "end": "2026-11-25T09:00-05:00",
+    "end": "2026-11-25T09:20-05:00",
     "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
     "name": "Meet Mario and Luigi",
-    "start": "2026-11-25T09:00-05:00"
-   },
-   {
-    "end": "2026-11-25T09:20-05:00",
-    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
-    "name": "Meet Princess Peach",
     "start": "2026-11-25T09:20-05:00"
    },
    {
     "end": "2026-11-25T10:00-05:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
+    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
+    "name": "Meet Princess Peach",
     "start": "2026-11-25T10:00-05:00"
    },
    {
     "end": "2026-11-25T10:20-05:00",
-    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
-    "name": "Meet Princess Peach",
+    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
+    "name": "Meet Mario and Luigi",
     "start": "2026-11-25T10:20-05:00"
    },
    {
@@ -967,8 +967,8 @@
    },
    {
     "end": "2026-11-25T11:00-05:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
+    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
+    "name": "Meet Princess Peach",
     "start": "2026-11-25T11:00-05:00"
    },
    {
@@ -985,14 +985,14 @@
    },
    {
     "end": "2026-11-25T11:20-05:00",
-    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
-    "name": "Meet Princess Peach",
+    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
+    "name": "Meet Mario and Luigi",
     "start": "2026-11-25T11:20-05:00"
    },
    {
     "end": "2026-11-25T12:00-05:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
+    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
+    "name": "Meet Princess Peach",
     "start": "2026-11-25T12:00-05:00"
    },
    {
@@ -1009,9 +1009,15 @@
    },
    {
     "end": "2026-11-25T12:20-05:00",
+    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
+    "name": "Meet Mario and Luigi",
+    "start": "2026-11-25T12:20-05:00"
+   },
+   {
+    "end": "2026-11-25T12:50-05:00",
     "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
     "name": "Meet Princess Peach",
-    "start": "2026-11-25T12:20-05:00"
+    "start": "2026-11-25T12:50-05:00"
    },
    {
     "end": "2026-11-25T12:50-05:00",
@@ -1026,15 +1032,9 @@
     "start": "2026-11-25T12:55-05:00"
    },
    {
-    "end": "2026-11-25T13:00-05:00",
+    "end": "2026-11-25T13:20-05:00",
     "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
     "name": "Meet Mario and Luigi",
-    "start": "2026-11-25T13:00-05:00"
-   },
-   {
-    "end": "2026-11-25T13:20-05:00",
-    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
-    "name": "Meet Princess Peach",
     "start": "2026-11-25T13:20-05:00"
    },
    {
@@ -1050,15 +1050,15 @@
     "start": "2026-11-25T13:40-05:00"
    },
    {
-    "end": "2026-11-25T14:00-05:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
-    "start": "2026-11-25T14:00-05:00"
+    "end": "2026-11-25T13:50-05:00",
+    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
+    "name": "Meet Princess Peach",
+    "start": "2026-11-25T13:50-05:00"
    },
    {
     "end": "2026-11-25T14:20-05:00",
-    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
-    "name": "Meet Princess Peach",
+    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
+    "name": "Meet Mario and Luigi",
     "start": "2026-11-25T14:20-05:00"
    },
    {
@@ -1074,10 +1074,10 @@
     "start": "2026-11-25T14:30-05:00"
    },
    {
-    "end": "2026-11-25T15:00-05:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
-    "start": "2026-11-25T15:00-05:00"
+    "end": "2026-11-25T14:50-05:00",
+    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
+    "name": "Meet Princess Peach",
+    "start": "2026-11-25T14:50-05:00"
    },
    {
     "end": "2026-11-25T15:15-05:00",
@@ -1087,8 +1087,8 @@
    },
    {
     "end": "2026-11-25T15:20-05:00",
-    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
-    "name": "Meet Princess Peach",
+    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
+    "name": "Meet Mario and Luigi",
     "start": "2026-11-25T15:20-05:00"
    },
    {
@@ -1098,21 +1098,21 @@
     "start": "2026-11-25T15:40-05:00"
    },
    {
+    "end": "2026-11-25T15:50-05:00",
+    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
+    "name": "Meet Princess Peach",
+    "start": "2026-11-25T15:50-05:00"
+   },
+   {
     "end": "2026-11-25T16:00-05:00",
     "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
     "name": "Le Cirque Arcanus™",
     "start": "2026-11-25T16:00-05:00"
    },
    {
-    "end": "2026-11-25T16:00-05:00",
+    "end": "2026-11-25T16:20-05:00",
     "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
     "name": "Meet Mario and Luigi",
-    "start": "2026-11-25T16:00-05:00"
-   },
-   {
-    "end": "2026-11-25T16:20-05:00",
-    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
-    "name": "Meet Princess Peach",
     "start": "2026-11-25T16:20-05:00"
    },
    {
@@ -1122,21 +1122,21 @@
     "start": "2026-11-25T16:30-05:00"
    },
    {
+    "end": "2026-11-25T16:40-05:00",
+    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
+    "name": "Meet Princess Peach",
+    "start": "2026-11-25T16:40-05:00"
+   },
+   {
     "end": "2026-11-25T16:45-05:00",
     "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
     "name": "Le Cirque Arcanus™",
     "start": "2026-11-25T16:45-05:00"
    },
    {
-    "end": "2026-11-25T17:00-05:00",
+    "end": "2026-11-25T17:20-05:00",
     "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
     "name": "Meet Mario and Luigi",
-    "start": "2026-11-25T17:00-05:00"
-   },
-   {
-    "end": "2026-11-25T17:20-05:00",
-    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
-    "name": "Meet Princess Peach",
     "start": "2026-11-25T17:20-05:00"
    },
    {
@@ -1152,10 +1152,10 @@
     "start": "2026-11-25T17:30-05:00"
    },
    {
-    "end": "2026-11-25T18:00-05:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
-    "start": "2026-11-25T18:00-05:00"
+    "end": "2026-11-25T17:40-05:00",
+    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
+    "name": "Meet Princess Peach",
+    "start": "2026-11-25T17:40-05:00"
    },
    {
     "end": "2026-11-25T18:10-05:00",
@@ -1171,15 +1171,15 @@
    },
    {
     "end": "2026-11-25T18:20-05:00",
-    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
-    "name": "Meet Princess Peach",
+    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
+    "name": "Meet Mario and Luigi",
     "start": "2026-11-25T18:20-05:00"
    },
    {
-    "end": "2026-11-25T19:00-05:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
-    "start": "2026-11-25T19:00-05:00"
+    "end": "2026-11-25T18:40-05:00",
+    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
+    "name": "Meet Princess Peach",
+    "start": "2026-11-25T18:40-05:00"
    },
    {
     "end": "2026-11-25T19:00-05:00",
@@ -1195,20 +1195,20 @@
    },
    {
     "end": "2026-11-25T19:20-05:00",
-    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
-    "name": "Meet Princess Peach",
+    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
+    "name": "Meet Mario and Luigi",
     "start": "2026-11-25T19:20-05:00"
    },
    {
-    "end": "2026-11-25T20:00-05:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
-    "start": "2026-11-25T20:00-05:00"
+    "end": "2026-11-25T19:40-05:00",
+    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
+    "name": "Meet Princess Peach",
+    "start": "2026-11-25T19:40-05:00"
    },
    {
     "end": "2026-11-25T20:20-05:00",
-    "id": "f6dc44e3-02f4-414d-9adc-c3c342efa275",
-    "name": "Meet Princess Peach",
+    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
+    "name": "Meet Mario and Luigi",
     "start": "2026-11-25T20:20-05:00"
    },
    {
@@ -1220,9 +1220,27 @@
   ],
   "hollywood_studios": [
    {
+    "end": "2026-11-25T20:00-05:00",
+    "id": "02861a9b-584d-47d5-a8d0-98e05c3b5dce",
+    "name": "Meet Disney Stars at Red Carpet Dreams",
+    "start": "2026-11-25T09:00-05:00"
+   },
+   {
+    "end": "2026-11-25T16:30-05:00",
+    "id": "79860074-658f-49bc-8c1b-624af8b4718e",
+    "name": "Meet Edna Mode at the Edna Mode Experience",
+    "start": "2026-11-25T09:00-05:00"
+   },
+   {
     "end": "2026-11-25T09:00-05:00",
     "id": "0e7426d1-7406-4e7c-9da6-ac6c126211c6",
     "name": "Meet Joy at Pixar Plaza",
+    "start": "2026-11-25T09:00-05:00"
+   },
+   {
+    "end": "2026-11-25T18:00-05:00",
+    "id": "27f9fc86-2341-4bf4-8cbf-67fc16a841f1",
+    "name": "Meet Olaf at Celebrity Spotlight",
     "start": "2026-11-25T09:00-05:00"
    },
    {
@@ -2184,6 +2202,24 @@
   ],
   "magic_kingdom": [
    {
+    "end": "2026-11-25T17:00-05:00",
+    "id": "cf4b2ba4-3626-4de7-9d07-abe8a65b1665",
+    "name": "Meet Cinderella and Princess Tiana at Princess Fairytale Hall",
+    "start": "2026-11-25T09:00-05:00"
+   },
+   {
+    "end": "2026-11-25T17:30-05:00",
+    "id": "a2d92647-634d-4eb4-886b-9da858e871f1",
+    "name": "Meet Mickey at Town Square Theater",
+    "start": "2026-11-25T09:00-05:00"
+   },
+   {
+    "end": "2026-11-25T17:00-05:00",
+    "id": "40737d3d-0ff6-4a9e-a050-beb87bf90120",
+    "name": "Meet Visiting Princesses at Princess Fairytale Hall",
+    "start": "2026-11-25T09:00-05:00"
+   },
+   {
     "end": "2026-11-25T09:00-05:00",
     "id": "1eee22e8-1d0a-4809-a42b-df3ae55c69d5",
     "name": "The Dapper Dans",
@@ -2437,18 +2473,6 @@
    }
   ],
   "universal_studios_florida": [
-   {
-    "end": "2026-11-25T09:00-05:00",
-    "id": "55222885-493c-4280-b295-6fd7c609f12d",
-    "name": "Hollywood Character Zone",
-    "start": "2026-11-25T09:00-05:00"
-   },
-   {
-    "end": "2026-11-25T09:00-05:00",
-    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
-    "name": "Illumination Theater",
-    "start": "2026-11-25T09:00-05:00"
-   },
    {
     "end": "2026-11-25T09:15-05:00",
     "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
@@ -3348,5 +3372,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-25T09:01-05:00"
+ "updated": "2026-11-25T09:15-05:00"
 }
