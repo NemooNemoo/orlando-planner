@@ -1014,12 +1014,6 @@
     "start": "2026-11-24T19:00-05:00"
    },
    {
-    "end": "2026-11-24T19:10-05:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-11-24T19:10-05:00"
-   },
-   {
     "end": "2026-11-24T19:20-05:00",
     "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
     "name": "Meet Mario and Luigi",
@@ -1967,17 +1961,10 @@
     "start": "2026-11-24T23:55-05:00"
    }
   ],
-  "universal_studios_florida": [
-   {
-    "end": "2026-11-24T18:45-05:00",
-    "id": "c85d936f-c5b7-490b-880b-6f0bf44ba557",
-    "name": "DreamWorks Imagination Celebration",
-    "start": "2026-11-24T18:45-05:00"
-   }
-  ],
+  "universal_studios_florida": [],
   "volcano_bay": []
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-24T18:45-05:00"
+ "updated": "2026-11-24T19:01-05:00"
 }
