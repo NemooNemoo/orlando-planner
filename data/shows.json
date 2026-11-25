@@ -1720,12 +1720,6 @@
   ],
   "islands_of_adventure": [
    {
-    "end": "2026-11-25T09:45-05:00",
-    "id": "c6c26dd9-bb82-49de-9fca-9245be6a8081",
-    "name": "Meet Spider-Man and the Marvel® Super Heroes",
-    "start": "2026-11-25T09:45-05:00"
-   },
-   {
     "end": "2026-11-25T10:00-05:00",
     "id": "ea72aa9c-3d89-4593-9fe8-ff25c88289a8",
     "name": "Classic Comic Book Characters",
@@ -2383,12 +2377,6 @@
    }
   ],
   "universal_studios_florida": [
-   {
-    "end": "2026-11-25T09:45-05:00",
-    "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
-    "name": "Meet SpongeBob SquarePants and Friends",
-    "start": "2026-11-25T09:45-05:00"
-   },
    {
     "end": "2026-11-25T10:00-05:00",
     "id": "1524b67b-4984-4a80-9d9f-753b8482c6f0",
@@ -3246,5 +3234,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-25T09:45-05:00"
+ "updated": "2026-11-25T10:01-05:00"
 }
