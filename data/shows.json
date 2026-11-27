@@ -610,6 +610,12 @@
     "start": "2026-11-27T11:30-05:00"
    },
    {
+    "end": "2026-11-27T11:30-05:00",
+    "id": "c5f6c7e4-d5cd-4d71-8e02-57d8bb43b3ba",
+    "name": "Voices of Liberty",
+    "start": "2026-11-27T11:30-05:00"
+   },
+   {
     "end": "2026-11-27T11:40-05:00",
     "id": "67b07a13-cfdf-45b0-a464-8e315a31312c",
     "name": "Norway Pavilion – A Mischievous Magical Barn Santa",
@@ -691,6 +697,12 @@
     "end": "2026-11-27T12:15-05:00",
     "id": "59077748-411e-432e-bb9b-4b77942e5a50",
     "name": "Italy Pavilion – La Befana",
+    "start": "2026-11-27T12:15-05:00"
+   },
+   {
+    "end": "2026-11-27T12:15-05:00",
+    "id": "c5f6c7e4-d5cd-4d71-8e02-57d8bb43b3ba",
+    "name": "Voices of Liberty",
     "start": "2026-11-27T12:15-05:00"
    },
    {
@@ -790,6 +802,12 @@
     "start": "2026-11-27T13:00-05:00"
    },
    {
+    "end": "2026-11-27T13:00-05:00",
+    "id": "c5f6c7e4-d5cd-4d71-8e02-57d8bb43b3ba",
+    "name": "Voices of Liberty",
+    "start": "2026-11-27T13:00-05:00"
+   },
+   {
     "end": "2026-11-27T13:20-05:00",
     "id": "f8dfc8f9-09e8-4b8c-b478-ee0d926eb76a",
     "name": "United Kingdom Pavilion – Father Christmas",
@@ -841,6 +859,12 @@
     "end": "2026-11-27T13:45-05:00",
     "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
     "name": "Meet Pluto Near EPCOT Main Entrance",
+    "start": "2026-11-27T13:45-05:00"
+   },
+   {
+    "end": "2026-11-27T13:45-05:00",
+    "id": "c5f6c7e4-d5cd-4d71-8e02-57d8bb43b3ba",
+    "name": "Voices of Liberty",
     "start": "2026-11-27T13:45-05:00"
    },
    {
@@ -931,6 +955,12 @@
     "end": "2026-11-27T14:30-05:00",
     "id": "016df02f-6a75-4ca3-88b1-b2cd2d4f200b",
     "name": "See Santa Claus in Communicore Hall",
+    "start": "2026-11-27T14:30-05:00"
+   },
+   {
+    "end": "2026-11-27T14:30-05:00",
+    "id": "c5f6c7e4-d5cd-4d71-8e02-57d8bb43b3ba",
+    "name": "Voices of Liberty",
     "start": "2026-11-27T14:30-05:00"
    },
    {
@@ -1042,6 +1072,12 @@
     "start": "2026-11-27T15:10-05:00"
    },
    {
+    "end": "2026-11-27T15:15-05:00",
+    "id": "c5f6c7e4-d5cd-4d71-8e02-57d8bb43b3ba",
+    "name": "Voices of Liberty",
+    "start": "2026-11-27T15:15-05:00"
+   },
+   {
     "end": "2026-11-27T15:25-05:00",
     "id": "ec3e507a-86a4-4a87-9fff-457893613ed7",
     "name": "Canada Pavilion – Canadian Holiday Voyageurs",
@@ -1141,6 +1177,12 @@
     "end": "2026-11-27T16:00-05:00",
     "id": "016df02f-6a75-4ca3-88b1-b2cd2d4f200b",
     "name": "See Santa Claus in Communicore Hall",
+    "start": "2026-11-27T16:00-05:00"
+   },
+   {
+    "end": "2026-11-27T16:00-05:00",
+    "id": "c5f6c7e4-d5cd-4d71-8e02-57d8bb43b3ba",
+    "name": "Voices of Liberty",
     "start": "2026-11-27T16:00-05:00"
    },
    {
@@ -1433,18 +1475,6 @@
    }
   ],
   "epic_universe": [
-   {
-    "end": "2026-11-27T17:20-05:00",
-    "id": "e3dd1ecd-f674-4aa7-83d9-9c7b4a8c886d",
-    "name": "The Untrainable Dragon",
-    "start": "2026-11-27T17:20-05:00"
-   },
-   {
-    "end": "2026-11-27T17:30-05:00",
-    "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
-    "name": "Le Cirque Arcanus™",
-    "start": "2026-11-27T17:30-05:00"
-   },
    {
     "end": "2026-11-27T17:40-05:00",
     "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
@@ -2116,12 +2146,6 @@
   ],
   "islands_of_adventure": [
    {
-    "end": "2026-11-27T17:20-05:00",
-    "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
-    "name": "Raptor Encounter",
-    "start": "2026-11-27T17:20-05:00"
-   },
-   {
     "end": "2026-11-27T17:40-05:00",
     "id": "28f411b9-dacc-47b1-9596-bd1383ce730d",
     "name": "Raptor Encounter",
@@ -2502,5 +2526,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-27T17:15-05:00"
+ "updated": "2026-11-27T17:31-05:00"
 }
