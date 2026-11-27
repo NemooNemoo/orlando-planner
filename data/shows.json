@@ -563,15 +563,15 @@
    },
    {
     "end": "2026-11-27T11:05-05:00",
-    "id": "87d6511a-42fc-45ab-be8b-550b7f49fb04",
-    "name": "Mexico Pavilion – Las Posadas Celebration",
+    "id": "ea730d0c-7723-429d-89a4-9e76f053f5ac",
+    "name": "Mariachi Cobre",
     "start": "2026-11-27T11:05-05:00"
    },
    {
-    "end": "2026-11-27T11:15-05:00",
-    "id": "ea730d0c-7723-429d-89a4-9e76f053f5ac",
-    "name": "Mariachi Cobre",
-    "start": "2026-11-27T11:15-05:00"
+    "end": "2026-11-27T11:05-05:00",
+    "id": "87d6511a-42fc-45ab-be8b-550b7f49fb04",
+    "name": "Mexico Pavilion – Las Posadas Celebration",
+    "start": "2026-11-27T11:05-05:00"
    },
    {
     "end": "2026-11-27T11:15-05:00",
@@ -748,15 +748,15 @@
     "start": "2026-11-27T12:45-05:00"
    },
    {
-    "end": "2026-11-27T12:45-05:00",
-    "id": "ea730d0c-7723-429d-89a4-9e76f053f5ac",
-    "name": "Mariachi Cobre",
-    "start": "2026-11-27T12:45-05:00"
-   },
-   {
     "end": "2026-11-27T12:50-05:00",
     "id": "dec242f1-31bf-42ef-86f7-f5358f2f2359",
     "name": "France Pavilion – Père Noël",
+    "start": "2026-11-27T12:50-05:00"
+   },
+   {
+    "end": "2026-11-27T12:50-05:00",
+    "id": "ea730d0c-7723-429d-89a4-9e76f053f5ac",
+    "name": "Mariachi Cobre",
     "start": "2026-11-27T12:50-05:00"
    },
    {
@@ -829,12 +829,6 @@
     "end": "2026-11-27T13:30-05:00",
     "id": "8e1a9a60-9311-4f79-b6a8-1b5172e4f7c9",
     "name": "Entertainment at Germany Gazebo",
-    "start": "2026-11-27T13:30-05:00"
-   },
-   {
-    "end": "2026-11-27T13:30-05:00",
-    "id": "ea730d0c-7723-429d-89a4-9e76f053f5ac",
-    "name": "Mariachi Cobre",
     "start": "2026-11-27T13:30-05:00"
    },
    {
@@ -989,6 +983,12 @@
    },
    {
     "end": "2026-11-27T14:35-05:00",
+    "id": "ea730d0c-7723-429d-89a4-9e76f053f5ac",
+    "name": "Mariachi Cobre",
+    "start": "2026-11-27T14:35-05:00"
+   },
+   {
+    "end": "2026-11-27T14:35-05:00",
     "id": "87d6511a-42fc-45ab-be8b-550b7f49fb04",
     "name": "Mexico Pavilion – Las Posadas Celebration",
     "start": "2026-11-27T14:35-05:00"
@@ -1039,12 +1039,6 @@
     "end": "2026-11-27T15:00-05:00",
     "id": "e48629ab-939f-4fe0-9e6a-6ad29b8added",
     "name": "Command Performance",
-    "start": "2026-11-27T15:00-05:00"
-   },
-   {
-    "end": "2026-11-27T15:00-05:00",
-    "id": "ea730d0c-7723-429d-89a4-9e76f053f5ac",
-    "name": "Mariachi Cobre",
     "start": "2026-11-27T15:00-05:00"
    },
    {
@@ -1133,6 +1127,12 @@
    },
    {
     "end": "2026-11-27T15:40-05:00",
+    "id": "ea730d0c-7723-429d-89a4-9e76f053f5ac",
+    "name": "Mariachi Cobre",
+    "start": "2026-11-27T15:40-05:00"
+   },
+   {
+    "end": "2026-11-27T15:40-05:00",
     "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
     "name": "Meet One of the Three Caballeros in Mexico",
     "start": "2026-11-27T15:40-05:00"
@@ -1147,12 +1147,6 @@
     "end": "2026-11-27T15:45-05:00",
     "id": "e6838b82-9927-4ab4-adee-5ceb9c12ce43",
     "name": "Between Morocco & France Pavilions – Hanukkah Storyteller",
-    "start": "2026-11-27T15:45-05:00"
-   },
-   {
-    "end": "2026-11-27T15:45-05:00",
-    "id": "ea730d0c-7723-429d-89a4-9e76f053f5ac",
-    "name": "Mariachi Cobre",
     "start": "2026-11-27T15:45-05:00"
    },
    {
@@ -1241,12 +1235,6 @@
    },
    {
     "end": "2026-11-27T16:30-05:00",
-    "id": "ea730d0c-7723-429d-89a4-9e76f053f5ac",
-    "name": "Mariachi Cobre",
-    "start": "2026-11-27T16:30-05:00"
-   },
-   {
-    "end": "2026-11-27T16:30-05:00",
     "id": "296d164a-8b9a-49d3-a285-637b86731260",
     "name": "Matsuriza",
     "start": "2026-11-27T16:30-05:00"
@@ -1321,6 +1309,12 @@
     "end": "2026-11-27T17:15-05:00",
     "id": "dec242f1-31bf-42ef-86f7-f5358f2f2359",
     "name": "France Pavilion – Père Noël",
+    "start": "2026-11-27T17:15-05:00"
+   },
+   {
+    "end": "2026-11-27T17:15-05:00",
+    "id": "ea730d0c-7723-429d-89a4-9e76f053f5ac",
+    "name": "Mariachi Cobre",
     "start": "2026-11-27T17:15-05:00"
    },
    {
@@ -1493,12 +1487,6 @@
    }
   ],
   "epic_universe": [
-   {
-    "end": "2026-11-27T10:00-05:00",
-    "id": "4cd6ac88-3945-49bb-ad20-2ce04a3f9628",
-    "name": "Meet Mario and Luigi",
-    "start": "2026-11-27T10:00-05:00"
-   },
    {
     "end": "2026-11-27T10:30-05:00",
     "id": "9c409ec9-a805-456c-96fc-d867cc5bc81b",
@@ -3062,12 +3050,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-11-27T10:10-05:00",
-    "id": "bf89766b-1d19-428f-9e68-71e12f25287b",
-    "name": "Marilyn and the Diamond Bellas",
-    "start": "2026-11-27T10:10-05:00"
-   },
-   {
     "end": "2026-11-27T10:15-05:00",
     "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
     "name": "Meet SpongeBob SquarePants and Friends",
@@ -3882,5 +3864,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-27T10:01-05:00"
+ "updated": "2026-11-27T10:15-05:00"
 }
