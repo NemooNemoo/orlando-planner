@@ -1893,12 +1893,6 @@
    },
    {
     "end": "2026-11-27T11:30-05:00",
-    "id": "d91a0e9a-8652-4036-822f-e7b12b381273",
-    "name": "For the First Time in Forever: A Frozen Sing-Along Celebration",
-    "start": "2026-11-27T11:30-05:00"
-   },
-   {
-    "end": "2026-11-27T11:30-05:00",
     "id": "d07a17c2-7720-4db7-b12a-a68ecdb51108",
     "name": "Hollygroove Swingin’",
     "start": "2026-11-27T11:30-05:00"
@@ -3050,24 +3044,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-11-27T10:20-05:00",
-    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
-    "name": "Illumination Theater",
-    "start": "2026-11-27T10:20-05:00"
-   },
-   {
-    "end": "2026-11-27T10:20-05:00",
-    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
-    "name": "Shrek’s Swamp Meet",
-    "start": "2026-11-27T10:20-05:00"
-   },
-   {
-    "end": "2026-11-27T10:25-05:00",
-    "id": "a492aa01-6f29-43f0-9aec-8adcb8da4674",
-    "name": "Meet The TRANSFORMERS™",
-    "start": "2026-11-27T10:25-05:00"
-   },
-   {
     "end": "2026-11-27T10:30-05:00",
     "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
     "name": "DreamWorks Character Zone",
@@ -3858,5 +3834,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-27T10:19-05:00"
+ "updated": "2026-11-27T10:31-05:00"
 }
