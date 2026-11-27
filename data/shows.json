@@ -2888,12 +2888,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-11-27T12:20-05:00",
-    "id": "2f4690b4-72b0-4845-bcce-9e735397d60b",
-    "name": "The Blues Brothers® Show",
-    "start": "2026-11-27T12:20-05:00"
-   },
-   {
     "end": "2026-11-27T12:30-05:00",
     "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
     "name": "DreamWorks Character Zone",
@@ -3468,5 +3462,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-27T12:15-05:00"
+ "updated": "2026-11-27T12:30-05:00"
 }
