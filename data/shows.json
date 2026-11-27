@@ -490,12 +490,6 @@
     "start": "2026-11-27T09:30-05:00"
    },
    {
-    "end": "2026-11-27T09:30-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
-    "start": "2026-11-27T09:30-05:00"
-   },
-   {
     "end": "2026-11-27T09:45-05:00",
     "id": "fd8afd63-0cb5-4f77-b47b-fb277f12d9f8",
     "name": "¡Celebración Encanto!",
@@ -535,12 +529,6 @@
     "end": "2026-11-27T10:30-05:00",
     "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
     "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-27T10:30-05:00"
-   },
-   {
-    "end": "2026-11-27T10:30-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
     "start": "2026-11-27T10:30-05:00"
    },
    {
@@ -625,12 +613,6 @@
     "end": "2026-11-27T11:30-05:00",
     "id": "5d3bdec3-8484-4aca-b192-e9735a41a316",
     "name": "Meet One of the Three Caballeros in Mexico",
-    "start": "2026-11-27T11:30-05:00"
-   },
-   {
-    "end": "2026-11-27T11:30-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
     "start": "2026-11-27T11:30-05:00"
    },
    {
@@ -971,12 +953,6 @@
    },
    {
     "end": "2026-11-27T14:15-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
-    "start": "2026-11-27T14:15-05:00"
-   },
-   {
-    "end": "2026-11-27T14:15-05:00",
     "id": "67b07a13-cfdf-45b0-a464-8e315a31312c",
     "name": "Norway Pavilion – A Mischievous Magical Barn Santa",
     "start": "2026-11-27T14:15-05:00"
@@ -1124,12 +1100,6 @@
     "id": "83fed9d1-c25f-497c-ab8e-21e4dd7ce655",
     "name": "Sergio",
     "start": "2026-11-27T15:10-05:00"
-   },
-   {
-    "end": "2026-11-27T15:15-05:00",
-    "id": "2ebce841-be26-42e3-a552-393dc995cfe8",
-    "name": "Meet Pluto Near EPCOT Main Entrance",
-    "start": "2026-11-27T15:15-05:00"
    },
    {
     "end": "2026-11-27T15:15-05:00",
@@ -4044,5 +4014,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-27T07:15-05:00"
+ "updated": "2026-11-27T07:30-05:00"
 }
