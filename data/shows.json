@@ -1832,12 +1832,6 @@
     "start": "2026-11-28T10:00-05:00"
    },
    {
-    "end": "2026-11-28T10:15-05:00",
-    "id": "1bbce25c-36eb-4d16-9216-4a1bbd46932b",
-    "name": "Disney Jr. Mickey Mouse Clubhouse Live!",
-    "start": "2026-11-28T10:15-05:00"
-   },
-   {
     "end": "2026-11-28T10:30-05:00",
     "id": "69cb35f2-c58e-4b44-88c9-ea0cc720e075",
     "name": "Disney Villains: Unfairly Ever After",
@@ -1908,12 +1902,6 @@
     "id": "a7763ca6-bca3-4e78-b75c-22886aa06bec",
     "name": "The Little Mermaid – A Musical Adventure",
     "start": "2026-11-28T11:10-05:00"
-   },
-   {
-    "end": "2026-11-28T11:15-05:00",
-    "id": "1bbce25c-36eb-4d16-9216-4a1bbd46932b",
-    "name": "Disney Jr. Mickey Mouse Clubhouse Live!",
-    "start": "2026-11-28T11:15-05:00"
    },
    {
     "end": "2026-11-28T11:30-05:00",
@@ -2843,6 +2831,12 @@
    }
   ],
   "magic_kingdom": [
+   {
+    "end": "2026-11-28T22:30-05:00",
+    "id": "a2d92647-634d-4eb4-886b-9da858e871f1",
+    "name": "Meet Mickey at Town Square Theater",
+    "start": "2026-11-28T09:00-05:00"
+   },
    {
     "end": "2026-11-28T09:00-05:00",
     "id": "1eee22e8-1d0a-4809-a42b-df3ae55c69d5",
@@ -3936,5 +3930,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-28T08:45-05:00"
+ "updated": "2026-11-28T09:01-05:00"
 }
