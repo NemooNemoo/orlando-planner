@@ -2454,17 +2454,10 @@
     "start": "2026-11-27T23:55-05:00"
    }
   ],
-  "universal_studios_florida": [
-   {
-    "end": "2026-11-27T18:45-05:00",
-    "id": "c85d936f-c5b7-490b-880b-6f0bf44ba557",
-    "name": "DreamWorks Imagination Celebration",
-    "start": "2026-11-27T18:45-05:00"
-   }
-  ],
+  "universal_studios_florida": [],
   "volcano_bay": []
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-27T18:45-05:00"
+ "updated": "2026-11-27T19:01-05:00"
 }
