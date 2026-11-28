@@ -593,12 +593,6 @@
    },
    {
     "end": "2026-11-28T10:45-05:00",
-    "id": "e9c1bff6-c9c1-4275-8f3d-44226f0fdfbb",
-    "name": "Meet Princess Aurora in France",
-    "start": "2026-11-28T10:45-05:00"
-   },
-   {
-    "end": "2026-11-28T10:45-05:00",
     "id": "fd8afd63-0cb5-4f77-b47b-fb277f12d9f8",
     "name": "¡Celebración Encanto!",
     "start": "2026-11-28T10:45-05:00"
@@ -709,12 +703,6 @@
     "end": "2026-11-28T11:55-05:00",
     "id": "99087d9a-4380-4ab6-b088-20816e233c6f",
     "name": "Meet Asha Near World Showcase Plaza",
-    "start": "2026-11-28T11:55-05:00"
-   },
-   {
-    "end": "2026-11-28T11:55-05:00",
-    "id": "e9c1bff6-c9c1-4275-8f3d-44226f0fdfbb",
-    "name": "Meet Princess Aurora in France",
     "start": "2026-11-28T11:55-05:00"
    },
    {
@@ -922,12 +910,6 @@
     "start": "2026-11-28T13:50-05:00"
    },
    {
-    "end": "2026-11-28T13:50-05:00",
-    "id": "e9c1bff6-c9c1-4275-8f3d-44226f0fdfbb",
-    "name": "Meet Princess Aurora in France",
-    "start": "2026-11-28T13:50-05:00"
-   },
-   {
     "end": "2026-11-28T13:55-05:00",
     "id": "59077748-411e-432e-bb9b-4b77942e5a50",
     "name": "Italy Pavilion – La Befana",
@@ -1093,12 +1075,6 @@
     "end": "2026-11-28T15:00-05:00",
     "id": "99087d9a-4380-4ab6-b088-20816e233c6f",
     "name": "Meet Asha Near World Showcase Plaza",
-    "start": "2026-11-28T15:00-05:00"
-   },
-   {
-    "end": "2026-11-28T15:00-05:00",
-    "id": "e9c1bff6-c9c1-4275-8f3d-44226f0fdfbb",
-    "name": "Meet Princess Aurora in France",
     "start": "2026-11-28T15:00-05:00"
    },
    {
@@ -3062,24 +3038,6 @@
   ],
   "universal_studios_florida": [
    {
-    "end": "2026-11-28T09:30-05:00",
-    "id": "55222885-493c-4280-b295-6fd7c609f12d",
-    "name": "Hollywood Character Zone",
-    "start": "2026-11-28T09:30-05:00"
-   },
-   {
-    "end": "2026-11-28T09:40-05:00",
-    "id": "17dd3a01-3127-4e22-8d73-35680fa8b034",
-    "name": "Illumination Theater",
-    "start": "2026-11-28T09:40-05:00"
-   },
-   {
-    "end": "2026-11-28T09:40-05:00",
-    "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
-    "name": "Shrek’s Swamp Meet",
-    "start": "2026-11-28T09:40-05:00"
-   },
-   {
     "end": "2026-11-28T09:45-05:00",
     "id": "14af192d-dfce-4bdb-bf5c-1c1957499a6a",
     "name": "Meet SpongeBob SquarePants and Friends",
@@ -3513,12 +3471,6 @@
    },
    {
     "end": "2026-11-28T13:40-05:00",
-    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
-    "name": "DreamWorks Character Zone",
-    "start": "2026-11-28T13:40-05:00"
-   },
-   {
-    "end": "2026-11-28T13:40-05:00",
     "id": "bf89766b-1d19-428f-9e68-71e12f25287b",
     "name": "Marilyn and the Diamond Bellas",
     "start": "2026-11-28T13:40-05:00"
@@ -3651,12 +3603,6 @@
    },
    {
     "end": "2026-11-28T14:40-05:00",
-    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
-    "name": "DreamWorks Character Zone",
-    "start": "2026-11-28T14:40-05:00"
-   },
-   {
-    "end": "2026-11-28T14:40-05:00",
     "id": "bf89766b-1d19-428f-9e68-71e12f25287b",
     "name": "Marilyn and the Diamond Bellas",
     "start": "2026-11-28T14:40-05:00"
@@ -3786,12 +3732,6 @@
     "id": "333c6657-2a9f-4423-a7a2-bf0230bf669a",
     "name": "Shrek’s Swamp Meet",
     "start": "2026-11-28T15:30-05:00"
-   },
-   {
-    "end": "2026-11-28T15:40-05:00",
-    "id": "a54b961b-06d3-492c-88b5-201cb32399c2",
-    "name": "DreamWorks Character Zone",
-    "start": "2026-11-28T15:40-05:00"
    },
    {
     "end": "2026-11-28T15:40-05:00",
@@ -3942,5 +3882,5 @@
  },
  "source": "https://themeparks.wiki",
  "timezone": "America/New_York",
- "updated": "2026-11-28T09:30-05:00"
+ "updated": "2026-11-28T09:45-05:00"
 }
